@@ -1,0 +1,172 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage{amsmath,amsxtra,amssymb,latexsym, amscd,amsthm}
+\usepackage{indentfirst}
+\usepackage[mathscr]{eucal}
+\usepackage{color}
+\usepackage[utf8]{vietnam}
+\usepackage{graphicx}
+\usepackage[left=2.5cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\newtheorem{vd}{Ví dụ}
+\newcommand{\m}[1]{
+\begin{bmatrix}
+#1
+\end{bmatrix}
+}
+\newcommand{\s}[1]{
+\sqrt{#1}
+}
+\newcommand{\n}[1]{
+\left(#1\right)
+}
+\begin{document}
+\underline{Câu 1}. Tính chéo hóa của $A$ và cách chéo hóa \\
+\underline{Xét tính chéo hóa được của $A$}\\
+Cho $A \in \mathbb{R}^{n \times n}$. Cần xét số bội đại số và bội hình học của $A$. Bội đại số của $A$ là số bội của các giá trị riêng $\lambda$ của A. Nếu số bội đại số của $A < n$ thì A không chéo hóa được. Nếu số bội đại số của $A = n$ thì xét số bội hình học của $A$. Số bội hình học của $A = n -$ số ràng buộc tuyến tính. Nếu 1 giá trị riêng của $A$ có số bội hình học khác số bội đại số thì $A$ không chéo hóa được. Nếu từng giá trị riêng mà số bội hình học bằng số bội đại số thì $A$ chéo hóa được. \\
+\underline{Cách chéo hóa $A$}\\
+Giải phương trình đặc trưng $P_A(\lambda)$ để tìm các giá trị riêng $\lambda$. Với từng giá trị riêng $\lambda$ giải phương trình $A -\lambda I$ để tìm cơ sở không gian con riêng ứng với các giá trị riêng. Khi đó $A = PDP^{-1}$ với $P$ là ma trận được tạo thành từ cơ sở các không gian con riêng của các giá trị riêng $\lambda_{i}$, $D$ là ma trận chéo với các hệ số trên đường chéo là các giá trị riêng $\lambda_{i}$. Lưu ý rằng cần phải sắp xếp các cơ sở và các giá trị riêng cùng thứ tự.
+\begin{vd}
+Chéo hóa  
+\begin{align*}
+A = 
+\m{
+0 & -4 & -6 \\
+-1 & 0 & -3 \\
+1 & 2 & 5
+}
+\end{align*} 
+Giải phương trình đặc trưng ta tính được $\lambda$ = 1 $\n{\mbox{bội 1}}$ và $\lambda$ = 2 $\n{\mbox{bội 2}}$.\\
+Với $\lambda = 1$ ta giải phương trình $A - 1I$ được không gian con riêng là $\left(-2,-1,1\right)$ \\
+Với $\lambda = 2\n{\mbox{bội 2}}$ ta giải phương trình $A - 1I$ được không gian con riêng là $\n{-1,-1,1}$ và $\n{3,0,-1}$ \\
+Ta thấy số bội đại số của $A$ bằng số bội hình học của $A$ nên $A$ chéo hóa được. \\
+$A = PDP^{-1}$ với $D = \m{
+1 & 0 & 0\\
+0 & 2 & 0\\
+0 & 0 & 2}$ và $P = \m{
+-2 & -1 & 3\\
+-1 & -1 & 0\\
+1 & 1 & -1
+}$
+\end{vd}
+\underline{Câu 2}.Tìm phân tích $QR$ của $A$ và từ đó tính nghiệm bình phương tối tiểu $Ax = b$ \\
+\underline{Phân tích QR} \\
+Trực giao hóa không gian vecto cột của $A$ sau đó trực chuẩn hóa ta sẽ được ma trận $Q$. Từ đó ta có $Q$ là một ma trận trực giao.
+$A = QR$ mà $Q$ là một ma trận trực giao nên $Q^{T} = Q^{-1}$. Do đó $Q^{T}A = R$. Từ đó tính được $R$. \\
+\underline{Nghiệm bình phương tối tiểu} \\
+$Ax = b$ nên $QRx = b$ do đó $Rx = Q^{T}b$. Giải hệ ta tính được $x$.
+\begin{vd}
+Cho 
+$A = \m{
+-1 & 2\\
+2 & -3\\
+-1 & 3
+}$ và $b = \m{
+4\\
+1\\
+2
+}$ \\
+Đặt $v_1 = \n{-1,2,-1} = u_1$ và $v_2 = \n{2,-3,3}$ từ đó ta tính được $u_1$ và $u_2$ lần lượt là $u_1 = \n{\frac{1}{\s{6}},\frac{2}{\s{6}},\frac{-1}{\s{6}}}$ , $u_2 = \n{\frac{1}{\s{66}},\frac{4}{\s{66}},\frac{7}{\s{66}}}$ \\
+Do đó $Q = \m{
+\frac{1}{\s{6}} & \frac{1}{\s{66}} \\
+\frac{2}{\s{6}} & \frac{4}{\s{66}} \\
+\frac{-1}{\s{6}} & \frac{7}{\s{66}}
+}$ \\
+$Q^{T}A = R$ nên $R = \m{
+\s{6} & \frac{-11}{\s{6}} \\
+0 & \s{\frac{11}{6}}
+}$ \\
+$QRx = b$ nên $Rx = Q^{T}b$ hay $\m{
+\s{6} & \frac{-11}{\s{6}} \\
+0 & \s{\frac{11}{6}}
+}\m{x_1 \\ x_2} = \m{
+\frac{-4}{\s{6}} \\
+\frac{2\s{11}}{\s{6}}
+}$ \\
+Do đó $x_2 = 2$ và $x_1 = 3$.
+\end{vd}
+\underline{Câu 3}.Cho dạng toàn phương $H$ và $K$. CMR $K$ xác định dương. Tìm max của $Hx$ với $Kx = 1$. Tìm vecto $x$ sao cho $Hx$ đạt max. \\
+\underline{Chuyển dạng toàn phương về dạng chuẩn tắc} \\
+Dùng phép biến đổi Larange đưa dạng toàn phương đã cho về dạng chính tắc, sau đó dùng các phép đổi biến $x = Qy$ để đưa về dạng chuẩn tắc.\\
+\underline{Tìm max và vecto x} \\
+Sau khi đã biến đổi dạng toàn phương ban đầu về dạng chuẩn tắc và về dạng $x = Qy$ thì tùy vào phương trình $Hx$ mà biến đổi về $Ky$ với $y^{T}y = 1$. Sau khi đã đưa được $Hx$ về hàm của $y$ với điều kiện $y^{T}y = 1$ thì đưa về dạng ma trận $x^{T}Ax$. Sau đó, giải phương trình $P_{A}\n{\lambda}$ để tìm ra các giá trị riêng $\lambda_{i}$ của $A$. Khi đó giá trị riêng $\lambda_{i}$ lớn nhất sẽ là max của $Hx$. \\
+Giải phương trình $\n{A-\lambda I}y = 0$ để tìm $y$ và trực chuẩn $y$ \\$\n{\mbox{cần trực giao ma trận thu được khi có 1 giá trị riêng nào đó có bội > 1}}$ \\
+Khi đó đặt $y = Pz \n{\mbox{P là ma trận vừa thu được từ việc trực chuẩn y phía trên}}$. Bài toán trở về là tìm max của phương trình chính tắc $Z\n{x}$ với điều kiện $z^{T}z = 1$ và với các hệ số là các giá trị riêng của $A$. Max của phương trình = giá trị riêng lớn nhất của $A$. Từ đó giải ra được $z$, thay ngược lại các phép đổi biến ta tìm được vecto x.
+\begin{vd}
+$H = 2x_4^2 + x_1 x_2 + x_1 x_3 - 2x_2 x_3 + 2x_2 x_4$ \\
+$K = \frac{1}{4}x_1^2 + x_2^2 + x_3^2 + 2x_4^2 + 2x_2 x_4$ \\
+Dùng phép biến đổi Larange ta đưa được $K$ về dạng : \\
+$K = \frac{1}{4}x_1^2 + \n{x_2^2 + x_4^2}^2 + x_3^2 + x_4^2$ \\\\
+Đặt 
+\begin{align}
+	\begin{cases}
+        \frac{1}{2}x_1 &= y_1 \\
+        x_2 + x_4 &= y_2 \\
+        x_3 &= y_3 \\
+        x_4 &= y_4
+    \end{cases}
+\Longrightarrow \begin{cases}
+        x_1 &= 2y_1 \\
+        x_2 &= y_2 - y_4\\
+        x_3 &= y_3 \\
+        x_4 &= y_4
+    \end{cases}
+\end{align}
+Vậy $K = y_1^2 + y_2^2 + y_3^2 + y_4^2$ và $K$ xác định dương.
+\begin{align*}
+Max H\n{x} &= Max_{Ky = 1}\tilde{H}\n{x} \\
+&= Max_{Ky = 1}\n{2y_4^2 + 2y_1\n{y_2 - y4} + 2y_1 y_3 - 2\n{y_2 - y4}y_3 + 2\n{y_2 - y4}y_4} \\
+&= Max_{Ky = 1}\n{2y_1 y_2 - 2y_1 y_4 + 2y_1 y_3 - 2y_2 y_3 + 2y_4 y_3 + 2y_2 y_4}
+\end{align*}
+Do đó
+$A = \m{
+0 & 1 & 1 & -1\\
+1 & 0 & -1 & 1\\
+1 & -1 & 0 & 1\\
+-1 & 1 & 1 & 0
+}$ \\
+Giải $P_A\n{\lambda}$ ta tìm được 2 giá trị riêng $\lambda = 1\n{\mbox{bội 3}}$ và $\lambda = -3\n{\mbox{bội 1}}$. Với $\lambda = 1$ thì do nó có bội 3 nên không gian con riêng sau khi tìm được cần phải thực hiện trực giao hóa. \\
+Giải $\n{A - 1I}y$ ta tìm được $y = a\m{-1\\0\\0\\1} + b\m{1\\0\\1\\0} + c\m{1\\1\\0\\0}$.
+Thực hiện trực giao hóa G-S ta thu được hệ vecto của không gian con riêng ứng với $\lambda = 1$ là $\m{
+\frac{-1}{\s{2}} & \frac{1}{\s{6}} & \frac{3}{\s{6}}\\
+0 & 0 & \frac{\s{3}}{2}\\
+0 & \frac{2}{\s{6}} & \frac{-3}{\s{6}}\\
+\frac{1}{\s{2}} & \frac{1}{\s{6}} & \frac{3}{\s{6}}
+}
+$ \\
+Giải $\n{A + 3I}y = 0$ ta tìm được $y = \m{1\\-1\\-1\\1}$.Do $A$ là ma trận đối xứng nên cơ sở của các không gian con riêng ứng với các giá trị riêng $\lambda$ khác nhau thì vuông góc với nhau nên cơ sở $y$ ứng với $\lambda = -3$ đã vuông góc với cơ sở của $y$ ứng với $\lambda = 1$ nên ở đây ta chỉ cần trực chuẩn hóa cơ sở $y$ ứng với $\lambda = -3$. \\
+Vậy ta thu được $P = \m{
+\frac{-1}{\s{2}} & \frac{1}{\s{6}} & \frac{3}{\s{6}} & \frac{1}{2}\\
+0 & 0 & \frac{\s{3}}{2} & \frac{-1}{2}\\
+0 & \frac{2}{\s{6}} & \frac{-3}{\s{6}} & \frac{-1}{2}\\
+\frac{1}{\s{2}} & \frac{1}{\s{6}} & \frac{3}{\s{6}} & \frac{1}{2}
+}$ và $D = \m{
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & -3
+}$ \\
+Đặt $y = Pz$. Khi đó ta có : 
+\begin{align}
+\begin{cases}
+y_1 &= \frac{-1}{\s{2}}z_1 + \frac{1}{\s{6}}z_2 + \frac{3}{\s{6}}z_3 + \frac{1}{2}z_4 \\
+y_2 &= \frac{\s{3}}{2}z_3 - \frac{1}{2}z_4\\
+y_3 &= \frac{2}{\s{6}}z_2 - \frac{3}{\s{6}}z_3 - \frac{1}{2}z_4 \\
+y_4 &= \frac{1}{\s{2}}z_1 + \frac{1}{\s{6}}z_2 + \frac{3}{\s{6}}z_3 + \frac{1}{2}z_4
+\end{cases}
+\end{align}
+Vậy $Max H\n{x} = Max_{z_1^2 + z_2^2 + z_3^2 + z_4^2 = 1} z_1^2 + z_2^2 + z_3^2 - 3z_4^2 = 1$.\\
+Giá trị max = 1 đạt được tại $z = \m{1\\0\\0\\0}$, thay vào $\n{2}$ ta tình được $y = \m{\frac{-1}{\s{2}}\\0\\0\\\frac{1}{\s{2}}}$, thay $y$ vào $\n{1}$ ta được $x = \m{\s{2}\\\frac{-1}{\s{2}}\\0\\\frac{1}{\s{2}}}$
+\end{vd}
+\underline{Câu 4}. Phân tích giá trị kỳ dị \\
+$A_{m \times n} = U_{m \ts m} \Sigma_{n \times n} V^{T}_{n \times n}$\\
+\underline{Bước 1}. Tính $B = A^{T}A$. Sau đó giải phương trình $P_B\n{\lambda}$ để tìm ra các giá trị riêng $\lambda$.\\
+\underline{Bước 2}. Tính toán giá trị riêng với thứ tự giảm dần ta  sẽ tìm được không gian con riêng ứng với các giá trị riêng $\lambda_i$. Sau đó chuẩn hóa các vecto trong không gian con riêng đó ta sẽ tìm được $V^{T}$. \\
+\underline{Bước 3}. $\sigma_i$ là giá trị kỳ dị ứng với $\lambda_i \n{\sigma_i = \s{\lambda_i}}$. Khi đó $\Sigma = \m{
+\sigma_1 & 0 & 0 & 0\\
+0 & \sigma_2 & 0 & 0 \\
+0 & 0 & \ddots & 0 \\
+0 & 0 & 0 & \sigma_{n}
+}$ \\
+\underline{Bước 4}. Tính $U$ \\
+$v_i$ là vecto riêng ứng với các giá trị riêng tương ứng và đã qua chuẩn hóa. Khi đó $u_i = \frac{Av_i}{\sigma_i}$ và $U = \m{u_1 & u_2 & ... & u_i}$ \\
+\underline{Bước 5}. Nếu $U$ chưa có dạng $m \times m$ thì cần bổ sung thêm các cột sao cho $U$ là ma trận trực giao và các cột đều có độ dài bằng 1. Tương tự nếu $\Sigma$ chưa có dạng $m \times n$ thì cần bổ sung thêm hàng, thông thường thì thêm hàng 0.
+\end{document}

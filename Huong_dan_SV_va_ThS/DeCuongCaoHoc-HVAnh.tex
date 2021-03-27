@@ -1,0 +1,197 @@
+\documentclass[12pt,oneside,portrait,a4paper]{book}
+\usepackage[utf8]{vietnam}
+\usepackage[mathscr]{eucal}
+\usepackage{amsfonts}
+\usepackage{amsmath,amsxtra,latexsym,amsthm, amssymb, amscd,amsfonts}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{graphics}
+\usepackage{xr}
+\usepackage{utopia}
+
+\usepackage[portrait, top=2.5cm, bottom=2.5cm, left=3.5cm, right=2.0cm] {geometry}
+
+\theoremstyle{definition}
+\newtheorem{dn}{Định nghĩa}[section]
+\newtheorem{nx}[dn]{Nhận xét}
+\newtheorem{vd}[dn]{Ví dụ}
+\newtheorem{cy}[dn]{Chú ý}
+
+\theoremstyle{plain}
+\newtheorem{dl}[dn]{Định lí}
+\newtheorem{md}[dn]{Mệnh đề}
+\newtheorem{bd}[dn]{Bổ đề}
+\newtheorem{hq}[dn]{Hệ quả}
+
+\newcommand{\bdn}{\begin{dn}}
+\newcommand{\edn}{\end{dn}}
+\newcommand{\bdl}{\begin{dl}}
+\newcommand{\edl}{\end{dl}}
+\newcommand{\bmd}{\begin{md}}
+\newcommand{\emd}{\end{md}}
+
+\newcommand{\bE}{\mathbb{E}}
+
+\newcommand{\bhq}{\begin{hq}}
+\newcommand{\ehq}{\end{hq}}
+\newcommand{\bbd}{\begin{bd}}
+\newcommand{\ebd}{\end{bd}}
+\newcommand{\bvd}{\begin{vd}}
+\newcommand{\evd}{\end{vd}}
+\newcommand{\bnx}{\begin{nx}}
+\newcommand{\enx}{\end{nx}}
+\newcommand{\bcy}{\begin{cy}}
+\newcommand{\ecy}{\end{cy}}
+\newcommand{\bpr}{\begin{proof}\item[]}
+\newcommand{\epr}{\end{proof}}
+
+\newcommand{\Ass}{\textup{Ass}}
+\newcommand{\Ann}{\textup{Ann}}
+\newcommand{\Supp}{\textup{Supp}}
+\newcommand{\Ima}{\textup{Im}}
+\newcommand{\Ker}{\textup{Ker}}
+
+\renewcommand{\labelenumi}{(\roman{enumi})}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\thispagestyle{empty}
+\begin{titlepage}
+\centerline{\fontsize{14pt}{18pt}\bf TRƯỜNG ĐẠI HỌC SƯ PHẠM HÀ NỘI}
+\centerline{\Large\bf KHOA TOÁN - TIN}
+\centerline{--------------------------o0o--------------------------}
+\vspace*{4cm}
+\centerline{\fontsize{14pt}{18pt}\bf ĐỀ CƯƠNG LUẬN VĂN THẠC SĨ}
+\vspace*{2cm}
+
+\begin{center}
+\centerline{\fontsize{14pt}{18pt}\bf Tên đề tài}
+\end{center}
+
+\centerline{\fontsize{14pt}{18pt}\bf LÝ THUYẾT ĐIỀU KHIỂN CỦA CÁC HỆ ĐỘNG LỰC CÓ TRỄ}
+\centerline{\fontsize{14pt}{18pt} \bf SỬ DỤNG TOOLBOX LambertWDDE VÀ ỨNG DỤNG}
+\vspace*{0,2cm}
+
+
+\vspace*{4cm}
+\begin{center}
+\begin{tabular}{l l}
+\hspace*{-0,5cm}{\fontsize{14pt}{18pt}\bf \textit{Chuyên ngành}}&{\fontsize{14pt}{18pt}\bf : Toán Ứng Dụng}\\
+\hspace*{-0,5cm}{\fontsize{14pt}{18pt}\bf \textit{Mã số}}&{\fontsize{14pt}{18pt}\bf : 8.46.01.12 }\\
+\hspace*{-0,5cm}{\fontsize{14pt}{18pt}\bf \textit{Học viên}}&{\fontsize{14pt}{18pt}\bf : Hoàng Việt Anh}\\
+\hspace*{-0,5cm}{\fontsize{14pt}{18pt}\bf \textit{Giảng viên hướng dẫn}}&{\fontsize{14pt}{18pt}\bf : TS. Hà Phi}\\
+\end{tabular}
+\end{center}
+\vfill
+\centerline{\fontsize{14pt}{18pt}\bf HÀ NỘI - 2019}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%  
+%\pagestyle{fancy}
+%\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter. \sc #1}{}}
+%\lhead[\fancyplain{}{}]{\fancyplain{}{\leftmark}}
+%\rhead{}\sloppy
+%\cfoot[\fancyplain{}{}]{\fancyplain{}{\thepage}}
+
+\pagenumbering{roman}
+\fontsize{12pt}{18pt}\selectfont
+
+
+\newpage
+
+\pagenumbering{arabic}       %%%%%Đánh số trang! Cấm bỏ!
+\renewcommand{\baselinestretch}{1.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{flushleft}
+\noindent 
+\textbf{ I. LÝ DO CHỌN ĐỀ TÀI}\\
+\hspace*{0,5cm}
+
+Các hệ điều khiển có trễ biểu diễn các hệ động lực có chứa độ trễ thời gian trong hệ thống, hoặc trễ được sử dụng như một công cụ để điều khiển và kiểm soát các tính chất mong muốn của hệ thống, ví dụ như tính ổn định, tính điều khiển được hay quan sát được, v.v. Độ trễ về mặt thời gian như vậy là rất phổ biến trong các hệ động lực hay hệ điều khiển trong khoa học và kỹ thuật, và có thể dẫn đến một số vấn đề không mong muốn như sự không ổn định và thiếu chính xác, và do đó, hạn chế và làm giảm hiệu suất có thể đạt được của các hệ điều khiển. Thêm vào đó, bởi vì các phương trình vi phân có trễ là các hệ động lực vô hạn chiều, việc phân tích các hệ điều khiển có trễ bằng các phương pháp cổ điển được phát triển cho các hệ điều khiển hữu hạn chiều là không khả thi.
+
+Trong những thập niên gần đây, các hàm Lambert W được nghiên cứu và sử dụng như một phương pháp tiếp cận hiệu quả cho các hệ phương trình vi phân đơn trễ (tức là chỉ có một trễ) với hệ số hằng số. 
+Cách tiếp cận sử dụng hàm Lambert W dẫn đến công thức nghiệm hiển cho các phương trình vi phân có trễ và cho phép nghiên cứu sâu hơn về các tính chất điều khiển tại từng điểm, ví dụ như tính điều khiển được, tính quan sát được, 
+các ma trận Gramian. Những công trình nghiên cứu tiên phong gần đây của Yi, Nelson và Ulsoy (2008-2012) dẫn đến sự ra đời của Toolbox LambertWDDE được lập trình trong ngôn ngữ tính toán khoa học MATLAB. 
+
+Với mong muốn được tìm hiểu kĩ hơn về các tính chất điều khiển của hệ điều khiển có trễ và ứng dụng trong thực tế, tôi quyết định chọn đề tài \textbf{``Lý thuyết điều khiển của các hệ động lực có trễ sử dụng Toolbox LambertWDDE và ứng dụng''} cho luận văn thạc sĩ của mình. 
+
+\vspace{6pt}
+\noindent 
+\textbf{ II. MỤC TIÊU NGHIÊN CỨU}\\
+\hspace*{0,5cm} Nghiên cứu các tính chất điều khiển (tại từng điểm) của các hệ điều khiển có trễ bằng cách tiếp cận sử dụng hàm Lambert W. Tìm hiểu Toolbox LambertWDDE trong ngôn ngữ MATLAB và ứng dụng trong một số mô hình thực tế.   
+
+\vspace{6pt}
+\noindent 
+\textbf{ III. ĐỐI TƯỢNG NGHIÊN CỨU}
+\begin{itemize}
+\item Hệ điều khiển có trễ
+\item Hàm Lambert W
+\item Toolbox LambertWDDE
+\end{itemize}
+
+\vspace{6pt}
+\noindent 
+\textbf{ IV. PHƯƠNG PHÁP NGHIÊN CỨU}\\
+\hspace*{0,5cm} Nghiên cứu lý luận. Nghiên cứu thực hành.
+
+\vspace{6pt}
+\noindent 
+\textbf{ V. CẤU TRÚC LUẬN VĂN}\\
+\hspace*{1cm} Nội dung của luận văn bao gồm hai chương:
+
+
+\hspace*{0,5cm}\textbf{Chương I: Hệ điều khiển có trễ và hàm Lambert W}\\
+\hspace*{1cm} 1.1 Sơ lược về hàm Lambert W \\
+\hspace*{1cm} 1.2 Công thức nghiệm của các hệ điều khiển có trễ \\
+\hspace*{1cm} 1.3 Tính ổn định của các hệ điều khiển có trễ \\
+\hspace*{1cm} 1.4 Tính điều khiển được của các hệ điều khiển có trễ \\
+\hspace*{1cm} 1.5 Tính quan sát được của các hệ điều khiển có trễ \\
+
+\vskip 0.5cm 
+\hspace*{0,5cm}\textbf{Chương II: Toolbox LambertWDDE và ứng dụng}\\
+\hspace*{1cm} 2.1 Toolbox LambertWDDE \\
+\hspace*{1cm} 2.2 Một số ví dụ thực tế \\
+
+\vspace{6pt}
+\noindent 
+\textbf{ VI. KẾ HOẠCH THỰC HIỆN}\\
+\hspace*{1cm} - Từ tháng 9 đến tháng 11 năm 2019: Gặp giảng viên hướng dẫn, nhận đề tài, lập và bảo vệ đề cương.\\
+\hspace*{1cm} - Từ tháng 12 năm 2019 đến tháng 5 năm 2020: Nghiên cứu kết hợp trao đổi với giảng viên hướng dẫn để viết luận văn.\\
+\hspace*{1cm} - Tháng 6 năm 2020: Hoàn chỉnh luận văn và bảo vệ trước Hội đồng chấm luận văn Thạc sĩ.\\
+%\end{flushleft}
+
+\begin{thebibliography}{99}
+\bibitem{Yi07} 
+S. Yi, P. W. Nelson and A. G. Ulsoy, \emph{Survey on analysis of time delayed systems via the Lambert W function}, Dyn. Contin. Discret. Impuls. Syst. Ser. A-Math Anal., vol. 14 (s2), pp. 296-301, 2007.
+
+\bibitem{Yi08} 
+S. Yi, P.W. Nelson, and A. G. Ulsoy, \emph{Controllability and observability of systems of linear delay differential equations via the matrix Lambert W function}, IEEE Trans. Autom. Control, 2008
+
+\bibitem{Yi12} 
+S. Yi, S. Duan, P. Nelson, A. Ulsoy, \emph{The Lambert W function approach to time delay systems and the lambertw-dde toolbox}. In Proceedings of the 10th IFAC Workshop on Time Delay Systems, volume 10 (2012), pp. 114-119
+
+\end{thebibliography}
+\vspace{10pt}
+
+\phantom{***}
+
+\begin{flushright}
+\textit{Hà Nội, tháng 10 năm 2019}
+\end{flushright}
+\par
+\par
+{\small
+	\hspace {-0,1cm} Học viên \hspace {0.5cm} Giảng viên hướng dẫn \hspace {0.7cm} Trưởng bộ môn \hspace {1.2cm} Phó trưởng khoa \\
+	\par
+	\vspace{1cm}
+	\noindent  \hspace{3.8cm} TS \hspace{3cm} PGS.TS \hspace{2.7cm} PGS.TS\\
+	\noindent Hoàng Việt Anh  \hspace*{0.9cm} Hà Phi \hspace{2,4cm}Ngô Hoàng Long \hspace{1,1cm} Nguyễn Công Minh
+	
+}
+
+\end{document}
+ 
+ 
+
+%%23:1:5 8/11/2013Last Modification of contents

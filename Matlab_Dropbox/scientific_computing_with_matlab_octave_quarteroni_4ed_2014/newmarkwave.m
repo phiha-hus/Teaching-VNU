@@ -1,0 +1,47 @@
+function [xh,uh]=newmarkwave(xspan,tspan,nstep,param,...
+               c,u0,v0,g,f,varargin)
+%NEWMARKWAVE solves the wave equation with the Newmark
+% method.
+% [XH,UH]=NEWMARKWAVE(XSPAN,TSPAN,NSTEP,PARAM,C,...
+% U0,V0,G,F)
+% solves the wave equation D^2 U/DT^2 - C D^2U/DX^2 = F
+% in (XSPAN(1),XSPAN(2)) X (TSPAN(1),TSPAN(2)) using
+% Newmark method with initial conditions U(X,0)=U0(X),
+% DU/DX(X,0)=V0(X) and Dirichlet boundary conditions
+% U(X,T)=G(X,T) for X=XSPAN(1) and X=XSPAN(2). C is a
+% positive constant.
+% NSTEP(1) is the number of space integration intervals
+% NSTEP(2) is the number of time-integration intervals.
+% PARAM(1)=ZETA and PARAM(2)=THETA.
+% U0(X), V0(X), G(X,T) and F(x,T) are function handles.
+% XH contains the nodes of the discretization.
+% UH contains the numerical solutions at time TSPAN(2).
+% [XH,UH]=NEWMARKWAVE(XSPAN,TSPAN,NSTEP,PARAM,C,...
+% U0,V0,G,F,P1,P2,...) passes the additional parameters
+%  P1,P2,...to the functions U0,V0,G,F.
+h  = (xspan(2)-xspan(1))/nstep(1);
+dt = (tspan(2)-tspan(1))/nstep(2);
+zeta = param(1);  theta = param(2);
+N = nstep(1)+1;
+e = ones(N,1); D = spdiags([e -2*e e],[-1,0,1],N,N);
+I = speye(N); lambda = dt/h;
+A = I-c*lambda^2*zeta*D;
+An = I+c*lambda^2*(0.5-zeta)*D;
+A(1,:) = 0; A(1,1) = 1; A(N,:) = 0; A(N,N) = 1;
+xh = (linspace(xspan(1),xspan(2),N))';
+fn = f(xh,tspan(1),varargin{:});
+un = u0(xh,varargin{:});
+vn = v0(xh,varargin{:});
+[L,U]=lu(A);
+alpha = dt^2*zeta; beta = dt^2*(0.5-zeta);
+theta1 = 1-theta;
+for t = tspan(1)+dt:dt:tspan(2)
+    fn1 = f(xh,t,varargin{:});
+    rhs = An*un+dt*I*vn+alpha*fn1+beta*fn;
+    temp = g([xspan(1),xspan(2)],t,varargin{:});
+    rhs([1,N]) = temp;
+    uh = L\rhs;    uh = U\uh;
+    v = vn + dt*((1-theta)*(c*D*un/h^2+fn)+...
+        theta*(c*D*uh/h^2+fn1));
+    fn = fn1;    un = uh;    vn = v;
+end

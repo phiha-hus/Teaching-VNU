@@ -1,0 +1,138 @@
+%\documentclass[11pt]{article}
+\documentclass[answers]{exam}
+
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+\DeclareUnicodeCharacter{00A0}{ }
+
+\usepackage{listings}
+\lstset{language=Python}          % Set your language (you can change the language for each code-block optionally)
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+
+\begin{document}
+% \noindent
+\begin{tabular*}
+{\linewidth}{c>{\centering\hspace{0pt}} p{.7\textwidth}}
+Trường ĐHKHTN, ĐHQGHN & {\bf Học Kỳ 1 (2020-2021)}
+\tabularnewline
+{K63 TTƯD - Lớp thầy Hà Phi} & {\bf Bài Tập Giải Tích Số. No 1 \\ \today}
+\tabularnewline
+\rule{1in}{1pt}  \small  & \rule{2in}{1pt} %(Due date:)
+\tabularnewline
+
+%  \tabularnewline
+%  &(Đề thi có 1 trang)
+\end{tabular*}
+%
+%\Opensolutionfile{ans}[ans1]
+\printanswers
+
+\begin{bt}\label{bt1}
+Viết hàm trong Python để đổi độ F ra độ C (google cách đổi). Kiểm tra thử xem F = 69.8 thì C = 21 đúng không?
+Khi viết hàm phải có phần giải thích và ghi tên, ví dụ
+%
+\begin{lstlisting}[frame=single] 
+"""
+This is  a function to convert degree F to degree C
+Using the formula C = .....
+Name: Phi Ha, K63 TTUD
+"""
+
+def doi_nhiet_do(F):
+
+......
+
+return C
+\end{lstlisting}
+%
+\end{bt}
+
+\begin{bt}
+Convert from meters to British length units. Make a program where you set a length given in meters and then
+compute and write out the corresponding length measured in inches, in feet, in yards, and in miles. Use that one inch is 2.54 cm, one foot is
+12 inches, one yard is 3 feet, and one British mile is 1760 yards. As a verification, a length of 640 meters corresponds to 25196.85 inches,
+2099.74 feet, 699.91 yards, or 0.3977 miles. Name of program file: \verb|length_conversion.py| or the function \verb|length_conversion|. 
+\end{bt}
+
+
+\begin{bt} Compute the growth of money in a bank. \\
+Let $p$ be a bank’s interest rate in percent per year. An initial amount A has then grown to $A \ \left(1 + \dfrac{p}{100}\right)^n$
+after $n$ years. Make a program for computing how much money 1000 euros have grown to after three years with 5\% interest rate. Name of
+program file: \verb|interest_rate.py|. 
+\end{bt}
+
+\begin{bt} Ôn lại thuật toán Horner. \\
+a) Viết script Python để tính các đa thức sau một cách hiệu quả.
+$p_1(x) = 3(x-1)^5+7(x-1)^9$, \quad $p_2(x) = 6(x+2)^3 + 9(x+2)^7 + 3 (x+2)^{15} - (x+2)^{31}.$	 \\
+b) Sử dụng thuật toán Horner để tính giá trị đa thức P(x) sau tại $x = 1.1$ một cách hiệu quả
+%
+\[
+p(x) = (n+1) x^n + n x^{n-1} + ... + x + 1 \ .
+\]
+%
+Số $n$ lớn nhất các em có thể tìm được là bao nhiêu (làm tròn đến 1000)? 
+\end{bt}
+
+
+\begin{bt} Tính toán lực cản của môi trường khí lên quả bóng đá . \\
+Lực kéo trên một vật thể, theo sức cản không khí, được tính bởi  
+%
+\[
+F_d = \dfrac{1}{2} C_D \rho A V^2, \\
+\]
+%
+trong đó $\rho$ là mật độ của khí, V là vận tốc của vật thể, A là diện tích tiếp xúc 
+(vuông góc với hướng vận tốc), và $C_D$ là hệ số kéo, phụ thuộc vào hình dạng của vật thể và độ gồ ghề của bề mặt vật thể đó. 
+Lực hấp dẫn trên một bề mặt với khối lượng $m$ là $F_g = mg$, trong đó $g = 9.81m s^{-2}$.
+Chúng ta có thể dùng các công thức của $F_d$ và $F_g$ để nghiên cứu mức độ tác động của không khí và trọng lực khi đá một quả bóng. 
+Mật độ không khí là $\rho = 1.2 kg/m^3$. 
+$A = \pi a^2$ với mọi quả bóng mà bán kính là $a$. Thông thường với bóng đá $a = 11 cm$. 
+Khối lượng quả bóng đá là $0.43 kg$, $C_D= 0.2$. 
+Viết hàm tính toán các lực trên và in kết quả ra khi đá quả bóng với vận tốc $V = 120 km/h$ (mạnh) và $V = 10 km/h$ (yếu).
+Đặc biệt chú ý đến đơn vị của V khi tính. Đặt tên hàm/file là \verb|kick|.
+\end{bt}
+
+\begin{bt}
+Import hàm giai thừa trong module math sử dụng lệnh \verb| from math import factorial|. Hãy tính xấp xỉ $e$ sử dụng 1000 số hạng đầu tiên trong khai triển MacLaurin như sau
+%
+\[
+e = 1 + \sum_{k=1}^{1000} \dfrac{1}{k!} \ .
+\]
+%
+\end{bt}
+\centerline{———————————Hết——————————}
+
+%\vspace{1cm}
+%\noindent{\bf Chú ý:} {\it Cán bộ coi thi không giải thích gì thêm}\\
+%\vspace{0.4cm}
+%\noindent{\bf Họ và tên học sinh: \rule{3in}{.01pt} Lớp: \hrulefill}
+%\Closesolutionfile{ans}
+%\newpage
+%\begin{center}
+%{\LARGE{\bf ĐÁP ÁN}}
+%\end{center}
+%\input{ans1} 
+   
+\end{document}

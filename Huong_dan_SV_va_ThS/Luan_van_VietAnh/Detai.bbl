@@ -1,0 +1,293 @@
+\begin{thebibliography}{10}
+
+\bibitem{AslU03}
+F.~M. Asl and A.~G. Ulsoy.
+\newblock Analysis of a system of linear delay differential equations.
+\newblock {\em ASMEJ. Dynamic Systems, Measurement and Control}, 125:215--223,
+  2003.
+
+\bibitem{AsnH73}
+B.~A. Asner and A.~Halanay.
+\newblock Non-controllability of time-invariant systems using one-dimensional
+  linear delay feedback.
+\newblock {\em Revue Roumaine des Sciences Techniques, Série Électrotechnique
+  et Énergétique}, 18:283--293, 1973.
+
+\bibitem{BelC63}
+R.~Bellman and K.~L. Cooke.
+\newblock {\em Differential-Difference Equations}.
+\newblock New York Academic Press, 1963.
+
+\bibitem{Bha76}
+K.~{Bhat} and H.~{Koivo}.
+\newblock Modal characterizations of controllability and observability in time
+  delay systems.
+\newblock {\em IEEE Transactions on Automatic Control}, 21(2):292--293, 1976.
+
+\bibitem{Bre09}
+D.~Breda, S.~Maset, and R.~Vermiglio.
+\newblock {TRACE-DDE}: a tool for robust analysis and characteristic equations
+  for delay differential equations.
+\newblock In J.~Loiseau, W.~Michiels, S.-I. Niculescu, and R.~Sipahi, editors,
+  {\em Topics in Time Delay Systems (LNCIS)}, pages 145--155. Springer,
+  Heidelberg, 2009.
+
+\bibitem{Bro73}
+R.~Brooks and K.~Schmitt.
+\newblock Pointwise completeness of differential-difference equations.
+\newblock {\em Rocky Mountain J. Math.}, 3(1):11--14, 03 1973.
+
+\bibitem{Che98}
+C.~T. Chen.
+\newblock {\em Linear System Theory and Design}.
+\newblock Oxford University Press, 1998.
+
+\bibitem{Cho72}
+A.~K. Choudhury.
+\newblock Algebraic and transfer-function criteria of fixed-time
+  controllability of delay-differential systems.
+\newblock {\em International Journal of Control}, 16(6):1073--1081, 1972.
+
+\bibitem{Cor96}
+R.~M. Corless, G.~H. Gonnet, D.~E.~G. Hare, D.~J. Jeffrey, and D.~E. Knuth.
+\newblock On the {Lambert W} function.
+\newblock {\em In: Advances in Computational Mathematics}, 5:329--359, 1996.
+
+\bibitem{Del72}
+M.~C. Delfour and S.~K. Mitter.
+\newblock Controllability, observability and optimal feedback control of affine
+  hereditary differential systems.
+\newblock {\em SIAM Journal on Control}, 10(2):298--328, 1972.
+
+\bibitem{Dua10}
+S.~Duan.
+\newblock Supplement for time delay systems: analysis and control using the
+  {Lambert W} function. {\it http://www.umich.edu/ulsoy/tds-supplement.htm}.
+\newblock Technical report, 2010.
+
+\bibitem{Du12}
+S.~Duan, J.~Ni, and A.~Ulsoy.
+\newblock Decay function estimation for linear time delay systems via the
+  {Lambert W} function.
+\newblock {\em Journal of Vibration and Control}, 18:1462--1473, 09 2012.
+
+\bibitem{Eng01}
+K.~Engelborghs, T.~Luzyanina, and G.~Samaey.
+\newblock {DDE-biftool v. 2.00} : a {MATLAB} package for bifurcation analysis
+  of delay differential equations.
+\newblock Technical report, TW-330, 61, 2001.
+
+\bibitem{Eul77}
+L.~Euler.
+\newblock Deformulis exponentialibus replicatis. {Leonardo Euleri Opera Omnia}.
+\newblock 1(15):268--297, 1777.
+
+\bibitem{Gli04}
+V.~Glizer.
+\newblock Observability of singularly perturbed linear time-dependent
+  differential systems with small delay.
+\newblock {\em Journal of Dynamical and Control Systems}, 10:329--363, 07 2004.
+
+\bibitem{Gu06}
+K.~Gu and S.~I. Niculescu.
+\newblock Stability analysis of time delay systems: a lyapunov approach.
+\newblock In F.~P. E.~e. A., Lamnabhi-Lagarrigue, editor, {\em Loria}, volume
+  328, pages 139--170. Advanced Topics in Control Systems Theory. LNCIS,
+  Springer, Heidelberg, 2006.
+
+\bibitem{Hal63}
+J.~K. Hale and S.~M.~V. Lunel.
+\newblock {\em Introduction to Functional Differential Equations}.
+\newblock Springer, 1963.
+
+\bibitem{Hol96}
+S.~{Holford} and P.~{Agathoklis}.
+\newblock The use of model reduction techniques for designing iir filters with
+  linear phase in the passband.
+\newblock {\em IEEE Transactions on Signal Processing}, 44(10):2396--2404,
+  1996.
+
+\bibitem{JanK00}
+M.~{Jankovic} and I.~{Kolmanovsky}.
+\newblock Constructive lyapunov control design for turbocharged diesel engines.
+\newblock {\em IEEE Transactions on Control Systems Technology}, 8(2):288--299,
+  2000.
+
+\bibitem{JanK09}
+M.~Jankovic and I.~Kolmanovsky.
+\newblock {\em Developments in Control of Time-Delay Systems for Automotive
+  Powertrain Applications}.
+\newblock 2009.
+
+\bibitem{Kol99}
+V.~B. Kolmanovskii and A.~Myshkis.
+\newblock {\em Introduction to the Theory and Applications of Functional
+  Differential Equations}.
+\newblock Kluwer Academy, Dordrecht, 1999.
+
+\bibitem{Kop98}
+T.~Kopeikina.
+\newblock Relative observability of linear nonstationary singularly perturbed
+  delay systems.
+\newblock {\em Differential Equations}, 34:22--28, 1998.
+
+\bibitem{Lam58}
+J.~H. Lambert.
+\newblock Observationes variea in mathesin puram.
+\newblock {\em Acta Helveticae, Physicomathematico-anatomico-botanico-medica},
+  3:128--168, 1758.
+
+\bibitem{LeeOl81}
+E.~B. LEE and A.~OLBROT.
+\newblock Observability and related structural results for linear hereditary
+  systems.
+\newblock {\em International Journal of Control}, 34(6):1061--1078, 1981.
+
+\bibitem{Lee81}
+T.~{Lee} and S.~{Dianat}.
+\newblock Stability of time-delay systems.
+\newblock {\em IEEE Transactions on Automatic Control}, 26(4):951--953, 1981.
+
+\bibitem{Mal87}
+M.~Malek-Zavarei and M.~Jamshidi.
+\newblock {\em Time-Delay Systems: Analysis, Optimization and Applications}.
+\newblock NewYork, USA: Elservier Science Pub., 1987.
+
+\bibitem{Mon05}
+S.~Mondi and V.~L. Kharitonov.
+\newblock Exponential estimates for retarded time-delay systems: an lmi
+  approach.
+\newblock {\em IEEE Trans. Autom. Control}, 50:2, 2005.
+
+\bibitem{OlgS02}
+N.~{Olgac} and R.~{Sipahi}.
+\newblock An exact method for the stability analysis of time-delayed linear
+  time-invariant (lti) systems.
+\newblock {\em IEEE Transactions on Automatic Control}, 47(5):793--797, 2002.
+
+\bibitem{RadR00}
+H.~Radjavi and P.~Rosenthal.
+\newblock {\em Simultaneous Trianqularizability}.
+\newblock Universitext, Springer, New York, 2000.
+
+\bibitem{Ric03}
+J.-P. Richard.
+\newblock Time-delay systems: an overview of some recent advances and open
+  problems.
+\newblock {\em Automatica}, 39(10):1667 -- 1694, 2003.
+
+\bibitem{Shi06}
+H.~Shinozaki and T.~Mori.
+\newblock Robust stability analysis of linear time-delay systems by {Lambert W}
+  function: Some extreme point results.
+\newblock {\em Automatica}, 42(1):1791--1799, 2006.
+
+\bibitem{Sip11}
+R.~Sipahi, S.~I. Niculescu, C.~T. Abdallah, W.~Michiels, and K.~Gu.
+\newblock Stability and stabilization of systems with time delay: limitations
+  and opportunities.
+\newblock {\em IEEE Control Systems Magazine}, 31(1):38--65, 2011.
+
+\bibitem{Ste89}
+G.~Stepan.
+\newblock {\em Retarded Dynamical Systems: Stability and Characteristic
+  Functions}.
+\newblock Wiley, 1989.
+
+\bibitem{Tho77}
+A.~Thowsen.
+\newblock On pointwise degeneracy, controllability and minimal time control of
+  linear dynamical systems with delays.
+\newblock {\em International Journal of Control}, 25(3):345--360, 1977.
+
+\bibitem{Tso78}
+A.~C. Tsoi.
+\newblock {\em Recent advances in the algebraic system theory of delay
+  differential equations}, pages 67--127.
+\newblock 1978.
+
+\bibitem{Van72}
+H.~F. Vandevenne.
+\newblock Controllability and stabilizability properties of delay systems.
+\newblock In {\em Proc. 1972 IEEE Conference on Decision Control and 11th
+  Symposium on Adaptive Processes}, pages 370--377, 1972.
+
+\bibitem{Ver83}
+E.~{Verriest} and T.~{Kailath}.
+\newblock On generalized balanced realizations.
+\newblock {\em IEEE Transactions on Automatic Control}, 28(8):833--844, 1983.
+
+\bibitem{Vyh09}
+T.~Vyhlidal and P.~Zitek.
+\newblock Mapping based algorithm for large-scale computation of
+  quasipolynomial zeros.
+\newblock {\em IEEE Transactions on Automatic Control}, 54(1):171--177, 2009.
+
+\bibitem{Wei67}
+L.~Weiss.
+\newblock On the controllability of delay-differential systems.
+\newblock {\em SIAM J. Control}, 5:575--587, 1967.
+
+\bibitem{Wei70}
+L.~{Weiss}.
+\newblock An algebraic criterion for controllability of linear systems with
+  time delay.
+\newblock {\em IEEE Transactions on Automatic Control}, 15(4):443--444, 1970.
+
+\bibitem{Yi12}
+S.~Yi, S.~Duan, P.~Nelson, and A.~Ulsoy.
+\newblock The {L}ambert {W} function approach to time delay systems and the
+  {LambertW-DDE} toolbox.
+\newblock {\em IFAC Proceedings Volumes}, 45(14):114 -- 119, 2012.
+\newblock 10th IFAC Workshop on Time Delay Systems.
+
+\bibitem{YiNU07}
+S.~Yi, P.~Nelson, and A.~Ulsoy.
+\newblock Feedback control via eigenvalue assignment for time delayed systems
+  using the {L}ambert {W} function.
+\newblock Proc. ASME 2007 IDETC, Las Vegas, NV.
+
+\bibitem{Yi07}
+S.~Yi, P.~W. Nelson, and A.~G. Ulsoy.
+\newblock Delay differential equations via the matrix {Lambert W} function and
+  bifurcation analysis: application to machine tool chatter.
+\newblock {\em Mathematical Biosciences and Engineering}, 4(2):355--368, 2007.
+
+\bibitem{Yi08}
+S.~Yi, P.~W. Nelson, and A.~G. Ulsoy.
+\newblock Controllability and observability of systems of linear delay
+  differential equations via the matrix {Lambert W} function.
+\newblock {\em {IEEE Trans. Automatic Control}}, 53(3):854--860, 2008.
+
+\bibitem{YiOc08}
+S.~Yi, P.~W. Nelson, and A.~G. Ulsoy.
+\newblock Eigenvalues and sensitivity analysis for a model of {HIV-1}
+  pathogenesis with an intracellular delay.
+\newblock In {\em Proc. ASME Dynamic Systems and Control Conf}, October 2008.
+
+\bibitem{YiEig10}
+S.~Yi, P.~W. Nelson, and A.~G. Ulsoy.
+\newblock Eigenvalue assignment via the {Lambert W} function for control of
+  time-delay systems.
+\newblock {\em J. Vibration and Control}, 16(7-8):961--982, 2010.
+
+\bibitem{YiMay10}
+S.~Yi, P.~W. Nelson, and A.~G. Ulsoy.
+\newblock Robust control and time-domain specifications for systems of delay
+  differential equations via eigenvalue assignment.
+\newblock {\em {ASME J. Dynamic Systems, Measurement and Control}}, 132:3, May
+  2010.
+
+\bibitem{Yi10}
+S.~Yi, P.~W. Nelson, and A.~G. Ulsoy.
+\newblock {\em Time-Delay Systems: Analysis and Control Using the {Lambert W}
+  Function}.
+\newblock World Scientific, 2010.
+
+\bibitem{Yi13}
+S.~Yi, P.~W. Nelson, and A.~G. Ulsoy.
+\newblock {PI} control of first order time-delay systems via eigenvalue
+  assignment.
+\newblock {\em IEEE Trans. Control Systems Technology}, 2013.
+
+\end{thebibliography}

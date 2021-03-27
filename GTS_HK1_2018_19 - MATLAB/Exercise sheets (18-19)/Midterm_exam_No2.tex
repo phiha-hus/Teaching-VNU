@@ -1,0 +1,128 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+
+\begin{document}
+% \noindent
+\begin{tabular*}
+{\linewidth}{c>{\centering\hspace{0pt}} p{.7\textwidth}}
+Trường ĐHKHTN, ĐHQGHN & {\bf Học Kỳ 1 (2018-2019)}
+\tabularnewline
+K61 TTƯD & {\bf Kiểm tra giữa kỳ - Đề 2 \\ Trung bình phương tối thiểu \\ Tính gần đúng tích phân}
+% Exercises on pages 239, 240 Cheney/Kincaid are really nice
+\tabularnewline
+\rule{1in}{1pt}  \small  & \rule{2in}{1pt} %(Due date:)
+\tabularnewline
+
+%  \tabularnewline
+%  &(Đề thi có 1 trang)
+\end{tabular*}
+%
+% \Opensolutionfile{ans}[ans1]
+
+\begin{shaded}
+	Tạo thư mục "GTS1" trên Desktop và 1 thư mục con với tên các em, có dạng v.d. "Nguyen\_Thi\_Tuoi", và lưu toàn bộ các m.file được viết ở trong đó. Để lập trình các em có thể dùng gedit. Octave gọi từ bash/terminal với lệnh Octave. Chú ý trên terminal các em có thể chạy Octave bình thường như trên OCTAVE GUI. Đề thi bao gồm 2 trang.
+\end{shaded}
+
+\begin{bt}(3đ) % Che/Kincaid 07, page 503, Ex. 16
+	Độ nhớt của một chất lưu là thông số đại diện cho ma sát trong của dòng chảy. Độ nhớt được biểu diễn qua một hàm bậc hai của nhiệt độ T, tức là $V = a + bT + cT^2$. \textbf{Viết script Matlab lấy tên là "test\_lq"} để tìm các hệ số của hàm xấp xỉ tốt nhất bảng số liệu sau theo phương pháp bình phương tối thiểu.
+	%
+	\begin{center}
+		\begin{tabular}[7]{l|l|l|l|l|l|l|l}
+			T & 1    & 2    & 3    & 4    & 5    & 6    & 7 \\ \hline
+			V & 2.31 & 2.01 & 1.80 & 1.66 & 1.55 & 1.47 & 1.41.
+		\end{tabular}	
+	\end{center}
+	%
+	Chú ý phải in ra hệ số dạng vector $[a \  b \ c]$. Kiểm tra kết quả vừa tìm được với kết quả của việc dùng built-in function polyfit trong Matlab/Octave. 
+\end{bt}
+
+\begin{bt}(3đ) Cho quy tắc cầu phương Gauss với 2 điểm nút 
+%
+\[  \int_{-1}^{1} f(x)dx \approx f(\cfrac{1}{\sqrt{3}}) +  f(\cfrac{-1}{\sqrt{3}}) \]
+%
+Hãy tìm cách tổng quát hóa công thức đó và viết hàm Matlab dạng 
+\begin{center}
+\emph{function [value] = Gauss\_2(f,a,b)} 
+\end{center}
+để tính gần đúng tích phân $\int_{a}^{b} f(x)dx$. \textbf{Viết script Matlab lấy tên là "test\_integral"} để test hàm vừa viết để tính các tích phân sau.
+%
+\[ i)\ \int_{0}^{1} x^5dx \qquad \qquad ii) \ \int_{0}^{1} \cfrac{\sin x}{x}dx \ . \]%
+\end{bt}
+
+\begin{bt}(4đ) Code \textbf{phương pháp cầu phương Gauss chỉnh sửa (adaptive Gauss quadrature)} với 2 nút để tính gần đúng tích phân $\int_{a}^{b} f(x)dx$ 
+dạng như sau, trong đó sum là giá trị gần đúng của tích phân, depth là độ sâu của phương pháp chỉnh sửa.
+%
+\begin{center}
+	\emph{function [sum,depth] = Gauss\_adap(f,a,b,eps)} 
+\end{center}	
+%
+Nếu muốn có thể set $eps = 1e-7$. Ý tưởng thuật toán như sau: \\
+1. Khởi tạo $depth=0$. Đầu tiên chia đoạn $[a,b]$ làm hai đoạn bằng nhau $[a,c]$ và $[c,b]$ và gọi phương pháp cầu phương Gauss trong cả 2 đoạn nhỏ lẫn đoạn lớn để được $I1$, $I2$ và $I$. \\
+2. Bước 2 ta đi kiểm tra xem sai số $diff := |I1+I2-I|$ có nhỏ hơn $eps$ không.\\ 
+Nếu đúng thì gán $sum=I$, rồi STOP. \\
+Nếu không đúng thì tăng $depth$ lên $1$, rồi tiếp tục chia đôi cả 2 đoạn nhỏ $[a,c]$ và $[c,b]$, và tính tích phân trên 4 đoạn nhỏ này để được $I1\_new$, $I2\_new$, $I3\_new$, $I4\_new$. Sai số mới sẽ có dạng tổng của 2 sai số thành phần trên các đoạn $[a,c]$, $[c,b]$, tức là
+%
+\[ diff = \underset{[a,c]}{diff} + \underset{[c,b]}{diff} = |I1\_new  +  I2\_new - I1| +  |I3\_new  +  I4\_new - I2| .\]
+%
+Rồi lại quay về bước so sánh $diff$ với $eps$. ...\\
+Nếu điều kiện $diff<eps$ không thỏa mãn và $depth = 20$ thì STOP vòng lặp. \\ 
+\textbf{Hãy viết script Matlab lấy tên là "test\_integral2"} test hàm vừa viết để tính các tích phân sau.
+\[ i)\ \int_{0}^{1} \cfrac{1}{\sqrt{\sin x}} dx \qquad \qquad ii) \ \int_{0}^{\infty} e^{x^{-3}}dx  \qquad ii) \ \int_{0}^{1} x \ |\sin (1/x)|dx  \ .  \]
+\end{bt}
+
+\centerline{———————————Hết——————————-}
+
+\end{document}
+
+\vspace{1cm}
+\noindent{\bf Chú ý:} {\it Cán bộ coi thi không giải thích gì thêm}\\
+\Closesolutionfile{ans}
+\newpage
+\begin{center}
+{\LARGE{\bf ĐÁP ÁN}}
+\end{center}
+
+\begin{sol}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Solution1/Sol4_1.png}
+		%\caption{}
+		\label{fig:Sol4}
+	\end{figure}
+	Exercise 7: Convergence order is 3.	
+\end{sol}
+
+   
+\end{document}
+
+
+

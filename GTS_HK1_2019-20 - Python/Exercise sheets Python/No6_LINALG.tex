@@ -1,0 +1,145 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{longtable}
+\usepackage{answers}
+
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage{listings}
+\lstset{language=Python}          % Set your language (you can change the language for each code-block optionally)
+
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+\newcommand{\m}[1]{\begin{bmatrix}
+		#1
+\end{bmatrix}}
+
+\begin{document}
+% \noindent
+\begin{tabular*}
+{\linewidth}{c>{\centering\hspace{0pt}} p{.7\textwidth}}
+Trường ĐHKHTN, ĐHQGHN & {\bf Học Kỳ 1 (2019-2020)}
+\tabularnewline
+K63 TTƯD - Thầy Hà Phi & {\bf Bài Tập Giải Tích Số. No 6 \\ Giải hệ pt tuyến tính Ax=b}
+% Exercises on pages 239, 240 Cheney/Kincaid are really nice
+\tabularnewline
+\rule{1in}{1pt}  \small  & \rule{2in}{1pt} %(Due date:)
+\tabularnewline
+
+%  \tabularnewline
+%  &(Đề thi có 1 trang)
+\end{tabular*}
+%
+% \Opensolutionfile{ans}[ans1]
+\vskip .2cm
+
+Tìm hiểu toolbox linalg trong Python \url{https://docs.scipy.org/doc/numpy-1.15.1/reference/routines.linalg.html}.
+
+\begin{bt}
+Với tham số $t$, sử dụng toolbox linalg hãy đi tìm chuẩn 1, 2, $\infty$ của ma trân $A= \begin{bmatrix} 1 & t \\ t & 1+t^2 \end{bmatrix}$ với $t=10,100,200,...,1000$. Tìm số điều kiện của các ma trận A đó.
+\end{bt}
+
+\begin{bt}
+Ma trận Hermit được định nghĩa bởi $H_n = \Big[ \dfrac{1}{i+j-1} \Big]_{i,j=1}^n$. Hãy đi tìm số điều kiện của $H_5$, $H_{12}$ theo các chuẩn 1, 2, $\infty$. 
+\end{bt}
+
+\begin{bt}
+Hãy viết hàm trong Python để giải hệ phương trình $Lx = z$ (t.ứ. $Rx = z$) với $L$ (t.ứ. $R$) là ma trận tam giác dưới (t.ứ. tam giác trên).
+Test code của các em với các hệ phương trình tự chọn.
+\end{bt}
+
+\begin{bt} Viết hàm Python để tìm phân tích LU. Từ đó sử dụng phương pháp Gauss để giải hệ phương trình sau
+%
+\begin{align*}
+ 2 x_1 + 4 x_2 + 3x_3   &= 3, \\
+ 3 x_1 + x_2 - 2 x_3    &= 3, \\
+ 4 x_1 + 11 x_2 + 7 x_3 &= 4. 
+\end{align*}
+%
+So sánh kết quả của các em với cách giải sử dụng toolbox linalg trong Python. 
+\end{bt}
+
+\begin{bt} Giả sử ma trận $A$ thỏa mãn $PA = LU$, trong đó
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale = 0.7]{3}
+\end{figure}
+a) Hãy sử dụng các ma trận trên để giải hệ phương trình $Ax=b$ với $b = \m{2 & 10 & -12}^T$ mà không cần tìm ma trận $A$ hay tìm nghich đảo của $A$.
+b, Có thể nhận thấy ma trận P nhận được từ ma trận đơn vị bằng cách hoán vị các hàng. Hãy nêu ý nghĩa của việc nhân một ma trận với $P$ từ bên trái.
+\end{bt}
+
+\centering{------------------------------Kết thúc phần 1--------------------------------------}
+
+\newpage 
+\begin{bt}
+Trong trường hợp ma trận A là đối xứng, xác định dương thì phương pháp Cholesky thường được sử dụng. Hãy đọc phương pháp này trang 116-120 (Giáo trình ĐHBK) hoặc Section 2.4 (Giáo trình Kiusalass) và tìm hiểu hàm $numpy.linalg.cholesky$ trong Python. Áp dụng để giải hệ phương trình sau đối với vế phải $b$ lần lượt bằng $[2 \ 3 \ 0]^T$ và $[2 \ 5 \ -2]^T$.
+	%
+	\begin{align*}
+	4 x_1 - 2 x_2 + 4 x_3   &= b_1, \\
+	-2 x_1 + 5 x_2 - 4 x_3  &= b_2, \\
+	4 x_1  -4 x_2 + 6 x_3   &= b_3. 
+	\end{align*}
+	%
+\end{bt}
+
+\begin{bt}
+\end{bt}
+
+\begin{center}
+  \includegraphics[scale = 0.7]{4}	
+\end{center}
+
+\begin{bt}
+\end{bt}
+\begin{figure}[H]
+	\includegraphics[scale = 0.7]{5}
+\end{figure}
+c. Từ các tính toán ở hai câu trên, hãy so sánh tốc độ hội tụ của hai phương pháp.
+
+\vskip .5cm
+
+\centerline{———————————Hết——————————-}
+
+\end{document}
+
+\vspace{1cm}
+\noindent{\bf Chú ý:} {\it Cán bộ coi thi không giải thích gì thêm}\\
+\Closesolutionfile{ans}
+\newpage
+\begin{center}
+{\LARGE{\bf ĐÁP ÁN}}
+\end{center}
+
+\begin{sol}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Solution1/Sol4_1.png}
+		%\caption{}
+		\label{fig:Sol4}
+	\end{figure}
+	Exercise 7: Convergence order is 3.	
+\end{sol}
+
+   
+\end{document}
+
+
+

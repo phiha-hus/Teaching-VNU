@@ -1,0 +1,382 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Lambert W function for real and complex inputs.">
+<meta name="keywords" content="matlab, lambertw">
+<title>lambertw</title>
+<style>
+a {color: blue;}
+
+body {background-color: white; margin:10px;}
+
+h2 {color: #990000; font-size: medium;}
+
+pre.codeinput {margin-left: 30px;}
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+
+pre.codeoutput {color: gray; font-style: italic;}
+
+p,h1,h2,div {
+  width: 600px;
+  max-width: 600px;
+  width:expression(document.body.clientWidth > 620 ? "600px": "auto" );
+}
+</style></head><body bgcolor="white">
+
+<table border="0" cellpadding="0"><tr><td colspan="2">
+<font style="color: #990000;font-size: x-large"><b>lambertw</b></font></td></tr>
+<tr><td width="25">&nbsp;</td>
+<td><font size="2">by Pascal Getreuer</font></td></tr></table>
+
+<p>The M<font size="2">ATLAB</font> function <tt>lambertw</tt>
+included in this package is a self-contained M-function implementing
+the Lambert W function, also known as the <font face="symbol">W</font>
+function or &quot;product log.&quot; It is equivalent to the numerical
+mode of the Symbolic Math Toolbox's <a
+href="http://www.mathworks.com/access/helpdesk/help/toolbox/symbolic/lambertw.html"><tt>lambertw</tt></a>,
+however, no toolboxes are required to use this function.</p>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Usage">Function Usage</a></li>
+<li><a href="#Background">Background</a></li>
+<li><a href="#Algebra">Algebra with the Lambert W Function</a></li>
+<li><a href="#Demos">Demos</a></li>
+<li><a href="#Test">Test</a></li>
+<li><a href="#Implementation">Implementation</a></li>
+<li><a href="#References">References</a></li>
+</ul>
+
+<h2 id="Usage">Function Usage</h2>
+
+<p><tt>w = lambertw(z)</tt> computes the principal value of the
+Lambert W function, <i>W</i><sub>0</sub>.  The input <tt>z</tt> may be
+a complex scalar or array.  For real <tt>z</tt>, the result is real on
+the principal branch for <tt>z</tt> &ge -1/e.</p>
+ 
+<p><tt>w = lambertw(b,z)</tt> specifies which branch of the Lambert
+W function to compute.  If <tt>z</tt> is an array, <tt>b</tt> may
+be either an integer array of the same size as <tt>z</tt> or an
+integer scalar.  If <tt>z</tt> is a scalar, <tt>b</tt> may be an array
+of any size.</p>
+
+<h2 id="Background">Background</h2>
+<p>The Lambert W function is defined as the function
+<i>W</i>(<i>z</i>) such that</p>
+<p style="text-align:center">
+<i>W</i>(<i>z</i>) e<sup><i>W</i>(<i>z</i>)</sup>
+= <i>z</i></p>
+<p>for all complex values <i>z</i>.  As log <i>z</i> is the inverse of
+e<sup><i>z</i></sup>, <i>W</i>(<i>z</i>) is the inverse of
+<i>z</i> e<sup><i>z</i></sup>.  Like the complex logarithm, the
+Lambert W function is multivalued with a countably infinite number of
+branches.  The branches are enumerated by the integers and are
+conventionally denoted by <i>W<sub>k</sub></i> for the <i>k</i>th
+branch.</p>
+
+<p>
+The principal branch, <i>W</i><sub>0</sub>(<i>z</i>), is real-valued
+for -1/e &le; <i>z</i>.  If -1/e &le; <i>z</i> < 0, then the branch
+<i>W</i><sub>-1</sub>(<i>z</i>) is also real-valued.  In the complex
+plane, a surface plot of |<i>W</i><sub>0</sub>(<i>z</i>)| is</p>
+<table border="0"><tr><td valign="top">
+<pre class="codeinput">
+x = linspace(-6,6,51);
+y = linspace(-6,6,51);
+[x,y] = meshgrid(x,y);
+w = lambertw(x + i*y);
+
+surf(x,y,abs(w));
+axis([-6,6,-6,6,0,2.5]);
+view(40,32);
+xlabel(<span class="string">'Re z'</span>);
+ylabel(<span class="string">'Im z'</span>);
+title(<span class="string">'|W_0(z)|'</span>);
+</pre>
+</td><td width="358">
+<img src="lambertw_01.png" width="358" height="353">
+</td></tr></table>
+
+<h2 id="Algebra">Algebra with the Lambert W Function</h2>
+<p>Although the Lambert W function may not be so widely known as the inverse trigonometry functions, it has essentially the same purpose as acos, asin, etc. as a building-block tool for solving equations.  The general approach is to manipulate all occurrences of the unknown variable <i>x</i> into an expression of the form <i>f</i>(<i>x</i>)e<sup><i>f</i>(<i>x</i>)</sup>.</p>
+
+
+<p><b>Problem 1.</b>
+Solve <i>y</i> = (<i>x</i> - 1) e<sup>2<i>x</i></sup> for <i>x</i>.</p>
+
+<p><i>Solution:</i> The right-hand side is close to the necessary form
+<i>f</i>(<i>x</i>)e<sup><i>f</i>(<i>x</i>)</sup>, but some
+manipulation is necessary to change the factor (<i>x</i> - 1) and the
+exponent 2<i>x</i> into the same expression.  Multiplying both sides
+by 2,</p>
+<p style="text-align:center">
+2<i>y</i> = (2<i>x</i> - 2) e<sup>2<i>x</i></sup>.</p>
+<p>This form is closer yet, the exponent is only missing the -2.
+Multiplying both sides by e<sup>-2</sup> achieves the desired
+form,</p>
+<p style="text-align:center">
+2e<sup>-2</sup><i>y</i> = (2<i>x</i> - 2) e<sup>2<i>x</i>-2</sup>.</p>
+<p>At this point, the Lambert W function can be applied to yield</p>
+<p style="text-align:center">
+<i>W</i>(2e<sup>-2</sup><i>y</i>) 
+= 2<i>x</i> - 2,</p>
+<p>which leads to the solution 
+<i>x</i> = <i>W</i>(2e<sup>-2</sup><i>y</i>)/2 + 1.
+Note that since <i>W</i> is multivalued, the solution is multivalued;
+there are multiple values of <i>x</i> satisfying the equation.</p>
+
+<p><b>Problem 2.</b>
+Solve <i>b<sup>x</sup></i> 
+= <i>x<sup><font face="symbol">a</font></sup></i> for <i>x</i>.</p>
+
+<p><i>Solution:</i> In this problem, there is initially no visible
+instance of the exponential function.  Rewrite <i>b<sup>x</sup></i> as
+e<sup><i>x</i> log <i>b</i></sup>, revealing</p>
+<p style="text-align:center">
+<table border="0" align="center"><tr><td align="right" valign="bottom">
+e<sup><i>x</i> log <i>b</i></sup> </td><td valign="bottom">=</td>
+<td valign="bottom">
+<i>x<sup><font face="symbol">a</font></sup></i> </td></tr>
+<tr><td align="right" valign="bottom">
+e<sup><i>x</i> (log <i>b</i>)/<i><font
+face="symbol">a</font></i></sup> </td><td valign="bottom">=</td>
+<td valign="bottom"><i>x</i>.</td></tr></table></p>
+<p>Divide the exponential over to the right-hand side, and multiply by
+-(log <i>b</i>)/<i><font face="symbol">a</font></i> to find<p>
+<p style="text-align:center">
+<table border="0" align="center"><tr><td align="right" valign="bottom">
+1 </td><td valign="bottom">=</td><td valign="bottom">
+<i>x</i> e<sup>-<i>x</i> (log <i>b</i>)/<i><font
+face="symbol">a</font></i></sup></td></tr>
+<tr><td align="right" valign="bottom">
+-(log <i>b</i>)/<i><font face="symbol">a</font></i> 
+</td><td valign="bottom">=</td>
+<td valign="bottom">
+(-<i>x</i> (log <i>b</i>)/<i><font face="symbol">a</font></i>)
+e<sup>-<i>x</i> (log <i>b</i>)/<i><font
+face="symbol">a</font></i></sup>.</td></tr></table></p>
+<p>The right-hand side is now in the form
+<i>f</i>(<i>x</i>)e<sup><i>f</i>(<i>x</i>)</sup> where the Lambert W
+function can be applied:</p>
+<p style="text-align:center">
+<i>W</i>(-(log <i>b</i>)/<i><font face="symbol">a</font></i>)
+= -<i>x</i> (log <i>b</i>)/<i><font face="symbol">a</font></i>.</p>
+<p>The solution is
+<i>x</i> = -(<i><font face="symbol">a</font></i> / log <i>b</i>)
+<i>W</i>(-(log <i>b</i>)/<i><font face="symbol">a</font></i>).
+</p>
+
+<p><b>Problem 3.</b> An old result <a href="#References"
+style="text-decoration:none">[1]</a> is the closed-form expression for
+iterated exponentiation:</p>
+<p style="text-align:center">
+<table border="0" align="center">
+<tr><td rowspan="2">
+<i>z<sup> z<sup> z<sup> ...</sup></sup></sup></i>
+= &nbsp;</td><td align="center"> <i>W</i>(-log <i>z</i>)</td>
+<td rowspan="2">.</td></tr>
+<tr><td align="center"> <hr noshade="1" color="black" size="1"> 
+-log <i> z</i></td></tr></table>
+</p>
+<p>Find <i>z</i> such that <i>z<sup> z<sup> z<sup>
+...</sup></sup></sup></i> = 2.</p>
+
+<p><i>Solution:</i> Using the formula,</p>
+<p style="text-align:center">
+<table border="0" align="center">
+<tr><td align="right" valign="bottom">
+-<i>W</i>(-log <i>z</i>) / log <i>z</i></td>
+<td valign="bottom">=</td>
+<td valign="bottom">2</td></tr>
+<tr><td align="right" valign="bottom">
+<i>W</i>(-log <i>z</i>)</td>
+<td valign="bottom">=</td>
+<td valign="bottom">-2 log <i>z</i></td></tr>
+<tr><td align="right" valign="bottom">
+-log <i>z</i></td>
+<td valign="bottom">=</td>
+<td valign="bottom">-2 log <i>z</i>
+e<sup>-2 log <i>z</i></sup>
+</td></tr>
+<tr><td align="right" valign="bottom">
+e<sup>2 log <i>z</i></sup>
+<td valign="bottom">=</td>
+<td valign="bottom">2 </sup>
+</td></tr>
+<tr><td align="right" valign="bottom">
+<i>z</i>
+<td valign="bottom">=</td>
+<td valign="bottom">
+2<sup>1/2</sup>.
+</td></tr>
+</table>
+</p>
+
+<h2 id="Demos">Demos</h2>
+
+<p>The following command evaluates <i>W<sub>k</sub></i>(1) for <i>k</i> =
+-4,... 4:</p>
+<pre class="codeinput">
+w = lambertw((-4:4).',1)
+</pre>
+<pre class="codeoutput">
+w =
+
+  -3.1630 -23.4277i
+  -2.8536 -17.1135i
+  -2.4016 -10.7763i
+  -1.5339 - 4.3752i
+   0.5671          
+  -1.5339 + 4.3752i
+  -2.4016 +10.7763i
+  -2.8536 +17.1135i
+  -3.1630 +23.4277i
+</pre>
+<p>These values are all solutions of <i>w</i> e<sup><i>w</i></sup> =
+1.  It is easy to verify numerically that they are solutions:
+<pre class="codeinput">
+w.*exp(w)
+</pre>
+<pre class="codeoutput">
+ans =
+
+   1.0000 - 0.0000i
+   1.0000 - 0.0000i
+   1.0000 + 0.0000i
+   1.0000          
+   1.0000          
+   1.0000          
+   1.0000 - 0.0000i
+   1.0000 + 0.0000i
+   1.0000 + 0.0000i
+</pre>
+
+<p>Problem 3 in the previous section mentioned the formula
+for evaluating iterated exponentiation:</p>
+<p style="text-align:center">
+<table border="0" align="center">
+<tr><td rowspan="2">
+<i>z<sup> z<sup> z<sup> ...</sup></sup></sup></i>
+= &nbsp;</td><td align="center"> <i>W</i>(-log <i>z</i>)</td>
+<td rowspan="2">.</td></tr>
+<tr><td align="center"> <hr noshade="1" color="black" size="1"> 
+-log <i> z</i></td></tr></table>
+</p>
+<p>For example, set <tt>z</tt> = 1.3, then its iterated exponentiation
+is approximately <tt>zlim</tt> = 1.4710.</p>
+<pre class="codeinput">
+zlim = -lambertw(-log(z))/log(z)
+</pre>
+<pre class="codeoutput">
+zlim =
+
+    1.4710
+</pre>
+
+<p>To verify this, computing <tt>z^z^z^</tt>...<tt>^z</tt> through 
+40 iterations shows that the iterated exponentiation does indeed
+converge to <tt>zlim</tt>.</p>
+
+<pre class="codeinput">
+zz(1) = z;
+zlim = -lambertw(-log(z))/log(z);
+
+<span class="keyword">for</span> k = 1:40
+   zz(k+1) = z^zz(k);
+<span class="keyword">end</span>
+
+plot(zz,<span class="string">'.-'</span>);
+</pre>
+<table border="0"><tr><td valign="center">
+<pre class="codeoutput">
+  k    zz     zlim-zz
+  1  1.4065   0.065
+  2  1.4463   0.025
+  3  1.4615   0.0095
+  4  1.4673   0.0037
+  5  1.4696   0.0014
+  6  1.4704   0.00055
+  7  1.4708   0.00021
+  8  1.4709   8.1e-005
+  9  1.4710   3.1e-005
+ 10  1.4710   1.2e-005
+ 20  1.4710   8.9e-010
+ 30  1.4710   6.5e-014
+ 40  1.4710   2.2e-016
+</pre></td><td width="40">&nbsp;</td><td valign="center" width="300">
+<img src="lambertw_02.png" width="300" height="249">
+</td></tr></table>
+
+<h2 id="Test">Test</h2>
+
+<p>Ideally, <tt>lambertw(b,z)*exp(lambertw(b,z))</tt> = <tt>z</tt> for any complex <tt>z</tt>
+and any integer branch index <tt>b</tt>, but this is limited by machine
+precision.  The inversion error |<tt>lambertw(b,z)*exp(lambertw(b,z)) - z</tt>|
+is small but worth minding.</p>
+
+<p>Experimentation finds that the error is usually on the order of |<tt>z</tt>|<font face="symbol">&#xB4;</font>10<sup>-16</sup> on the principal branch.  This test computes the inversion error over the square [-10,10]<font face="symbol">&#xB4;</font>[-10,10] in the complex plane, large enough to characterize the error away from the branch points at <tt>z</tt> = 0 and -1/e.</p>
+
+<pre class="codeinput">
+N = 81;    <span class="comment">% Use NxN points to sample the complex plane</span>
+R = 10;    <span class="comment">% Sample in the square [-R,R]x[-R,R]</span>
+x = linspace(-R,R,N);
+y = linspace(-R,R,N);
+[xx,yy] = meshgrid(x,y);
+z = xx + 1i*yy;
+
+<span class="keyword">for</span> b = -4:4
+   w = lambertw(b,z);
+   InvError = abs(w.*exp(w) - z);   
+   fprintf(<span class="string">'Largest error for b = %2d:  %.2e\n'</span>,b,max(InvError(:)));
+<span class="keyword">end</span>
+</pre>
+
+
+<pre class="codeoutput">
+Largest error for b = -4:  2.51e-014
+Largest error for b = -3:  2.39e-014
+Largest error for b = -2:  1.39e-014
+Largest error for b = -1:  7.94e-015
+Largest error for b =  0:  5.40e-015
+Largest error for b =  1:  7.94e-015
+Largest error for b =  2:  1.39e-014
+Largest error for b =  3:  2.39e-014
+Largest error for b =  4:  2.51e-014
+</pre>
+
+
+<h2 id="Implementation">Implementation</h2>
+
+<p>The Lambert W function is implemented numerically with approximations
+from series expansions followed by root-finding.  Depending on the
+desired branch and the proximity to the branch points at
+<i>z</i> = 0 and -1/e, different series expansions are used as
+initializations to the root-finder.</p>
+
+<p>As developed in <a href="#References"
+style="text-decoration:none">[2]</a>, <tt>lambertw</tt> uses 
+Halley's method, a fourth-order extension of Newton's root-finding
+method.  Convergence is very fast, usually requiring fewer than 5
+iterations to reach machine accuracy.</p>
+
+<h2 id="References">References</h2>
+<p><table border="0" cellpadding="6">
+<tr><td>[1] G. Eisenstein, &quot;Entwicklung von <font face="symbol">
+a</font><sup><font face="symbol">a</font><sup>...</sup></sup>.&quot;
+<i>J. reine angewandte Math.</i>, vol. 28, 1844.</td></tr>
+<tr><td>[2] R.M. Corless, G.H. Gonnet, D.E.G. Hare, G.J. Jeffery, and
+D.E. Knuth. <a href=
+"http://www.apmaths.uwo.ca/~rcorless/frames/PAPERS/LambertW/">
+&quot;On the Lambert W Function.&quot;</a>
+<i>Advances in Computational Mathematics</i>, vol. 5, 1996.</td></tr>
+</table>
+</p>
+
+
+<br>
+<br>
+</body>
+</html>

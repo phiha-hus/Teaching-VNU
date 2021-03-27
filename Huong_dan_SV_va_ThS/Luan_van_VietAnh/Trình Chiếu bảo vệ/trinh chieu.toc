@@ -1,0 +1,16 @@
+\beamer@endinputifotherversion {3.10pt}
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{M\IeC {\d \ocircumflex }t s\IeC {\'\ocircumflex } ki\IeC {\'\ecircumflex }n th\IeC {\'\uhorn }c c\IeC {\horn o} s\IeC {\h \ohorn }}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{S\IeC {\horn o} l\IeC {\horn u}\IeC {\d \ohorn }c v\IeC {\`\ecircumflex } h\IeC {\`a}m Lambert W}{5}{0}{1}
+\beamer@subsectionintoc {1}{2}{M\IeC {\d \ocircumflex }t s\IeC {\'\ocircumflex } t\IeC {\'\i }nh ch\IeC {\'\acircumflex }t c\IeC {\horn o} b\IeC {\h a}n c\IeC {\h u}a c\IeC {\'a}c h\IeC {\d \ecircumflex } \IeC {\dj }i\IeC {\`\ecircumflex }u khi\IeC {\h \ecircumflex }n kh\IeC {\^o}ng tr\IeC {\~\ecircumflex }}{17}{0}{1}
+\beamer@sectionintoc {2}{\IeC {\'\UHORN }ng d\IeC {\d u}ng h\IeC {\`a}m Lambert W trong l\IeC {\'y} thuy\IeC {\'\ecircumflex }t ph\IeC {\horn u}\IeC {\horn o}ng tr\IeC {\`\i }nh vi ph\IeC {\^a}n c\IeC {\'o} tr\IeC {\~\ecircumflex }}{19}{0}{2}
+\beamer@subsectionintoc {2}{1}{Tr\IeC {\horn u}\IeC {\`\ohorn }ng h\IeC {\d \ohorn }p v\IeC {\^o} h\IeC {\horn u}\IeC {\'\ohorn }ng}{20}{0}{2}
+\beamer@subsectionintoc {2}{2}{Tr\IeC {\horn u}\IeC {\`\ohorn }ng h\IeC {\d \ohorn }p h\IeC {\d \ecircumflex } ph\IeC {\horn u}\IeC {\horn o}ng tr\IeC {\`\i }nh}{32}{0}{2}
+\beamer@sectionintoc {3}{T\IeC {\'\i }nh \IeC {\h \ocircumflex }n \IeC {\dj }\IeC {\d i}nh c\IeC {\h u}a h\IeC {\d \ecircumflex }}{45}{0}{3}
+\beamer@sectionintoc {4}{H\IeC {\`a}m ph\IeC {\^a}n r\IeC {\~a} cho h\IeC {\d \ecircumflex } \IeC {\dj }i\IeC {\`\ecircumflex }u khi\IeC {\h \ecircumflex }n c\IeC {\'o} tr\IeC {\~\ecircumflex }}{48}{0}{4}
+\beamer@sectionintoc {5}{T\IeC {\'\i }nh \IeC {\dj }i\IeC {\`\ecircumflex }u khi\IeC {\h \ecircumflex }n \IeC {\dj }\IeC {\horn u}\IeC {\d \ohorn }c v\IeC {\`a} t\IeC {\'\i }nh quan s\IeC {\'a}t \IeC {\dj }\IeC {\horn u}\IeC {\d \ohorn }c}{50}{0}{5}
+\beamer@subsectionintoc {5}{1}{T\IeC {\'\i }nh \IeC {\dj }i\IeC {\`\ecircumflex }u khi\IeC {\h \ecircumflex }n \IeC {\dj }\IeC {\horn u}\IeC {\d \ohorn }c}{52}{0}{5}
+\beamer@subsectionintoc {5}{2}{T\IeC {\'\i }nh quan s\IeC {\'a}t \IeC {\dj }\IeC {\horn u}\IeC {\d \ohorn }c}{59}{0}{5}
+\beamer@sectionintoc {6}{Ph\IeC {\^a}n t\IeC {\'\i }ch v\IeC {\`a} \IeC {\dj }i\IeC {\`\ecircumflex }u khi\IeC {\h \ecircumflex }n c\IeC {\'a}c h\IeC {\d \ecircumflex } c\IeC {\'o} tr\IeC {\~\ecircumflex } s\IeC {\h \uhorn } d\IeC {\d u}ng g\IeC {\'o}i c\IeC {\^o}ng c\IeC {\d u} LambertWDDE}{64}{0}{6}
+\beamer@subsectionintoc {6}{1}{Ph\IeC {\^a}n t\IeC {\'\i }ch s\IeC {\d \uhorn } rung l\IeC {\'\abreve }c c\IeC {\h u}a m\IeC {\'a}y c\IeC {\^o}ng c\IeC {\d u}}{65}{0}{6}
+\beamer@subsectionintoc {6}{2}{\IeC {\DJ }i\IeC {\`\ecircumflex }u khi\IeC {\h \ecircumflex }n \IeC {\dj }\IeC {\d \ocircumflex }ng c\IeC {\horn o} Diesel}{70}{0}{6}

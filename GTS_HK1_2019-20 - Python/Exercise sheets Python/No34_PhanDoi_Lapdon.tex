@@ -1,0 +1,171 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{listings}
+\lstset{language=Python}          % Set your language (you can change the language for each code-block optionally)
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+
+\begin{document}
+% \noindent
+\begin{tabular*}
+{\linewidth}{c>{\centering\hspace{0pt}} p{.7\textwidth}}
+Trường ĐHKHTN, ĐHQGHN & {\bf Học Kỳ 1 (2020-2021)}
+\tabularnewline
+K63 TTƯD - Thầy Hà Phi & {\bf Bài Tập Giải Tích Số. No 3 \\ Các Phương pháp Phân Đôi và Lặp Đơn}
+\tabularnewline
+\rule{1in}{1pt}  \small  & \rule{2in}{1pt} %(Due date:)
+\tabularnewline
+
+%  \tabularnewline
+%  &(Đề thi có 1 trang)
+\end{tabular*}
+%
+% \Opensolutionfile{ans}[ans1]
+
+\centerline{——————————— BÀI TẬP PHƯƠNG PHÁP PHÂN ĐÔI ——————————-}
+
+\begin{bt}
+	Hãy viết hàm phân đôi (bisection trong Python có dạng) sau:
+	%
+	\begin{lstlisting}[frame=single] 
+	def bisection(f,a,b,nmax,tol):
+	return c, err, n
+	\end{lstlisting}
+	%
+	trong đó f là hàm số; a,b: là điểm đầu và điểm cuối của đoạn ta tìm nghiệm; nmax: số lượng tối đa các phép lặp; tol: sai số nhỏ nhất cho phép; c: nghiệm xấp xỉ;
+	err: đánh giá cận trên của sai số tuyệt đối của nghiệm xấp xỉ; n: số bước lặp thực hiện để tìm c.\\
+	\textbf{Trong các câu sau hãy sử dụng chính hàm bisection vừa viết trong câu 1 để thực hành trong Python.}
+\end{bt}
+
+\begin{bt} 
+	Sử dụng phương pháp phân đôi để tìm nghiệm của các phương trình sau, với sai số $tol=1e-6$.\\ 
+	(a) Các nghiệm thực của phương trình $x^3 - x^2 - x - 1 = 0$. \\
+	(b) Nghiệm của phương trình $x = 1 + 0.3 cos(x)$. \\
+	(c) Nghiệm dương nhỏ nhất của $cos(x) = 1/2 + sin (x)$. \\
+	(d) Nghiệm của $x = e^{-x}$. \\
+	(e) Nghiệm dương nhỏ nhất của phương trình $e^{-x} = sin(x)$. 
+\end{bt}
+
+\begin{bt}
+	Vẽ đồ thị của hai hàm số ở 2 vế của phương trình $x = tan(x)$, và quan sát giao điểm của 2 đồ thị đó.\\
+	(a) Dựa vào đồ thị, hãy chọn 2 điểm đầu mút $a$, $b$ cho phương pháp phân đôi để tìm nghiệm dương nhỏ nhất của phương trình $x = tan (x)$, với độ chính xác 
+	$\epsilon=1e-4$. \\
+	(b) Tìm nghiệm gần $100$ nhất của phương trình $x = tan(x)$ sử dụng phương pháp phân đôi.
+\end{bt}
+
+\begin{bt}
+	a) Viết script trong Python sử dụng phương pháp phân đôi để tìm tất cả các nghiệm của phương trình sau với độ chính xác $\epsilon=1e-6$.
+	\[ f(x) := 32x^6 - 48x^4 +18x^2 - 1 = 0.  \] 
+	b) Tính số bước lặp theo công thức trong lý thuyết và so sánh với kết quả lập trình trong Python.
+\end{bt}
+
+\centerline{——————————— BÀI TẬP PHƯƠNG PHÁP LẶP ĐƠN ——————————-}
+
+\begin{bt}
+	Hãy viết hàm lặp đơn trong Python dạng sau:
+	%
+	\begin{lstlisting}[frame=single] 
+	def lapdon(f,x0,nmax,tol):
+	return c, err, n
+	\end{lstlisting}
+	%
+	trong đó f là hàm số; x0 là giá trị đầu tiên của phép lặp đơn; nmax: số lượng tối đa các phép lặp; tol: sai số nhỏ nhất cho phép; c: nghiệm xấp xỉ;
+	err: đánh giá cận trên của sai số tuyệt đối của nghiệm xấp xỉ; n: số bước lặp thực hiện để tìm c.\\
+	\textbf{Trong các câu sau hãy sử dụng chính hàm vừa viết trong câu 5 để thực hành trong Python, khi mà ta có tính chất ánh xạ co của hàm f.}
+\end{bt}
+
+\begin{bt} % Exercises 3 & 4, Atkinson/Han p.106
+a) Phương trình sau có bao nhiêu nghiệm $x=e^{-x}$? Phép lặp đơn $x_{n+1}=e^{-x_n}$ có hội tụ với giá trị $x_0$ phù hợp hay không? Viết Python script để tính $6$ giá trị đầu tiên của $x_n$.\\
+b) Câu hỏi tương tự với phép lặp $x_{n+1} = 1 + \arctan(x_n)$.
+\end{bt}
+
+\begin{bt} % Exercise 5, Atkinson/Han p.107
+Chứng minh rằng với các hằng số c, d thỏa mãn $|d|<1$, phương trình $x=c+d \cos(x)$ có nghiệm duy nhất. Kiểm tra tính hội tụ của phép lặp $x_{n+1}=c+d \cos(x_n)$ và hãy đưa ra đánh giá cho tốc độ hội tụ.
+\end{bt}
+
+\begin{bt} % Exercise 8, Atkinson/Han p.107
+Các phép lặp sau có hội tụ đến $\alpha$ hay không? Nếu hội tụ, hãy xác định tốc độ hội tụ, cho $x_0$ đủ gần $\alpha$.
+%
+\[
+a) x_{n+1} = \cfrac{15 x_n^2-24x_n+13}{4x_n} \ , \ \alpha=1, \hskip 2cm \hfill  b) x_{n+1} = \cfrac{3}{4} x_n + \cfrac{1}{x_n^3} \ , \ \alpha=\sqrt{2}.
+\]
+%
+a) Sử dụng công thức ước lượng tiên nghiệm, hãy tìm số bước lặp cần thiết để nhận được xấp xỉ với sai số tuyệt đối không quá $1e-5$, với $x_0 = \alpha + 1e-1$. \\
+b) Cùng câu hỏi, nhưng cho sai số tương đối
+\end{bt}
+
+\begin{bt} % Exercise 11, Atkinson/Han p.108
+Phép lặp đơn $x_{n+1}=2-(1+c)x_n + c x_n^3$ sẽ hội tụ đến $\alpha=1$ với một số giá trị của c, giả sử $x_0$ đủ gần $\alpha$. \\
+a) Tìm tất cả mọi $c$ để phép lặp đơn này hội tụ. Tìm mọi $c$ để phép lặp đơn này hội tụ bậc hai, tức là $|x_{n+1}-\alpha| = \mathcal{O} (\ |x_n-\alpha|^2)$. \\
+b) Với một $c$ như vậy, hãy tính số bước lặp cần thiết để đạt được 5 chữ số chắc, cho điều kiện ban đầu $x_0=\alpha + 1e-3$.  
+\end{bt}
+
+\begin{bt} 
+Phương trình $x^3+4x^2-10=0$ có nghiệm duy nhất trong đoạn $[1, 2]$. Có rất nhiều các khác nhau để chuyển về bài toán tìm điểm bất động. Hãy xét sự hội tụ của các phép lặp đơn sau, với điều kiện đầu $x_0=1.5$. Tìm bậc hội tụ của các phương pháp đó (nếu có) và tính sai số với $n=1,...,10$, từ đó so sánh với phương pháp phân đôi.\\
+%
+\begin{tabular}{lll}
+a) $x=g_1(x)=x+x^3+4x^2-10$	&  & b) $x=g_2(x) = \sqrt{10/x - 4x}$ \\ 
+c) $x=g_3(x)=\cfrac{1}{2}\sqrt{10-x^3}$	&  &  d) $x=g_2(x) = \sqrt{\cfrac{10}{x+4}}$ \\ 
+e) $x=g_3(x)=x-\cfrac{x^3+4x^2-10}{3x^2+8x}$	&  &  \\ 
+\end{tabular} 
+%	
+\end{bt}
+
+\begin{bt}
+Cho các phương trình sau
+%
+\[ a) \ 3(2x-1)= \cos(x) \qquad \qquad b) \ x^4-2x-3=0  \]
+%
+Hãy xây dựng cho mỗi phương trình một phương pháp lặp đơn hội tụ, biết rằng phương trình a) (t.ứ. b)) có nghiệm duy nhất trong $(0,1)$ (t.ứ. $(0,2)$). Viết các công thức đánh giá sai số tiên nghiệm, hậu nghiệm sao cho sai số nhỏ hơn $1e-4$.
+\end{bt}
+
+\centerline{———————————Hết——————————-}
+
+\end{document}
+
+\vspace{1cm}
+\noindent{\bf Chú ý:} {\it Cán bộ coi thi không giải thích gì thêm}\\
+\Closesolutionfile{ans}
+\newpage
+\begin{center}
+{\LARGE{\bf ĐÁP ÁN}}
+\end{center}
+
+\begin{sol}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Solution1/Sol4_1.png}
+		%\caption{}
+		\label{fig:Sol4}
+	\end{figure}
+	Exercise 7: Convergence order is 3.	
+\end{sol}
+
+   
+\end{document}
+
+
+

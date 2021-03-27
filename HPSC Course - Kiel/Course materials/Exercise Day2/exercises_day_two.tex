@@ -1,0 +1,138 @@
+\documentclass[a4paper]{scrartcl} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{verbatim}
+%%
+%% My special illegal Layout
+%%
+\textheight25cm \textwidth16.5cm
+\topmargin-1.5cm \topskip0cm
+\emergencystretch 10pt
+\oddsidemargin-.32cm 
+\evensidemargin-.32cm 
+\parskip2mm\parindent0mm
+%%
+%% indent for algorithms
+%%
+\newcommand{\algindent}{\hskip 0.4cm}
+%%
+%% environmments for theorem and proof
+%%
+\newtheorem{theorem}{Theorem}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{corollary}[theorem]{Corollary}
+\newenvironment{proof}{\noindent \textbf{Proof:}}{
+  {\hfill{\vrule height 6pt width 6pt depth 0pt}}\\}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{implementation}[theorem]{Implementation}
+%\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{exercise}{Exercise}
+
+%
+% abbreviations
+%
+\newcommand{\bbbn}{{\mathbb{N}}}
+\newcommand{\bbbr}{{\mathbb{R}}}
+\newcommand{\Troot}{\mathop{\rm root}\nolimits}
+\newcommand{\level}{\mathop{\rm level}\nolimits}
+\newcommand{\depth}{\mathop{\rm depth}\nolimits}
+\newcommand{\father}{\mathop{\rm father}\nolimits}
+\newcommand{\sons}{\mathop{\rm sons}\nolimits}
+\newcommand{\supp}{\mathop{\rm supp}\nolimits}
+\newcommand{\diam}{\mathop{\rm diam}\nolimits}
+\newcommand{\dist}{\mathop{\rm dist}\nolimits}
+\newcommand{\diag}{\mathop{\rm diag}\nolimits}
+\newcommand{\lagrange}{{\mathcal{L}}}
+\newcommand{\interpol}{{\mathfrak{I}}}
+\newcommand{\identity}{I}
+\newcommand{\polynomials}{{\mathcal{P}}}
+\newcommand{\Index}{{\mathcal{I}}}
+\newcommand{\Jndex}{{\mathcal{J}}}
+\newcommand{\Kndex}{{\mathcal{K}}}
+\newcommand{\ct}{T_{\Index}}
+\newcommand{\ctI}{T_{\Index}}
+\newcommand{\ctJ}{T_{\Jndex}}
+\newcommand{\bct}{T_{\Index\times\Index}}
+\newcommand{\bctIJ}{T_{\Index\times\Jndex}}
+
+\pagestyle{empty}
+\begin{document}
+\noindent
+\input{header.tex}
+
+\section*{General Remark}
+
+On day two, we will look at a few different ways of approaching a problem - such as differentiation or integration - by interpolating an underlying function with a polynomial and then solving that problem for the \emph{much easier to handle} polynomial. This then gives us an \emph{approximate} solution to the original problem. From an abstract viewpoint, our methods for solving ordinary differential equations also emanate from that approach. Usually, but not always, it holds that the higher order polynomial we use, the better the approximation is.
+
+\section*{Main Exercises: Applications of Lecture 03}
+
+\textbf{a) Approximating the First Derivative Through Fourth Order Interpolation}\newline\newline
+Work out a formula for approximating the derivative $f'(0)$ of a given function $f$ by interpolating it with a fourth order polynomial $p$ in the points $-2$, $-1$, $1$, $2$ and then evaluating $p'(0)$. \textbf{Implement} the application of your formula to the function $f(t)=e^{t}$ in the file \texttt{exercise\_polynomial.c}. Do not forget to implement a calculation and printing of the error. \textbf{Compile} and \textbf{execute} \texttt{exercise\_polynomial}.
+
+Now, alter your formula by interpolating in the points $-2h$, $-h$, $h$, $2h$ for some small $h>0$ instead. \textbf{Implement} - with decreasing sizes of $h$ - the application of your new formula to the function $f(t)=e^{t}$ in \texttt{exercise\_polynomial.c}. \textbf{Test} your algorithm and observe the order of convergence.
+\newline
+
+\textbf{b) Approximating a Limit Through Third Order Interpolation}\newline\newline 
+Similarly to a), work out a formula for approximating the limit $\lim_{t\rightarrow0}f(t)$ of a given function $f$ by interpolating it with a third order polynomial $p$ in the points $\frac{1}{4}$, $\frac{1}{2}$, $1$ and then evaluating $p(0)$. \textbf{Implement} the application of your formula to the function $f(t)=\frac{e^{t}-1}{t}$ in the file \texttt{exercise\_polynomial.c}. Again, do not forget to implement a calculation and printing of the error. What is the exact value $\lim_{t\rightarrow0}f(t)$ here? \textbf{Test} your algorithm.
+
+Now, alter your formula by interpolating in the points $\frac{h}{4}$, $\frac{h}{2}$, $h$ for some small $h>0$ instead. \textbf{Implement} - with decreasing sizes of $h$ - the application of your new formula to the function $f(t)=\frac{e^{t}-1}{t}$ in \texttt{exercise\_polynomial.c}. \textbf{Test} your algorithm and observe the order of convergence.
+\newline
+
+\textbf{c) Approximating an Integral through Quadrature and Composite Quadrature}\newline\newline
+Computing analytical solutions of integrals is sometimes hard and often even
+impossible. 
+This is where \emph{numerical integration} or \emph{quadrature} come in handy. One of the simplest approaches to this task is the \emph{trapezoidal rule}.
+
+\textbf{Implement} the trapezoidal rule in the file \texttt{exercise\_quadrature.c} and test your code for
+the function
+\begin{equation*}
+	f : \mathbb R \to \mathbb R, \quad x \mapsto \exp\left(-\frac{x^2}{2 \sigma^2}\right),
+\end{equation*}
+by computing the integral
+\begin{equation*}
+	\int\limits_{-0.5}^{0.5} f(x) \, d x.
+\end{equation*}
+
+The trapezoidal rule - as well as the Simpson quadrature rule that was also introduced in the lectures - have in common that there is no mechanism to control the error
+of the approximation. This drawback is fixed by \emph{composite quadrature rules}.
+
+Work out and \textbf{implement} a composite version of Simpson's rule. \textbf{Test} your implementation with the same integral as before. Which rate of convergence can you observe with respect to the number
+of subintervals?
+
+\section*{Additional Exercises: Applications of Lecture 04}
+
+\textbf{a) Classical Runge-Kutta Method and Error Calculation}\newline\newline
+All time-stepping methods we have seen so far fit into the framework of
+\emph{Runge-Kutta methods}. Within the file \texttt{ode.c}, \textbf{implement} the \emph{classical Runge-Kutta method} in the function \texttt{rk\_classic\_step}.
+
+In order to better be able to examine a time-stepping method, we need to compute an error. Since for many problems, an analytical solution is hard to come by or even unknown, we take the approach of first calculating a \emph{reference solution} by using a reliable and accurate method with a very small time step.
+
+Within the file \texttt{exercise\_mass\_spring.c}, \textbf{implement} a solution of the mass-spring system using the classical Runge-Kutta method with a step size of $\delta=10^{-5}$ and store the position value at the last point in time in some variable. 
+
+Below that - in the same file - then \textbf{implement} a solution of the mass-spring system using the classical Runge-Kutta method with varying but much larger step sizes. Use the stored position value to calculate an error. \textbf{Run} your programm and see which order of convergence you can observe.\newline
+
+\textbf{b) Predator-Prey (also: Lotka-Volterra) Equations}\newline\newline
+Here we will look at another interesting example from the class of ordinary differential equations. It describes the dynamics of biological systems in which two species interact, one as a predator and the other as prey.
+
+\textbf{Implement} the Lotka-Volterra equations - as they were introduced in lecture 01 - in the file \texttt{exercise\_lotka\_volterra.c}. Choose and \textbf{implement} a time-stepping method and a way of assessing the solution - such as visualization via gnuplot or calculating an error using a reference solution. \textbf{Test} your algorithm.\newline
+
+\textbf{c) The Adams-Bashforth Methods}\newline\newline
+All previously introduced methods for the solution of ordinary differential equations had in common that they \emph{only} used information from the numerical solution at the time step \emph{exactly before the current one}. Multistep methods aim to store and use the information from the numerical solution at \emph{multiple} previous time steps.
+
+Some of the best-known multistep methods are the \emph{Adams-Bashforth methods}. Note that these methods are \emph{explicit}. We want to work with the Adams-Bashforth method with $m=3$ and equidistant time steps as it was described in the lectures. \textbf{Implement} it in the function \texttt{adams\_bashforth\_step} in the file \texttt{ode.c}.
+
+Apply that Adams-Bashforth method to a problem of your choice - such as the mass-spring system or the Lotka-Volterra equations - and assess the solution - i.e., by visualization via gnuplot or computation of an error via a reference solution.
+
+You have to pay special attention to the \emph{starting values}. Usually, only starting values for one point in time are given. In multistep methods, however, one usually needs more values to begin the multistep procedure. Come up with a way to generate the missing values, \textbf{implement} everything and \textbf{test} your algorithm.
+
+\vspace*{0.5cm}
+\textit{Please provide feedback about the format/difficulty/length of the exercises so that we can adjust accordingly. Contact us via Email or on the OpenOLAT forum.}
+
+\end{document}
+

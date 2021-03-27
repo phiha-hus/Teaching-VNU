@@ -1,0 +1,18 @@
+1. Giai Lap don hay Newton
+2. Giai hpt tuyen tinh
+3. Least square roi rac - khong choi he chuan tac
+4. Tich gan dung tich phan hoac noi suy 
+5. Giai PTVP
+
+Chú ý bài thi của anh Hiếu
+
+1. May have diagonally dominated in columns
+2. May consider norm 1 estimation in jacobi, Gauss-Seidel
+3. Newton backward + error estimations
+4. PLU 
+
+Structed:
+1. Fixed point iteration
+2. Jacobi-Gausseidel
+3. Interpolation
+4. PLU

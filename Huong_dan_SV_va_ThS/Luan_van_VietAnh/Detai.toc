@@ -1,0 +1,21 @@
+\contentsline {chapter}{M\IeC {\h \ohorn } \IeC {\dj }\IeC {\`\acircumflex }u}{3}{chapter*.1}
+\contentsline {chapter}{\numberline {1}M\IeC {\d \ocircumflex }t s\IeC {\'\ocircumflex } ki\IeC {\'\ecircumflex }n th\IeC {\'\uhorn }c c\IeC {\ohorn } s\IeC {\h \ohorn }}{4}{chapter.1}
+\contentsline {section}{\numberline {1.1}S\IeC {\ohorn } l\IeC {\uhorn }\IeC {\d \ohorn }c v\IeC {\`\ecircumflex } h\IeC {\`a}m Lambert W}{4}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}H\IeC {\`a}m Lambert v\IeC {\^o} h\IeC {\uhorn }\IeC {\'\ohorn }ng}{5}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}D\IeC {\d a}ng ma tr\IeC {\d \acircumflex }n c\IeC {\h u}a h\IeC {\`a}m Lambert}{7}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}M\IeC {\d \ocircumflex }t s\IeC {\'\ocircumflex } t\IeC {\'\i }nh ch\IeC {\'\acircumflex }t c\IeC {\ohorn } b\IeC {\h a}n c\IeC {\h u}a c\IeC {\'a}c h\IeC {\d \ecircumflex } \IeC {\dj }i\IeC {\`\ecircumflex }u khi\IeC {\h \ecircumflex }n kh\IeC {\^o}ng tr\IeC {\~\ecircumflex }}{9}{section.1.2}
+\contentsline {chapter}{\numberline {2}Ph\IeC {\^a}n t\IeC {\'\i }ch c\IeC {\'a}c h\IeC {\d \ecircumflex } \IeC {\dj }i\IeC {\`\ecircumflex }u khi\IeC {\h \ecircumflex }n c\IeC {\'o} tr\IeC {\~\ecircumflex } s\IeC {\h \uhorn } d\IeC {\d u}ng ph\IeC {\uhorn }\IeC {\ohorn }ng ph\IeC {\'a}p h\IeC {\`a}m Lambert W}{11}{chapter.2}
+\contentsline {section}{\numberline {2.1}Gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u chung}{11}{section.2.1}
+\contentsline {section}{\numberline {2.2}\IeC {\'\UHORN }ng d\IeC {\d u}ng c\IeC {\h u}a h\IeC {\`a}m Lambert W trong l\IeC {\'y} thuy\IeC {\'\ecircumflex }t ph\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh vi ph\IeC {\^a}n c\IeC {\'o} tr\IeC {\~\ecircumflex }}{13}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Tr\IeC {\uhorn }\IeC {\`\ohorn }ng h\IeC {\d \ohorn }p v\IeC {\^o} h\IeC {\uhorn }\IeC {\'\ohorn }ng}{13}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Tr\IeC {\uhorn }\IeC {\`\ohorn }ng h\IeC {\d \ohorn }p h\IeC {\d \ecircumflex } ph\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh}{16}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}T\IeC {\'\i }nh \IeC {\h \ocircumflex }n \IeC {\dj }\IeC {\d i}nh c\IeC {\h u}a h\IeC {\d \ecircumflex }}{19}{section.2.3}
+\contentsline {section}{\numberline {2.4}H\IeC {\`a}m ph\IeC {\^a}n r\IeC {\~a} cho h\IeC {\d \ecircumflex } \IeC {\dj }i\IeC {\`\ecircumflex }u khi\IeC {\h \ecircumflex }n c\IeC {\'o} tr\IeC {\~\ecircumflex }}{20}{section.2.4}
+\contentsline {section}{\numberline {2.5}T\IeC {\'\i }nh \IeC {\dj }i\IeC {\`\ecircumflex }u khi\IeC {\h \ecircumflex }n \IeC {\dj }\IeC {\uhorn }\IeC {\d \ohorn }c v\IeC {\`a} t\IeC {\'\i }nh quan s\IeC {\'a}t \IeC {\dj }\IeC {\uhorn }\IeC {\d \ohorn }c}{21}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}T\IeC {\'\i }nh \IeC {\dj }i\IeC {\`\ecircumflex }u khi\IeC {\h \ecircumflex }n \IeC {\dj }\IeC {\uhorn }\IeC {\d \ohorn }c}{21}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}T\IeC {\'\i }nh quan s\IeC {\'a}t \IeC {\dj }\IeC {\uhorn }\IeC {\d \ohorn }c}{27}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}Ph\IeC {\^a}n t\IeC {\'\i }ch v\IeC {\`a} \IeC {\dj }i\IeC {\`\ecircumflex }u khi\IeC {\h \ecircumflex }n c\IeC {\'a}c h\IeC {\d \ecircumflex } c\IeC {\'o} tr\IeC {\~\ecircumflex } s\IeC {\h \uhorn } d\IeC {\d u}ng g\IeC {\'o}i c\IeC {\^o}ng c\IeC {\d u} LambertWDDE}{33}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Ph\IeC {\^a}n t\IeC {\'\i }ch s\IeC {\d \uhorn } rung l\IeC {\'\abreve }c c\IeC {\h u}a m\IeC {\'a}y c\IeC {\^o}ng c\IeC {\d u}}{33}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}\IeC {\DJ }i\IeC {\`\ecircumflex }u khi\IeC {\h \ecircumflex }n \IeC {\dj }\IeC {\d \ocircumflex }ng c\IeC {\ohorn } Diesel}{37}{subsection.2.6.2}
+\contentsline {chapter}{\numberline {3}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{40}{chapter.3}
+\contentsline {chapter}{T\IeC {\`a}i li\IeC {\d \ecircumflex }u tham kh\IeC {\h a}o}{42}{chapter.3}

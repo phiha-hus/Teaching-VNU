@@ -1,0 +1,146 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{listings}
+\lstset{language=Python}          % Set your language (you can change the language for each code-block optionally)
+
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+
+\begin{document}
+% \noindent
+\begin{tabular*}
+{\linewidth}{c>{\centering\hspace{0pt}} p{.7\textwidth}}
+Trường ĐHKHTN, ĐHQGHN & {\bf Học Kỳ 1 (2019-2020)}
+\tabularnewline
+K62 TTƯD & {\bf Bài Tập Giải Tích Số. No 9 \\ Tính gần đúng tích phân \\ Các quy tắc cơ bản \\ Lớp CT Newton-Cotes}
+\tabularnewline
+\rule{1in}{1pt}  \small  & \rule{2in}{1pt} %(Due date:)
+\tabularnewline
+
+%  \tabularnewline
+%  &(Đề thi có 1 trang)
+\end{tabular*}
+%
+% \Opensolutionfile{ans}[ans1]
+
+\begin{center}	
+	\textbf{PHẦN I: Các quy tắc cầu phương cơ bản: Trung điểm; Hình Thang; Simpson}
+\end{center}
+
+\begin{center}
+	BÀI TẬP LÝ THUYẾT \\
+%	\vskip .5cm 
+\end{center}
+
+\begin{bt}
+a) Hãy tính các tích phân sau sử dụng cả 3 phương pháp \emph{Hình thang/Simpson/Trung điểm} với các điểm nút cách đều và so sánh kết quả. 
+\[ \int_{0}^{1} e^{-x^2} dx \ . \]
+%	
+b) Nếu tích phân $\int_{0}^{1} e^{-x^2} dx$ cần tính với sai số nhỏ hơn $1e-7$, sử dụng các nút cách đều trong phương pháp hình thang, hỏi chúng ta cần bao nhiêu điểm nút?
+\end{bt}
+
+\begin{bt}
+Tích phân logarit là một dạng tích phân phụ thuộc tham số đặc biệt có dạng 
+%
+\[ \rm{li}(x) = \int_{2}^{x} \cfrac{dt}{\ln t} dt  \ . \]
+%
+Với $x$ đủ lớn, số lượng các số nguyên tố nhỏ hơn hoặc bằng $x$ là xấp xỉ gần bằng $\rm{li}(x)$. Ví dụ, có 46 số nguyên tố nhỏ hơn hoặc bằng 200, và li(200) thì xấp xỉ 50. Hãy tìm 
+li(200) đến 3 chữ số chắc, sử dụng ba phương pháp cầu phương đã nói ở trên. \\
+Gợi ý: Như vậy tìm $h$ để sai số toàn phần bé hơn 1e-3, sau đó dùng quy tắc cầu phương cho các điểm nút cách đều h.
+\end{bt}
+
+\begin{bt}
+	Xét tích phân $\int_{0}^{1} sin(\pi x^2/2) dx$ và giả sử rằng chúng ta muốn tính gần đúng tích phân với sai số bé hơn $1e-4$. \\
+	a. Nếu chúng ta dùng quy tắc hình thang với các nút cách đều thì độ rộng $h$ cần dùng là bao nhiêu?\\
+	b. Câu hỏi tương tự với quy tắc Simpson?	
+\end{bt}
+
+\begin{center}
+	BÀI TẬP THỰC HÀNH \\
+	%	\vskip .5cm 
+\end{center}
+
+\begin{bt} Viết các hàm trong Python để tính tích phân dựa trên các quy tắc cầu phương Trung điểm; Hình thang; Simpson dạng composite, ví dụ như
+%
+\begin{lstlisting}[frame=single] 
+def Simpson(f,a,b,tol):
+return I, h
+\end{lstlisting}
+%	 
+trong đó $f$ là hàm; $a$ và $b$ là 2 đầu mút, $tol$ là sai số cần đạt được của việc tính xấp xỉ tích phân, $I$ là giá trị gần đúng của tích phân, $h$ là độ rộng mỗi bước. Chú ý các nút được sử dụng là cách đều, tức là $x_0=a<x_1<\dots<x_n=b$, $x_i = a+i*h$, $h=\cfrac{b-a}{n}$. 
+\end{bt}
+
+\begin{bt}\label{bt5}
+	Nhắc lại rằng độ dài của một đường cong được biểu diễn bởi hàm số $y=f(x)$ trên một đoạn $[a,b]$ được tính bởi tích phân $I(f) = \int_{a}^{b} \sqrt{1+[f'(x)]} dx$.\\ 
+	Sử dụng các hàm vừa viết trong bài tập trước để tính độ dài của các đường cong sau. \\ 
+	(a) $f(x)=sin(\pi x)$, $0\leq x \leq 1$, \\ 
+	(b) $f(x)=e^x$, $0\leq x \leq 1$, \\ 
+	(c) $f(x)=e^{x^2}$, $0\leq x \leq 1$.\\
+	Dựa trên kết quả lý thuyết, hãy đánh giá các sai số toàn phần với mỗi phương pháp và mỗi đường cong.  	
+\end{bt}
+
+\begin{center}	
+	\textbf{PHẦN II: Các quy tắc cầu phương Newton-Cotes}
+\end{center}
+
+\begin{bt}
+Để tính tích phân $\int_{0}^{1} f(x)dx$, ngoài 3 phương pháp nêu trên người ta còn tìm các công thức Newton-Cotes khác bằng phương pháp hệ số bất định (đã học trên lớp sáng nay). Hãy sử dụng phương pháp đó để đi tìm công thức cầu phương sử dụng 4 điểm chia $0$, $\dfrac{1}{3}$, $\dfrac{2}{3}$, $1$. Công thức thu được được gọi là \emph{Quy tắc Simpson 3/8}, khác với \emph{Quy tắc Simpson 1/3} đã học trên lớp. Hãy tìm quy tắc Simpson 3/8 đó.
+\end{bt}
+
+
+\begin{bt}
+Đối với trường hợp 5 điểm chia, ta có quy tắc Boole được sinh ra từ lớp công thức Newton-Cotes sử dụng 5 điểm chia $0$, $\dfrac{1}{4}$, $\dfrac{1}{2}$, $\dfrac{3}{4}$, $1$. Hãy tìm công thức Boole đó.
+\end{bt}
+
+\begin{bt}
+Sử dụng các quy tắc Simpson 3/8 và Boole để tính xấp xỉ độ dài các đường cong trong Bài tập \ref{bt5}. So sánh thời gian tính toán và sai số của các phương pháp này với các công thức cầu phương cơ bản.
+\end{bt}
+\centerline{———————————Hết——————————-}
+
+\end{document}
+
+\vspace{1cm}
+\noindent{\bf Chú ý:} {\it Cán bộ coi thi không giải thích gì thêm}\\
+\Closesolutionfile{ans}
+\newpage
+\begin{center}
+{\LARGE{\bf ĐÁP ÁN}}
+\end{center}
+
+\begin{sol}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Solution1/Sol4_1.png}
+		%\caption{}
+		\label{fig:Sol4}
+	\end{figure}
+	Exercise 7: Convergence order is 3.	
+\end{sol}
+
+   
+\end{document}
+
+
+
