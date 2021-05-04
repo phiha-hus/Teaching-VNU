@@ -16,7 +16,8 @@ end
 rank_X= rank(X); 
 dim_X = length(X); % system order
 LMW = zeros(dim_X);
-[V,D] =  jordan(X); % transform to Jordan form
+% [V,D] =  jordan(X); % transform to Jordan form
+[V,D] =  eig(X);
 
 % check superdiagonal terms
 super_diag = [];
