@@ -1,0 +1,480 @@
+\chapter{Ước lượng hàm phân rã cho hệ thống tuyến tính có trễ}
+\section{Đặt vấn đề}
+Xét hệ thống tuyến tính đơn trễ với hệ số hằng (Linear Time Invariant Time-Delayed System) có dạng 
+%
+\begin{align}\label{1}
+	& \dot{x}(t) + Ax(t) + A_dx(t-h)= 0, t > 0 , \\
+	& x(0) = x_0, x(t) = g(t) \quad \text{với} \quad t \in [-h,0) , \notag
+\end{align}
+%
+trong đó $A$ và $A_d$ là các ma trận hệ số cỡ $n \times n$, $x(t)$ là vectơ trạng thái cỡ $n \times 1$, $g(t)$ là hàm quỹ đạo ban đầu cỡ $n \times 1$, $t$ là biến thời gian và $h$ là độ trễ vô hướng cho trước. Một sự gián đoạn đã được cho phép tại $t = 0$ khi $g(0^-) \ne x(0) = x(0)$. Mục tiêu là tìm giới hạn trên cho tốc độ phân rã, được gọi là $\a$ - ổn định, cũng như giới hạn trên cho số $K$, sao cho chuẩn của trạng thái bị giới hạn bởi 
+%
+\begin{equation}\label{2}
+	\Vert x(t)\Vert\leq Ke^{\a t}\Phi(h,t_0)
+\end{equation}
+%
+trong đó $\Phi(h,t_0)=\sup\limits_{t_0-h\leq t\leq t_0}\{\Vert x(t)\Vert\}$ và $\Vert \cdot\Vert$ biểu thị chuẩn Euclid. Các điều kiện cho sự tồn tại của $K$ và $\a$ đã được thảo luận trong Hale và Verduyn-Lunel (1993).
+%
+Điều quan trọng là chỉ ra rằng $K$ và $\a$ là một cặp và không thể ước lượng riêng lẻ chúng. Mặc dù tồn tại một số phương pháp tiếp cận miền tần số để tối ưu $\a$, một ước lượng tương ứng của $K$ không được cung cấp trong cách tiếp cận đó. Với một giá trị $\a$ cho trước, nó không khả thi để thu được $K$ bằng cách sử dụng mô phỏng, bởi vì hàm quỹ đạo ban đầu $g(t)$ và điều kiện ban đầu $x_0$ không thể xác định duy nhất khi chỉ biết giới hạn của $\Vert{x} \Vert$, với $t \in [-h,0]$. Khó khăn là việc tìm một hàm bao mà giới hạn chuẩn cho các trạng thái bất kì với $t > 0$ và với mọi hàm quỹ đạo ban đầu có thể có và điều kiện ban đầu.
+%
+Khi $h = 0$, $A_d = 0$ và phương trình vi phân có trễ (DDE) trong phương trình \eqref{1} rút gọn thành một phương trình vi phân thường (ODE), thì hàm phân rã của nó là
+%
+\begin{equation}\label{3}
+	\Vert x(t)\Vert\leq e^{\mu (A) t}\Vert x(0)\Vert
+\end{equation}
+%
+trong đó $\mu (A) = \lim\limits_{\theta \to 0^+}\dfrac{\Vert I + \theta A\Vert -1}{\theta}$ là độ đo ma trận (Hale and Verduyn-Lunel, 1993).
+%
+Khi có thời gian trễ, vấn đề trở nên phức tạp hơn v ì quỹ đạo thời gian trễ của hệ thống phụ thuộc không chỉ vào trạng thái ban đầu $x_0$ mà còn hàm quỹ đạo ban đầu  $g(t)$. Các cách tiếp cận hiện đại cho ta một ước tính với hàm phân rã hạn chế đáng kể. Ví dụ, kết quả từ cách tiếp cận theo chuẩn ma trận (Hale and Verduyn-Lunel, 1993) cho ta ước lượng
+%
+\begin{equation}\label{4}
+	K = 1 + \Vert A_d \Vert h, \a = \Vert A \Vert + \Vert A_d \Vert
+\end{equation}
+%
+trong đó, ước lượng của $\a$ là một số dương. Đối với các phương pháp đo lường ma trận (Lehman and Shujaee, 1994; Niculescu et al., 1998), $K$ được cố định bằng $1$, điều này làm cho ước lượng của $\a$ rất chặt chẽ. Ví dụ, xét quỹ đạo của hệ thống được biểu diễn trong Hình $1$. Nếu $K$ bằng $1$ thì hàm phân rã có giá trị bằng $1$ tại thời điểm $t=0$. Khi đó $\a$ phải dương để hàm phân rã bị giới hạn bởi đỉnh của quỹ đạo trạng thái chuẩn tại $t = 2$. Tuy nhiên, giá trị tối ưu của $\a$ rõ ràng là một số âm.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale= 0.7]{"./Hinh/Hinh11"}
+	\caption[Ví dụ về hàm phân rã cho hệ có trễ bậc hai $\dot{x}(t) + Ax(t) + A_dx(t-h)= 0$, với $A = \m{0& 1\\ -1.25& -1}, A_d= \m{-0.1&0.6 \\ 0.2&0}, h = 1$ và $g(t)= \m{0\\1}$, với $t \le 0$]{Ví dụ về hàm phân rã cho hệ có trễ bậc hai $\dot{x}(t) + Ax(t) + A_dx(t-h)= 0$, với $A = \m{0& 1\\ -1.25& -1}, A_d= \m{-0.1&0.6 \\ 0.2&0}, h = 1$ và $g(t)= \m{0\\1}$, với $t \le 0$}
+	\label{fig:hinh-11}
+\end{figure}
+%
+Ngoài ra, ta có thể áp dụng cá phương pháp của Lyapunov để giải
+quyết vấn đề về mặt tính toán. Sử dụng các phương pháp Lyapunov-Krasovskii cổ điển, các ước lượng của $K$ và $\a$ có thể thu được như sau
+%
+\begin{equation}\label{5}
+	\sqrt{\dfrac{c_2}{c_1}}, \a = - c_3
+\end{equation}
+%
+giả sử sự tồn tại của các hằng số dương $c_1, c_2, c_3$ sao cho\\
+%
+\begin{equation}\label{6}
+	c_1 \Vert x(t) \Vert ^2 \le V(x_t) \le c_2 \Vert x_t \Vert ^2
+\end{equation}
+%
+và
+%
+\begin{equation}\label{7}
+	\dot{V}(x_t) \le -2c_3 \Vert x(t) \Vert ^2
+\end{equation}
+%
+trong đó $x_t$ biểu thị cho đoạn $\{x(t+ \theta) \Vert \theta \in [-h, 0]\}$ và $V(.)$ là hàm Lyapunov-Krasovskii. Vì hạn chế vốn có của phương pháp Lyapunov, ước lượng tốc độ phân rã, $c_3$ sẽ không thể đạt được giá trị tối ưu. Ước lượng của $K$, tức là $\sqrt{\dfrac{c_2}{c_1}}$ cũng khó đạt được giá trị tối ưu.\\
+%
+Từ công thức nghiệm trong Yi et al. (2007a), mối quan hệ giữa quỹ đạo của phương trình \eqref{1} và hàm định dạng cũng như điều kiện ban đầu có thể được xác định về mặt phân tích theo chuỗi hàm Lambert W vô hạn. 
+Chúng tôi có ý định khắc phục, hoặc giảm bớt hạn chế vốn có trong các phương pháp đo lường ma trận hoặc chuẩn và các phương pháp Lyapunov và nghiên cứu vấn đề ước lượng hàm phân rã theo một quan điểm mới và khác bằng cách áp dụng phương pháp hàm Lambert W.
+
+\section{Hàm Lambert W}
+Hàm Lambert W là hàm số $W(z)$, $\mathbb{C} \to \mathbb{C}$, được định nghĩa là nghiệm của phương trình
+\begin{equation}\label{eq2}
+	W(z) \mathrm{e}^{W(z) }=z.
+\end{equation}
+Đây là một hàm đa trị, nghĩa là với mỗi $z \in \mathbb{C}$ thì có vô số nghiệm của \eqref{eq2}. Để nhận diện giá trị này, một nhánh số được gán, ta gọi $W_k(z)$ là nhánh thứ $k$ của hàm Lambert của $z$. Nhánh cắt được xác định bằng cách mỗi nhánh có một miền xác định riêng biệt \cite{Cor96}. Với $z \in \R$, chỉ có hai nhánh cho giá trị thực. Nhánh chính $W_0(z)$ có giá trị thực với $z \ge \dfrac{-1}{e}$ và miền giá trị của nhánh này là $[-1;\infty]$. Nhánh $W_{-1}(z)$ có giá trị thực với $\dfrac{-1}{e} \le z < 0$, và miền giá trị của nó là $(-\infty; -1]$. Hai nhánh này được biểu diễn ở hình $2.1$.
+Một nghiên cứu toàn diện về định nghĩa và tính chất của hàm Lambert W được tìm thấy trong \cite{Cor96}.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale= 0.7]{"./Hinh/Hinh 1"}
+	\caption[Hai nhánh thực của hàm Lambert W]{Hai nhánh thực của hàm Lambert W}
+	\label{fig:hinh-1}
+\end{figure}
+Bây giờ, ta sẽ định nghĩa ma trận của hàm Lambert W. Xét một ma trận $H \in \C ^{n\times n}$, có phân tích Jordan là $H = ZJZ^{-1}$, với $J = \mathrm{diag} (J_1(\lb_1),J_2(\lb_2), \cdots , J_p(\lb_p) )$. Sau đây là một trong những định nghĩa tiêu chuẩn cho ma trận hàm Lambert. Ma trận hàm Lambert W cho khối Jordan cỡ $m$ được định nghĩa bởi
+\begin{equation}\label{eq3}
+	W_k(J_i)= \begin{bmatrix}
+		W_k(\lb_i)  & W'_k(\lb_i) & \cdots & \dfrac{1}{(m-1)!} W_k ^{m-1}(\lb_i)\\
+		0 & W_k(\lb_i) & \cdots & \dfrac{1}{(m-2)!} W_k ^{m-2}(\lb_i)\\
+		\vdots  & \vdots  & \ddots & \vdots  \\
+		0 & 0 & \cdots & W_k(\lb_i)
+	\end{bmatrix} 
+\end{equation}
+và ma trận hàm Lambert của $H$ được định nghĩa bởi
+\begin{equation}\label{eq4}
+	W_k(H)= Z \mathrm{diag} (W_k(J_1(\lb_1),W_k(J_2(\lb_2), \cdots , W_k(J_p(\lb_p) ))Z^{-1}.
+\end{equation}
+Mọi ma trận được định nghĩa bởi \eqref{eq4}, với $k = 0, \pm 1, \pm 2 \cdots$ là một nghiệm riêng biệt cho phương trình ma trận 
+\begin{equation}\label{eq5}
+	W_k(H) \mathrm{exp}	(W_k(H)) = H.
+\end{equation}		
+Định nghĩa chuẩn ở trên dẫn đến cùng một nhánh $k$ của hàm Lambert W được sử dụng trong tất cả các khối Jordan. Điều này là không cần thiết để có một nghiệm của (5). Từ $W_0(0)= 0$ và $W_k(0) = \infty$ với $k \ne 0$, ta điều chỉnh định nghĩa chuẩn để tránh sự vô hạn giá trị. Trường hợp đặc biệt này được gọi là trường hợp nhánh chuyển mạch, được định nghĩa trong  Yi ( 2009) và \cite{Yi10} . Chi tiết hơn, $W_k(H)$ sử dụng giá trị $k$ cho những khối Jordan với $\lb \ne 0$ và $0$ cho những khối Jordan với $\lb = 0$. Định nghĩa này được sử dụng trong chương.
+Bằng cách tương tự, giả sử rằng khi tính toán nhánh chính $e ^{-1}$ không là giá trị riêng của $H$ ứng với khối Jordan có số chiều lớn hơn $1$. Điều này được yêu cầu để vượt qua khó khăn bởi thực tế rằng $W'_0(e ^{-1})$ không xác định. Hạn chế này làm giảm vẻ đẹp của định nghĩa ma trận hàm Lambert W nhưng không ảnh hưởng đến hiệu quả của của việc sử dụng nó (Jarlebring \& Damm, 2007).
+
+
+
+\section{Giải phương trình vi phân có trễ sử dụng hàm Lambert W}
+\subsection{Trường hợp vô hướng}
+Với trường hợp vô hướng, ta có phương trình
+\begin{equation}\label{eq6}
+	\dot{x}(t)=ax(t) + bx(t -\tau).
+\end{equation}
+Phương trình đặc trưng có dạng
+\begin{equation}\label{eq7}
+	s - a -b e ^{-s \tau} = 0.
+\end{equation}
+Nghiệm của \eqref{eq7} có thể được biểu diễn về hàm Lambert W theo các bước đơn giản (\cite{AslU03}; \cite{Cor96}; Yi, 2009; \cite{Yi10}) có dạng 
+\begin{equation}\label{eq8}
+	s_k = \dfrac{1}{\tau}W_k(\tau be^{-a\tau})+a,
+\end{equation}
+trong đó $k = 0, \pm 1, \pm2, \cdots$ là chỉ số của các nhánh của hàm Lambert được sử dụng. Mỗi nghiệm trong số vô hạn các nghiệm của \eqref{eq7} tương ứng với một nhánh của hàm này.\\
+Năm 2006, Shinozaki \& Mori đã chứng minh rằng trong số các nghiệm của \eqref{eq8}, nghiệm tương ứng với nhánh chính $k =0$ luôn có phần thực lớn nhất, do đó nó là nghiệm trội của phương trình. Để nghiên cứu sự ổn định cho phương trình vi phân có trễ một chiều, điều kiện cần và đủ  là tìm nghiệm của \eqref{eq7} trong \eqref{eq8} tương ứng với $k =0$.\\
+
+\subsection{Trường hợp bậc cao hơn}
+Xét hệ điều khiển có trễ có dạng sau
+\begin{equation}\label{eq9}
+	\dot{x}(t)=Ax(t) + Bx(t -\tau),
+\end{equation}
+với $x(t)\in \R^{n\times n}, A, B \in \R^{n\times n}, \tau > 0$.\\
+Các bước sau đây được giới thiệu trong \cite{AslU03} và đã được mở rộng trong Yi (2009),  \cite{Yi10}, Yi and Ulsoy (2006) and Yi et al. (2006), nhằm tính toán các giá trị riêng bằng cách sử dụng ma trận hàm Lambert W. Phương pháp được đề xuất dựa trên việc tìm nghiệm của phương trình
+\begin{equation}\label{eq10}
+	S-A-B \exp (-S\tau)=0,
+\end{equation}
+trong đó $S \in \C^{n\times n}$. Biến đổi \eqref{eq10} ta được
+\begin{equation*}
+	(S - A) \exp \left( (S - A) \tau + A \tau \right) = B
+\end{equation*}
+Giả sử ta tìm được một ma trận $Q$ sao cho
+\begin{equation*}
+	\exp \left((S-A) + A\tau \right) = \exp \left( (S-A) \tau \right)Q^{-1}	
+\end{equation*}
+Khi đó ta có
+\begin{equation}\label{eq11}
+	\tau (S -A)\exp((S-A)\tau)= \tau BQ.
+\end{equation}
+Đặt $M : = \tau BQ$. Ta thấy rằng với mỗi $k \in \Z$ thì
+\begin{equation}\label{eq12}
+	S_k = \dfrac{1}{\tau}W_k(M) + A,
+\end{equation}
+là một nghiệm của \eqref{eq11}. Bằng cách thay \eqref{eq12} vào \eqref{eq11}, ta thu được biểu thức sau
+\begin{equation}\label{eq13}
+	W_k(M)\exp (W_k(M)+A\tau)-\tau B=0.
+\end{equation}
+Do đó, các bước tính nghiệm đặc trưng của hệ được cho bởi thuật toán sau\\
+
+\noindent\textbf{Thuật toán 1.} Lặp lại với $k = 0;\pm 1; \pm2; \cdots$
+(1) Giải phương trình phi tuyến
+\begin{equation}\label{eq14}
+	W_k(M)\exp (W_k(M)+A\tau)-\tau B=0,
+\end{equation}
+để tìm $M_k$, với $M_k = \tau B Q_k$.
+(2) Tính $S_k$ tương ứng với $M_k$ vừa tìm được
+\begin{equation}\label{eq15}
+	S_k= \dfrac{1}{\tau}W_k(M_k)+A.
+\end{equation}
+(3) Tính các giá trị riêng của $S_k$.\\
+
+\noindent Để hệ \eqref{eq9} ổn định thì mọi giá trị riêng phải có phần thực âm. Việc tính nghiệm cho tất cả các nhánh là điều không thể. Để giải quyết khó khăn này, người ta giả sử rằng với bất kì nhánh $k$ nào của ma trận hàm Lambert, chỉ tồn tại duy nhất nghiệm $M_k$ của \eqref{eq14} tương ứng với ma trận $S_k$. Giả định này dựa trên quan sát từ nhiều ví dụ, dẫn đến một giả thuyết mạnh hơn. Giả thuyết này được phát biểu chính thức trong Yi (2009) và nó là cơ sở cho một số nghiên cứu sau đó (\cite{Dua12}; Wei et al (2014); Yi,Duan, Nelson, Ulsoy, 2012; \cite{YiEig10}; \cite{YiJune12}; \cite{YiDes10} ).
+
+\begin{gth}\label{Hypo}
+Các giá trị riêng trội nhất nằm trên $m$ nhánh chính của hàm Lambert W, trong đó $m$ là số khuyết của ma trận $A_d$. Cụ thể hơn, với mọi $i \in \mathbb{Z}$ ta có
+\begin{equation}\label{hypothesis}
+\max\left\{ \Re(eig(S_{-m})), ... , \Re(eig(S_{0})), ... , \Re(eig(S_{m})) \right\} = \max \{ \Re(eig(S_i))\} \ .  
+\end{equation}
+\end{gth}
+
+Một hệ quả trực tiếp của Giả thiết \ref{Hypo} là khi hạng của ma trận $B$ lớn hơn hoặc bằng $n-1$ thì giá trị riêng có phần thực lớn nhất là giá trị riêng của ma trận $S_0$, tương ứng với nhánh chính của hàm Lambert trong Thuật toán 1.
+
+\section{Ước lượng hàm phân rã của hệ có trễ}
+Xét ma trận thuần nhất DDE trong phương trình \eqref{1}. Nghiệm của \eqref{1} được viết dưới dạng (Yi et al., 2006),
+%
+\begin{equation}\label{8}
+	x(t) = \sum_{k = -\infty}^{\infty} e^{S_kt}C_k^I
+\end{equation}
+%  
+trong đó
+%
+\begin{equation}\label{9}
+	S_k = \dfrac{1}{h} W_k(-A_dhQ_k) -A
+\end{equation} 
+%
+và $Q_k$  được giải bởi điều kiện sau
+%
+\begin{equation}\label{10}
+	W_k(-A_dhQ_k)e^{Ae^{W_k(-A_dhQ)-Ah}} = -A_dh
+\end{equation}
+%
+Trong đó $S_k$ và $Q_k$ là ma trận cỡ $n \times n$, $C_I^k$ là véc tơ cỡ $n \times 1$ và được xác định bởi hàm đquỹ đạo ban đầu $g(t)$ và $x_0$ bằng cách sử dụng một trong hai cách tiếp cận (Yi et al., 2006, 2007b).
+%
+Những kết quả trong Yi et al. (2006) đã được mở rộng ở đây để đưa ra một nghiệm tổng quát (xem trong Phụ lục A) để thấy rằng nghiệm của (1) có thể được viết dưới dạng
+%
+\begin{equation}\label{11}
+	x(t) = \underbrace{\sum_{k = -\infty}^{\infty} \left\{e^{S_k t} \left( \sum_{j=1}^{n} T^I_{kj} L^I_{kj} \right)x_0 \right\}}_{P_1} - \underbrace{\sum_{k = -\infty}^{\infty} \left\{e^{S_k t} \sum_{j=1}^{n} \left(T^I_{kj} L^I_{kj} A_d G(\lb_{kj}) \right)\right\}}_{P_2}
+\end{equation}
+%
+trong đó
+%
+\begin{align}\label{12}
+	&\lb_{kj}=eig(S_k), j = 1,2,\cdots, n\\
+%
+	&G(\lb_{kj})= \int \limits^h_0 e^{-\lb_{kj}\tau} G(\tau - h) d \tau\\
+%	
+	&L^I_{kj} = \lim\limits_{s\to \lb_{kj}}	\left\{ \dfrac{\frac{\partial }{\partial s} \prod_{j=1}^{n} (s - \lb_{kj})}{\frac{\partial }{\partial s} \text{det} (s I + A + A_d e^{-sh})} adj(s I + A + A_d e^{-sh}) \right\}\\
+% 
+	& \tR^{I^+}_k = \begin{bmatrix}
+		T_{k1}^I & T_{k2}^I & \cdots & T_{kn}^I
+	\end{bmatrix} = R^I_k*(R^I_k R^I_k*)^-1\\
+%
+	& R_{kj}^I = adj (\lb_{kj}I - S_k), \tR_k^I = \m{R^I_{k1} \\R^I_{k2} \\  \cdots \\R^I_{kn} }
+\end{align}
+% 
+Kí hiệu $\tR_k^{I^+}$ là nghịch đảo mở rộng Moore-Penrose cỡ $n \times n^2$, $R^I_k*$ là ma trận chyển vị liên hợp $n \times n^2$ của $\tR^I_k$ và $T_{kj}^I$ là khối vuông thứ $j$ của $\tR_k^{I^+}$.\\
+%
+\begin{dly}\label{dly1}
+Nếu tồn tại các vô hướng $\a, K_1, K_2, K_3$ và $K_4$ sao cho
+\begin{align}\label{17}
+	&\a = \max \left\{\re(eig(S_{-m})), \cdots, \re(eig(S_{0})), \re(eig(S_{m})) \right\}
+\end{align}
+\begin{align}\label{18}
+	&K_1 = \sup\limits_{0 \le t <h} \left \Vert e^{(-A - \a I)t} \right\Vert
+\end{align}
+\begin{align}\label{19}
+	&K_2 = \lim\limits_{N \to \infty} \left\{ \sup\limits_{t \ge h} \left\Vert \sum_{k=-N}^{N} \left\{e^{(S_k-\a I)t} \sum_{j=1}^{n} T^I_{kj}L^I_{kj}\right\} \right\Vert\right\}
+\end{align}	
+\begin{align}\label{20}
+	&K_3 = \sup \limits_{0 \le t <h} \int_0^t \left\Vert e^{(-A-\a I)t +A \tau}A_d \right\Vert d\tau 
+\end{align}
+\begin{align}\label{21}
+	&K_4 = \lim\limits_{N \to \infty} \left\{\sup\limits_{t \ge h} \int_{0}^{h} \left \Vert \sum_{k=-N}^{N} \left\{e^{(S_k-\a I)t} \sum_{j =1}^{n} \left(T^I_{kj}L^I_{kj}A_de^{\lb_{ki}\tau} \right) \right\} \right \Vert \right\}
+\end{align}
+%
+trong đó $m$ là số khuyết của $A_d$ và $eig(S_i)$ là các giá trị riêng của $S_i$. Sau đó, các quỹ đạo của phương trình \ref{1} được giới hạn bởi hàm mũ $\Vert x(t) \Vert \le Ke^{\a t}\Phi(h)$ với mọi $t >0$, trong đó $\Phi(h) = \sup\limits_{-h \le t \le 0} \left\{\Vert x(t) \Vert \right\} $ và $K = \max (K_1, K_2) + \max(K_3, K_4)$.
+\end{dly}
+\begin{cm}
+Ước lượng tốc độ phân rã của $\a$\\
+	Với hệ vô hướng \eqref{1}, giá trị riêng ngoài cùng bên phải có thể xác định bằng nhánh chính $k =0$ của hàm Lambert W vô hướng (Shinozaki and Mori, 2006). Chứng minh đó có thể dễ dàng mở rộng cho trường hợp ma trận khi $A$ và $A_d$ trong phương trình \eqref{1} (Jarlebring	and Damm, 2007). Hiện tại, chưa có chứng minh nào cho trường hợp chung của ma trận phương trình vi phân có trễ. Tuy nhiên, trong tất cả các ví dụ đã xem xét trong tài liệu,  nó đã quan sát thấy rằng giá trị riêng nằm ngoài cùng bên phải đều thu được chỉ bằng việc sử dụng $m$ nhánh đầu tiên, trong đó $m$ là số chiều của hạt nhân ma trận $A_d$ (Yi et al., 2010c). Ta có một giả thiết như sau
+	\begin{align}\label{22}
+		\max \{\re (eig(S_{-m})), \cdots, \re (eig(S_{0})), \cdots, \re (eig(S_{m})) \} \ge \max \{ \re (eig(S_{i}))\} , \forall i
+	\end{align} 
+	trong đó $m$ là số chiều của hạt nhân ma trận $A_d$ và $eig(S_i)$ là các giá trị riêng của $S_i$. Do đó, dựa vào giả thuyết trên, tốc độ phân rã tối ưu của ma trận của phương trình vi phân có trễ  có thể tính được như phương trình \eqref{17}.\\
+Ước lượng của hệ số $K$\\
+	Sau khi xác định được $\a$ bằng cách sử dụng phương trình \eqref{17}, sau đó ta phải xác định hệ số $K$ sao cho $\V x(t) \V \le K e^{\a t} \Phi$, trong đó $\Phi = \sup\limits_{-h \le t \le 0} \V x(t) \V$. 	Lấy chuẩn cả hai vế của phương trình \eqref{11} ta được
+\begin{align}\label{23}
+	\V x(t) \V \le \V P_1(t) \V + \V P_2(t)\V
+\end{align}	
+trong đó $P_1(t)$ và $P_2(t)$ đã được xác định trong phương trình \eqref{11}. Việc sử dụng bất phương trình trong phương trinh \eqref{23} sẽ dẫn đến sự hạn chế  trong kết quả của chúng tôi. Vì hàm bao nên giới hạn bất kì quỹ đạo nào có thể, nên ta phải tách $\V x_0 \V$ và $\V g (.) \V$ ra khỏi chuỗi vô hạn nhưng không ảnh hưởng đến sự hội tụ.\\
+Đầu tiên, lưu ý rằng với $t \in [0,h)$,  trạng thái $x(t-h)$ trong ma trận của các DDE được xác định bởi các hàm quỹ đạo ban đầu . Do đó, trong giai đoạn này, ma trận thuần nhất DDE có thể coi như một ma trận của phương trình vi phân thường với đầu vào từ hàm quỹ đạo ban đầu 
+\begin{align}\label{24}
+	\dot{x}(t) + Ax(t) = -A_dg(t-h).
+\end{align}
+Do đó, với $t \in (0,h)$, $P_1(t)$ bằng phản hồi tự do của \eqref{24} với $x(0) =x_0$ và $P_2(t)$ có thể được coi như phản hồi bắt buộc của phương trình \eqref{24} với đầu vào $g(t-h)$. Do đó,  trong trường hợp này, giới hạn của $\V P_1(t) \V$ và $\V P_2(t) \V$ có thể thu được như sau
+\begin{align}\label{25}
+	\V P_1(t) \V \le \V e^{(-A - \a I)t}x_0 \V e^{\a t} \le K_1 e^{\a t}\Phi, t \in [0,h)
+\end{align}
+\begin{align}\label{26}
+	\V P_2(t) \V &\le \int_{0}^{t}\V -e^{-A(t-\tau)}A_d \V \cdot \V g(\tau - h) \V d\tau \notag\\
+	&\le \int_{0}^{t}\V -e^{(-A - \a I)t + A\tau}A_d \V \cdot \V g(\tau - h) \V e^{\a t}d\tau \notag\\
+	&\le K_3e^{\a t}	\Phi, t \in [0,h)
+\end{align}
+trong đó $K_1$ và $K_3$ được định nghĩa tương ứng ở phương trình \eqref{18} và \eqref{20}.\\
+Với $t\in [h,+\infty)$, phương pháp hàm Lambert W đã được áp dụng. Lưu ý rằng
+\begin{align}\label{27}
+	\V P_1(t) \V &= \lim\limits_{N \to \infty} \left \V \sum_{k=-N}^{N} \left\{ e^{(S_k-\a I)t} \sum_{j =1}^n T^I_{kj}L^I_{kj}x_0\right\} \right \V e^{\a t} \notag\\
+	& \le \lim \limits_{N \to \infty} \left\{ \sup \limits_{t \ge h} \left \V \sum_{k=-N}^{N} \left\{ e^{(S_k - \a I)t} \sum_{j =1}^n T^I_{kj} L^I_{kj}\right\} \right \V\right\} e^{\a t} \V x_0 \V, t \in [h,\infty)
+\end{align}
+Do đó, nếu $K_2$ trong phương trình \eqref{19} tồn tại, $\V P_1(t) \V \le K_2 e^{\a t} \Phi$ với $t \in [h,\infty)$ sẽ thỏa mãn khi $\Phi = \sup \limits_{-h \le t \le 0} \V x(t)\V \ge \V x(0)\V$. Tương tự,
+\begin{align}\label{28}
+	\V P_2(t)\V &= \lim\limits_{N \to \infty} \left \V \left\{  \sum_{k=-N}^N e^{(S_k - \a I)t} \sum_{j =1}^n (T^I_{kj}L^I_{kj}A_d \int_0^h e^{\lb_{ki}\tau} g(\tau - h) d\tau)  \right\} \right \V \notag\\
+	& \le \lim\limits_{N\to \infty} \left \V \int_0^h \left\{ \sum_{k=-N}^N \left\{ e^{(S_k - \a I)t} \sum_{j=1}^n (T^I_{kj} L^I_{kj}A_de^{\lb_{ki}\tau})\right\}\right\} \times g(\tau - h) d \tau \right \V e^{\a t}, t \in [h,\infty)
+	\end{align}
+Chuyển chuỗi tích phân và thu được chuẩn, sau đó chuyển $\V g(t-h)\V$ ra ngoài dấu tích phân
+\begin{align}\label{29}
+	\V P_2(t) \V \le \lim \limits_{N\to \infty} \left \{ \sup \limits_{t \ge h} \int_0^h \left \V \sum_{k=-N}^N \left\{ e^{(S_k - \a I)t} \sum_{j =1}^n (T^I_{kj}L^I_{kj}A_de^{\lb_{ki}\tau})\right\} \right \V d\tau \times \V g(\tau - h)\V \right\}
+\end{align}
+Do đó, nếu $K_4$ trong \eqref{21} tồn tại thì $\V P_2(t) \le K_4e^{\a t} \Phi$ với $t \in [h,\infty)$ sẽ giữ nguyên kể từ khi $\Phi = \sup \limits_{-h \le t \le 0} \V x(t) \V \ge \V g(t-h)\V$ với $t \in [0,h)$.\ 
+Vậy ta đã chứng minh xong. $\hfill \square$
+\end{cm}
+
+\begin{nx}
+	Phương pháp hàm Lambert W cung cấp một giải pháp về chuỗi vô hạn. Tính khả thi của phương pháp phụ thuộc vào sự hội tụ của chuỗi. Chứng minh cho sự hội tụ của chuỗi hàm Lambert W hiện tại chưa khả dụng. Tuy nhiên, ta vẫn có thể đánh giá chuỗi số để thu được ước lượng của $K$. Quá trình này được chứng minh trong ví dụ số ở phần 4. 
+\end{nx}
+\begin{nx}
+	Người ta đã quan sát thấy rằng, mặc dù chuỗi hàm Lambert W có thể hội tụ chậm tại $t = 0^+$, tốc độ hội tụ tăng nhanh khi $t$ lớn hơn. Vì DDE có thể xử lí một phương trình vi phân thường với $t \in[0,h)$, phương pháp tiếp cận hàm Lambert W được áp dụng cho $t \ge 0$ để đạt được sự hội tụ tốt hơn. 
+\end{nx}
+\begin{nx}
+	Vì hàm bao cần ràng buộc bất kì quĩ đạo nào có thể, người ta phải tách $\V x_0\V$ và $\V g(.)\V$ ra khỏi chuỗi vô hạn nhưng không ảnh hưởng đến sự hội tụ. Do đó, trong phương trình \eqref{29} chuỗi tích phân và chuẩn được đổi chỗ trước khi di chuyển $\V g(t-h)\V$ ra ngoài dấu tích phân.
+\end{nx}
+\begin{nx}
+	Lưu ý rằng ước lượng của $K_1, K_2, K_3$ và $K_4$ thu được trực tiếp dựa trên nghiệm của hệ và không có tính hạn chế  được đưa ra trong quy trình đề xuất. Tuy nhiên, việc sử dụng dạng nghiệm của phương trình \eqref{11} phù hợp với sự gián đoạn tại $t = 0$ (tức là $g(0^-) \ne x(0) =x_0$)  nhưng dẫn tới tính bảo toàn khi sử dụng bất đẳng thức tam giác \eqref{23}.  Khi xem xét sự gián đoạn như vậy, ước lượng của $K$ từ phương pháp được tối ưu.\\
+	Định lí 1 cho ta kết quả chung cho các hệ thống DDE. Với trường hợp vô hướng, kết quả có thể được đơn giản hóa hơn nữa. Xét dạng vô hướng của phương trình \eqref{1}
+	\begin{align}\label{30}
+		&\dot{x} + ax(t) +a_dx(t-h)=0, t > 0 \notag\\ 
+		&x(t) = g(t), t \in [-h, 0); x(0) = x_0 , t = 0
+	\end{align}
+trong đó $a, a_d, h$ là các hằng số vô hướng, $t$ là thời gian, $x(t)$ và $g(t)$ là các hàm vô hướng.
+\end{nx}
+\begin{hq}
+	Nếu tồn tại các đại lượng vô hướng $\a, K_1, K_2, K_3$ và $K_4$ sao cho
+	\begin{align}\label{31}
+		\a = \re \left[ \dfrac{W_0(-a_dhe^{ah})}{h} - a\right]
+	\end{align}
+\begin{align}\label{32}
+	K_1 = \sup \limits_{0 \le t <h} \V e^{(-a - \a I)t} \V 
+	= \heva{ e^{(-a-\a)h}, -a > \a\\1, -a \le \a}
+\end{align}
+\begin{align}\label{33}
+	K_2 = \lim\limits_{N \to \infty} \left\{ \sup \limits_{t \ge h}\left \V \sum_{k=-N}^N \dfrac{e^{(S_k-\a)t}}{1-a_dhe^{-S_kh}} \right \V\right\}
+\end{align}
+\begin{align}\label{34}
+	K_3 = \sup\limits_{0 \le t <h}\int_0^t \V e^{(-a - \a)t + a\tau}a_d\V d\tau = \left \V \dfrac{a_d(1-e^{-ah})e^{-\a h}}{a}\right \V
+\end{align}
+\begin{align}\label{35}
+	K_4= \lim\limits_{N\to \infty} \left\{\sup\limits_{t \ge h} \int_0^h\left\V \sum_{k=-N}^N \dfrac{a_dr^{-S_k\tau}}{1-a_dhe^{-S_kh}}e^{(S_k-\a)t} \right\V d\tau \right\}
+\end{align}
+Khi đó quỹ đạo của phương trình \eqref{30} được giới hạn bởi hàm mũ $\V x(t) \V \le K e^{\a t} \Phi (h)$ với mọi $t >0$, trong đó $\Phi(h) = \sup \limits_{-h \le t \le 0}\{ \V x(t)\V\}$.
+\end{hq}
+\begin{cm}
+	Nghiệm của phương trình \eqref{30} có thể viết dưới dạng chuỗi hàm Lambert W, $W_k$ (Asl and Ulsoy, 2003) như sau
+\begin{align}\label{36}
+	x(t) = \sum_{k = -\infty}^{\infty} C^I_ke^{S_kt} \quad , S_k = \dfrac{1}{h}W_k(-a_dhe^{ah})-a
+\end{align}	
+Theo biến đổi Laplace dựa vào phương pháp trong Yi et al. (2006),  $C_k^I$ trong phương trình \eqref{36} được xác định bởi
+\begin{align}\label{37}
+	C_k^I = \dfrac{x_0 -a_d\int_{0}^{h}e^{-S_kt}g(t)dt}{1-a_dhe^{-S_kh}}
+\end{align}
+Lưu ý rằng phản hồi tự do của $x(t)$, sử dụng phương trình \eqref{36} và \eqref{37} có thể được tách thành hai phần
+\begin{align}\label{38}
+	x(t) = \underbrace{\sum_{k=-\infty}^{\infty} \dfrac{x_0e^{S_kt}}{1-a_dhe^{-S_kh}}}_{P_1(t)} - \underbrace{\sum_{k=-\infty}^{\infty} \dfrac{a_d\int_0^he^{-S_k\tau}g(\tau-h)d\tau}{1-a_dhe^{-S_kh}}e^{S_kt}}_{P_2(t)}
+\end{align}
+Ta có thể chứng minh tương tự như định lí 1 để chứng minh cho trường hợp vô hướng.
+\end{cm}
+\section{Ví dụ số}
+Trong phần này, một ví dụ vô hướng và một ví dụ ma trận được cung cấp để chứng minh tính hiệu quả của phương pháp tiếp cận được đề xuất.
+\begin{vd}
+	DDE vô hướng:\\
+	Xét một DDE vô hướng trong \eqref{30} với $a = a_d = h =1$ (Yi et al., 2006)
+	\begin{align}\label{39}
+		\dot{x} +x(t) + x(t-1) = 0, t > 0
+	\end{align}
+	Lưu ý rằng giá trị chính xác của $g(t)$ và $x_0$ không cần thiết ở đây nhưng $\sup$ của chúng được biết đến là $\Phi(h) = \sup\limits_{-h \le t \le 0} \{\V x(t\V)\}$. Hàm phân rã thu được áp dụng cho bất kì hàm $g(t)$ và $x_0$ nào của hệ thống.\\
+	Từ phương trình \eqref{31}, giá trị nằm ngoài cùng bên phải được tìm thấy là:
+	\begin{align}\label{40}
+		\a = \re \left[\dfrac{W_0(-a_dhe^{ah}}{h} -a \right] = -0.605
+	\end{align}
+Do đó ta thu được tốc độ phân rã $\a= -0.605$. Tiếp theo, các phương trình \eqref{32}, \eqref{33},\eqref{34},\eqref{35} đã được sử dụng để tính các giá trị $K_1, K_2,K_3,K_4$ tương ứng. Để thuận lợi cho quá trình này, ta định nghĩa
+\begin{align}\label{41}
+	J_1(t) = e^{(-a-\a)t}, \quad t \in [0,h)
+\end{align}
+%
+\begin{align}\label{42}
+	J_2(N,t) = \left\V \sum_{k=-N}^N \dfrac{e^{(S_k - \a)t}}{1-a_dhe^{-S_kh}} \right\V, \quad t \in [h,\infty)
+\end{align}
+%
+\begin{align}\label{43}
+	J_3(t) = \left \V \dfrac{a_d(1-e^{-ah})e^{-\a h}}{a}\right \V, \quad t \in [0,h)
+\end{align}
+%
+\begin{equation}\label{44}
+	J_4(N,t) = \int_0^h \left\{\left\V \sum_{k=-N}^N \dfrac{a_de^{-S_k\tau}}{1-a_dhe^{-S_kh}}e^{(S_k-\a)t}\right\V \right\}d\tau, \quad t \in [h,\infty)
+\end{equation}
+lưu ý rằng $K_1 = \sup \limits_{0 \le t <h}J_1(t), K_2 = \lim\limits_{N\to\infty} \{\sup\limits_{N\to \infty} J_2(N,t)\}, K_3 = \sup\limits_{0 \le t <h}J_3(t)$ và $K_4 = \lim\limits_{N\to \infty}\{\sup\limits_{t \ge h}J_4(N,t) \}$. Với ví dụ này ta thu được $K_1 = J_1(0)=1$ và $K_3= J_3(h) = 1.1576$. Để ước lượng $K_2, J_2(N,t)$ trong phương trình \eqref{42}, ta phải đánh giá cho $t \ge h$ với $N$ đủ lớn. Đầu tiên, lưu ý rằng $J_2(N,t)$ tiếp cận một biên độ không đổi vì $\max\{ \re(S_k-\a) \} \ge 0$ đúng với mọi nhánh. Do đó, nó luôn luôn đủ để kiểm tra một vài nhánh đầu tiên (ở đây $0 \le t \le 5h$) để thu được giá trị lớn nhất của chúng. Thứ hai, người ta đã quan sát thấy rằng sự hội tụ của $J_2(N,t)$ là nhanh hơn nhiều khi $t$ càng lớn. Ví dụ, ở đây khi $t > 1.5, J_2(N,t)$ là rất gần với quỹ đạo cuối cùng với $ N \ge 10$. Điều đó thuận lợi để tìm vị trí của đỉnh với $N$ đủ lớn đầu tiên (ví dụ $N =10$ là đủ ở đây) và sau đó tính $J_2(N,t)$ tại vị trí cụ thể khi $N$ tăng lên để có độ chính xác tốt hơn, nếu cần thiết.\\
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale= 0.7]{"./Hinh/Hinh12"}
+	\caption[Sự hội tụ của $J_2(N,t)$ tại $t = h = 1$ trong Ví dụ 1]{Sự hội tụ của $J_2(N,t)$ tại $t = h = 1$ trong Ví dụ 1}
+	\label{fig:hinh-12}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale= 0.7]{"./Hinh/Hinh13"}
+	\caption[Hàm $J_1(t)$ và $J_2(t)$ với $N = 50$ trong Ví dụ 1 ]{Hàm $J_1(t)$ và $J_2(t)$ với $N = 50$ trong Ví dụ 1}
+	\label{fig:hinh-13}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale= 0.7]{"./Hinh/Hinh14"}
+	\caption[Sự hội tụ của $J_4(N,t)$ tại $t = h = 1$ trong Ví dụ 1]{Sự hội tụ của $J_2(N,t)$ tại $t = h = 1$ trong Ví dụ 1}
+	\label{fig:hinh-14}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale= 0.7]{"./Hinh/Hinh15"}
+	\caption[Hàm $J_3(t)$ và $J_4(t)$ với $N = 50$ trong Ví dụ 1 ]{Hàm $J_3(t)$ và $J_4(t)$ với $N = 50$ trong Ví dụ 1}
+	\label{fig:hinh-15}
+\end{figure}
+Do không gian hạn chế, chỉ có sự hội tụ cho trường hợp xấu nhất (tức là $ t = h = 1$) được cung cấp ở đây trong Hình 2. Ở đây, ta lấy $N = 50$ và thu được $k = 0.9$ từ Hình 3. Cũng lưu ý rằng $J_2(N,t)$ với $N = 50, t =h$ là rất gần với $J_1(t)$ với $ t = h^-$, cho nhất sự nhất quán tốt của hai đối tượng.\\
+Sự hội tụ của $J_4(N,t)$ tại $t =1$ được thể hiện trong Hình 4. $K_4$ được chọn bằng cách lấy giá trị lớn nhất dọc theo quỹ đạo của $J_4(N,t)$ với số nhành $N$ đủ lớn (ví dụ $N = 50$) trong Hình $5$. Có thể thấy rằng $J_4(N,t)$ với $N = 50$, $t =h$ cũng phù 
+hợp với $J_3(t)$ với $t = h^-$.\\
+Do đó, ta được $K_1 =1, K_2=0.9, K_3 - 1.1576, K_4 = 1.16$ và hệ số $J$ được ước lượng là
+\begin{align*}
+	K = \max(K_1,K_2) + \max(K_3,K_4) = 2.16
+\end{align*}
+Các tham số của hàm phân rã thu được bằng các phương pháp trong in Hale and Verduyn-Lunel (1993) and Mondie´ and Kharitonov (2005) và bằng cách sử sụng phương pháp được đề cuất, được so sánh trong Bảng 1. Tốc độ phân rã $\a$ được cải thiện đáng kể so với trong Hale and Verduyn-Lunel (1993) and Mondie´ and Kharitonov (2005). Để ước lượng hệ số $K$, cách tiếp cận đạt được kết quả conservative hơn trong ví dụ này vì ta sử dụng bất đẳng thức tam giác để tách riêng $P_1$ và $P_2$ khi lấy chuẩn. Cũng lưu ý rằng điểm kì dị tại $t=0$ (tức là nếu $g(0) \ne x_0$) được xem xét trong ví dụ của chúng ta. Một điểm kì dị như vậy không thể được chấp nhận bằng phương pháp dự trên hàm Lyapunov (tức là Mondie´ and Kharitonov, 2005), vì nó biểu thị hàm Lyapunov không khả vi liên tục tại $ t = 0^+$. Mặc dù ước lượng của $K$ sử dụng phương pháp hàm Lambert W lớn hơn, nhưng hàm phân rã theo cấp số nhân sử dụng cách tiếp cận mới cho ước lượng tốt hơn khi $t$ càng lớn như hàm phân rã theo hàm mũ.
+% Hinh 2 3 4
+\end{vd}
+\begin{nx}
+	Tốc độ phân rã thu được trong phương pháp được đề xuất là tối ưu, cái mà không thể đạt được khi sử dụng phương pháp Lyapunov và phương pháp đo lường ma trận so tính hạn chế  của chúng. Mặc dù chỉ so sánh các phương pháp đã chọn khác ở đây, nhưng tính hạn chế  là thứ vốn có trong phương pháp Lyapunov và phương háp đo lường ma trận. 
+\end{nx}
+\begin{vd}
+	Dạng ma trận của phương trình vi phân có trễ: \\
+	Xét ví dụ (Yi et al., 2006)
+	\begin{equation}\label{45}
+		\dot{x} + Ax(t) + A_dx(t-h) =0, \quad t >0 , 
+	\end{equation}
+where
+  \[
+  A= \m{1&3\\-2&5};\quad A_d = \m{-1.66&0.697\\ -0.93& 0.33}; \quad h = 1
+  \]
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale= 0.7]{"./Hinh/Hinh16"}
+	\caption[Sự hội tụ của $J_2(N,t)$ tại $t = h = 1$ trong Ví dụ 2 ]{Sự hội tụ của $J_2(N,t)$ tại $t = h = 1$ trong Ví dụ 2}
+	\label{fig:hinh-16}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale= 0.7]{"./Hinh/Hinh17"}
+	\caption[Hàm $J_1(t)$ và $J_2(t)$ với $N = 50$ trong Ví dụ 2 ]{Hàm $J_1(t)$ và $J_2(t)$ với $N = 50$ trong Ví dụ 2}
+	\label{fig:hinh-17}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale= 0.7]{"./Hinh/Hinh18"}
+	\caption[Sự hội tụ của $J_4(N,t)$ tại $t = h = 1$ trong Ví dụ 2 ]{Sự hội tụ của $J_4(N,t)$ tại $t = h = 1$ trong Ví dụ 2}
+	\label{fig:hinh-18}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale= 0.7]{"./Hinh/Hinh19"}
+	\caption[Hàm $J_3(t)$ và $J_4(t)$ với $N = 50$ trong Ví dụ 2 ]{Hàm $J_3(t)$ và $J_4(t)$ với $N = 50$ trong Ví dụ 2}
+	\label{fig:hinh-19}
+\end{figure}
+Đầu tiên, phương pháp hàm Lambert W được đề xuất trong Yi et al. (2006) được sử dụng để phân tích phổ của hệ ma trận này và xác định vị trí ngoài cùng bên phải. Với ví dụ này, $m = Nullity(A_d) =0$ và giá trị ngoài cùng bên phải của hệ có thể thu được bằng nhánh chính $k =0$. Do đó
+\begin{align}\label{46}
+	\a &= \max \{ \re(eig(S_0))\} \notag\\
+	& = \max\left\{\re \left(eig \left(\dfrac{1}{h} W_0\left( -A_dhQ_0\right) - A\right) \right) \right\}	\notag \\
+	& = -1.10119	
+\end{align}
+Sau khi thu được tốc độ phân rã, vế phải của các phương trình \eqref{18}, \eqref{19}, \eqref{20} và \eqref{21} được đánh giá bằng số để tính các giá trị $K_1, K_2, K_3$ và $K_4$ tương ứng. Tương tự, ta định nghĩa
+\begin{align}
+	&J_1(t) = \left \V e^{(-A-\a I)t} \right\V, \quad t \in [0,h)\\
+	%
+	&J_2(N, t) = \left\V \sum_{k=-N}^N\left\{e^{(S_k-\a I)t} \sum_{j=1}^N T^I_{kj}L^I_{kj} \right\} \right\V, \quad t \in [h, \infty)\\
+	%
+	&J_3(t) = \int_0^t\left\V e^{(-A-\a I)t+A\tau}A_d\right\V d\tau, \quad t \in [0,h)\\
+	%
+	&J_4(N,t)= \int^h_0 \left\V \sum_{k=-N}^N \left\{e^{(S_k-\a I)t} \sum_{j =1}^n(T^I_{kj}L^I_{kj}A_de^{\lb_{ki}\tau})\right\}\right\V d\tau, \quad t \in [h, \infty)
+ \end{align}
+Lưu ý rằng $K_1 =\sup\limits_{0 \le t <h}J_1(t), K_2 = \lim\limits_{N\to \infty} \{\sup\limits_{t \ge h}J_2(N,t)\}, K_3 = \sup\limits_{0 \le t <h}J_3(h)$ và $K_4 = \lim\limits_{N\to \infty} \{\sup\limits_{t \ge h}J_4(N,t)\}$\\
+Như trong trường hợp vô hướng, $J_2(N,t)$ trong \eqref{38} cũng hội tụ  đến một quỹ đạo nhất định khi $N$ tăng đối với trường hợp ma trận, như biểu diễn trong Hình 6. Do đó $K_1$ thu được bằng cách việc tính $J_1(t)$ cho $0 \le t<h$ và $K_2$ thu được bằng cách lấy giá trị lớn nhất của $J_2(N,t)$ với $t \ge h$ với một số nhánh $N$ đủ lớn (ở đây $N = 50$) như trong Hình 7.\\
+Một quy trình tương tự cũng có thể áp dụng để thu được $K_3$ và $K_4$ như minh họa trong Hình 8 và 9. Kết quả là ta được
+\begin{align*}
+	K_1 = 1.076, K_2 = 1.9, K_3 = 1.89, K_4 = 1.9
+\end{align*}
+và hệ số $K$ được xác định bởi 
+\begin{align*}
+	K = \max(K_1, K_2) + \max(K_3, K_4) = 3.8
+\end{align*}
+Một lần nữa, hàm phân rã được ước lượng bằng phương pháp Mondie´ and Kharitonov (2005) and Hale and VerduynLunel (1993) được so sánh với phương pháp được đề xuất trong Bảng 2.\\
+Trong Ví dụ 2, tốc độ phân rã thu được bằng cách sử dụng phương pháp được đề xuất là giá trị tối ưu của $\a$ và cho thấy sự cải thiện đáng kể so với các phương pháp miền thời gian khác.
+% Hinh 6,7,8,9
+Kết quả cho hệ số $K$ từ phương pháp cũng ít hạn chế đáng kể so với các phương pháp khác được xem xét. Với phương pháp Lyapunov,  bậc của hệ càng tăng dẫn đến sự tăng về số chiều của bài toán tối ưu tương ứng, dẫn đến hạn chế hơn. Hơn nữa, ước lượng của $K$ thường không được tối ưu hóa trong phương pháp hàm Lyapunov. Với phương pháp hàm Lambert W, vấn đề được giải quyết bằng cách đánh giá chuỗi rõ ràng, không công thức hóa nó như một vấn đề tối ưu hóa.
+\end{vd}
+
+
+\section{Kết luận chương}
+Trong chương này chúng ta đã thảo luận về một cách tiếp cận dựa trên hàm Lambert W để đưa ra các ước lượng của hàm phân rã cho hệ thống tuyến tính có trễ. 
+Sử dụng phương pháp được đề xuất, chúng ta đạt được ước lượng tối ưu của tốc độ phân rã $\a$. Hệ số hằng $K$ thu được bằng cách sử dụng một chuỗi vô hạn hàm Lambert W và thường ít hạn chế hơn khi được so sánh với một số phương pháp phổ biến khác. Ước lượng tốt hơn của hàm phân rã không chỉ mô tả chính xác hơn trạng thái của hệ thống có trễ mà còn dẫn đến thiết kế điều khiển hiệu quả hơn. Bên cạnh đó, một chứng minh tổng quát 
+về sự hội tụ của hàm Lambert cũng như việc xác định các giá trị riêng trội bằng cách trích ra một số lượng hữu hạn nhánh của hàm Lambert cũng còn mở cho các nghiên cứu trong tương lai. 
+Một nhánh nghiên cứu khác có liên quan đến hàm Lambert cũng đang được quan tâm là hệ thống có trễ tuần hoàn theo thời gian (\cite{Ins02, Ins10}), trong đó độ trễ và thời gian tuần hoàn khiến cho việc ước lượng tốc độ phân rã trở nên khó khăn hơn. 
+
+
+
+
+
+

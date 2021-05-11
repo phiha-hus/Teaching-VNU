@@ -1,0 +1,135 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools,amssymb}
+\usepackage{graphicx}
+\usepackage{type1cm}
+\usepackage{amsmath,amsxtra,amssymb,latexsym, amscd,amsthm}
+\usepackage{url}
+
+\usepackage{color}
+%\usepackage{showlabels}
+%\renewcommand{\showlabelfont}{\small\slshape\color{magenta}}
+
+\usepackage{picinpar}
+\usepackage{floatflt}
+\usepackage{commath}
+\usepackage{makeidx}
+\usepackage{enumerate}
+\usepackage{longtable}%
+\usepackage{multicol}%
+\usepackage[left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+%\usepackage{indentfirst}
+%\setlength{\parindent}{6.5ex}
+
+\usepackage[graphicx]{realboxes}
+
+\usepackage{algorithmic}
+\usepackage[chapter]{algorithm}
+\makeatletter
+\renewcommand{\ALG@name}{Thuật toán}
+
+\usepackage[sort&compress]{natbib}
+%\usepackage{natbib}
+%\bibliographystyle{abbrvnat}
+%\setcitestyle{[author,open={(},close={)}]}
+
+\usepackage[backref=page]{hyperref}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\BR@backref}{\newblock}{\newblock(trang~}{}{}
+\patchcmd{\BR@backref}{\par}{)\par}{}{}
+\makeatother
+
+\usepackage{filecontents}
+
+
+\newtheorem{dly}{Định lý}[chapter]
+
+\newtheorem{bde}[dly]{Bổ đề}
+\newtheorem{hqua}[dly]{Hệ quả}
+
+\theoremstyle{definition}
+\newtheorem{gth}{Giả thiết}
+
+
+
+\theoremstyle{definition}
+\newtheorem{dng}{Định nghĩa}
+\newtheorem{nx}{Nhận xét}
+\newtheorem{gch}[dly]{Chú ý}
+\newtheorem*{cm}{Chứng minh}
+\newtheorem{hq}{Hệ quả}
+\theoremstyle{definition}
+\newtheorem{vd}[dly]{Ví dụ}
+\newtheorem{bt}[dly]{Bài toán}
+\newtheorem{pp}[subsection]{Phương pháp}
+\newtheorem{kl}{Kết luận}
+\theoremstyle{definition}
+\newtheorem{tch}[dly]{Tính chất}
+
+\include{command}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\setlength{\baselineskip}{22 truept}
+{\setlength{\unitlength}{1cm}}
+%\input{Camon}
+\tableofcontents
+%\input{Modau}
+%\input{Chuong1}
+\input{Duan2011}
+\input{Chuong2}
+%\input{Chuong4}
+%\input{Ketluan}
+%\input{TailieuTK}
+
+\clearpage
+
+\addcontentsline{toc}{chapter}{Tài liệu tham khảo}
+
+\bibliography{TailieuTK}
+\bibliographystyle{abbrv}
+
+
+%\appendix
+%\input{appendix}
+
+\end{document}
+
+
+
+
+%$$\begin{aligned}& = jk \\ & =ghj \end{aligned}$$
+
+
+%\begin{dng}\label{dng29}\end{dng}
+
+%\begin{gch}\label{5}\end{gch}
+
+%\begin{dly}\label{dly25}\end{dly}\begin{proof}\end{proof}
+
+%\begin{vd}\label{vd7}\end{vd}
+
+%\begin{bde}\label{bd5}\end{bde}\begin{proof}\end{proof}
+
+%\begin{proposition}\label{md2}\end{proposition}\begin{proof}\end{proof}
+
+%\begin{hqua}\label{hqua4}\end{hqua}\begin{proof}\end{proof}
+
+%\begin{nx}\label{nx6}\end{nx}
+
+%\begin{mde}\label{mde9}\end{mde}\begin{proof}\end{proof}
+
+
+
+
+
+%\begin{equation}\label{eq28}\end{equation}
+ 
+ 
+ 
