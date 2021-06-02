@@ -1,5 +1,11 @@
 \documentclass[12pt,a4paper]{report}
 
+\usepackage{color}
+\usepackage{showlabels}
+\renewcommand{\showlabelfont}{\small\slshape\color{magenta}}
+%\usepackage{showkeys}
+
+
 \usepackage[utf8]{vietnam}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -9,9 +15,6 @@
 \usepackage{amsmath,amsxtra,amssymb,latexsym, amscd,amsthm}
 \usepackage{url}
 
-\usepackage{color}
-%\usepackage{showlabels}
-%\renewcommand{\showlabelfont}{\small\slshape\color{magenta}}
 
 \usepackage{picinpar}
 \usepackage{floatflt}
@@ -67,10 +70,10 @@
 \theoremstyle{definition}
 \newtheorem{vd}[dly]{Ví dụ}
 \newtheorem{bt}[dly]{Bài toán}
-\newtheorem{pp}[subsection]{Phương pháp}
 \newtheorem{kl}{Kết luận}
 \theoremstyle{definition}
 \newtheorem{tch}[dly]{Tính chất}
+
 
 \include{command}
 \setlength{\parindent}{0pt}
@@ -79,8 +82,9 @@
 \setlength{\baselineskip}{22 truept}
 {\setlength{\unitlength}{1cm}}
 %\input{Camon}
+\input{Tendetai}
 \tableofcontents
-%\input{Modau}
+
 %\input{Chuong1}
 \input{Duan2011}
 \input{Chuong2}

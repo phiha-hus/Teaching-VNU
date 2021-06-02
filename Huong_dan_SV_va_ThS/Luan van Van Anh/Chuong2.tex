@@ -4,13 +4,13 @@
 \section{Giới thiệu}
 Ta xét hệ điều khiển có trễ với hệ số hằng được biểu diễn bằng phương trình vi phân có trễ dạng
 \begin{equation}\label{eq1}
-	\dot{x}(t)=Ax(t) + Bx(t -\tau). 
+	\dot{x}(t)=Ax(t) + A_dx(t -h). 
 \end{equation}
-%Phân tích tính ổn định và điều khiển của hệ thống này là một lĩnh vực nghiên cứu rộng lớn. Khó khăn của các hệ này nảy sinh từ thực tế là độ trễ $\tau$ làm cho hệ \eqref{eq1} là vô hạn chiều. Một tổng hợp tốt về những kết quả gần đây và những thách thức trong lĩnh vực này có thể tìm được trong \cite{Sip11} (2011). Việc nghiên cứu tính ổn định và tính điều khiển được của loại hệ thống này đã được nhiều nhà toán học quan tâm. Một số công trình nghiên cứu các miền ổn định tuyệt đối liên quan đến thời gian trễ (Olgac \& Sipahi, 2002; Sipahi \& Olgac, 2006), và dẫn đến thời gian trễ được sử dụng như một công cụ điều khiển tính ổn định (Olgac, Ergenc, \& Sipahi, 2005). Các nghiên cứu khác tập trung vào việc tính toán các giá trị riêng của hệ thống. Các công trình này bao gồm các phương pháp tiếp cận dựa trên việc rời rạc hóa các nghiệm  (Breda, 2006 ; Butcher \& Bobrenkov, 2011 ; Engelborghs, Luzyanina và Roose, 2002) hoặc toán tử sinh \cite{Bre09}, và phương pháp này dựa trên việc tìm nghiệm của phương trình đặc trưng \cite{Vyh09}. Từ đây các phương pháp đã được đề xuất để tối ưu hóa việc tính toán các giá trị riêng trội.  (Michiels, Engelborghs, Vansevenant, \& Roose, 2002; Mondié \& Michiels, 2003). Cuối cùng phương pháp Krylov để tính các giá trị riêng cho các bài toán có cỡ lớn  đã được đề xuất trong (Michiels, Engelborghs, Vansevenant, \& Roose, 2002; Mondié \& Michiels, 2003).  \\
+%Phân tích tính ổn định và điều khiển của hệ thống này là một lĩnh vực nghiên cứu rộng lớn. Khó khăn của các hệ này nảy sinh từ thực tế là độ trễ $h $ làm cho hệ \eqref{eq1} là vô hạn chiều. Một tổng hợp tốt về những kết quả gần đây và những thách thức trong lĩnh vực này có thể tìm được trong \cite{Sip11} (2011). Việc nghiên cứu tính ổn định và tính điều khiển được của loại hệ thống này đã được nhiều nhà toán học quan tâm. Một số công trình nghiên cứu các miền ổn định tuyệt đối liên quan đến thời gian trễ (Olgac \& Sipahi, 2002; Sipahi \& Olgac, 2006), và dẫn đến thời gian trễ được sử dụng như một công cụ điều khiển tính ổn định (Olgac, Ergenc, \& Sipahi, 2005). Các nghiên cứu khác tập trung vào việc tính toán các giá trị riêng của hệ thống. Các công trình này bao gồm các phương pháp tiếp cận dựa trên việc rời rạc hóa các nghiệm  (Breda, 2006 ; Butcher \& Bobrenkov, 2011 ; Engelborghs, Luzyanina và Roose, 2002) hoặc toán tử sinh \cite{Bre09}, và phương pháp này dựa trên việc tìm nghiệm của phương trình đặc trưng \cite{Vyh09}. Từ đây các phương pháp đã được đề xuất để tối ưu hóa việc tính toán các giá trị riêng trội.  (Michiels, Engelborghs, Vansevenant, \& Roose, 2002; Mondié \& Michiels, 2003). Cuối cùng phương pháp Krylov để tính các giá trị riêng cho các bài toán có cỡ lớn  đã được đề xuất trong (Michiels, Engelborghs, Vansevenant, \& Roose, 2002; Mondié \& Michiels, 2003).  \\
 %Trong thập kỉ trước, một công trình để phân tích DDEs dựa trên hàm Lambert W đã được phát triển (\cite{AslU03}; Yi, 2009; \cite{Yi10}). Nó mở rộng công trình trước đó của Wright( 1959). Ý tưởng chính của phương pháp này là biểu diễn nghiệm của một phương trình vi phân có trễ dưới dạng tổng của một chuỗi vô hạn các hàm mũ. Giá trị riêng của hệ được tìm ra bằng việc sử sụng hàm Lambert W. Vì bài toán là sự vô hạn chiều, ta  giả sử rằng có một tương ứng 1 - 1 giữa các giá trị riêng của hệ với các nhánh của hàm. 
 %
 Như trong chương trước chúng ta đã thấy việc phân tích tính chất ổn định của hệ đã được giải quyết bằng việc sử dụng các giá trị riêng trội của hệ tương ứng với các nhánh thứ 
-$k = 0, \pm 1 , \cdots , \pm m$, trong đó $m$ là số khuyết của ma trận $B$ (tức là số chiều của hạt nhân ma trận) trong \eqref{eq1}. Do đó, chỉ có một số nhánh hữu hạn được xem xét để xác định xem một nghiệm có ổn định hay không, hoặc để đánh giá tốc độ tăng/giảm của nghiệm. 
+$k = 0, \pm 1 , \cdots , \pm m$, trong đó $m$ là số khuyết của ma trận $A_d$ (tức là số chiều của hạt nhân ma trận) trong \eqref{eq1}. Do đó, chỉ có một số nhánh hữu hạn được xem xét để xác định xem một nghiệm có ổn định hay không, hoặc để đánh giá tốc độ tăng/giảm của nghiệm. 
 %Hơn nữa, sự tồn tại công thức nghiệm hiển của hệ biểu diễn dưới dạng chuỗi lũy thừa cho phép phân tích các đặc tính cấu trúc cũng như tính quan sát được và tính điều khiển được của các hệ DDE \cite{Yi08}, sự phát triển của các kỹ thuật đặt cực để tổng hợp điều khiển (\cite{YiEig10}, \cite{YiMay10};\cite{YiJune12}; \cite{YiDes10}) và các ứng dụng khác như ước lượng tốc độ phân rã \cite{Du12} và thiết kế phổ ( Wei, Bachrathy, Orosz, \& Ulsoy, 2014).\\
 Nền tảng cơ bản của phương pháp luận này là giả thiết rằng nhánh chính của hàm Lambert W xác định sự ổn định của hệ thống. Điều này đã được chứng minh cho các hệ thống bậc nhất (\cite{AslU03}; \cite{Shi06}). Tuy nhiên với trường hợp bậc cao hơn, kết quả này không được mở rộng chặt chẽ, và chỉ dựa trên các quan sát của Yi, Nelson và Ulsoy trong \cite{Yi07}.
 
@@ -20,19 +20,19 @@ Trong chương này, ta chỉ ra rằng giả thiết trên nói chung không ho
 
 
 \section{Một trường hợp đặc biệt của hệ bậc hai}\label{sec4}
-Xét hệ \eqref{eq9}, với $A$ và $B$ là các ma trận có dạng sau
+Xét hệ \eqref{eq9}, với $A$ và $A_d$ là các ma trận có dạng sau
 \begin{equation}\label{eq16}
 	A= \begin{bmatrix}
 		0 &1\\
 		a_{21} &a_{22}
 	\end{bmatrix}, \quad
-	B= \begin{bmatrix}
+	A_d= \begin{bmatrix}
 		0 &0\\
 		b_{21} &b_{22}
 	\end{bmatrix}.
 \end{equation}
-Từ \eqref{eq16}, ta có hạng của $B$ bằng $1$, lí thuyết dự đoán rằng nghiệm của \eqref{eq14} tương ứng với $k =0$ và $k = \pm1$ cho ta các nghiệm trội của bài toán. \\
-Từ cấu trúc của $B$, ta thấy $M_k = \tau B Q_k$ có dạng
+Từ \eqref{eq16}, ta có hạng của $A_d$ bằng $1$, lí thuyết dự đoán rằng nghiệm của \eqref{eq14} tương ứng với $k =0$ và $k = \pm1$ cho ta các nghiệm trội của bài toán. \\
+Từ cấu trúc của $A_d$, ta thấy $M_k = h  A_d Q_k$ có dạng
 \begin{equation}\label{eq17}
 	M_k = \begin{bmatrix}
 		0 &0\\
@@ -49,21 +49,21 @@ Nếu $m_{22} \ne 0$, ta có
 \end{equation}
 Từ đó ta được
 \begin{equation}\label{eq19}
-	S_k = \dfrac{1}{\tau}W_k(M_k)+A = 
+	S_k = \dfrac{1}{h }W_k(M_k)+A = 
 	\m{0 &1\\
-		\dfrac{	m_{21}}{\tau m_{22}} W_k(m_{22}) +a_{21} &\dfrac{1}{\tau}W_k(m_{22})+a_{22}}
+		\dfrac{	m_{21}}{h  m_{22}} W_k(m_{22}) +a_{21} &\dfrac{1}{h }W_k(m_{22})+a_{22}}
 	 \ .
 \end{equation}
 Nếu $m_{22}=0, m_{21} \ne 0$, ta được
 \begin{equation}\label{eq20}
 	S_k	= \begin{bmatrix}
 		0 &1\\
-		\dfrac{	m_{21}}{\tau} +a_{21} &a_{22}
+		\dfrac{	m_{21}}{h } +a_{21} &a_{22}
 	\end{bmatrix},
 \end{equation}
 trong đó, ta sử dụng $W_0 (0)' =1$. Bây giờ, ta sẽ phát biểu kết quả chính của bài toán.\\
 %
-\noindent\textbf{Định lý 1.} \textit{Cho $A$ và $B$ được cho bởi \eqref{eq16}. Lấy $\{ \lb, \overline{\lb}\}$ là một cặp giá trị riêng liên hợp bất kỳ. Giả sử bội của chúng bằng một. Khi đó, với $k =0$ hoặc $k =-1$, tồn tại một nghiệm thực của \eqref{eq14}, sao cho nếu nghiệm này và giá trị $k$ tương ứng được chọn trong bước đầu tiên của Thuật toán 1 thì giá trị riêng $\lb$ và $\overline{\lb}$ được tìm thấy trong bước cuối cùng của thuật toán. }\\
+\noindent\textbf{Định lý 1.} \textit{Cho $A$ và $A_d$ được cho bởi \eqref{eq16}. Lấy $\{ \lb, \overline{\lb}\}$ là một cặp giá trị riêng liên hợp bất kỳ. Giả sử bội của chúng bằng một. Khi đó, với $k =0$ hoặc $k =-1$, tồn tại một nghiệm thực của \eqref{eq14}, sao cho nếu nghiệm này và giá trị $k$ tương ứng được chọn trong bước đầu tiên của Thuật toán 1 thì giá trị riêng $\lb$ và $\overline{\lb}$ được tìm thấy trong bước cuối cùng của thuật toán. }\\
 %
 \noindent\textbf{Chứng minh.} Ý tưởng chính là thực hiện các bước của Thuật toán 1 theo thứ tự ngược lại.\\
 Ta xây dựng một ma trận thực $S_k$ nhận cặp  $\{ \lb, \overline{\lb}\}$ là giá trị riêng là
@@ -77,11 +77,11 @@ Sau đó, ta xây dựng $M_k$ từ \eqref{eq21}. Xét hai trường hợp sau.\
 \noindent\textit{Trường hợp 1:} $2\re(\lb) \ne a_{22}$.\\
 So sánh \eqref{eq19} và \eqref{eq21}, ta lấy $M_k$ có dạng \eqref{eq17}, trong đó $m_{21} \in \R$ và $m_{22} \in \R$ được chọn sao cho thỏa mãn phương trình sau
 \begin{equation*}
-	\heva{2\re(\lb) = \dfrac{1}{\tau} W_k(m_{22}) +a_{22} \\ -\vert \lb\vert ^2 = \dfrac{m_{21}}{\tau m_{22}} W_k(m_{22}) + a_{21}}.
+	\heva{2\re(\lb) = \dfrac{1}{h } W_k(m_{22}) +a_{22} \\ -\vert \lb\vert ^2 = \dfrac{m_{21}}{h  m_{22}} W_k(m_{22}) + a_{21}}.
 \end{equation*}
 Từ đó suy ra
 \begin{equation}\label{eq22}
-	W_k(m_{22}) = \tau(2\re(\lb) - a_{22}).
+	W_k(m_{22}) = h (2\re(\lb) - a_{22}).
 \end{equation}
 
 \begin{equation}\label{eq23}
@@ -90,20 +90,20 @@ Từ đó suy ra
 Lựa chọn như vậy luôn thực hiện được với $k = 0$ hoặc $k = -1$. Phương trình \eqref{eq22} ngụ ý rằng $W_k(m_{22})$ phải là một số thực. Như đã đề cập trước đó, theo định nghĩa nhánh cắt của hàm Lambert W thì chỉ có hai nhánh cho giá trị thực là nhánh chính $k = 0$ và nhánh $k = -1$ và hợp hai miền giá trị của $W_0$ và $W_{-1}$ chứa tập số thực $\R$ (xem hình 1). Hơn nữa, trong trường hợp này, $m_{22} \ne 0$, đó là lí do của việc sử dụng \eqref{eq19}.\\
 %
 \noindent\textit{Trường hợp 2:} $2\re(\lb) = a_{22}$.\\
-Ta có $\dfrac{1}{\tau} W_k(m_{22}) = 0$. Do đó $W_k(m_{22}) =0$. Vì vậy $m_{22}=0$.\\
+Ta có $\dfrac{1}{h } W_k(m_{22}) = 0$. Do đó $W_k(m_{22}) =0$. Vì vậy $m_{22}=0$.\\
 Khi đó
 \begin{equation*}
 S_k = \begin{bmatrix}
 	0 &1\\
-	\dfrac{m_{21}}{\tau} +a_{21} & a_{22}
+	\dfrac{m_{21}}{h } +a_{21} & a_{22}
 \end{bmatrix}.
 \end{equation*}
-Vì vậy $m_{21} = - \tau(\vert \lb \vert ^2 + a_{21})$.\\
+Vì vậy $m_{21} = - h (\vert \lb \vert ^2 + a_{21})$.\\
 Do vậy
 \begin{equation}\label{eq24}
 	M_k = \begin{bmatrix}
 		0 &0\\
-		- \tau(\vert \lb \vert ^2 + a_{21}) & 0
+		- h (\vert \lb \vert ^2 + a_{21}) & 0
 	\end{bmatrix}
 \end{equation} 
 Cuối cùng, ta có cặp $(k, M_k)$ được xây dựng như trên là một nghiệm của \eqref{eq14}.\\
@@ -117,7 +117,7 @@ Thật vậy, lấy $\mathbf{v}$ và  $\mathbf{\overline{v}}$ là các vector ri
 \end{equation}
 Ta có
 \begin{align}\label{100}
-	&\mathbf{V} \mathbf{\lb} - A - B \mathbf{V} \exp (-\mathbf{\lb})\\ \notag
+	&\mathbf{V} \mathbf{\lb} - A - A_d \mathbf{V} \exp (-\mathbf{\lb})\\ \notag
 	&= 
 	\begin{bmatrix}
 		\mathbf{v}&\mathbf{\overline{v}}
@@ -125,7 +125,7 @@ Ta có
 	\begin{bmatrix}
 		\lb & 0 \\ 0 & \overline{\lb}
 	\end{bmatrix}
-	- A - B \begin{bmatrix}
+	- A - A_d \begin{bmatrix}
 		\mathbf{v}&\mathbf{\overline{v}}
 	\end{bmatrix} \exp \left(\begin{bmatrix}
 		\lb & 0 \\ 0 & \overline{\lb}
@@ -136,7 +136,7 @@ Ta có
 	\begin{bmatrix}
 		\lb & 0 \\ 0 & \overline{\lb}
 	\end{bmatrix}
-	- A - B \begin{bmatrix}
+	- A - A_d \begin{bmatrix}
 		\mathbf{v}&\mathbf{\overline{v}}
 	\end{bmatrix} \begin{bmatrix}
 		e^{\lb} & 0 \\ 0 & e^{\overline{\lb}}
@@ -144,19 +144,19 @@ Ta có
 \end{align} 
 Ta có phương trình đặc trưng
 \begin{equation*}
-	det(\lb I_2 -A - Be^{-\lb \tau}) = 0 .
+	det(\lb I_2 -A - A_de^{-\lb h }) = 0 .
 \end{equation*}
 Vì $\mathbf{v}$ và  $\mathbf{\overline{v}}$ là các vector riêng nên ta có
 \begin{equation*}
 	\heva{
-		&(\lb I_2 -A - Be^{-\lb \tau})\mathbf{v} =0\\
-		&(\overline{\lb} I_2 -A - Be^{-\overline{\lb} \tau}) \mathbf{\overline{v}} =0} .
+		&(\lb I_2 -A - A_de^{-\lb h })\mathbf{v} =0\\
+		&(\overline{\lb} I_2 -A - A_de^{-\overline{\lb} h }) \mathbf{\overline{v}} =0} .
 \end{equation*}
 Từ đó suy ra
 \begin{equation*}
 	\heva{
-		&\lb \mathbf{v} -A\mathbf{v} - Be^{-\lb \tau}\mathbf{v} =0\\
-		&\overline{\lb}\mathbf{\overline{v}} -A\mathbf{\overline{v}} - Be^{-\overline{\lb} \tau}\mathbf{\overline{v}} =0} .
+		&\lb \mathbf{v} -A\mathbf{v} - A_de^{-\lb h }\mathbf{v} =0\\
+		&\overline{\lb}\mathbf{\overline{v}} -A\mathbf{\overline{v}} - A_de^{-\overline{\lb} h }\mathbf{\overline{v}} =0} .
 \end{equation*}
 Như vậy
 \begin{equation}\label{200}
@@ -166,17 +166,17 @@ Như vậy
 	\begin{bmatrix}
 		\lb & 0 \\ 0 & \overline{\lb}
 	\end{bmatrix}
-	- A - B \begin{bmatrix}
+	- A - A_d \begin{bmatrix}
 		\mathbf{v}&\mathbf{\overline{v}}
 	\end{bmatrix} \begin{bmatrix}
-		e^{\lb\tau} & 0 \\ 0 & e^{\overline{\lb} \tau}
+		e^{\lb h } & 0 \\ 0 & e^{\overline{\lb} h }
 	\end{bmatrix} = \begin{bmatrix}
 		0\\0
 	\end{bmatrix}.
 \end{equation}
 Từ \eqref{100} và \eqref{200} ta thấy $\mathbf{V}$ và $\mathbf{\lb}$  thỏa mãn phương trình
 \begin{equation}\label{eq26}
-	\mathbf{V} \mathbf{\lb} - A - B \mathbf{V} \exp (-\mathbf{\lb})=0.
+	\mathbf{V} \mathbf{\lb} - A - A_d \mathbf{V} \exp (-\mathbf{\lb})=0.
 \end{equation}
 Ta có thể kiểm tra trực tiếp $S_k$ có phân tích Jordan là
 \begin{equation}\label{eq27}
@@ -192,11 +192,11 @@ Suy ra
 \end{equation}
 Thay vào \eqref{eq26}, với $V$ khả nghịch, ta được
 \begin{equation}\label{eq30}
-	S_k -A - B \tau \exp (-S_k \tau) =0 .
+	S_k -A - A_d h  \exp (-S_k h ) =0 .
 \end{equation}
 Cuối cùng, thay $S_k$ bởi 
 \begin{equation}\label{eq31}
-	S_k = \dfrac{1}{\tau}W_k(M_k)+A
+	S_k = \dfrac{1}{h }W_k(M_k)+A
 \end{equation}
 ta được kết quả trong \eqref{eq14}.\\
 \noindent\textbf{Định lý 2.} \textit{Cho $A$ và $B$ được cho bởi \eqref{eq16}. Lấy $\lb_1 \ne \lb_2$ là hai giá trị riêng thực bội đơn của phương trình đặc trưng của hệ cho bởi \eqref{eq16}. Sau đó, cho $k =0$ hoặc $k =-1$, tồn tại một nghiệm thực của \eqref{eq14}, sao cho nếu nghiệm này và giá trị $k$ tương ứng được chọn trong bước đầu tiên của thuật toán 1 thì giá trị riêng $\lb_1$ và $\lb_2$ được tìm thấy trong bước cuối cùng của thuật toán. }\\
@@ -212,7 +212,7 @@ Tiếp theo ta sẽ xây dựng ma trận $M_k$. Xét hai trường hợp:\\
 Ta đi tìm $m_{21}$ và $m_{22}$ sao cho
 \begin{equation*}
 	\heva{
-		&W_k(m_{22}) = \tau (\lb_1 + \lb_2 -a_{22})\\ 
+		&W_k(m_{22}) = h  (\lb_1 + \lb_2 -a_{22})\\ 
 		&m_{21} = - \dfrac{m_{22}(\lb_1 \lb_2+a_{21})}{\lb_1  + \lb_2 - a_{22}}
 	} . 
 \end{equation*}
@@ -221,13 +221,13 @@ Ta đi tìm $m_{21}$ và $m_{22}$ sao cho
 \begin{equation*}
 	M_k = \begin{bmatrix}
 		0 & 0\\
-		-\tau (\lb_1 \lb_2 +a_{21}) & 0
+		-h  (\lb_1 \lb_2 +a_{21}) & 0
 	\end{bmatrix}.
 \end{equation*}
 Ta có cặp $(k, M_k)$ chính là một nghiệm của \eqref{eq14}.\\
 Từ Định lý 1 và 2, ta thu được hệ quả sau.\\ 
 
-\noindent\textbf{Hệ quả 1.} \textit{Cho $A$ và $B$ được cho bởi \eqref{eq16}. Nếu tất cả các giá trị riêng của \eqref{eq16} là đơn và  nếu số lượng các giá trị riêng thực khác một, bằng cách lựa chọn ban đầu $M_k$ thích hợp cho phương trình \eqref{14},  thì tất cả các giá trị riêng có thể tìm được chỉ bằng hai nhánh $W_0$ và $W_{-1}$ của ma trận hàm Lambert W. Hơn nữa, ta có thể hạn chế rằng điều kiện ban đầu của \eqref{eq14} phải là ma trận giá trị thực} .\\
+\noindent\textbf{Hệ quả 1.} \textit{Cho $A$ và $A_d$ được cho bởi \eqref{eq16}. Nếu tất cả các giá trị riêng của \eqref{eq16} là đơn và  nếu số lượng các giá trị riêng thực khác một, bằng cách lựa chọn ban đầu $M_k$ thích hợp cho phương trình \eqref{eq14},  thì tất cả các giá trị riêng có thể tìm được chỉ bằng hai nhánh $W_0$ và $W_{-1}$ của ma trận hàm Lambert W. Hơn nữa, ta có thể hạn chế rằng điều kiện ban đầu của \eqref{eq14} phải là ma trận giá trị thực} .\\
 
 \noindent\textbf{Chú ý}. Những phân tích ở trên chỉ ra rằng, với điều kiện ban đầu thích hợp, tất cả các giá trị riêng của hệ \eqref{eq16} có thể tìm thấy bằng hai nhánh $k =0$ và $k = -1$. Tuy nhiên, số nhánh cao hơn có thể được sử dụng để tìm các cặp nghiệm khác nhau sử dụng cách tiếp cận ngược như ở trên, không có bất kì cấu trúc cụ thể nào. Điều này được chứng minh trong phần sau.
 
@@ -241,9 +241,9 @@ Từ Định lý 1 và 2, ta thu được hệ quả sau.\\
 %
 \noindent Ta xét một hệ được định nghĩa bởi ma trận
 \begin{equation}\label{eq33}
-	\dot{x} = \m{0 & 1\\ -5 &-1}x + \m{	0 & 0\\ -3 &-0.6}(t - 5)
+	\dot{x}(t) = \m{0 & 1\\ -5 &-1}x(t) + \m{	0 & 0\\ -3 &-0.6}x(t - 5)
 \end{equation}
-Khi dùng hộp công cụ LambertDDE (\cite{YiJune12}) để tính các nghiệm đặc trưng của hệ thì phần mềm này không thể tìm được nghiệm với bất kì giá trị $k$ nào. Với nghiệm số, ta sử dụng ma trận $\exp (-A\tau)$ là điều kiện ban đầu của $Q_k$. Trong trường hợp này, giá trị tìm được nằm ngoài miền hội tụ nghiệm của \eqref{eq14}.
+Khi dùng hộp công cụ LambertDDE (\cite{YiJune12}) để tính các nghiệm đặc trưng của hệ thì phần mềm này không thể tìm được nghiệm với bất kì giá trị $k$ nào. Với nghiệm số, ta sử dụng ma trận $\exp (-Ah )$ là điều kiện ban đầu của $Q_k$. Trong trường hợp này, giá trị tìm được nằm ngoài miền hội tụ nghiệm của \eqref{eq14}.
 Để thu được ước lượng hậu nghiệm của $Q_k$, ta đảo ngược quá trình tìm nghiệm như trong chứng minh của Định lý $1$. 
 Đầu tiên, ta sử dụng thuật toán QPmR (\cite{Vyh09}) để tìm giá trị riêng của hệ nằm trong miền gần với gốc tọa tộ của mặt phẳng phức. 
 Các giá trị riêng của hệ được biểu diễn ở Hình 2.\\
@@ -255,7 +255,7 @@ Các giá trị riêng trội của hệ là $\lb = 0.0377 \pm 1.7911i$. Xét ma
 \end{equation}
 Từ (19), ta có
 \begin{equation}\label{eq35}
-	W_k(M) = \tau (S-A) = \begin{bmatrix}
+	W_k(M) = h  (S-A) = \begin{bmatrix}
 		0 & 0 \\ 8.9521 & 5.3766
 	\end{bmatrix}.
 \end{equation}
@@ -265,7 +265,7 @@ Ta thấy $W(m_{22}) \in [-1, \infty)$, đó là miền của nhánh chính $W_0
 		0 & 0\\ 1.9361 &1.1628
 	\end{bmatrix} \times 10^3 .
 \end{equation}
-Vì $B$ và $M$ là các ma trận suy biến nên có vô số ma trận $Q_0$ thỏa mãn $M_0 = \tau B Q_0$. Ta có thể lấy $Q_0$ như sau
+Vì $A_d$ và $M$ là các ma trận suy biến nên có vô số ma trận $Q_0$ thỏa mãn $M_0 = h  A_d Q_0$. Ta có thể lấy $Q_0$ như sau
 \begin{equation}\label{eq37}
 	Q_0 = \begin{bmatrix}
 		1 & 1\\ -650.3812 &-392.6121
@@ -302,7 +302,7 @@ Nếu ta xét cặp giá trị riêng $\lb = -0.6169 \pm 14.0734$ thì $S$ và $
 		0 & 1 \\ -198.4405 & -1.2338
 	\end{bmatrix}
 	\\ 
-	& W_k(M)= \tau (S -A)=\begin{bmatrix}
+	& W_k(M)= h  (S -A)=\begin{bmatrix}
 		0 & 0 \\ -967.2027 & -1.1692
 	\end{bmatrix}
 \end{align} 
@@ -328,7 +328,7 @@ Quy trình này có thể được lặp lại cho tất cả các nghiệm đư
 \end{equation*}
 Do đó,
 \begin{equation} \label{eq42}
-W_k(M)= \tau (S-A) = \begin{bmatrix}
+W_k(M)= h  (S-A) = \begin{bmatrix}
 		0&0\\   132.3092 + 7.2411i &  2.5693 + 52.6026i	
 	\end{bmatrix}.
 \end{equation}
@@ -341,18 +341,18 @@ Theo \cite{Cor96} $W_k(m_{22})$ nằm trong miền giá trị của nhánh thứ
 	\caption[Các nghiệm đặc trưng của hệ trong  \eqref{43} ] {Các nghiệm đặc trưng của hệ trong  \eqref{eq43}}
 	\label{fig:hinh-2}
 \end{figure}
-Các thảo luận ở trên đã xem xét các hệ thống mà tất cả các giá trị riêng của nó có thể ghép thành từng cặp sao cho các ma trận thực $S$ được xây dựng. 
+\noindent Các thảo luận ở trên đã xem xét các hệ thống mà tất cả các giá trị riêng của nó có thể ghép thành từng cặp sao cho các ma trận thực $S$ được xây dựng. 
 Trường hợp này xảy ra khi các giá trị riêng phức đi theo cặp liên hợp và số giá trị riêng thực là số chẵn. Khi có một số lẻ của phần thực của các giá trị riêng, điều này là không thể. Trong phần này, ta xem xét và thảo luận sâu hơn về vấn đề này.\\
 Xét hệ
 \begin{equation}\label{eq43}
-\dot{x} = \m{0 & 1\\ - 1 & 0}x + \m{0 & 0 \\ 1 & 0}x.(t - 1),
+\dot{x}(t) = \m{0 & 1\\ - 1 & 0}x(t) + \m{0 & 0 \\ 1 & 0}x.(t - 1),
 \end{equation}
 ta có phương trình đặc trưng
 \begin{equation}\label{eq44}
 	\lb^2 + 1 - e^{\lb} = 0.
 \end{equation}
 Từ \eqref{eq44}, ta có thể thấy rằng chỉ có một giá trị riêng thực nằm ở gốc tọa độ và có bội 1. Hơn nữa, đây còn là giá trị riêng trội nhất (xem Hình 2.3).\\
-Ta thấy $B$ có $0$ là giá trị riêng bội 2. Theo những quan sát trong Yi (2009) và Yi et al. (2010c), trong trường hợp giá trị riêng trội có thể được tìm thấy bằng cách sử dụng nhánh chính hoặc nhánh $k = \pm1$.\\
+Ta thấy $A_d$ có $0$ là giá trị riêng bội 2. Theo những quan sát trong Yi (2009) và Yi et al. (2010c), trong trường hợp giá trị riêng trội có thể được tìm thấy bằng cách sử dụng nhánh chính hoặc nhánh $k = \pm1$.\\
 Sử dụng kĩ thuật tính ngược ở trên cho ví dụ này, ta thấy tất cả các giá trị riêng liên hợp có thể thu được bằng cách sử dụng nhánh $k = -1$ và điều kiện ban đầu thích hợp. Tuy nhiên, giá trị riêng trội ở gốc tọa độ không thể tìm thấy bằng cách sử dụng nhánh chính của hàm Lambert W. Như trong Định lí 1-2 cách xây dựng ma trận thực $S_k$ không thể thực hiện được với giá trị riêng thực đơn. Ta chứng minh bằng phản chứng. Giả sử rằng tồn tại một ma trận thực $M_k$ tương ứng với ma trận thực $S_k$ , được định nghĩa bởi \eqref{eq12}, có giá trị riêng $\lb = 0$. Vì $S_k$ thỏa mãn \eqref{eq10}, điều này dẫn đến $Im(S_k)$ là không gian riêng ứng với giá trị riêng $0$ có bội hình học bằng $2$. Điều này mâu thuẫn với việc hàm $f(\lb) = \lb^2 + 1 - e^{-\lb}$ chỉ có nghiệm thực $0$ với bội $1$.\\
 Nếu ta nới lỏng điều kiện và cho phép $S$ có giá trị phức như trong phương pháp được trình bày ở Định lý 1 -2, ta có thể thay thế các giá trị riêng ở gốc tọa độ với bất kì giá trị riêng phức nào có dạng $\lb = a + ib$. Điều này dẫn đến các ma trận có dạng
 \begin{equation}\label{eq45}
@@ -364,10 +364,10 @@ Nếu ta nới lỏng điều kiện và cho phép $S$ có giá trị phức nh�
 \begin{equation}\label{eq46}
 	W_k(M) = \begin{bmatrix}
 		0 & 0\\
-		\tau & -\tau(a+ib)
+		h  & -h (a+ib)
 	\end{bmatrix}
 \end{equation}
-Ma trận được cho trong \eqref{eq46} có thể tìm được bằng cách sử dụng một giá trị $k$ sao cho $-\tau bi$ thuộc vào miền giá trị của nhánh thứ $k$ của hàm Lambert W. Do đó, với những hệ thống cụ thể, giá trị riêng trội có thể tìm được bằng cách sử dụng bất kì nhánh nào của ma trận hàm Lambert, nếu có một điều kiện ban đầu phù hợp. Thực tế này đã được quan sát trong Chương 3 của Yi et al. (2010c).
+Ma trận được cho trong \eqref{eq46} có thể tìm được bằng cách sử dụng một giá trị $k$ sao cho $-h  bi$ thuộc vào miền giá trị của nhánh thứ $k$ của hàm Lambert W. Do đó, với những hệ thống cụ thể, giá trị riêng trội có thể tìm được bằng cách sử dụng bất kì nhánh nào của ma trận hàm Lambert, nếu có một điều kiện ban đầu phù hợp. Thực tế này đã được quan sát trong Chương 3 của Yi et al. (2010c).
 
 \section{Kết luận chương}
 
