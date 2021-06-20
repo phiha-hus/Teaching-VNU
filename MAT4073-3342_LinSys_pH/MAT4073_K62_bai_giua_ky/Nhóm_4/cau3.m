@@ -1,4 +1,4 @@
-%%
+%%  
 % Magnitude scaling and Equivalence relation in OCTAVE
 clear all; close all; clc
 

@@ -18,6 +18,11 @@ pkg load control
 A = [-0.1 2;0 -1]; B = [10;0.1]; C = [0.2 -1]; D = 0;
 sys = ss(A,B,C,D) ;
 
+disp('Find minimal realization of this system')
+tol = 1e-9
+sys=minreal(sys,tol)
+
+
 figure(1); clf;
 [y,t,x] = impulse(sys);
 plot(t,x(:,1),t,x(:,2),t,y)
