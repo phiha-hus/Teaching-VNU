@@ -1,15 +1,29 @@
-function [alpha] = find_alpha(h,A,Ad)
+function [alpha] = find_alpha(A,Ad,h)
 %FIND_ALPHA Summary of this function goes here
 %   Detailed explanation goes here
 
-W0 = real(lambertw_matrix(0,-h*Ad*expm(h*A)))
+[n,~] = size(A);
+m = n - rank(Ad);
+
+Eig_Sk = [];  % Long vector Eig_Sk store all eigenvalues of Sk
+
+for k = -m:1:m
+
+k    
+temp = -h*Ad*expm(h*A) ;
+D_init = lambertw_matrix(k,temp)
 % W = fsolve(@witer,W0,optimoptions('fsolve','Display','iter'));
 
-W = fsolve(@witer,W0) 
+options = optimoptions('fsolve','Display','off');
+[Dk,fval,exitflag,output] = fsolve(@witer,D_init,options) ;
 
-S0 = W./h - A;
 
-alpha = max( eig(S0) );
+Sk = Dk/h - A  
+Eig_Sk = [Eig_Sk eig(Sk)]; 
+
+end
+
+alpha = max(real(Eig_Sk)) ; 
 
 return
 

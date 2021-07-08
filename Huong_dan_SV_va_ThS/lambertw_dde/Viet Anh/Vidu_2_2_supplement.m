@@ -71,11 +71,18 @@ for n = n_begin:1:n_end
            % Dang bi loi o day 
            % Da sua lai bang cach viet ham tich phan moi quad_P
            temp2 = expm(S_k(:,:,k) .* t)  ;          
-           temp4 = C_N(:,:,k) * B ;
-           temp3 = quad_P(@(s)expm(-s .* S_k(:,:,k)) * temp4 * u(s),0,t) ;        
+%            temp4 = C_N(:,:,k) * B ;
+%            %temp3 = quad_P(@(s)expm(-s .* S_k(:,:,k)) * temp4 * u(s),0,t) ;        
+%            syms s
+%            temp3 = int(expm(-s .* S_k(:,:,k)) * C_N(:,:,k) * B * u(s),0,t) ;
+           
+           size(xt)
+           size(temp1)
+           size(temp2)
+           size(temp3)
            
            xt = xt + temp1 + sum(temp2 * temp3);                     
-        end
+         end
         
         sol_approx = [sol_approx xt];
     end

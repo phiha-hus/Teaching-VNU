@@ -1,33 +1,16 @@
-function [K3] = find_K3(h, A, Ad)
-global	h	A	Ad
-tic
+function [K3] = find_K3(h, A, Ad,alpha)
 
-h = 0.1;	kp = 0.4451; K = 1.53; ki = 2.3046; tau = 0.0254;
-A = [ 0 1; 0 -1/tau];
-Ad = [0 0; -K * ki/tau -K * kp/tau]
-a = A;
-N = 1;
-I = eye(2)
-for	k = -N : N
-k 
-W0 = lambertw_matrix(0,-h*Ad*expm(h*A));
-W = fsolve(@witer,W0);
-S0 = W0/h	-	A;
-lambda = eig(S0);
-%pause
-end
-alpha = max(lambda); 
+h1 = 1e-2; t = 0 : h1 : h;
 
-h1 = 1e-2;
-t = 0 : h1 : h;
 syms s
 
+K3 = 0 ; 
+
 for i = 1:length(t)
- J3 = int(norm(expm((-A-alpha*I)*t +A*h)*Ad), s, 0, t)
- K3 = max(J3)
+ J3 = int(norm( expm( (-A-alpha * eye(2))*t(i) + A*h) * Ad), s, 0, t(i));
+ K3 = max(K3,J3);
 end
 
-toc
-
+K3
 
 
