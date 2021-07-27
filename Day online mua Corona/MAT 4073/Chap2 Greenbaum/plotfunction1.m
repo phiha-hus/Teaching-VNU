@@ -1,0 +1,1 @@
+%  Plot function over large interval.subplot(2,1,1)x = [-6:.01:3];plot(x,2*cos(x)-exp(x))  title('plot of 2cos(x) - exp(x)')grid on%  Zoom in on smaller interval about one root.subplot(2,1,2)xx = [-1.46:.001:-1.44];plot(xx,2*cos(xx)-exp(xx))  axis([-1.46 -1.44 -0.02 0.02])title('zoomed view')grid on

@@ -1,0 +1,643 @@
+
+
+
+<script src="Http://10.0.18.10/daotao//scripts/jquery.js"></script>
+<script type="text/javascript">
+    function truebody() {
+        var body = document.body;
+        return body;
+    }
+
+    function resizeDivList()
+    {
+
+        //Căn chỉnh độ cao của phân trang và divList
+        try {
+
+            if ($('div.introThongSo1'))
+            {
+                var pager = $('div.introThongSo1').closest('table')
+                $(pager).css('margin', '5px 0px');
+            }
+
+            if ($('#divList')) {
+
+                $('input').css('height', 'auto');
+                $('#divList').parent('form').parent('body').css('height', '');
+                $('#divList').parent('form').parent('body').css('overflow', '');
+             
+                $('form').css('height', '');
+                $('form').css('overflow', '');
+                var totalHeight = 0;
+                $('body form').children().each(function () {
+                    if (this.id != "divList" & ($(this).is('table') || $(this).is('div')))
+                    {
+                        totalHeight = totalHeight + $(this).outerHeight(true);
+
+                        if (window.console)
+                        {
+                            console.log(this.id);
+                        }
+                        
+                    }
+                    
+                });
+
+               
+                var h = document.body.clientHeight;
+               
+             
+                $('#divList').height(h - totalHeight);
+              //  alert('div he:'+$('#divList').height());
+            }
+        }
+        catch (err) {
+            alert(err.message);
+        }
+
+        //Căn dòng tiêu đề của bảng và bảng dữ liệu bằng nhau
+        try {
+            if ($('#divList table') && $('#ListHeader')) {
+                $('#divList').css('width', '100%');
+                $('#divList table').css('width', '100%');
+                if ($('#divList table').css('border-collapse') == 'collapse');
+                {
+                    $('#divList table').css('width', '99%');
+                    $('#divList table').css('margin', '0 auto');
+                }
+                $('#ListHeader').width($('#divList table').width());
+            }
+        }
+        catch (err) {
+            alert(err);
+        }
+
+    }
+    document.oncontextmenu = function () { return false; };
+
+    //Huydq: xử lý tự động một số lỗi rất vớ vẩn
+    $(document).ready(function () {
+
+        //Tìm kiếm nhanh
+        try {
+            if ($('#txtSearch')) {
+                $('#txtSearch').keypress(function (event) { if (event.which == 13) { event.preventDefault(); cmdSearchFast_click(); } });
+            }
+        }
+        catch (err) {
+            //do nothing
+        }
+
+        resizeDivList();
+      
+    });
+</script>
+
+<script type="text/javascript">
+	
+	var JS_SS_Selected = '#9CBEE7';
+	var JS_SS_Grayed = '#DBE9E9';
+	var JS_SS_ContextBoxBorder= '#9CBEE7';
+	var JS_SS_ContextBoxBackground= '#F7F7FF';
+	var JS_SS_Toolbar= '#F1F5FA';
+	var JS_SS_Dialog= '#EEEEEE';
+	var JS_SS_ButtonHoverBorderLT='#222284';
+	var JS_SS_ButtonHoverBorderRB='#222284';
+	var JS_SS_ButtonHoverBG='#A9D2E1';
+	var JS_SS_ButtonPressBorderLT='#222284';
+	var JS_SS_ButtonPressBorderRB='#222284';
+	var JS_SS_ButtonPressBG='#A9D2E1';
+	var JS_SS_MenuBackground='#FFFBF7';
+	var JS_SS_MenuTL='gray';
+	var JS_SS_MenuBR='gray';
+	var JS_ModuleTitleColor='#000000';
+	var JS_UsesTabRunner='1';
+	
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		<script type="text/javascript">
+        if(parent.document.getElementById("windowtitle"))
+        {
+            
+            parent.document.getElementById("windowtitle").innerHTML = '<b>Kiểm tra đánh giá giữa kỳ/thường xuyên</b>';
+        }else
+        {
+            
+                //document.location.replace("../login/error.asp?ID=12");
+            
+        }
+        </script>
+        <head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<style>
+	BODY{ border: 0; margin: 0; cursor: default; }
+	</style>
+	
+</head>
+
+
+<!--====================================================================================--->
+<!-- header v footer-->
+
+
+<!--=====Vi?t chn bo co====================-->
+
+<!--====================================================================================--->
+
+
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+
+	<script language="javascript" src="FunctionRpt.js"></script>
+</head>
+<body scrolling=no style="overflow: auto; cursor:default"  background="../../Themes/Ice/body_white.gif" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bottommargin="0">
+
+	<div id="divHead" style="overflow:auto">
+		<div id="divHeadStatic" style="overflow:auto">
+		
+	
+<table id="tblMain" border="0" width="100%" cellpadding="0" cellspacing="0" style="display:block;" >
+		<tr id="trDonvi1" >
+			<td width="50%" style="font:Time New Roman, Times, serif; color:Black; font-size:12; font-style:Normal; text-align:Center;">ĐẠI&nbsp;HỌC&nbsp;QUỐC&nbsp;GIA&nbsp;HÀ&nbsp;NỘI</td>
+			<td  width="50%" style="font:Time New Roman, Times, serif; color:Black; font-size:12; font-style:Normal; text-align:Center;">CỘNG&nbsp;HÒA&nbsp;XÃ&nbsp;HỘI&nbsp;CHỦ&nbsp;NGHĨA&nbsp;VIỆT&nbsp;NAM</td>
+		</tr>
+		<tr id="trDonvi2" >
+			<td width="50%" style="font:Time New Roman, Times, serif; color:Black; font-size:12; font-style:Normal; text-align:Center;"><b>TRƯỜNG&nbsp;ĐẠI&nbsp;HỌC&nbsp;KHOA&nbsp;HỌC&nbsp;TỰ&nbsp;NHIÊN</b></td>
+			<td width="50%" style="font:Time New Roman, Times, serif; color:Black; font-size:12; font-style:Normal; text-align:Center;"><b>Độc&nbsp;lập&nbsp;-&nbsp;Tự&nbsp;do&nbsp;-&nbsp;Hạnh&nbsp;phúc</b></td>
+		</tr>
+		<tr id="trDongke" >
+			<td width="50%" style="font:Time New Roman, Times, serif; color:Black; font-size:12; font-style:Normal; text-align:Center;">------------------------------------</td>
+			<td width="50%" style="font:Time New Roman, Times, serif; color:Black; font-size:12; font-style:Normal; text-align:Center;">--------------------------------------</td>
+		</tr>
+	</table>
+	<table border="0" width="100%" cellpadding="0" cellspacing="0">
+		<tr id="trTenbaocao">
+			<td width="100%" style="padding-bottom:5px; padding-top:5px; font:Time New Roman, Times, serif; color:Black; font-size:16; font-style:Bold; text-align:Center; "><b>HỌC&nbsp;KỲ&nbsp;II,&nbsp;NĂM&nbsp;HỌC&nbsp;2019-2020</b></td>
+		</tr>
+	
+	</table>
+
+		</div><!--End divHeadStatic-->
+		<div id="divHeadDynamic" style="overflow:auto">
+		
+		<!--<div id="divList" style="width:auto;overflow:auto;">-->
+		
+			<table border="0" width="100%" cellpadding="0" cellspacing="0" style="display:block;">
+				<tr height="22">
+					<td  width="30%" style="font:Times New Roman, Times, serif; font-size:12">&nbsp;</td>
+					<td  width="35%" style="font:Times New Roman, Times, serif; font-size:12">&nbsp;</td>
+					<td  width="35%" style="font:Times New Roman, Times, serif; font-size:12">&nbsp;</td>
+				</tr>
+				<tr height="22">
+					<td colspan="3" style="font:Times New Roman, Times, serif; font-size:12"><div align="center">Học kỳ:&nbsp;II Năm học: 2019-2020</div></td>
+				</tr>
+				<tr height="22">
+					<td colspan="2" id="tdHeadCrdName" style="font:Times New Roman, Times, serif; font-size:12"><div>Học phần:&nbsp;Một số vấn đề chọn lọc trong tính toán khoa học</div></td>	
+					
+						<td  style="font:Times New Roman, Times, serif; font-size:12" id="tdHeadCseCode" align="right">Lớp học phần: MAT4073</td>
+					
+				</tr>
+				<tr height="22">
+					<td colspan="3" style="font:Times New Roman, Times, serif; font-size:12" id="tdHeadNumCrd">
+						Số tín chỉ:&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lịch học: Thứ 5, tiết 1-3, giảng đường 104T4
+					</td>
+					<!--<td colspan="2" style="font:Times New Roman, Times, serif; font-size:12" align="right"></td>-->
+				</tr>
+			</table>
+		</div><!--End divHeadDynamic-->
+	</div><!--End divHead-->
+	<div id="divBody">
+	<table id="tblData" width="100%" border="1" cellpadding="0" cellspacing="0" rules=all style="border-collapse: collapse; font-size:8; font-family:Time New Roman, Times, serif; color:Black; font-style:Normal;border:0 none; " bordercolor="#000000" >	
+	  <tr id="trStartData0" height="22">
+		<td id="tdCol1" width="5%" align="center" title="Số thứ tự" style="border-collapse: collapse; font-weight: bold;">STT</td>
+		<td id="tdCol2" width="10%" align="center" style="border-collapse: collapse; font-weight: bold;" title="Mã sinh viên">Mã SV</td>
+		<td id="tdCol3" width="20%" align="center" title="Họ tên sinh viên" style="border-collapse: collapse; font-weight: bold;">Họ và tên </td>
+		<td id="tdCol4" width="6%" align="center" title="Ngày sinh" style="border-collapse: collapse; font-weight: bold;">Ngày sinh</td>
+		<td id="tdCol5" width="4%" align="center" title="Giới tính" style="border-collapse: collapse; font-weight: bold;">GT</td>
+		<td id="tdCol6" width="15%" align="center" title="Lớp khóa học" style="border-collapse: collapse; font-weight: bold;">Lớp khóa học</td>
+		<!--<td id="tdCol7" width="5%" align="center" title="Lớp học phần" style="border-collapse: collapse; font-weight: bold;">Số tờ</td>-->
+		<td id="tdCol9" width="10%" align="center" title="Lớp học phần" style="border-collapse: collapse; font-weight: bold;">Thường xuyên<br />(... %)</td>
+        <td id="tdCol8" width="8%" align="center" title="Lớp học phần" style="border-collapse: collapse; font-weight: bold;">Ký nộp</td>
+		<td id="tdCol10" width="12%" align="center" title="Lớp học phần" style="border-collapse: collapse; font-weight: bold;">Giữa kỳ<br />(... %)</td>
+        
+		<td id="tdCol11" width="10%" align="center" style="border-collapse: collapse; font-weight: bold;">Ghi chú</td>
+	  </tr>
+	<!--Hiển thị danh sách các lớp học phần của chương trình đào tạo-->
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main0" align="center" style="border-collapse: collapse;">&nbsp;1</td>
+						<td id="tdcol2Main0"  style="border-collapse: collapse;" align="center">16003500</td>
+						<td id="tdcol3Main0"  style="border-collapse: collapse;">&nbsp;&nbsp;Đàm Tuấn Anh&nbsp;</td>
+						<td id="tdcol4Main0"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;11/08/1997&nbsp;</td>
+						<td id="tdcol5Main0"  style="border-collapse: collapse;">&nbsp;&nbsp;Nam</td>
+						<td id="tdcol6Main0"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main0"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main0"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main0"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main0"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main0"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Đàm Tuấn Anh">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main1" align="center" style="border-collapse: collapse;">&nbsp;2</td>
+						<td id="tdcol2Main1"  style="border-collapse: collapse;" align="center">16003503</td>
+						<td id="tdcol3Main1"  style="border-collapse: collapse;">&nbsp;&nbsp;Hà Thị Mai Anh&nbsp;</td>
+						<td id="tdcol4Main1"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;06/10/1997&nbsp;</td>
+						<td id="tdcol5Main1"  style="border-collapse: collapse;">&nbsp;&nbsp;Nữ</td>
+						<td id="tdcol6Main1"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main1"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main1"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main1"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main1"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main1"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Hà Thị Mai Anh">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main2" align="center" style="border-collapse: collapse;">&nbsp;3</td>
+						<td id="tdcol2Main2"  style="border-collapse: collapse;" align="center">16003492</td>
+						<td id="tdcol3Main2"  style="border-collapse: collapse;">&nbsp;&nbsp;Nguyễn  Thị Ngọc Ánh&nbsp;</td>
+						<td id="tdcol4Main2"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;05/02/1998&nbsp;</td>
+						<td id="tdcol5Main2"  style="border-collapse: collapse;">&nbsp;&nbsp;Nữ</td>
+						<td id="tdcol6Main2"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main2"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main2"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main2"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main2"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main2"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Nguyễn  Thị Ngọc Ánh">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main3" align="center" style="border-collapse: collapse;">&nbsp;4</td>
+						<td id="tdcol2Main3"  style="border-collapse: collapse;" align="center">16002504</td>
+						<td id="tdcol3Main3"  style="border-collapse: collapse;">&nbsp;&nbsp;Vũ Mạnh Cường&nbsp;</td>
+						<td id="tdcol4Main3"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;22/09/1998&nbsp;</td>
+						<td id="tdcol5Main3"  style="border-collapse: collapse;">&nbsp;&nbsp;Nam</td>
+						<td id="tdcol6Main3"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main3"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main3"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main3"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main3"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main3"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Vũ Mạnh Cường">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main4" align="center" style="border-collapse: collapse;">&nbsp;5</td>
+						<td id="tdcol2Main4"  style="border-collapse: collapse;" align="center">16002507</td>
+						<td id="tdcol3Main4"  style="border-collapse: collapse;">&nbsp;&nbsp;Mai Tú Duy&nbsp;</td>
+						<td id="tdcol4Main4"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;11/11/1998&nbsp;</td>
+						<td id="tdcol5Main4"  style="border-collapse: collapse;">&nbsp;&nbsp;Nam</td>
+						<td id="tdcol6Main4"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main4"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main4"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main4"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main4"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main4"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Mai Tú Duy">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main5" align="center" style="border-collapse: collapse;">&nbsp;6</td>
+						<td id="tdcol2Main5"  style="border-collapse: collapse;" align="center">16000423</td>
+						<td id="tdcol3Main5"  style="border-collapse: collapse;">&nbsp;&nbsp;Nguyễn Tuấn Duy&nbsp;</td>
+						<td id="tdcol4Main5"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;08/11/1998&nbsp;</td>
+						<td id="tdcol5Main5"  style="border-collapse: collapse;">&nbsp;&nbsp;Nam</td>
+						<td id="tdcol6Main5"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main5"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main5"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main5"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main5"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main5"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Nguyễn Tuấn Duy">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main6" align="center" style="border-collapse: collapse;">&nbsp;7</td>
+						<td id="tdcol2Main6"  style="border-collapse: collapse;" align="center">16003498</td>
+						<td id="tdcol3Main6"  style="border-collapse: collapse;">&nbsp;&nbsp;Lê Quốc Đạt&nbsp;</td>
+						<td id="tdcol4Main6"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;15/11/1998&nbsp;</td>
+						<td id="tdcol5Main6"  style="border-collapse: collapse;">&nbsp;&nbsp;Nam</td>
+						<td id="tdcol6Main6"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main6"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main6"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main6"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main6"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main6"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Lê Quốc Đạt">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main7" align="center" style="border-collapse: collapse;">&nbsp;8</td>
+						<td id="tdcol2Main7"  style="border-collapse: collapse;" align="center">16002515</td>
+						<td id="tdcol3Main7"  style="border-collapse: collapse;">&nbsp;&nbsp;Hoàng Đức Giang&nbsp;</td>
+						<td id="tdcol4Main7"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;14/09/1998&nbsp;</td>
+						<td id="tdcol5Main7"  style="border-collapse: collapse;">&nbsp;&nbsp;Nam</td>
+						<td id="tdcol6Main7"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main7"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main7"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main7"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main7"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main7"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Hoàng Đức Giang">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main8" align="center" style="border-collapse: collapse;">&nbsp;9</td>
+						<td id="tdcol2Main8"  style="border-collapse: collapse;" align="center">16003499</td>
+						<td id="tdcol3Main8"  style="border-collapse: collapse;">&nbsp;&nbsp;Vũ Quang Hải&nbsp;</td>
+						<td id="tdcol4Main8"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;14/07/1998&nbsp;</td>
+						<td id="tdcol5Main8"  style="border-collapse: collapse;">&nbsp;&nbsp;Nam</td>
+						<td id="tdcol6Main8"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main8"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main8"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main8"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main8"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main8"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Vũ Quang Hải">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main9" align="center" style="border-collapse: collapse;">&nbsp;10</td>
+						<td id="tdcol2Main9"  style="border-collapse: collapse;" align="center">16003502</td>
+						<td id="tdcol3Main9"  style="border-collapse: collapse;">&nbsp;&nbsp;Nguyễn Minh Hiếu&nbsp;</td>
+						<td id="tdcol4Main9"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;20/03/1998&nbsp;</td>
+						<td id="tdcol5Main9"  style="border-collapse: collapse;">&nbsp;&nbsp;Nam</td>
+						<td id="tdcol6Main9"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main9"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main9"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main9"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main9"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main9"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Nguyễn Minh Hiếu">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main10" align="center" style="border-collapse: collapse;">&nbsp;11</td>
+						<td id="tdcol2Main10"  style="border-collapse: collapse;" align="center">16002540</td>
+						<td id="tdcol3Main10"  style="border-collapse: collapse;">&nbsp;&nbsp;Phí Văn Hùng&nbsp;</td>
+						<td id="tdcol4Main10"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;26/03/1998&nbsp;</td>
+						<td id="tdcol5Main10"  style="border-collapse: collapse;">&nbsp;&nbsp;Nam</td>
+						<td id="tdcol6Main10"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main10"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main10"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main10"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main10"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main10"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Phí Văn Hùng">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main11" align="center" style="border-collapse: collapse;">&nbsp;12</td>
+						<td id="tdcol2Main11"  style="border-collapse: collapse;" align="center">16002543</td>
+						<td id="tdcol3Main11"  style="border-collapse: collapse;">&nbsp;&nbsp;Nguyễn Lan Hương&nbsp;</td>
+						<td id="tdcol4Main11"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;26/05/1998&nbsp;</td>
+						<td id="tdcol5Main11"  style="border-collapse: collapse;">&nbsp;&nbsp;Nữ</td>
+						<td id="tdcol6Main11"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main11"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main11"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main11"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main11"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main11"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Nguyễn Lan Hương">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main12" align="center" style="border-collapse: collapse;">&nbsp;13</td>
+						<td id="tdcol2Main12"  style="border-collapse: collapse;" align="center">16003491</td>
+						<td id="tdcol3Main12"  style="border-collapse: collapse;">&nbsp;&nbsp;Lê Thị Hường&nbsp;</td>
+						<td id="tdcol4Main12"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;28/08/1997&nbsp;</td>
+						<td id="tdcol5Main12"  style="border-collapse: collapse;">&nbsp;&nbsp;Nữ</td>
+						<td id="tdcol6Main12"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main12"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main12"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main12"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main12"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main12"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Lê Thị Hường">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main13" align="center" style="border-collapse: collapse;">&nbsp;14</td>
+						<td id="tdcol2Main13"  style="border-collapse: collapse;" align="center">16003496</td>
+						<td id="tdcol3Main13"  style="border-collapse: collapse;">&nbsp;&nbsp;Phan Hữu Lâm&nbsp;</td>
+						<td id="tdcol4Main13"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;11/02/1998&nbsp;</td>
+						<td id="tdcol5Main13"  style="border-collapse: collapse;">&nbsp;&nbsp;Nam</td>
+						<td id="tdcol6Main13"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main13"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main13"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main13"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main13"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main13"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Phan Hữu Lâm">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main14" align="center" style="border-collapse: collapse;">&nbsp;15</td>
+						<td id="tdcol2Main14"  style="border-collapse: collapse;" align="center">16003490</td>
+						<td id="tdcol3Main14"  style="border-collapse: collapse;">&nbsp;&nbsp;Trần Thị Hương Ly&nbsp;</td>
+						<td id="tdcol4Main14"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;28/08/1998&nbsp;</td>
+						<td id="tdcol5Main14"  style="border-collapse: collapse;">&nbsp;&nbsp;Nữ</td>
+						<td id="tdcol6Main14"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main14"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main14"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main14"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main14"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main14"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Trần Thị Hương Ly">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main15" align="center" style="border-collapse: collapse;">&nbsp;16</td>
+						<td id="tdcol2Main15"  style="border-collapse: collapse;" align="center">16002561</td>
+						<td id="tdcol3Main15"  style="border-collapse: collapse;">&nbsp;&nbsp;Lê Mỵ Thúy Nga&nbsp;</td>
+						<td id="tdcol4Main15"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;26/10/1998&nbsp;</td>
+						<td id="tdcol5Main15"  style="border-collapse: collapse;">&nbsp;&nbsp;Nữ</td>
+						<td id="tdcol6Main15"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main15"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main15"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main15"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main15"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main15"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Lê Mỵ Thúy Nga">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main16" align="center" style="border-collapse: collapse;">&nbsp;17</td>
+						<td id="tdcol2Main16"  style="border-collapse: collapse;" align="center">16002562</td>
+						<td id="tdcol3Main16"  style="border-collapse: collapse;">&nbsp;&nbsp;Nguyễn Hữu Tuấn Nghĩa&nbsp;</td>
+						<td id="tdcol4Main16"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;16/07/1998&nbsp;</td>
+						<td id="tdcol5Main16"  style="border-collapse: collapse;">&nbsp;&nbsp;Nam</td>
+						<td id="tdcol6Main16"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main16"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main16"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main16"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main16"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main16"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Nguyễn Hữu Tuấn Nghĩa">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main17" align="center" style="border-collapse: collapse;">&nbsp;18</td>
+						<td id="tdcol2Main17"  style="border-collapse: collapse;" align="center">16002569</td>
+						<td id="tdcol3Main17"  style="border-collapse: collapse;">&nbsp;&nbsp;Phạm Trung Phú&nbsp;</td>
+						<td id="tdcol4Main17"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;04/11/1998&nbsp;</td>
+						<td id="tdcol5Main17"  style="border-collapse: collapse;">&nbsp;&nbsp;Nam</td>
+						<td id="tdcol6Main17"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main17"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main17"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main17"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main17"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main17"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Phạm Trung Phú">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main18" align="center" style="border-collapse: collapse;">&nbsp;19</td>
+						<td id="tdcol2Main18"  style="border-collapse: collapse;" align="center">16002589</td>
+						<td id="tdcol3Main18"  style="border-collapse: collapse;">&nbsp;&nbsp;Nguyễn Hà Thu&nbsp;</td>
+						<td id="tdcol4Main18"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;25/11/1998&nbsp;</td>
+						<td id="tdcol5Main18"  style="border-collapse: collapse;">&nbsp;&nbsp;Nữ</td>
+						<td id="tdcol6Main18"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main18"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main18"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main18"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main18"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main18"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Nguyễn Hà Thu">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main19" align="center" style="border-collapse: collapse;">&nbsp;20</td>
+						<td id="tdcol2Main19"  style="border-collapse: collapse;" align="center">16002591</td>
+						<td id="tdcol3Main19"  style="border-collapse: collapse;">&nbsp;&nbsp;Đỗ Thị Diệu Thúy&nbsp;</td>
+						<td id="tdcol4Main19"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;22/03/1998&nbsp;</td>
+						<td id="tdcol5Main19"  style="border-collapse: collapse;">&nbsp;&nbsp;Nữ</td>
+						<td id="tdcol6Main19"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main19"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main19"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main19"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main19"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main19"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Đỗ Thị Diệu Thúy">
+					</tr>
+	
+					<tr height="22" id="trCrd">
+						<td id="tdcol1Main20" align="center" style="border-collapse: collapse;">&nbsp;21</td>
+						<td id="tdcol2Main20"  style="border-collapse: collapse;" align="center">16002608</td>
+						<td id="tdcol3Main20"  style="border-collapse: collapse;">&nbsp;&nbsp;Đào Thanh Tùng&nbsp;</td>
+						<td id="tdcol4Main20"  align="center" style="border-collapse: collapse;">&nbsp;&nbsp;09/08/1998&nbsp;</td>
+						<td id="tdcol5Main20"  style="border-collapse: collapse;">&nbsp;&nbsp;Nam</td>
+						<td id="tdcol6Main20"  style="border-collapse: collapse;">&nbsp;&nbsp;61 Toán - Tin ứng dụng</td>
+						<!--<td id="tdcol7Main20"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>-->
+						<td id="tdcol8Main20"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol9Main20"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<td id="tdcol10Main20"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>						
+						<td id="tdcol11Main20"  style="border-collapse: collapse;">&nbsp;&nbsp;</td>
+						<input type="hidden" name="hidCse" value="MAT4073">
+						<input type="hidden" name="hidStd" value="Đào Thanh Tùng">
+					</tr>
+	
+	</table>
+	</div><!--End divBody-->
+	<div id="divFoot" style="overflow:auto">
+		
+
+	<table id="tblEndData" border="0" width="100%">
+
+	<tr id"trNguoilapbieu">
+		<td width="5%">&nbsp;</td>
+		<td width="30%" style="font:Time New Roman, Times, serif; color:Black; font-size:12; font-style:Normal; text-align:Left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Số&nbsp;bài:&nbsp;…………		Số&nbsp;tờ:&nbsp;………..<br><br>Hà&nbsp;Nội,&nbsp;ngày........tháng.......năm......&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hà&nbsp;Nội,&nbsp;ngày........tháng.......năm......</td>
+		<td width="10%">&nbsp;</td>
+		<td width="30%" style="font:Time New Roman, Times, serif; color:Black; font-size:12; font-style:Italic; text-align:Center ;">Hà&nbsp;Nội,&nbsp;Ngày&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tháng&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;năm&nbsp;2020</td>
+		<td width="5%">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="5%">&nbsp;</td>
+		<td width="30%" style="font:Time New Roman, Times, serif; color:Black; font-size:12; font-style:Normal; text-align:Left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CÁN&nbsp;BỘ&nbsp;COI&nbsp;THI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CÁN&nbsp;&nbsp;BỘ&nbsp;CHẤM&nbsp;THI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Ký&nbsp;và&nbsp;ghi&nbsp;rõ&nbsp;họ&nbsp;tên)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Ký&nbsp;và&nbsp;ghi&nbsp;rõ&nbsp;họ&nbsp;tên)<br></td>
+		<td width="10%">&nbsp;</td>
+		<td width="30%" style="font:Time New Roman, Times, serif; color:Black; font-size:12; font-style:Normal; text-align:Center;">TL.&nbsp;HIỆU&nbsp;TRƯỞNG</td>
+		<td width="5%">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="5%">&nbsp;</td>
+		<td width="30%">&nbsp;</td>
+		<td width="10%">&nbsp;</td>
+		<td width="30%" style="font:Time New Roman, Times, serif; color:Black; font-size:12; font-style:Normal; text-align:Center; ">&nbsp;TRƯỞNG&nbsp;PHÒNG&nbsp;ĐÀO&nbsp;TẠO</td>
+		<td width="5%">&nbsp;</td>
+	</tr>
+
+	<tr>
+		<td width="5%">&nbsp;</td>
+		<td width="30%">&nbsp;</td>
+		<td width="10%">&nbsp;</td>
+		<td width="30%" >&nbsp;</td>
+		<td width="5%">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="5%">&nbsp;</td>
+		<td width="30%">&nbsp;</td>
+		<td width="10%">&nbsp;</td>
+		<td width="30%" >&nbsp;</td>
+		<td width="5%">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="5%">&nbsp;</td>
+		<td width="30%">&nbsp;</td>
+		<td width="10%">&nbsp;</td>
+		<td width="30%" >&nbsp;</td>
+		<td width="5%">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="5%">&nbsp;</td>
+		<td width="30%" style="font:Time New Roman, Times, serif; color:Black; font-size:10; font-style:Normal; text-align:Center;">&nbsp;</td>
+		<td width="10%">&nbsp;</td>
+		<td width="30%" style="font:Time New Roman, Times, serif; color:Black; font-size:12; font-style:Bold; text-align:Center;"></td>
+		<td width="5%">&nbsp;</td>
+	</tr>		
+</table>
+
+
+		
+	</div><!--End divFoot-->
+	<table border="0" width="100%">
+		<tr>
+			<td align="center" id="PageFooter" valign="bottom"></td>
+		</tr>
+	</table>
+	
+
+
+
+</BODY>
+</html>
+
+
+
