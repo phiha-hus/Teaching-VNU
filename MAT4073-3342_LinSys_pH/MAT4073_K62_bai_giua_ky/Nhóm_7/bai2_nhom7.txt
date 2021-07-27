@@ -1,0 +1,64 @@
+octave:1>  A = [-1 1
+1 2]
+A =
+
+  -1   1
+   1   2
+
+octave:2> B = [1
+0]
+B =
+
+   1
+   0
+
+octave:3> C=[0 1]
+C =
+
+   0   1
+
+octave:4> D=[0]
+D = 0
+octave:5>  pkg load signal
+octave:6>  [N1,D1] = ss2tf(A,B,C,D,1)
+N1 = 1.0000
+D1 =
+
+   1.0000  -1.0000  -3.0000
+
+octave:7> [Z1,P1,K1] = tf2zp(N1,D1)
+Z1 = [](0x1)
+P1 =
+
+   2.3028
+  -1.3028
+
+K1 = 1.0000
+octave:8>  x0 = [1 1 ]
+x0 =
+
+   1   1
+
+octave:9>  sys = ss(A,B,C,D)
+
+sys.a =
+       x1  x2
+   x1  -1   1
+   x2   1   2
+
+sys.b =
+       u1
+   x1   1
+   x2   0
+
+sys.c =
+       x1  x2
+   y1   0   1
+
+sys.d =
+       u1
+   y1   0
+
+Continuous-time model.
+octave:10> initial(sys,x0)
+ans = -7.7682

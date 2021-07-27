@@ -1,0 +1,93 @@
+\begin{thebibliography}{10}
+
+\bibitem{Wim15}
+R.~Cepeda-Gomez and W.~Michiels.
+\newblock Some special cases in the stability analysis of multi-dimensional
+  time-delay systems using the matrix {Lambert W} function.
+\newblock {\em Automatica}, 53:339–345, Mar 2015.
+
+\bibitem{Cor96}
+R.~M. Corless, G.~H. Gonnet, D.~E.~G. Hare, D.~J. Jeffrey, and D.~E. Knuth.
+\newblock On the {Lambert W} function.
+\newblock {\em In: Advances in Computational Mathematics}, 5:329--359, 1996.
+
+\bibitem{Dua12}
+S.~Duan, J.~Ni, and A.~G. Ulsoy.
+\newblock Decay function estimation for linear time delay systems via the
+  {Lambert W} function.
+\newblock {\em Journal of Vibration and Control}, 18(10):1462--1473, 2012.
+
+\bibitem{GiU19}
+A.~Galip~Ulsoy and R.~Gitik.
+\newblock On the convergence of the matrix lambert w approach to solution of
+  systems of delay differential equations.
+\newblock {\em Journal of Dynamic Systems, Measurement, and Control}, 142(2),
+  Nov 2019.
+
+\bibitem{Hal93}
+J.~Hale and V.~Lunel.
+\newblock Introduction to functional differential equations.
+\newblock 1993.
+
+\bibitem{Le.et.al16}
+V.~Léchappé, S.~Rouquet, A.~González, F.~Plestan, J.~D. León, E.~Moulay,
+  and A.~Glumineau.
+\newblock Delay estimation and predictive control of uncertain systems with
+  input delay: {Application to a DC Motor}.
+\newblock {\em IEEE Transactions on Industrial Electronics}, 63(9):5849--5857,
+  2016.
+
+\bibitem{Leh94}
+B.~Lehman and K.~Shujaee.
+\newblock Delay independent stability conditions and decay estimates for
+  time-varying functional differential equations.
+\newblock page 1673–1676, 1994.
+
+\bibitem{Mon05}
+S.~Mondi and V.~L. Kharitonov.
+\newblock Exponential estimates for retarded time-delay systems: an lmi
+  approach.
+\newblock {\em IEEE Trans. Autom. Control}, 50:2, 2005.
+
+\bibitem{Ni98}
+S.-I. Niculescu, C.~De~Souza, and L.~Dugard.
+\newblock Robust exponential stability of uncertain systems with time varying
+  delays.
+\newblock page 743–748, 1994.
+
+\bibitem{Shi06}
+H.~Shinozaki and T.~Mori.
+\newblock Robust stability analysis of linear time-delay systems by {Lambert W}
+  function: Some extreme point results.
+\newblock {\em Automatica}, 42(1):1791--1799, 2006.
+
+\bibitem{Vyh09}
+T.~Vyhlidal and P.~Zitek.
+\newblock Mapping based algorithm for large-scale computation of
+  quasipolynomial zeros.
+\newblock {\em IEEE Transactions on Automatic Control}, 54(1):171--177, 2009.
+
+\bibitem{Yi07}
+S.~Yi, P.~W. Nelson, and A.~G. Ulsoy.
+\newblock Delay differential equations via the matrix {Lambert W} function and
+  bifurcation analysis: application to machine tool chatter.
+\newblock {\em Mathematical Biosciences and Engineering}, 4(2):355--368, 2007.
+
+\bibitem{YiDes10}
+S.~Yi, P.~W. Nelson, and A.~G. Ulsoy.
+\newblock Design of observer-based feedback control for time delay systems with
+  application to automotive powertrain control.
+\newblock {\em J. Franklin Institute}, 347(1):358--376, 2010.
+
+\bibitem{Yi10}
+S.~Yi, P.~W. Nelson, and A.~G. Ulsoy.
+\newblock {\em Time-Delay Systems: Analysis and Control Using the {Lambert W}
+  Function}.
+\newblock World Scientific, 2010.
+
+\bibitem{YiJune12}
+S.~Yi, P.~W. Nelson, and A.~G. Ulsoy.
+\newblock Dc motor control using the {Lambert W} function approach.
+\newblock In {\em IFAC Workshop on Time Delay Systems}. 2012.
+
+\end{thebibliography}

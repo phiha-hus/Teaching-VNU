@@ -1,0 +1,126 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+\newcommand{\m}[1]{
+	\begin{bmatrix}
+		#1 
+	\end{bmatrix}
+}
+
+
+\begin{document}
+% \noindent
+\begin{tabular*}
+{\linewidth}{c>{\centering\hspace{0pt}} p{.7\textwidth}}
+Trường ĐHKHTN, ĐHQGHN & {\bf Học Kỳ 2 (2020-2021)}
+\tabularnewline
+K63 TTƯD & {\bf Giới hạn kiểm tra cuối kỳ (90 min.)}
+\tabularnewline
+\rule{1in}{1pt}  \small  & \rule{2in}{1pt} %(Due date:)
+\tabularnewline
+
+%  \tabularnewline
+%  &(Đề thi có 1 trang)
+\end{tabular*}
+%
+% \Opensolutionfile{ans}[ans1]
+
+\begin{center}
+\textbf{Lý thuyết}
+\end{center}
+
+\begin{bt}
+i) Thế nào là một hệ điều khiển, hệ điều khiển với thời gian liên tục, thời gian rời rạc? Hệ MIMO, SISO là gì? \\
+ii) Thế nào là hệ điều khiển nhân quả, cho ví dụ về 1 hệ nhân quả và 1 hệ không nhân quả. \\
+iii) Thế nào là 1 hệ bó, 1 hệ phân tán. Cho ví dụ về 1 hệ bó, 1 hệ phân tán.
+\end{bt}
+
+\begin{bt}
+i) Thế nào là 1 hệ tuyến tính. Cho ví dụ 1 hệ tuyến tính và 1 hệ phi tuyến. \\
+ii) Thế nào là phản hồi trạng thái 0, phản hồi đầu vào 0. Nêu định lý về phản hồi của hệ tuyến tính và cho ví dụ. Chỉ rõ đâu là phản hồi trạng thái 0, phản hồi đầu vào 0 trong ví dụ. 
+\end{bt}
+
+\begin{bt}
+i) Thế nào là 1 hàm box-car, thế nào là hàm xung tại 1 thời điểm $t_i$, người ta dùng hàm box-car để xấp xỉ hàm xung như thế nào. \\
+ii) Trình bày về công thức đầu vào-đầu ra (I-O) cho hệ điều khiển. Nếu hệ là nhân quả thì công thức là gì? Nếu hệ là thư giãn tại 0 thì công thức là gì?
+\end{bt}
+
+\begin{bt}
+i) Công thức đầu vào-đầu ra cho 1 hệ điều khiển MIMO là gì? Thế nào là ma trận phản hồi xung cho 1 hệ nhân quả và thư giãn tại 0? \\
+ii) Biểu diễn không gian trạng thái của 1 hệ điều khiển là gì?
+\end{bt}
+
+\begin{bt}
+i) Thế nào là biến đổi Laplace, cho 1 ví dụ. Hàm truyền liên hệ với biến đổi Laplace của đầu vào, đầu ra như thế nào? Hàm truyền liên hệ với phản hồi xung thế nào? \\
+ii) Một hệ LTI (hệ tuyến tính hệ số hằng) có công thức như thế nào? Tìm công thức ma trận phản hồi xung và hàm truyền của hệ đó. \\
+iii) Thế nào là 1 hàm chính, chính ngặt. Cho ví dụ hàm truyền của 1 hệ LTI là chính, chính ngặt.
+\end{bt}
+
+\begin{bt}
+i) Viết công thức nghiệm và công thức ma trận hàm truyền của hệ LTI, cho ví dụ. 
+ii) Phát biểu \textbf{Bài toán thay đổi độ lớn (magnitude scaling)}. Vì sao người ta cần thực hiện nó?
+\end{bt}
+
+\begin{bt}
+Phát biểu \textbf{Bài toán nhận dạng (realization)}. Phát biểu định lý về tính giải được của bài toán nhận dạng và cho 1 ví dụ đơn giản (chỉ cần kiểm tra xem bài toán có nghiệm không, không cần tìm 
+hệ).
+%
+\begin{center}
+\textbf{BÀI TẬP LÝ THUYẾT}
+\end{center}
+\end{bt}
+
+\begin{bt}
+Bài tập về tìm phản hồi xung, hàm truyền, tìm CT nghiệm của 1 hệ LTI.
+\end{bt}
+
+\begin{bt}
+Bài tập về thay đổi độ lớn (magnitude scaling).
+\end{bt}
+
+\begin{bt} 
+BT về hai hệ tương đương hay tương đương zero?
+\end{bt}
+
+\begin{bt}
+Bài tập về tìm nhận dạng: dạng chính tắc phản hồi được, dạng chính tắc quan sát được.
+\begin{center}
+	\textbf{BÀI TẬP LẬP TRÌNH}
+\end{center}
+\end{bt}
+
+\begin{bt} Biết cách code để thực hiện những nhiêm vụ sau (đi thi chỉ cần viết lệnh - 0 cần ra kết quả cụ thể). Chú ý cần \verb|pkg load control| và \verb|pkg load signal| \\
+	i) Cho trước 4 ma trận A,B,C,D với kích thước phù hợp, tìm biểu diễn không gian trạng thái của hệ trong OCTAVE. \\
+	ii) Tìm hàm truyền của hệ vừa được thiết lập, tìm các cực, không điểm của hệ. \\
+	iii) Sử dụng hàm đầu vào $u$ là hàm xung (xem lệnh impulse trong OCTAVE) và hàm bước nhảy (xem lệnh step trong OCTAVE) tìm trạng thái $x$ và đầu ra $y$ của hệ.  \\
+	iv) Giải quyết bài toán thay đổi độ lớn (magnitude scaling) của hệ. Xác định ngưỡng khuếch đại $a$ của đầu vào $u$ được chọn (impulse hoặc step) sao cho độ lớn tất cả các tín hiệu trạng thái $x$
+	cũng như đầu ra $y$ đều không vượt ngưỡng $M$ cho trước. \\
+	iv) Giải quyết bài toán nhận dạng: Cho hàm truyền, tìm biểu diễn không gian trạng thái của hệ. \\	 
+\end{bt}
+
+\centerline{———————————Hết——————————-}
+
+\end{document}
+
+
