@@ -126,9 +126,65 @@ Bài tập lớn: Lý thuyết hệ điều khiển tuyến tính \\ Thời hạ
 		\caption{}
 		\label{fig:fig3}
 	\end{figure}
+\centerline{——————————— Hết Bài Giữa Kỳ ——————————-}
+\pagebreak 
+\begin{center}
+\textbf{ADDITIONAL EXERCISE FOR THE FINAL EXAM}
+\end{center}
 \end{bt}
 
-\centerline{———————————Hết——————————-}
+\begin{bt}
+a) Resolve the necessary and sufficient condition for the matrix $K\in \R^{n,n}$ such that
+\begin{equation*}
+\sum_{m\geq 0}\dfrac{1}{(2m)!} (-K)^m t^{2m} \geq 0, \mbox{ and }
+\ 
+\sum_{m\geq 0}\dfrac{1}{(2m+1)!} (-K)^m t^{2m+1} \geq 0,
+\end{equation*}
+%
+in two cases: i) $K$ is a scalar, and ii) $K$ is a square, symmetric positive definite matrix. \\
+b) Solve the general problem for symmetric system (which usually occurs in mechanics), i.e., find the necessary and sufficient condition for the system coefficients in order to verify the internal positivity
+%
+\[
+M \ddot{x}(t) + D \dot{x}(t) + K x(t) = B u(t), \mbox{ for all } t\geq 0,
+\]
+where the matrices $M$, $K$ are symmetric, positive definite, and $D$ is symmetric, positive semi-definite.
+%
+\end{bt}
+
+\begin{bt}
+Find the necessary and sufficient condition for the matrices M,D,K,B such that the second order system
+%
+\begin{equation}\label{1}
+M \ddot{x}(t) + D \dot{x}(t) + K x(t) = B u(t), \mbox{ for all } t\geq 0,
+\end{equation}
+%
+where $M \in \R^{n,n}$ is invertible, \\
+%
+a) is $C$-controllable, i.e., for any initial condition $x(0) = x_0$ and $\dot{x}(0) = \dot{x}_0$, and any final state $x_1$, there exists an input that transfers $(x_0,\dot{x}_0)$ to $x_1$ in a finite time. \\
+b) is $C_2$-controllable, i.e., transfer from any pair $(x_0,\dot{x}_0) \in \R^{n} \times \R^n$ to any pair $(x_1,\dot{x}_1) \in \R^{n} \times \R^n$. \\
+c) is $C$-observable, i.e., for any unknown initial condition $x(0) = x_0$ and $\dot{x}(0) = \dot{x}_0$, there exists a finite time $t_1$ such that 
+the pair $(x_0,\dot{x}_0)$ is uniquely determined from the knowledge of 
+the input $u|_{[t_0,t_1]}$ and the output $y|_{[t_0,t_1]}$. \
+You may think about the equivalent condition, that knowing $y=0$, $u=0$ implies that $(x_0,\dot{x}_0)=(0,0)$.\\
+d) Establish and prove the duality of $C$-observability and $C2$-controllability for the original system \eqref{1} and the dual system
+%
+\begin{equation}\label{2}
+M^T \ddot{x}(t) + D^T \dot{x}(t) + K^T x(t) = C^T u(t), \mbox{ for all } t\geq 0 \ .
+\end{equation}
+%
+%
+\end{bt}
+
+\begin{bt}
+Programming your conditions for the two exercise above in MATLAB/OCTAVE.\\
+\verb|function value = check_positive(M,D,K,B)| \\
+\verb|function value = check_Cctrb(M,D,K,B)| \\
+\verb|function value = check_C2ctrb(M,D,K,B)| \\
+\verb|function value = check_Cobsv(M,D,K,B)|
+\end{bt}
+
+\vskip 1cm
+\centerline{———————————  THE END ——————————-}
 
 \end{document}
 
