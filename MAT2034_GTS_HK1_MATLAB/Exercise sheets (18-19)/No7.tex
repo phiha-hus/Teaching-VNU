@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+
+\begin{document}
+% \noindent
+\begin{tabular*}
+{\linewidth}{c>{\centering\hspace{0pt}} p{.7\textwidth}}
+Trường ĐHKHTN, ĐHQGHN & {\bf Học Kỳ 1 (2018-2019)}
+\tabularnewline
+K61 TTƯD & {\bf Bài Tập Giải Tích Số. No 7 \\ Thực hành Nội suy Newton bằng tỷ sai phân}
+\tabularnewline
+\rule{1in}{1pt}  \small  & \rule{2in}{1pt} %(Due date:)
+\tabularnewline
+
+%  \tabularnewline
+%  &(Đề thi có 1 trang)
+\end{tabular*}
+%
+% \Opensolutionfile{ans}[ans1]
+
+\begin{bt} % Cheney/Kincaid 07
+a) Phải chăng càng nhiều mốc nội suy thì đa thức $P_n(x)$ càng xấp xỉ tốt hàm $f(x)$? Hãy xét hai trường hợp sau.\\
+i) Hàm $f(x)$ là \textbf{hàm Dirichlet}, tức là $f(x)=0$ tại các điểm vô tỉ, và $f(x)=1$ tại các điểm hữu tỉ. \\
+ii) Hàm $f(x)$ là \textbf{hàm Runge} $f(x) = \cfrac{1}{1+x^2}$. Hãy dùng 21 mốc nội suy cách đều trên đoạn $[-5, 5]$ để tìm đa thức nội suy bậc 20 dạng $P(x)$ của hàm Runge. Tính toán và vẽ đồ thị $f(x)$ và $P(x)$ tại 41 điểm cách đều trên đoạn $[-5, 5]$. Các em quan sát được gì ở đây? Gợi ý vẽ: dùng hàm linspace.\\
+b) Hãy sử dụng 21 mốc nội suy Chebyshev $x_i=5\cos((2i+1)\pi/42)$, $0\leq i\leq 20$ để tìm đa thức nội suy của hàm Runge. Vẽ sai số tại 41 điểm cách đều trên đoạn $[-5, 5]$ của 2 phép nội suy trong câu a-ii) và b). Các em quan sát được gì ở đây?
+\end{bt}
+
+\begin{bt} a) Viết hàm Matlab để tìm tỉ sai phân dạng $v = div\_diff(x,y)$ trong đó $x$ là vector chứa các mốc nội suy, $y$ là vector lưu giá trị của hàm số tại các mốc nội suy đó, $v$ là vector output, chứa các hệ số của đa thức nội suy Newton (cũng chính là đường chéo chính của bảng tỉ sai phân đã học trên lớp). \\
+b) Test script đã viết cho các bài toán nội suy sau. Hãy đưa ra nhận xét về bậc của đa thức nội suy và số lượng mốc nội suy.  \\
+\begin{tabular}[7]{l|l|l|l|l|l|l}
+	x & -2 & -1 & 0  & 1  & 2  & 3 \\ \hline 
+	y & 1  & 4  & 11 & 16 & 13 & -4
+\end{tabular}	
+\hfill 
+\begin{tabular}[6]{l|l|l|l|l|l}
+	x & 0 & 1 & 2  & -1  & 3 \\ \hline 
+	y & -1  & -1  & -1 & -7 & 5
+\end{tabular}	\\
+\begin{tabular}[6]{l|l|l|l|l|l}
+	x & 1 & 3 & -2  & 4  & 5 \\ \hline 
+	y & 2  & 6  & -1 & -4 & 2
+\end{tabular}
+\hfill 
+\begin{tabular}[6]{l|l|l|l|l|l}
+	x & 0 & 1 & 3  & 2  & 5 \\ \hline 
+	y & 2  & 1  & 5 & 6 & -183
+\end{tabular}\\
+\end{bt}
+
+\begin{bt}
+Đa thức nội suy Newton được liên hệ với tỉ sai phân bởi công thức
+%
+\begin{align*}
+P_n(x) = f(x_0)+f[x_0,x_1](x-x_0) &+f[x_0,x_1,x_2](x-x_0)(x-x_1)+ \dots + \\ 
+&+ f[x_0,x_1,\dots,x_n](x-x_0)\cdots(x-x_{n-1}).
+\end{align*}
+%
+a) Viết script Matlab dạng $value = newton\_interp(x,y,w)$ để tính giá trị của hàm số tại điểm $w$, sử dụng nội suy Newton với các mốc nội suy $x$, giá trị $y$. Chú ý sử dụng thuật toán Horner kết hợp với nội suy Newton. \\	
+b) Test code vừa viết để tìm $f(0.5)$ cho các ví dụ trong câu b) bài tập trên. 
+\end{bt}
+
+\begin{bt} Chứng minh các ước lượng sai số của các phép nội suy mốc cách đều sau.
+\begin{enumerate}
+\item[i)]  $\frac{1}{8}h^2M$ đối với phép nội suy tuyến tính, trong đó $h = x_1-x_0$ và $M = \max_{x_0 \leq x \leq x_1} |f"(x)|$. 
+\item[ii)] $\frac{1}{9\sqrt{3}}h^3M$ đối với nội suy bậc 2, trong đó $h = x_1-x_0 = x_2-x_1$ và $M = \max_{x_0 \leq x \leq x_2} |f"(x)|$. 
+\item[iii)] $\frac{3}{128} h^4M$ đối với nội suy bậc 2, trong đó $h = x_1-x_0 = x_2-x_1= x_3-x_2$ \linebreak và $M = \max_{x_0 \leq x \leq x_3} |f"(x)|$.
+\end{enumerate}	
+\end{bt}
+
+\begin{bt} Hãy lập công thức nội suy Newton cho hàm $\cos x$ bằng đa thức bậc $n$, sử dụng $n+1$ điểm cách đều trên đoạn $[0, 1]$. Thiết lập công thức đánh giá sai số cho phép nội suy này theo n? Tìm $n$ sao cho sai số này nhỏ hơn $1e-7$?	
+\end{bt}
+
+\centerline{———————————Hết——————————-}
+
+\end{document}
+
+\vspace{1cm}
+\noindent{\bf Chú ý:} {\it Cán bộ coi thi không giải thích gì thêm}\\
+\Closesolutionfile{ans}
+\newpage
+\begin{center}
+{\LARGE{\bf ĐÁP ÁN}}
+\end{center}
+
+\begin{sol}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Solution1/Sol4_1.png}
+		%\caption{}
+		\label{fig:Sol4}
+	\end{figure}
+	Exercise 7: Convergence order is 3.	
+\end{sol}
+
+   
+\end{document}
+
+
+

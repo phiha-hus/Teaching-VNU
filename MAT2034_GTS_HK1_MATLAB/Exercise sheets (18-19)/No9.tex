@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+
+\begin{document}
+% \noindent
+\begin{tabular*}
+{\linewidth}{c>{\centering\hspace{0pt}} p{.7\textwidth}}
+Trường ĐHKHTN, ĐHQGHN & {\bf Học Kỳ 1 (2018-2019)}
+\tabularnewline
+K61 TTƯD & {\bf Bài Tập Giải Tích Số. No 9 \\ Tính gần đúng tích phân \\ Các Quy tắc Cầu Phương: \\ Hình Thang, Simpson, Trung điểm}
+\tabularnewline
+\rule{1in}{1pt}  \small  & \rule{2in}{1pt} %(Due date:)
+\tabularnewline
+
+%  \tabularnewline
+%  &(Đề thi có 1 trang)
+\end{tabular*}
+%
+% \Opensolutionfile{ans}[ans1]
+
+\begin{bt}
+Giải thích ý nghĩa hình học và viết hàm trong Matlab để tính tích phân dựa trên \emph{\textbf{Công Thức Trung Điểm với các nút các đều}} sau
+%
+\[ \int_{a}^{b} f(x)dx = h \ \sum_{i=0}^{n-1} f(x_i + h/2), \]
+%
+trong đó $h=\cfrac{b-a}{n}$, $x_i = a+i*h$.
+\end{bt}
+
+\begin{bt}
+a) Hãy tính các tích phân sau sử dụng cả 3 phương pháp \emph{Hình thang/Simpson/Trung điểm} với các điểm nút cách đều và so sánh kết quả. 
+\[ \int_{0}^{1} e^{-x^2} dx \ . \]
+%	
+b) Nếu tích phân $\int_{0}^{1} e^{-x^2} dx$ cần tính với sai số nhỏ hơn $1e-7$, sử dụng các nút cách đều trong phương pháp hình thang, hỏi chúng ta cần bao nhiêu điểm nút?
+\end{bt}
+
+\begin{bt}
+Tích phân logarit là một dạng tích phân phụ thuộc tham số đặc biệt có dạng 
+%
+\[ \rm{li}(x) = \int_{2}^{x} \cfrac{dt}{\ln t} dt  \ . \]
+%
+Với $x$ đủ lớn, số lượng các số nguyên tố nhỏ hơn hoặc bằng $x$ là xấp xỉ gần bằng $\rm{li}(x)$. Ví dụ, có 46 số nguyên tố nhỏ hơn hoặc bằng 200, và li(200) thì xấp xỉ 50. Hãy tìm 
+li(200) đến 3 chữ số chắc, sử dụng ba phương pháp cầu phương đã nói ở trên.
+\end{bt}
+
+\begin{bt}
+Nhắc lại rằng độ dài của một đường cong được biểu diễn bởi hàm số $y=f(x)$ trên một đoạn $[a,b]$ được tính bởi tích phân $I(f) = \int_{a}^{b} \sqrt{1+[f'(x)]} dx$.\\ 
+Viết các hàm tích tích phân trong Matlab sử dụng các công thức hình thang và Simpson để tính độ dài của các đường cong sau. \\ 
+(a) $f(x)=sin(\pi x)$, $0\leq x \leq 1$, \\ 
+(b) $f(x)=e^x$, $0\leq x \leq 1$, \\ 
+(c) $f(x)=e^{x^2}$, $0\leq x \leq 1$.	
+\end{bt}
+
+\begin{bt}
+	Xét tích phân $\int_{0}^{1} sin(\pi x^2/2) dx$ và giả sử rằng chúng ta muốn tính gần đúng tích phân với sai số bé hơn $1e-4$. \\
+	a. Nếu chúng ta dùng quy tắc hình thang với các nút cách đều thì độ rộng $h$ cần dùng là bao nhiêu?\\
+	b. Câu hỏi tương tự với quy tắc Simpson?	
+\end{bt}
+
+\centerline{———————————Hết——————————-}
+
+\end{document}
+
+\vspace{1cm}
+\noindent{\bf Chú ý:} {\it Cán bộ coi thi không giải thích gì thêm}\\
+\Closesolutionfile{ans}
+\newpage
+\begin{center}
+{\LARGE{\bf ĐÁP ÁN}}
+\end{center}
+
+\begin{sol}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Solution1/Sol4_1.png}
+		%\caption{}
+		\label{fig:Sol4}
+	\end{figure}
+	Exercise 7: Convergence order is 3.	
+\end{sol}
+
+   
+\end{document}
+
+
+

@@ -1,0 +1,28 @@
+Thông báo thi giữa kỳ: Thứ 4. 27/11. thi 2 tiết bao gồm 45 phút bài tập lý thuyết và 45 phút lập trình
+
+Bài tập lý thuyết. 
+Đề 1. Lặp đơn + Jacobi
+Đề 2. Newton + Gauss-Seidel
+
+Bài tập lập trình. 
+Đề 1. Jacobi + Gauss-Seidel
+Đề 2. Curve fitting, phải lập hpt để chuyển về bình phương tối thiểu và giải bằng cả 2 phương pháp.
+
+Yêu cầu tất cả các em mang laptop đi làm bài tập lập trình. Copy bài lập trình chung vào 1 USB để đưa thầy cầm.
+
+
+GTS dự kiến thi cuối kỳ 29/12 vào lúc 8h sáng
+
+
+Rõ ràng là phải đặt ra 1 câu hỏi: 
+1. Liệu có nên dạy quá chi tiết về mặt thuật toán cho sv ngành toán-tin hay không? Ngành máy tính và khoa học thông tin bỏ học GTS là vì đâu?
+Hay chỉ dạy 1 số phần thôi và dạy sử dụng toolbox trong 1 số phần. Chỉ lớp tài năng mới nên học lý thuyết nặng thôi chứ.
+2. Đề thi cuối kỳ việc gì phải yêu cầu sinh viên đi tính QR, tại sao 0 để gọi luôn QR đi? tính toán như vậy có làm sinh viên khôn hơn tí nào đâu?
+Có thể cho trước phân tích QR.
+3. Nếu 0 thi trên máy thì tại sao 0 yêu cầu sinh viên viết thuật toán, dù bằng bất cứ ngôn ngữ nào thì về mặt cấu trúc nó cũng tương đối như nhau
+GTS mà thi toàn bài tập tính tay thì có tốt không?
+
+
+
+
+
