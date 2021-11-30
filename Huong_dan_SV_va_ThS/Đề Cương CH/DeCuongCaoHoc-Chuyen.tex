@@ -1,0 +1,212 @@
+\documentclass[12pt,oneside,portrait,a4paper]{book}
+\usepackage[utf8]{vietnam}
+\usepackage[mathscr]{eucal}
+\usepackage{amsfonts}
+\usepackage{amsmath,amsxtra,latexsym,amsthm, amssymb, amscd,amsfonts}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{graphics}
+\usepackage{xr}
+\usepackage{utopia}
+
+\usepackage[portrait, top=2.5cm, bottom=2.5cm, left=3.5cm, right=2.0cm] {geometry}
+
+\theoremstyle{definition}
+\newtheorem{dn}{Định nghĩa}[section]
+\newtheorem{nx}[dn]{Nhận xét}
+\newtheorem{vd}[dn]{Ví dụ}
+\newtheorem{cy}[dn]{Chú ý}
+
+\theoremstyle{plain}
+\newtheorem{dl}[dn]{Định lí}
+\newtheorem{md}[dn]{Mệnh đề}
+\newtheorem{bd}[dn]{Bổ đề}
+\newtheorem{hq}[dn]{Hệ quả}
+
+\newcommand{\bdn}{\begin{dn}}
+\newcommand{\edn}{\end{dn}}
+\newcommand{\bdl}{\begin{dl}}
+\newcommand{\edl}{\end{dl}}
+\newcommand{\bmd}{\begin{md}}
+\newcommand{\emd}{\end{md}}
+
+\newcommand{\bE}{\mathbb{E}}
+
+\newcommand{\bhq}{\begin{hq}}
+\newcommand{\ehq}{\end{hq}}
+\newcommand{\bbd}{\begin{bd}}
+\newcommand{\ebd}{\end{bd}}
+\newcommand{\bvd}{\begin{vd}}
+\newcommand{\evd}{\end{vd}}
+\newcommand{\bnx}{\begin{nx}}
+\newcommand{\enx}{\end{nx}}
+\newcommand{\bcy}{\begin{cy}}
+\newcommand{\ecy}{\end{cy}}
+\newcommand{\bpr}{\begin{proof}\item[]}
+\newcommand{\epr}{\end{proof}}
+
+\newcommand{\Ass}{\textup{Ass}}
+\newcommand{\Ann}{\textup{Ann}}
+\newcommand{\Supp}{\textup{Supp}}
+\newcommand{\Ima}{\textup{Im}}
+\newcommand{\Ker}{\textup{Ker}}
+
+\renewcommand{\labelenumi}{(\roman{enumi})}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\thispagestyle{empty}
+\begin{titlepage}
+\centerline{\fontsize{14pt}{18pt}\bf TRƯỜNG ĐẠI HỌC SƯ PHẠM HÀ NỘI}
+\centerline{\Large\bf KHOA TOÁN - TIN}
+\centerline{--------------------------o0o--------------------------}
+\vspace*{4cm}
+\centerline{\fontsize{14pt}{18pt}\bf ĐỀ CƯƠNG LUẬN VĂN THẠC SĨ}
+\vspace*{2cm}
+
+\begin{center}
+\centerline{\fontsize{14pt}{18pt}\bf Tên đề tài}
+\end{center}
+\centerline{\fontsize{14pt}{18pt}\bf PHÂN TÍCH TÍNH CHẤT ỔN ĐỊNH CỦA CÁC HỆ}
+\centerline{\fontsize{14pt}{18pt} \bf CHUYỂN MẠCH SUY BIẾN TUYẾN TÍNH VỚI HỆ SỐ HẰNG}
+\vspace*{0,2cm}
+
+
+\vspace*{4cm}
+\begin{center}
+\begin{tabular}{l l}
+\hspace*{-0,5cm}{\fontsize{14pt}{18pt}\bf \textit{Chuyên ngành}}&{\fontsize{14pt}{18pt}\bf : Toán Ứng Dụng}\\
+\hspace*{-0,5cm}{\fontsize{14pt}{18pt}\bf \textit{Mã số}}&{\fontsize{14pt}{18pt}\bf : 8.46.01.12 }\\
+\hspace*{-0,5cm}{\fontsize{14pt}{18pt}\bf \textit{Học viên}}&{\fontsize{14pt}{18pt}\bf : xxx Chuyên}\\
+\hspace*{-0,5cm}{\fontsize{14pt}{18pt}\bf \textit{Giảng viên hướng dẫn}}&{\fontsize{14pt}{18pt}\bf : TS. Hà Phi}\\
+\end{tabular}
+\end{center}
+\vfill
+\centerline{\fontsize{14pt}{18pt}\bf HÀ NỘI - 2021}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%  
+%\pagestyle{fancy}
+%\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter. \sc #1}{}}
+%\lhead[\fancyplain{}{}]{\fancyplain{}{\leftmark}}
+%\rhead{}\sloppy
+%\cfoot[\fancyplain{}{}]{\fancyplain{}{\thepage}}
+
+\pagenumbering{roman}
+\fontsize{12pt}{18pt}\selectfont
+
+
+\newpage
+
+\pagenumbering{arabic}       %%%%%Đánh số trang! Cấm bỏ!
+\renewcommand{\baselinestretch}{1.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{flushleft}
+\noindent 
+\textbf{ I. LÝ DO CHỌN ĐỀ TÀI}\\
+\hspace*{0,5cm}
+
+Trong những năm gần đây, việc phân tích tích chất ổn định và thiết kế bộ điều khiển cho các hệ thống chuyển mạch đã thu hút được rất nhiều sự quan tâm của các nhà nghiên cứu trong và ngoài nước. 
+Hệ thống chuyển mạch xuất hiện trong nhiều ứng dụng, chẳng hạn như hệ thống điện/điện tử, hệ thống điều khiển chuyến bay, hệ thống điều khiển mạng, điều khiển robot, hệ thống kinh tế, v.v. 
+Động lực để nghiên cứu các hệ thống chuyển mạch đến từ việc một hệ thống thực tế có thể bao gồm nhiều hệ thống con phụ thuộc vào các yếu tố môi trường khác nhau (các tham số môi trường).
+Bên cạnh đó, các phương pháp thiết kế điều khiển thông minh được phát triển dựa trên ý tưởng chuyển đổi giữa các bộ điều khiển khác nhau. 
+Do đó, nghiên cứu về hệ thống chuyển mạch đóng góp rất lớn trong việc thiết kế bộ điều khiển chuyển mạch và bộ điều khiển thông minh.
+
+Bên cạnh các hệ chuyển mạch thì các hệ thống suy biến (hay còn gọi là các phương trình vi phân/sai phân ẩn, phương trình vi phân đại số) có vai trò vô cùng quan trọng trong lĩnh vực toán ứng dụng/toán công nghiệp. So với các mô hình không gian trạng thái cổ điển, việc nghiên cứu hệ thống suy biến khó khăn hơn, bởi vì bên cạnh tích chất ổn định ta còn phải xem xét đồng thời tính chính quy và tính khử xung (đối với trường hợp thời gian liên tục) và quan hệ nhân quả (đối với trường hợp thời gian rời rạc). 
+
+Mặc dù các hệ thống chuyển mạch cũng như các hệ thống suy biến đã được nghiên cứu rất mạnh từ năm 1990 trở lại đây, nhưng lớp các hệ giao thoa giữa chúng (được gọi là các hệ chuyển mạch suy biến) mới chỉ được quan tâm nghiên cứu từ năm 2012 cho đến nay. Với mong muốn được tìm hiểu kĩ hơn về tính chất ổn định của hệ các hệ chuyển mạch suy biến và ứng dụng trong thực tế, tôi quyết định chọn đề tài \textbf{``Phân tích tính chất ổn định của các hệ chuyển mạch suy biến tuyến tính với hệ số hằng''} cho luận văn thạc sĩ của mình. 
+
+\pagebreak
+
+\noindent 
+\textbf{ II. MỤC TIÊU NGHIÊN CỨU}\\
+\hspace*{0,5cm} 
+
+Khi tập trung vào phân tích tính chất ổn định của hệ thống chuyển mạch, có 2 vấn đề cơ bản được quan tâm trong luận văn này là: \\
+i) Nghiên cứu về tính chất ổn định của hệ chuyển mạch dưới quy luật chuyển mạch bất kỳ, đặc biệt trong trường hợp các hệ con là ổn định. \\
+ii) Thiết kế quy luật chuyển mạch để ổn định hóa hệ tổng, đặc biệt trong trường hợp các hệ con là không ổn định.\\
+
+Luận văn sẽ tập trung giải quyết 2 vấn đề cơ bản trên cho lớp các hệ chuyển mạch suy biến không trễ có dạng
+%
+\[
+E \dot{x}(t) = A_i x(t), \quad i \in \{1,\ 2, ..., N \} .
+\]
+%
+Nếu thời gian cho phép, các kết quả ở trên hy vọng có thể được mở rộng cho lớp các hệ chuyển mạch suy biến có trễ có dạng
+%
+\[
+E \dot{x}(t) = A_i x(t) + \sum_{j=1}^{k}D^{j}_{i} x(t-\tau), \quad i \in \{1,\ 2, ..., N \} .
+\]
+%
+
+\noindent 
+\textbf{ III. ĐỐI TƯỢNG NGHIÊN CỨU}
+\begin{itemize}
+\item Tính chất ổn định của nghiệm của hệ thống chuyển mạch suy biến.
+\item Phương pháp phân tích cấu trúc ma trận 
+\item Phương pháp hàm Liapunov \& sử dụng bất đẳng thức ma trận (LMIs)
+\end{itemize}
+
+\vskip 0.5cm 
+\noindent 
+\textbf{ IV. PHƯƠNG PHÁP NGHIÊN CỨU}\\
+\hspace*{0,5cm} Nghiên cứu lý luận. Nghiên cứu thực hành.
+
+\vspace{6pt}
+\noindent 
+\textbf{ V. CẤU TRÚC LUẬN VĂN}\\
+Nội dung của luận văn bao gồm hai chương:
+
+\textbf{Chương I: Kiến thức chuẩn bị}\\
+1.1 Sơ lược về các hệ chuyển mạch không suy biến \\
+1.2 Sơ lược về các hệ suy biến 
+
+\textbf{Chương II: Phân tích tính ổn định của hệ thống chuyển mạch suy biến} \\
+2.1 Phân tích tính chất ổn định của hệ chuyển mạch dưới quy luật chuyển mạch bất kỳ \\
+2.2 Thiết kế quy luật chuyển mạch để ổn định hóa hệ thống chuyển mạch suy biến \\
+
+\pagebreak
+
+\textbf{ VI. KẾ HOẠCH THỰC HIỆN}\\
+\hspace*{1cm} - Từ tháng 9 đến tháng 11 năm 2020: Gặp giảng viên hướng dẫn, nhận đề tài, lập và bảo vệ đề cương.\\
+\hspace*{1cm} - Từ tháng 12 năm 2020 đến tháng 5 năm 2021: Nghiên cứu kết hợp trao đổi với giảng viên hướng dẫn để viết luận văn.\\
+\hspace*{1cm} - Tháng 6 năm 2021: Hoàn chỉnh luận văn và bảo vệ trước Hội đồng chấm luận văn Thạc sĩ.\\
+%\end{flushleft}
+
+\begin{thebibliography}{99}
+\bibitem{IvR15} 
+I. Ivanoviene and J.	Rimas,	\emph{Complement	to	method	of	analysis	of	time	delay	systems	via	the	Lambert	W	function},	Automatica,	Vol.	54,	2015,	pp.	25-28.
+
+\bibitem{CepM15} R. Cepeda-Gomez	and	W.	Michiels, \emph{Some	special	cases	in	the	stability analysis	of	multi-dimensional	time	delay	systems	using	the	matrix	Lambert	W	function},	Automatica, Vol.	53,	2015,	pp.	339-345.
+
+\bibitem{Yi12} 
+S. Yi, S. Duan, P. Nelson, A. Ulsoy, \emph{The Lambert W function approach to time delay systems and the lambertw-dde toolbox}. In Proceedings of the 10th IFAC Workshop on Time Delay Systems, volume 10 (2012), pp. 114-119
+
+\bibitem{UlG20}
+G. Ulsoy and R. Gitik, \emph{On the Convergence of the Matrix Lambert W Approach to Solution of Systems of Delay Differential Equations}, J. Dyn. Sys., Meas., Control., volume 142 (2020)
+
+\end{thebibliography}
+\vspace{10pt}
+
+\phantom{***}
+
+\begin{flushright}
+\textit{Hà Nội, tháng 10 năm 2020}
+\end{flushright}
+\par
+\par
+{\small
+	\hspace {-0,1cm} Học viên \hspace {0.5cm} Giảng viên hướng dẫn \hspace {0.7cm} Trưởng bộ môn \hspace {1.2cm} Phó trưởng khoa \\
+	\par
+	\vspace{1cm}
+	\noindent  \hspace{4.2cm} TS \hspace{3cm} PGS.TS \hspace{2.7cm} PGS.TS\\
+	\noindent Nguyễn T. Vân Anh  \hspace*{0.9cm} Hà Phi \hspace{2,4cm}Ngô Hoàng Long \hspace{1,1cm} Nguyễn Công Minh
+	
+}
+
+\end{document}
+ 
+ 
+
+%%23:1:5 8/11/2013Last Modification of contents

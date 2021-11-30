@@ -36,9 +36,9 @@
 % \noindent
 \begin{tabular*}
 {\linewidth}{c>{\centering\hspace{0pt}} p{.7\textwidth}}
-Trường ĐHKHTN, ĐHQGHN & {\bf Học Kỳ 1 (2019-2020)}
+Trường ĐHKHTN, ĐHQGHN & {\bf Học Kỳ 1 (2021-2022)}
 \tabularnewline
-K63 TTƯD - Thầy Hà Phi & {\bf Bài Tập Giải Tích Số. No 6 \\ Giải hệ pt tuyến tính Ax=b}
+K64 TTƯD - Thầy Hà Phi & {\bf Bài Tập Giải Tích Số. No 2a \\ Giải hệ pt tuyến tính Ax=b \\ \today}
 % Exercises on pages 239, 240 Cheney/Kincaid are really nice
 \tabularnewline
 \rule{1in}{1pt}  \small  & \rule{2in}{1pt} %(Due date:)
@@ -54,11 +54,13 @@ K63 TTƯD - Thầy Hà Phi & {\bf Bài Tập Giải Tích Số. No 6 \\ Giải h
 Tìm hiểu toolbox linalg trong Python \url{https://docs.scipy.org/doc/numpy-1.15.1/reference/routines.linalg.html}.
 
 \begin{bt}
-Với tham số $t$, sử dụng toolbox linalg hãy đi tìm chuẩn 1, 2, $\infty$ của ma trân $A= \begin{bmatrix} 1 & t \\ t & 1+t^2 \end{bmatrix}$ với $t=10,100,200,...,1000$. Tìm số điều kiện của các ma trận A đó.
+a) Với tham số $t$, sử dụng toolbox linalg hãy đi tìm chuẩn 1, 2, $\infty$ của ma trân $A= \begin{bmatrix} 1 & -t \\ 2t & 1+t^2 \end{bmatrix}$ với $t=10,100,200,...,1000$. Tìm số điều kiện của các ma trận A đó.\\
+b) Tìm chuẩn và số điều kiện của A trong trường hợp tổng quát (t bất kỳ) bằng việc tính toán lý thuyết. 
+
 \end{bt}
 
 \begin{bt}
-Ma trận Hermit được định nghĩa bởi $H_n = \Big[ \dfrac{1}{i+j-1} \Big]_{i,j=1}^n$. Hãy đi tìm số điều kiện của $H_5$, $H_{12}$ theo các chuẩn 1, 2, $\infty$. 
+Ma trận Hermit được định nghĩa bởi $H_n = \Big[ \dfrac{1}{i+j+1} \Big]_{i,j=0}^n$. Hãy đi tìm số điều kiện của $H_5$, $H_{12}$ theo các chuẩn 1, 2, $\infty$. 
 \end{bt}
 
 \begin{bt}  
@@ -77,9 +79,9 @@ b) \textbf{Thực hành:} Viết hàm trong Python để tìm phân tích $A=LU$
 a) \textbf{Lý thuyết:} Sử dụng phương pháp khử Gauss kết hợp với Pivoting trong lý thuyết để tìm phân tích $PLU$ và giải hệ phương trình sau
 %
 \begin{align*}
-	-4 x_1 + 1 x_2   -1 x_3   &= -9, \\
-	-1 x_1 + 4 x_2 - 1 x_3    &= -12, \\
-	1 x_1 + 1 x_2 + 4 x_3 &= 11. 
+	3 x_1 + 17 x_2   + 10 x_3   &= 30, \\
+	2 x_1 + 4 x_2 - 2 x_3    &= 4, \\
+	6 x_1 + 18 x_2 -12 x_3 &= 12. 
 \end{align*}
 %
 b) \textbf{Thực hành:} Viết hàm trong Python để tìm phân tích $PLU$ của ma trận $A$ và giải hệ phương trình $Ax=b$ ở trên. 
@@ -87,7 +89,9 @@ So sánh kết quả của các em với cách giải sử dụng toolbox linalg
 \end{bt}
 
 \begin{bt}
-	Tìm hiểu các ma trận Pascal, Leslie và Van der Monde trong module scipy.linalg. Tìm các phân tích LU và PLU của chúng, ứng với các ma trận cỡ $3\times 3$ hoặc $4 \times 4$.
+a) Tìm hiểu các ma trận Pascal, Leslie và Van der Monde trong module scipy.linalg, ứng với các ma trận cỡ $3\times 3$ hoặc $4 \times 4$. \\
+b) Trong các ma trận cùng cỡ $3\times 3$ hoặc $4 \times 4$ ở trên, ma trận nào có số điều kiện lớn nhất (vì sao)? Chú ý kết quả phụ thuộc vào cách chọn ma trận của các em (ngẫu nhiên). \\
+c) Tìm các phân tích LU và PLU của chúng bằng tính toán lý thuyết. 
 \end{bt}
 
 \centering{------------------------------Kết thúc phần 1--------------------------------------}
@@ -95,7 +99,8 @@ So sánh kết quả của các em với cách giải sử dụng toolbox linalg
 \newpage 
 
 \begin{bt} Tìm các phân tích PLU của các ma trận $A$ dưới đây và giải hệ phương trình vi phân tương ứng, với $b$ là random vector, làm tròn 4 chữ số thập phân khi tính toán bằng tay. \\
-i) $A = \m{4 & -1 & -2 \\ -1 & 4 & -1 \\ -1 & -2 & 4}$ \qquad ii) $A = \m{-3 & 1 & -1 \\ -1 & 4 & 1 \\ 2 & -1 & 6}$, \\
+i) $A = \m{4 & 5 & -2 \\ 2 & -5 & 2 \\ 6 & 2 & 4}$ \qquad 
+ii) $A = \m{2 & 4 & 8 \\ 10 & 12 & 0 \\ 0 & 2 & 8 }$, \\
 iii) $A = \m{0 & 1 & 0 & 0  \\ 2 & 0 & 1 & 0  \\ 0 & 2 & 0 & 1 \\ 0 & 0 & 2 & 0}$ \qquad iv) $A = \m{2 & 2 & 0 & 0  \\ 2 & 2 & 1 & 0  \\ 1 & 1 & 0 & 2 \\ 0 & 1 & 0 & 0}$.	
 \end{bt}
 
@@ -108,6 +113,23 @@ Trong trường hợp ma trận A là đối xứng, xác định dương thì p
 	4 x_1  -4 x_2 + 6 x_3   &= b_3. 
 	\end{align*}
 	%
+\end{bt}
+
+\begin{bt}
+Cho hệ phương trình sau, trong đó $\Delta b$ là các sai số tuyệt đối do quá trình đo đạc, còn $\Delta x$ là sai số tuyệt đối của nghiệm.
+%
+\[
+\m{1 & 0 \\ 100 & 1} (x+\Delta x) = b+\Delta b.
+\]
+%
+a) Tính số điều kiện của ma trận $A$ theo chuẩn $\infty$. \\
+b) Xét theo chuẩn nói trên, nếu sai số tương đối cho phép của nghiệm $x$ là $1\%$, thì sai số tương đối tối đa của vế phải là bao nhiêu $\%$?
+\end{bt}
+
+\begin{bt}
+Bạn Hải Anh sau khi học lớp thầy Phi đưa ra kết luận ``Nếu số điều kiện của 1 ma trận vuông A là xấu (tức là rất lớn), thì định thức của ma trận A phải rất gần 0 (tức là có giá trị tuyệt đối rất nhỏ)." 
+Hãy khẳng định hoặc phủ định khẳng định trên của Hải Anh, xét trong 3 trường hợp chuẩn $1$, $\infty$ và $2$. \\
+Hint: For the 2-norm, one can use SVD, noticing that the 2-norm is preserved under orthogonal transformations.
 \end{bt}
 
 \centering{------------------------------ Kết thúc phần 2 --------------------------------------}

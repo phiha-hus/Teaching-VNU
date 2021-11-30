@@ -16,7 +16,6 @@ def proterm(i, value, x):
 
 # Function for calculating divided difference table 
 def dividedDiffTable(x, y, n): 
-
 	for i in range(1, n): 
 		for j in range(n - i): 
 			y[j][i] = ((y[j][i - 1] - y[j + 1][i - 1]) /

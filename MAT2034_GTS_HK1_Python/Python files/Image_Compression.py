@@ -11,7 +11,7 @@ import os
 import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
-
+import numpy.linalg as la
 
 #path = 'Sleeping_baby.jpg'
 path = 'Baby_AJ.jpg'
@@ -23,19 +23,22 @@ plt.title("Original Image (%0.2f Kb):" %s)
 plt.imshow(img)
 
 imggray = img.convert('LA')
-imgmat = np.array( list(imggray.getdata(band = 0)), float)
-imgmat.shape = (imggray.size[1], imggray.size[0])
-imgmat = np.matrix(imgmat)
+A = np.array( list(imggray.getdata(band = 0)), float)
+A.shape = (imggray.size[1], imggray.size[0])
+
+A = np.matrix(A)
+print(la.matrix_rank(A))
+
 plt.figure()
-plt.imshow(imgmat, cmap = 'gray')
+plt.imshow(A, cmap = 'gray')
 plt.title("Image after converting it into the Grayscale pattern")
 plt.show()
 
 
 print("After compression: ")
-U, S, Vt = np.linalg.svd(imgmat) #single value decomposition
+U, S, Vt = np.linalg.svd(A) #single value decomposition
 
-print("dimension of A is: ",np.size(imgmat))
+print("dimension of A is: ",np.size(A))
 
 for i in range(50, 300, 50):
     cmpimg = np.matrix(U[:, :i]) * np.diag(S[:i]) * np.matrix(Vt[:i,:])

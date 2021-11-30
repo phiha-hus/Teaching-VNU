@@ -1,0 +1,180 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{listings}
+\lstset{language=Python}          % Set your language (you can change the language for each code-block optionally)
+
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+
+\begin{document}
+% \noindent
+
+\input{header_template}
+
+\begin{center}
+	{\bf Bài Tập Giải Tích Số. No 5b: Tính gần đúng tích phân \\ Các phương pháp Newton-Cotes \& Gauss}
+\end{center}
+
+\begin{center}
+	BÀI TẬP LÝ THUYẾT \\
+%	\vskip .5cm 
+\end{center}
+
+\begin{bt}\label{bt1}
+a) Hãy tính các tích phân sau sử dụng cả 2 phương pháp \emph{Hình thang/Trung điểm} đến 4 chữ số thập phân và tinh sai số tương đối, biết kết quả chính xác là $0.7468$. 
+\[ \int_{0}^{1} e^{-x^2} dx \ . \]
+%	
+b) Nếu cần tính tích phân nói trên với sai số nhỏ hơn $1e-9$ bằng các phương pháp \emph{Hình thang/Trung điểm \ composite} thì cần sử dụng tối thiểu khoảng bao nhiêu điểm nút?
+\end{bt}
+
+\begin{bt}
+Tích phân logarit là một dạng tích phân phụ thuộc tham số đặc biệt có dạng 
+%
+\[ \rm{li}(x) = \int_{2}^{x} \cfrac{dt}{\ln t} dt  \ . \]
+%
+Với $x$ đủ lớn, số lượng các số nguyên tố nhỏ hơn hoặc bằng $x$ là xấp xỉ gần bằng $\rm{li}(x)$. Ví dụ, có 46 số nguyên tố nhỏ hơn hoặc bằng 200, và li(200) thì xấp xỉ 50. \\
+a) Hỏi có bao nhiêu số nguyên tố nhỏ hơn hoặc bằng 300 nếu sử dụng công thức trên. \\
+b) Sử dụng pp Simpson 1/3 composite để tính toán tích phân trên với độ chính xác $1e-6$ thì cần dùng bao nhiêu điểm nút? Bước $h$ của phương pháp $=?$ \\
+c) Hãy lập trình phương pháp Simpson 1/3 và 3/8 để tìm $\rm{li}(n)$ với $n=200,\ 300, ...,\ 1000$. So sánh kết quả thực tế và xấp xỉ theo bảng sau.
+%
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	n &  200 & 300 & \dots  & \dots & 1000  \\
+	\hline
+	Simpson 1/3 &  &  &  &  &  \\
+	\hline
+	Simpson 3/8 &  &  &  &  &  \\
+	\hline
+    Kết quả thực tế &  &  &  &  &  \\
+    \hline
+    Sai số &  &  &  &  &  \\
+    \hline		
+\end{tabular}
+\end{center}
+%
+% Gợi ý: Như vậy tìm $h$ để sai số toàn phần bé hơn 1e-3, sau đó dùng quy tắc cầu phương cho các điểm nút cách đều h.
+\end{bt}
+
+
+\begin{bt} % Exercise 5, 6 Burden Faires, p. 226
+	Hãy xác định các hằng số $a$, $b$, $c$, và $d$ sao cho quy tắc cầu phương sau có cấp chính xác là 3.
+	%
+	\[ \int_{-1}^{1} f(x) dx = a f(-1) + bf (1) + cf'(-1) + df'(1) \ .
+	\]
+	%
+\end{bt}
+
+\begin{bt}
+	Hãy xác định các hằng số $a$, $b$, $c$, $d$, $e$ sao cho quy tắc cầu phương sau có cấp chính xác là 4.
+	%
+	\[  \int_{-1}^{1} f(x) dx = a f(-1) + bf (1) + cf(0) + d f'(-1) + e f'(1) \ .  \]
+	%
+\end{bt}
+
+\begin{bt}
+	Hãy tìm 4 hằng số $A$, $B$, $C$, $D$ sao cho quy tắc cầu phương sau có cấp chính xác lớn nhất có thể. 
+	%
+	\[  Af(-h) + B f(0) + C f(h) = hDf'(h) + \int_{-h}^{h} f(x) dx \ .
+	\]
+	%
+
+\begin{center}
+	==============BÀI TẬP LẬP TRÌNH============== \\
+	%	\vskip .5cm 
+\end{center}
+\end{bt}
+
+\begin{bt} a) Viết hàm trong Python để tính tích phân dựa trên các quy tắc cầu phương Simpson 1/3 và 3/8 dạng composite, ví dụ như
+	%
+	\begin{lstlisting}[frame=single] 
+		def Simpson_3_8(f,a,b,tol):
+		return I, h
+	\end{lstlisting}
+	%	 
+trong đó $f$ là hàm; $a$ và $b$ là 2 đầu mút, $tol$ là sai số cần đạt được của việc tính xấp xỉ tích phân, $I$ là giá trị gần đúng của tích phân, $h$ là độ rộng mỗi bước. \\
+b) Test hàm đã cho và so sánh sai số của hàm đó với hàm \verb|simpson| trong module \verb|scipy.integrate|. Chú ý tìm hiểu hàm \verb|simpson| cẩn thận.
+\end{bt}
+
+\begin{bt}\label{bt4} 
+a) Đề xuất phương án và thực hiện việc tính xấp xỉ các tích phân suy rộng sau với sai số $tol = 1e-9$, sử dụng các hàm đã viết trong bài tập trước. \\
+i) $A = \int_{1}^{\infty} \dfrac{1}{x^2} dx$ \ (=1) \hskip 2cm  ii) $B = \int_{0}^{\infty} \dfrac{t}{e^{2t}} dx$ \ (=1/4) . \\
+b) So sánh sai số của kết quả tìm được với sai số của hàm \verb|quad| trong module \verb|scipy.integrate|.
+\end{bt}
+
+\begin{bt}
+Tìm hiểu các hàm \verb|newton_cotes|, \verb|quadrature|, \verb|fixed_quad| trong module \verb|scipy.integrate| để trả lời câu hỏi \textbf{\emph{"Hàm đấy dùng để làm gì, hoạt động như thế nào và dựa trên thuật toán nào."}} Ứng dụng các quy tắc đó để tính tích phân trong các Bài Tập \ref{bt1} và \ref{bt4}. \\
+
+%
+%\hline
+\end{bt}
+
+\begin{center}
+	==============BÀI TẬP THÊM (Tự luyện tập)============== \\
+	%	\vskip .5cm 
+\end{center}
+
+\begin{bt}
+Xét tích phân $\int_{0}^{1} sin(\pi x^2/2) dx$ và giả sử rằng chúng ta muốn tính gần đúng tích phân với sai số bé hơn $1e-4$. \\
+a. Nếu chúng ta dùng quy tắc hình thang với các nút cách đều thì bước $h$ cần dùng là bao nhiêu?\\
+b. Câu hỏi tương tự với quy tắc Simpson?	
+\end{bt}
+
+\begin{bt}\label{bt5}
+	Độ dài của một đường cong được biểu diễn bởi hàm số $y=f(x)$ trên một đoạn $[a,b]$ được tính bởi tích phân $I(f) = \int_{a}^{b} \sqrt{1+[f'(x)]} dx$.\\ 
+	Sử dụng các hàm vừa viết trong bài tập trước để tính độ dài của các đường cong sau. \\ 
+	(a) $f(x)=sin(\pi x)$, $0\leq x \leq 1$, \qquad (b) $f(x)=e^x$, $0\leq x \leq 1$, \qquad (c) $f(x)=e^{x^2}$, $0\leq x \leq 1$.
+\end{bt}
+
+\begin{bt}
+Hãy thực hiện lại phương pháp hệ số bất định để tìm các hệ số của phương pháp Newton-Cotes ứng với các trường hợp $n=1$ (hình thang), $n=2$ (Simpson 1/3) và $n=3$ (Simpson 3/8). 
+\end{bt}
+
+
+\end{document}
+
+\vspace{1cm}
+\noindent{\bf Chú ý:} {\it Cán bộ coi thi không giải thích gì thêm}\\
+\Closesolutionfile{ans}
+\newpage
+\begin{center}
+{\LARGE{\bf ĐÁP ÁN}}
+\end{center}
+
+\begin{sol}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Solution1/Sol4_1.png}
+		%\caption{}
+		\label{fig:Sol4}
+	\end{figure}
+	Exercise 7: Convergence order is 3.	
+\end{sol}
+
+   
+\end{document}
+
+
+
