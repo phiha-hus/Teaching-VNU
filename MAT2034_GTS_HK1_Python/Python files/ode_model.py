@@ -27,3 +27,4 @@ plt.plot(I,x[:,:,0].T,I,x[:,:,1].T,I,x[:,:,2].T) ;
 plt.legend(['T','I','V'])
 plt.grid() ; 
 plt.show()
+

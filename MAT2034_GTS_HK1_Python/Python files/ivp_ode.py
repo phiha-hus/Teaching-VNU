@@ -43,7 +43,7 @@ def euler_imp(f,t0,tf,x0,n):
 
 
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-def trap_exp(f,t0,tf,x0,n):
+def Heun(f,t0,tf,x0,n):
     import numpy as np
     I = np.linspace(t0,tf,n+1) ;
     h = (tf-t0)/n ;
@@ -92,7 +92,7 @@ def f(t,x): return t/x
 # Choose a suitable method
 # I, x = euler_exp(f,t0,tf,x0,n)
 # I, x = euler_imp(f,t0,tf,x0,n)
-I, x = trap_exp(f,t0,tf,x0,n)
+I, x = Heun(f,t0,tf,x0,n)
 #I, x = trap_imp(f,t0,tf,x0,n)
 
 x = np.array([x])

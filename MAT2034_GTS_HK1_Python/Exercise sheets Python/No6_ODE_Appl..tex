@@ -1,0 +1,95 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{listings}
+\lstset{language=Python}          % Set your language (you can change the language for each code-block optionally)
+
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+
+\begin{document}
+
+\input{header_template}
+
+\begin{center}
+	{\bf Bài Tập Giải Tích Số. No 6b \\ Giải số phương trình vi phân - Các bài toán ứng dụng}
+\end{center}
+
+% \Opensolutionfile{ans}[ans1]
+
+\begin{bt}
+Nước chảy từ một bể hình nón ngược với lỗ hình tròn với tốc độ
+%
+\[
+x'(t) = - 0.6 \pi r^2 \sqrt{2g} \dfrac{\sqrt{x}}{Ax} \,
+\]
+%
+trong đó r là bán kính của lỗ, x là chiều cao của mực chất lỏng tính từ đỉnh của hình nón và A (x) là diện tích của mặt cắt ngang của bể x đơn vị phía trên lỗ. Giả sử $ r = 0,1 $ ft, $ g = 32,1 ft / s ^ 2 $ và bể có mực nước ban đầu là 8 ft và thể tích ban đầu là $ 512 (\ pi / 3) \ ft ^ 3 $. \\
+Một. Tính mực nước sau 10 min với h = 20 s. \\
+b. Xác định, trong vòng 1 phút, xem khi nào bể sẽ rỗng.
+\end{bt}
+
+\begin{bt}
+Phản ứng hóa học không thuận nghịch trong đó hai phân tử kali đicromat rắn (K2Cr2O7), hai phân tử nước (H2O) và ba nguyên tử lưu huỳnh rắn (S) kết hợp để tạo ra ba phân tử khí lưu huỳnh đioxit (SO2), bốn phân tử kali hydroxit rắn (KOH), và hai phân tử oxit cromic rắn (Cr2O3) có thể được biểu diễn một cách tượng trưng bằng phương trình phản ứng
+%
+\begin{equation}
+2K_2Cr_2O_7 + 2H_2O + 3S \rightarrow 4KOH + 2Cr_2O_3 + 3SO_2 \ .
+\end{equation}
+%
+Nếu ban đầu có $ n_1 $ phân tử $ K_2Cr_2O_7 $, $ n_2 $ phân tử $ H_2O $ và $ n_3 $ phân tử $ S $ thì phương trình vi phân sau mô tả lượng $x(t)$ KOH sau thời gian $t$:
+%
+\[
+x'(t) = k \left( n_1 - \dfrac{x}{2} \right)^2 \left( n_2 - \dfrac{x}{2} \right)^2  \left( n_3 - \dfrac{3x}{4} \right)^3 
+\]
+%
+với k là hằng số vận tốc của phản ứng. Nếu $ k = 6.22 \cdot 10^{- 19} $, $ n_1 = n_2 = 2 \cdot 10^3 $ và $ n_3 = 3 \cdot 10 ^ 3 $, thì có bao nhiêu đơn vị kali hydroxit sẽ được tạo thành sau 0,2 s?
+\end{bt}
+
+\centerline{———————————Hết——————————-}
+
+\end{document}
+
+\vspace{1cm}
+\noindent{\bf Chú ý:} {\it Cán bộ coi thi không giải thích gì thêm}\\
+\Closesolutionfile{ans}
+\newpage
+\begin{center}
+{\LARGE{\bf ĐÁP ÁN}}
+\end{center}
+
+\begin{sol}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Solution1/Sol4_1.png}
+		%\caption{}
+		\label{fig:Sol4}
+	\end{figure}
+	Exercise 7: Convergence order is 3.	
+\end{sol}
+
+   
+\end{document}
+
+
+
