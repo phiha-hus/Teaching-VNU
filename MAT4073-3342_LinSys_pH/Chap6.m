@@ -19,14 +19,14 @@ title ("Step response of a discretized PT2 transfer function");
 n = 3; p = 1;  q = 1;
 P = rand(n,n) ; 
 A = P * diag( -rand(n,1) * 100 ) * inv(P) ; 
-m = 2 ;  # m is the number of controllable modes
+m = 2 ;  % m is the number of controllable modes
 B = [rand(m,p) ; zeros(n-m,p)];
 C = rand(q,n); D = rand(q,p);
 
 sys = ss(A,B,C,D) ;
 
 figure(2); clf;
-[y,t,x] = step(sys,10);
+%[y,t,x] = step(sys,10);
 plot(t,x(:,1),t,x(:,2),t,y)
 legend('x1','x2','y')
 title('Plot the step response for the system')

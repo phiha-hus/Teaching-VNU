@@ -22,13 +22,16 @@ def euler_exp(f,t0,tf,x0,n):
     return I, x
 
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# ptvp có dạng x'(t) = f(t, x(t))
 
 def euler_imp(f,t0,tf,x0,n):  
     import numpy as np
     I = np.linspace(t0,tf,n) ;
     h = (tf-t0)/n ;
     x = [x0];    
-    x_old = x0 ;
+    x_old = x0 ;  
+    
+    # Euler ẩn có phương trình y_{k+1} = y_k + h * f(x_{k+1},y_{k+1}) cần giải ra y_{k+1}
     
     for i in range(1,n):        
         from scipy.optimize import fsolve
