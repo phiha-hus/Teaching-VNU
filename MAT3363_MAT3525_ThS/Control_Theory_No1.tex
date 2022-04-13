@@ -66,7 +66,7 @@ Từ đó kết luận rằng tồn tại các điều kiện ban đầu $\vphi(
 
 \begin{bt} \textbf{(tính ổn định của hệ thống LTI):} Cho $A \in \R^{n,n}$. Chứng minh các khẳng định sau: \\
 a) PTVP $x'(t) = Ax(t)$ là ổn định tiệm cận khi và chỉ khi $\sigma(A) := \{ \lambda \in \C \ | \ \det(\lambda I-A) = 0\} \subset \C_{-}$ và $\sigma(A) \cap i\R = \emptyset$. \\
-b) PTVP $x'(t) = Ax(t)$ là ổn định tiệm cận khi và chỉ khi $\sigma(A) := \{ \lambda \in \C \ | \ \det(\lambda I-A) = 0\} \subset \C_{-}$ và các giá trị riêng thuần ảo là đơn (bội 1).
+b) PTVP $x'(t) = Ax(t)$ là ổn định khi và chỉ khi $\sigma(A) := \{ \lambda \in \C \ | \ \det(\lambda I-A) = 0\} \subset \C_{-}$ và các giá trị riêng thuần ảo là đơn (bội 1).
 \end{bt}   
 
 \begin{bt} \textbf{Bài tập về biến đổi Laplace để huẩn bị cho hàm truyền trong Bài Giảng 2.} \\
@@ -92,26 +92,54 @@ Hãy áp dụng biến đổi Laplace cho hệ LTI
 y(t) &= Cx(t) + Du(t),
 \end{align}
 %
-để xây dựng công thức hàm truyền $G(s)$ sao cho $Y(s) = G(s) U(s)$.
+để xây dựng công thức hàm truyền (transfer function) $G(s)$ sao cho $Y(s) = G(s) U(s)$.
 \end{bt}
 
-\begin{bt} \textbf{Bài tập thực hành về tính ổn định - vẽ hình trong Matlab.}
-Cho hệ \eqref{3} với các ma trận hệ số là 
+
+\begin{bt} 
+a) Nhắc lại rằng hai phương trình $\dot{x}(t) = A(t) x(t)$	và $\dot{z}(t) = -A^T(t) z(t)$ là \emph{liên hợp}. Hãy tìm phương trình liên hợp của hệ LTV
+%
+\begin{equation}\label{3}
+	\dot{x}(t) = A(t) x(t) + B(t) u(t).
+\end{equation}
+%
+b) Cho họ tiến hóa của phương trình $\dot{x}(t) = A(t) x(t)$ là $\{\Phi(t,s)\}_{t\geq s}$. Hãy xác định họ tiến hóa của phương trình liên hợp $\dot{z}(t) = -A^T(t) z(t)$.
+\end{bt}
+
+%\begin{bt} \textbf{Bài tập thực hành về tính ổn định - vẽ hình trong Matlab.}
+%Cho hệ \eqref{3} với các ma trận hệ số là 
+%%
+%\[
+%A = \m{1 & 1 \\ 4 & -2}, \ B = \m{1 & -1 \\ 1 & -1}, \ C = \m{1 & 0}, \ D = 0. 
+%\]
+%%
+%Hãy tìm hiểu các hàm \verb|eig| và \verb|ode45| trong MATLAB để xác định tính ổn định của hệ và vẽ hình 
+%đầu ra $y(t)$, trạng thái $x(t)$ với các dữ kiện sau:
+%%
+%\[
+%u(t) \mbox{ là hàm Heaviside (google nhé)}, \ x_0 = \m{1 \\ 1}, \ [t_0,t_f] = [0,10] \ .
+%\]
+%% 
+%\end{bt}
+
+\begin{bt}
+a) Cho trước ma trận $A \in \R^{m,n}$. Chứng minh rằng $\|A\|_2 = \max\{\lambda \ | \ \det(\lambda I - A^TA) = 0 \}$. \\
+b) Cho ma trận $A \in \R^{n,n}$ khả nghịch, $B \in \R^{n,m}$, $C \in \R^{p,n}$, $D \in \R^{p,m}$. Chứng minh rằng $\m{A & B \\ C & D}$ khả nghịch khi và chỉ khi ma trận $M := D - CA^{-1}B$ là khả nghịch. \\
+c) Xét TH đặc biệt $p = m$ và $D \in \R^{m,m}$ là xác định âm. Chứng minh rằng ma trận $\m{A & B \\ B^T & D}$ là (nửa) xác định âm khi và chỉ khi $M$ là (nửa) xác định âm.
+\end{bt}
+
+
+\begin{bt}
+Cặp ma trận vuông $(E,A) \in (R^{n,n})^2$ được gọi là chính quy nếu $\det(sE-A) \not= 0$ với số $s\in C$ nào đó. Giả sử rằng cặp ma trận vuông $(E,A)$ là chính quy, hãy chứng minh các khẳng định sau. \\
+a) Tồn tại 1 ma trận $K$ khả nghịch sao cho $KE$ và $KA$ là giao hoán. \\
+b) Tồn tại 2 ma trận khả nghịch $W$, $T$ sao cho $WET = \m{I & 0 \\ 0 & N}$, $WAT = \m{J & 0\\ 0 & I}$ trong đó $J$ có dạng Jordan, $N$ là ma trận lũy linh. \\
+c) Từ đó hãy tìm công thức nghiệm tường minh của phương trình 
 %
 \[
-A = \m{1 & 1 \\ 4 & -2}, \ B = \m{1 & -1 \\ 1 & -1}, \ C = \m{1 & 0}, \ D = 0. 
+E \dot{x}(t) = A x(t) + f(t), 
 \]
 %
-Hãy tìm hiểu các hàm \verb|eig| và \verb|ode45| trong MATLAB để xác định tính ổn định của hệ và vẽ hình 
-đầu ra $y(t)$, trạng thái $x(t)$ với các dữ kiện sau:
-%
-\[
-u(t) \mbox{ là hàm Heaviside (google nhé)}, \ x_0 = \m{1 \\ 1}, \ [t_0,t_f] = [0,10] \ .
-\]
-% 
+giả sử rằng hàm $f(t)$ là đủ trơn.
 \end{bt}
 
 \end{document}
-
-
-
