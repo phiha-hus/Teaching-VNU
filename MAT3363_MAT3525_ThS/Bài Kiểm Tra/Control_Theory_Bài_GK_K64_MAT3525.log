@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.29)  14 APR 2022 16:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.29)  14 APR 2022 17:28
 entering extended mode
-**./Control_Theory_Bài_GK.tex
-(Control_Theory_Bài_GK.tex
+**./Control_Theory_Bài_GK_K64_MAT3525.tex
+(Control_Theory_Bài_GK_K64_MAT3525.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
 (D:\Program Files\MikTex\tex/latex/base\article.cls
@@ -589,8 +589,8 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count304
 \l__pdf_internal_box=\box70
 )
-(Control_Theory_Bài_GK.aux)
-\openout1 = `Control_Theory_Bài_GK.aux'.
+(Control_Theory_Bài_GK_K64_MAT3525.aux)
+\openout1 = `Control_Theory_Bài_GK_K64_MAT3525.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
@@ -685,9 +685,10 @@ LaTeX Info: Redefining \ref on input line 33.
 LaTeX Info: Redefining \pageref on input line 33.
 LaTeX Info: Redefining \nameref on input line 33.
 
-(Control_Theory_Bài_GK.out) (Control_Theory_Bài_GK.out)
+(Control_Theory_Bài_GK_K64_MAT3525.out)
+(Control_Theory_Bài_GK_K64_MAT3525.out)
 \@outlinefile=\write3
-\openout3 = `Control_Theory_Bài_GK.out'.
+\openout3 = `Control_Theory_Bài_GK_K64_MAT3525.out'.
 
  (header_template.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
@@ -709,51 +710,68 @@ Overfull \hbox (17.0pt too wide) in paragraph at lines 2--13
 [][] 
  []
 
-) [1
-
-{C:/Users/DELL/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
+)
+Underfull \hbox (badness 10000) in paragraph at lines 67--71
 
  []
 
-<../Figures/Electrical_connection.png, id=29, 724.50674pt x 162.00525pt>
-File: ../Figures/Electrical_connection.png Graphic file (type png)
-<use ../Figures/Electrical_connection.png>
-Package pdftex.def Info: ../Figures/Electrical_connection.png  used on input li
-ne 91.
-(pdftex.def)             Requested size: 434.7074pt x 97.20389pt.
+[1
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--107
+{C:/Users/DELL/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2]
+(header_template.tex
+Overfull \hbox (35.17105pt too wide) in alignment at lines 2--12
+[][] 
+ []
+
+
+Overfull \hbox (17.0pt too wide) in paragraph at lines 2--13
+[][] 
+ []
+
+
+! LaTeX Error: Command \m already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 124--128
 
  []
 
-[2 <../Figures/Electrical_connection.png>] (Control_Theory_Bài_GK.aux)
-Package rerunfilecheck Info: File `Control_Theory_Bài_GK.out' has not changed.
-
+[3] [4] (Control_Theory_Bài_GK_K64_MAT3525.aux)
+Package rerunfilecheck Info: File `Control_Theory_Bài_GK_K64_MAT3525.out' has 
+not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 11796 strings out of 479321
- 166625 string characters out of 2866504
- 541316 words of memory out of 3000000
- 29048 multiletter control sequences out of 15000+600000
- 413348 words of font info for 52 fonts, out of 8000000 for 9000
+ 11798 strings out of 479321
+ 166685 string characters out of 2866504
+ 540340 words of memory out of 3000000
+ 29045 multiletter control sequences out of 15000+600000
+ 412514 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,16n,74p,464b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,14n,74p,297b,385s stack positions out of 5000i,500n,10000p,200000b,80000s
 <D:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Progra
 m Files/MikTex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Program Files/MikT
 ex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Program Files/MikTex/fonts/type
 1/public/amsfonts/cm/cmr10.pfb><D:/Program Files/MikTex/fonts/type1/public/amsf
-onts/cm/cmr6.pfb><D:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmr8.p
-fb><D:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Progr
-am Files/MikTex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Program Files/MikT
-ex/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/Program Files/MikTex/font
-s/type1/vntex/vnr/vnbx10.pfb><D:/Program Files/MikTex/fonts/type1/vntex/vnr/vnb
-xti10.pfb><D:/Program Files/MikTex/fonts/type1/vntex/vnr/vnr10.pfb><D:/Program 
-Files/MikTex/fonts/type1/vntex/vnr/vnti10.pfb>
-Output written on Control_Theory_Bài_GK.pdf (2 pages, 369331 bytes).
+onts/cm/cmr8.pfb><D:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb><D:/Program Files/MikTex/fonts/type1/vntex/vnr/vnbx10.pfb><D:/Program File
+s/MikTex/fonts/type1/vntex/vnr/vnr10.pfb><D:/Program Files/MikTex/fonts/type1/v
+ntex/vnr/vnti10.pfb>
+Output written on Control_Theory_Bài_GK_K64_MAT3525.pdf (4 pages, 119352 bytes
+).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 16 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 83 PDF objects out of 1000 (max. 8388607)
+ 23 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
