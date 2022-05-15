@@ -1,0 +1,119 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{listings}
+\lstset{language=Python}          % Set your language (you can change the language for each code-block optionally)
+
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+
+\usepackage{extarrows}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+
+\begin{document}
+% \noindent
+
+\input{header_template}
+
+\begin{center}
+	{\bf Bài Tiểu Luận - Lý Thuyết Điều Khiển Hệ Thống - K64TN}
+\end{center}
+
+\textbf{Các em cùng nhóm chỉ cần nộp 1 bản cứng Tiểu Luận + 1 bản mềm vào Google Classroom, ghi tên đầy đủ các bạn trong nhóm theo mẫu thầy gửi kèm.} \\
+
+\hrule
+
+\begin{center}
+	{\bf Đề 1: Tính điều khiển được (3 bạn làm)}
+\end{center}
+
+\begin{bt}(\textbf{7 điểm}) \\
+Hãy đọc, tìm hiểu và dịch các phần liên quan đến tính chất điều khiển được của hệ suy biến (singular systems) trong các trang \textbf{121 - 142} (Section 4.1 \& 4.2) trong Part 1, cuốn sách của Duan. 
+\end{bt}
+
+Một hệ thống điều khiển dạng 
+%
+\begin{align}\label{0}
+	\dot{x}(t) &= A x(t) + B u(t), \quad \forall t\geq 0, \\
+	y(t) &=  C x(t), \notag
+\end{align}
+%
+được gọi là \textbf{$L$-điều khiển được một phần ($L$-partially controllable)}, trong đó $L$ là một ma trận có cỡ phù hợp, nếu thành phần $Lx$ là điều khiển được.
+Thông thường nếu $A \in \RR^{n,n}$ thì $L \in \RR^{\ell,n}$ và có đủ hạng dòng, trong đó $\ell < n$. Một ví dụ tiêu biểu của việc điều khiển được một phần là không phải mọi hệ cơ học bậc hai
+%
+\begin{equation}\label{1}
+	M \ddot{x}(t) + D \dot{x}(t) + K x(t) = B u(t), \mbox{ for all } t\geq 0,
+\end{equation}
+%
+đều có thể điều khiển được cả vị trí ($x$) và vận tốc ($\dot{x}$). Khi đó nếu chỉ quan tâm đến điều khiển vị trí và hệ thống \eqref{1} được chuyển về dạng bậc nhất với biến
+trạng thái mới $z(t) = \m{x(t) \\ \dot{x}(t)}$, thì ta có thể lấy $L = \m{I_n & 0}$.
+
+
+\begin{bt}(\textbf{3 điểm}) \\
+Xét một hệ thống điều khiển suy biến (hệ mô tả/descriptor systems) có dạng 
+%
+\begin{align}\label{2}
+	E \dot{x}(t) &= A x(t) + B u(t), \quad \forall t\geq 0,  \\
+	y(t) &=  C x(t), \notag
+\end{align}
+%
+trong đó $E$, $A \in \RR^{n,n}$, $B \in \RR^{n,p}$. Cho trước ma trận $L \in \RR^{\ell,n}$ và có đủ hạng dòng, trong đó $\ell < n$. \\
+Hệ điều khiển (\eqref{0} hay \eqref{2}) được gọi là $L$-điều khiển được một phần, nếu đối với bất kỳ điều kiện ban đầu nào $x(0) = x_0$ và bất kỳ trạng thái cuối cùng nào $x_1$ luôn tồn tại $t_1 > 0$ và một hàm đầu vào $u(t)$ sao cho nghiệm của hệ \eqref{2} thỏa mãn $L x(t_1;t_0,x_0,u) = L x_1$.\\  
+a) Tham khảo bài báo của Bashirov. Hãy xây dựng các điều kiện để kiểm tra cho tính $L$-điều khiển được một phần của hệ \eqref{0}. Yêu cầu phải có ít nhất 2 trong 3 điều kiên: (i) Điều kiện Gramian; (ii) Điều kiện tương tự Hautus; (iii) Điều kiện tương tự ma trận điều khiển Kalman. \\
+b) Xây dựng ít nhất một điều kiện để kiểm tra cho tính $L$-điều khiển được một phần của hệ mô tả \eqref{2}.
+\end{bt}
+
+\hrule
+
+\begin{center}
+	{\bf Đề 2: Tính quan sát được (2 bạn làm)}
+\end{center}
+
+\begin{bt}(\textbf{7 điểm}) \\
+Hãy đọc, tìm hiểu và dịch các phần liên quan đến tính chất quan sát được của hệ suy biến (singular systems) trong các trang \textbf{142 - 156} (Section 4.3 \& 4.4) trong Part 1, cuốn sách của Duan. 
+\end{bt}
+
+\begin{bt}(\textbf{3 điểm}) \\
+	Xét một hệ thống điều khiển suy biến (hệ mô tả/descriptor systems) có dạng 
+	%
+	\begin{align}\label{02}
+		E \dot{x}(t) &= A x(t) + B u(t), \quad \forall t\geq 0,  \\
+		y(t) &=  C x(t), \notag
+	\end{align}
+	%
+	trong đó $E$, $A \in \RR^{n,n}$, $B \in \RR^{n,p}$. Hãy đọc Mục 6.7, Chương 6 cuốn sách của Chen để hiểu về việc bảo toàn tính chất điều khiển được qua quá trình lấy mẫu/sampling. \\
+	a) Dựa vào tính chất đối ngẫu, hãy phát biểu và chứng minh Định lý tương tự Định lý 6.9 cho tính quan sát được khi lấy mẫu hệ điều khiển
+	%
+	\begin{align}\label{00}
+		\dot{x}(t) &= A x(t) + B u(t), \quad \forall t\geq 0, \\
+		y(t) &=  C x(t), \notag
+	\end{align}
+	%
+	\noindent b) Hãy mở rộng các kết quả nói trên cho hệ mô tả \eqref{02}.
+\end{bt}
+
+
+\end{document}
+
+
+
