@@ -1,0 +1,12 @@
+\contentsline {chapter}{\numberline {1}Gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u h\IeC {\`a}m Lambert}{5}
+\contentsline {section}{\numberline {1.1}Gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u}{5}
+\contentsline {section}{\numberline {1.2}C\IeC {\'a}c t\IeC {\'\i }nh ch\IeC {\'\acircumflex }t c\IeC {\h u}a h\IeC {\`a}m Lambert}{6}
+\contentsline {section}{\numberline {1.3}M\IeC {\d \ocircumflex }t s\IeC {\'\ocircumflex } \IeC {\'\uhorn }ng d\IeC {\d u}ng c\IeC {\h u}a h\IeC {\`a}m Lambert}{9}
+\contentsline {subsection}{\numberline {1.3.1}B\IeC {\`a}i to\IeC {\'a}n v\IeC {\`\ecircumflex } m\IeC {\^o} h\IeC {\`\i }nh \IeC {\dj }\IeC {\'\ocircumflex }t ch\IeC {\'a}y}{9}
+\contentsline {subsection}{\numberline {1.3.2}Ph\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh vi ph\IeC {\^a}n h\IeC {\d \ecircumflex } s\IeC {\'\ocircumflex } h\IeC {\`\abreve }ng}{10}
+\contentsline {chapter}{\numberline {2}H\IeC {\`a}m Lambert v\IeC {\`a} ph\IeC {\h \ocircumflex } c\IeC {\h u}a ph\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh vi ph\IeC {\^a}n c\IeC {\'o} tr\IeC {\~\ecircumflex }}{11}
+\contentsline {section}{\numberline {2.1}Gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u}{11}
+\contentsline {section}{\numberline {2.2}D\IeC {\d a}ng ma tr\IeC {\d \acircumflex }n c\IeC {\h u}a h\IeC {\`a}m Lambert}{12}
+\contentsline {section}{\numberline {2.3}K\IeC {\'\ecircumflex }t qu\IeC {\h a} ch\IeC {\'\i }nh}{13}
+\contentsline {section}{\numberline {2.4}Ph\IeC {\h a}n v\IeC {\'\i } d\IeC {\d u}}{15}
+\contentsline {chapter}{\numberline {3}T\IeC {\'\i }nh to\IeC {\'a}n ph\IeC {\h \ocircumflex } cho ph\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh vi ph\IeC {\^a}n c\IeC {\'o} tr\IeC {\~\ecircumflex }}{19}

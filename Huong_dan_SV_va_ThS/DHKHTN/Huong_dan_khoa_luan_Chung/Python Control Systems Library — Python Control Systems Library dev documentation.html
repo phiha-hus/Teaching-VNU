@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://python-control.readthedocs.io/en/0.8.3/ -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python Control Systems Library — Python Control Systems Library dev documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script async="" src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/analytics.js.tải xuống"></script><script type="text/javascript" src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/modernizr.min.js.tải xuống"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/documentation_options.js.tải xuống"></script>
+        <script type="text/javascript" src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/jquery.js.tải xuống"></script>
+        <script type="text/javascript" src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/underscore.js.tải xuống"></script>
+        <script type="text/javascript" src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/doctools.js.tải xuống"></script>
+        <script type="text/javascript" src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/language_data.js.tải xuống"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/require.min.js.tải xuống"></script>
+        <script type="text/javascript" src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/readthedocs-doc-embed.js.tải xuống"></script>
+    
+    <script type="text/javascript" src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/theme.js.tải xuống"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="./Python Control Systems Library — Python Control Systems Library dev documentation_files/theme.css" type="text/css">
+  <link rel="stylesheet" href="./Python Control Systems Library — Python Control Systems Library dev documentation_files/pygments.css" type="text/css">
+    <link rel="index" title="Index" href="https://python-control.readthedocs.io/en/0.8.3/genindex.html">
+    <link rel="search" title="Search" href="https://python-control.readthedocs.io/en/0.8.3/search.html">
+    <link rel="next" title="Introduction" href="https://python-control.readthedocs.io/en/0.8.3/intro.html"> 
+
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="https://python-control.readthedocs.io/en/0.8.3/">
+
+<link rel="stylesheet" href="./Python Control Systems Library — Python Control Systems Library dev documentation_files/readthedocs-doc-embed.css" type="text/css">
+
+<script type="text/javascript" src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/readthedocs-data.js.tải xuống"></script>
+
+<!-- Add page-specific data, which must exist in the page js, not global -->
+<script type="text/javascript">
+READTHEDOCS_DATA['page'] = "index"
+READTHEDOCS_DATA['source_suffix'] = ".rst"
+</script>
+
+<script type="text/javascript" src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/readthedocs-analytics.js.tải xuống"></script>
+
+<!-- end RTD <extrahead> -->
+<script src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/ethicalads.min.js.tải xuống" type="text/javascript" async="" id="ethicaladsjs"></script><style>[data-ea-publisher].loaded,[data-ea-type].loaded{font-size:14px;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;font-weight:normal;font-style:normal;leter-spacing:0px;vertical-align:baseline;line-height:1.3em}[data-ea-publisher].loaded a,[data-ea-type].loaded a{text-decoration:none}[data-ea-publisher].loaded .ea-pixel,[data-ea-type].loaded .ea-pixel{display:none}[data-ea-publisher].loaded .ea-content,[data-ea-type].loaded .ea-content{margin:1em 1em 0.5em 1em;padding:1em;background:rgba(0,0,0,0.03);color:#505050}[data-ea-publisher].loaded .ea-content a:link,[data-ea-type].loaded .ea-content a:link{color:#505050}[data-ea-publisher].loaded .ea-content a:visited,[data-ea-type].loaded .ea-content a:visited{color:#505050}[data-ea-publisher].loaded .ea-content a:hover,[data-ea-type].loaded .ea-content a:hover{color:#373737}[data-ea-publisher].loaded .ea-content a:active,[data-ea-type].loaded .ea-content a:active{color:#373737}[data-ea-publisher].loaded .ea-content a strong,[data-ea-publisher].loaded .ea-content a b,[data-ea-type].loaded .ea-content a strong,[data-ea-type].loaded .ea-content a b{color:#088cdb}[data-ea-publisher].loaded .ea-callout a:link,[data-ea-type].loaded .ea-callout a:link{color:#6a6a6a}[data-ea-publisher].loaded .ea-callout a:visited,[data-ea-type].loaded .ea-callout a:visited{color:#6a6a6a}[data-ea-publisher].loaded .ea-callout a:hover,[data-ea-type].loaded .ea-callout a:hover{color:#505050}[data-ea-publisher].loaded .ea-callout a:active,[data-ea-type].loaded .ea-callout a:active{color:#505050}[data-ea-publisher].loaded .ea-callout a strong,[data-ea-publisher].loaded .ea-callout a b,[data-ea-type].loaded .ea-callout a strong,[data-ea-type].loaded .ea-callout a b{color:#088cdb}[data-ea-publisher].loaded .ea-callout a,[data-ea-type].loaded .ea-callout a{font-size:0.8em}[data-ea-publisher].loaded.dark .ea-content,[data-ea-type].loaded.dark .ea-content{background:rgba(255,255,255,0.05);color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-content a:link,[data-ea-type].loaded.dark .ea-content a:link{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-content a:visited,[data-ea-type].loaded.dark .ea-content a:visited{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-content a:hover,[data-ea-type].loaded.dark .ea-content a:hover{color:#f6f6f6}[data-ea-publisher].loaded.dark .ea-content a:active,[data-ea-type].loaded.dark .ea-content a:active{color:#f6f6f6}[data-ea-publisher].loaded.dark .ea-content a strong,[data-ea-publisher].loaded.dark .ea-content a b,[data-ea-type].loaded.dark .ea-content a strong,[data-ea-type].loaded.dark .ea-content a b{color:#50baf9}[data-ea-publisher].loaded.dark .ea-callout a:link,[data-ea-type].loaded.dark .ea-callout a:link{color:#c3c3c3}[data-ea-publisher].loaded.dark .ea-callout a:visited,[data-ea-type].loaded.dark .ea-callout a:visited{color:#c3c3c3}[data-ea-publisher].loaded.dark .ea-callout a:hover,[data-ea-type].loaded.dark .ea-callout a:hover{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-callout a:active,[data-ea-type].loaded.dark .ea-callout a:active{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-callout a strong,[data-ea-publisher].loaded.dark .ea-callout a b,[data-ea-type].loaded.dark .ea-callout a strong,[data-ea-type].loaded.dark .ea-callout a b{color:#50baf9}[data-ea-publisher].loaded .ea-content,[data-ea-type].loaded .ea-content{border:0px;border-radius:3px;box-shadow:0px 2px 3px rgba(0,0,0,0.15)}[data-ea-publisher].loaded.raised .ea-content,[data-ea-type].loaded.raised .ea-content{border:0px;border-radius:3px;box-shadow:0px 2px 3px rgba(0,0,0,0.15)}[data-ea-publisher].loaded.bordered .ea-content,[data-ea-type].loaded.bordered .ea-content{border:1px solid rgba(0,0,0,0.04);border-radius:3px;box-shadow:none}[data-ea-publisher].loaded.bordered.dark .ea-content,[data-ea-type].loaded.bordered.dark .ea-content{border:1px solid rgba(255,255,255,0.07)}[data-ea-publisher].loaded.flat .ea-content,[data-ea-type].loaded.flat .ea-content{border:0px;border-radius:3px;box-shadow:none}[data-ea-type="image"].loaded,[data-ea-publisher]:not([data-ea-type]).loaded,.ea-type-image{display:inline-block}[data-ea-type="image"].loaded .ea-content,[data-ea-publisher]:not([data-ea-type]).loaded .ea-content,.ea-type-image .ea-content{max-width:180px;overflow:auto;text-align:center}[data-ea-type="image"].loaded .ea-content>a>img,[data-ea-publisher]:not([data-ea-type]).loaded .ea-content>a>img,.ea-type-image .ea-content>a>img{width:120px;height:90px;display:inline-block}[data-ea-type="image"].loaded .ea-content>.ea-text,[data-ea-publisher]:not([data-ea-type]).loaded .ea-content>.ea-text,.ea-type-image .ea-content>.ea-text{margin-top:1em;font-size:1em;text-align:center}[data-ea-type="image"].loaded .ea-callout,[data-ea-publisher]:not([data-ea-type]).loaded .ea-callout,.ea-type-image .ea-callout{max-width:180px;margin:0em 1em 1em 1em;padding-left:1em;padding-right:1em;font-style:italic;text-align:right}[data-ea-type="image"].loaded.horizontal .ea-content,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-content,.ea-type-image.horizontal .ea-content{max-width:320px}[data-ea-type="image"].loaded.horizontal .ea-content>a>img,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-content>a>img,.ea-type-image.horizontal .ea-content>a>img{float:left;margin-right:1em}[data-ea-type="image"].loaded.horizontal .ea-content .ea-text,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-content .ea-text,.ea-type-image.horizontal .ea-content .ea-text{margin-top:0em;text-align:left;overflow:auto}[data-ea-type="image"].loaded.horizontal .ea-callout,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-callout,.ea-type-image.horizontal .ea-callout{max-width:320px;text-align:right}[data-ea-type="text"].loaded,.ea-type-text{font-size:14px}[data-ea-type="text"].loaded .ea-content,.ea-type-text .ea-content{text-align:left}[data-ea-type="text"].loaded .ea-callout,.ea-type-text .ea-callout{margin:0.5em 1em 1em 1em;padding-left:1em;padding-right:1em;text-align:right;font-style:italic}
+</style><script src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/saved_resource" type="text/javascript" async=""></script></head>
+
+<body class="wy-body-for-nav"><audio class="audio-for-speech" src=""></audio><div class="translate-tooltip-mtz hidden">
+                    <div class="header">
+                        <div class="header-controls">
+                            <span class="sound-translate"></span>
+                            <span class="settings"></span>
+                        </div>
+                        <div class="translate-icons">
+                            <img class="from" src="https://python-control.readthedocs.io/en/0.8.3/">
+                            <img class="arrow" src="chrome-extension://hiidjliailpkjeigakikbfedlfijngih/images/right-arrow.png">
+                            <img class="to" src="https://python-control.readthedocs.io/en/0.8.3/">
+                        </div>
+                    </div>
+                    <div class="translated-text">
+                        <div class="words"></div>
+                        <div class="sentences"></div>
+                    </div>
+                </div><span class="translate-button-mtz hidden"></span>
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="https://python-control.readthedocs.io/en/0.8.3/#" class="icon icon-home"> Python Control Systems Library
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                0.8.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://python-control.readthedocs.io/en/0.8.3/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/conventions.html">Library conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/control.html">Function reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/classes.html">Control system classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html">MATLAB compatibility module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/flatsys.html">Differentially flat systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/iosys.html">Input/output systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/examples.html">Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      <div id="rtd-sidebar" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" data-ea-manual="true" class="ethical-rtd ethical-dark-theme loaded" data-ea-keywords="python|readthedocs-project-18262|readthedocs-project-python-control" data-ea-campaign-types="community|house|paid"><div class="ethical-sidebar"><div class="ethical-content"><a href="https://server.ethicalads.io/proxy/click/194/5c182326-18d5-418c-bf73-c04c2ebce224/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/english-house_RILBxkP.png"></a><div class="ethical-text"><a href="https://server.ethicalads.io/proxy/click/194/5c182326-18d5-418c-bf73-c04c2ebce224/" rel="nofollow" target="_blank"><b>Reach over 7 million devs</b> each month when you advertise with Read the Docs</a>.</div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></div></div><img src="./Python Control Systems Library — Python Control Systems Library dev documentation_files/saved_resource(1)" class="ea-pixel"></div></div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="https://python-control.readthedocs.io/en/0.8.3/#">Python Control Systems Library</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="https://python-control.readthedocs.io/en/0.8.3/#">Docs</a> »</li>
+        
+      <li>Python Control Systems Library</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/python-control/python-control/blob/0.8.3/doc/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="python-control-systems-library">
+<h1>Python Control Systems Library<a class="headerlink" href="https://python-control.readthedocs.io/en/0.8.3/#python-control-systems-library" title="Permalink to this headline">¶</a></h1>
+<p>The Python Control Systems Library (<cite>python-control</cite>) is a Python package that
+implements basic operations for analysis and design of feedback control systems.</p>
+<p class="rubric">Features</p>
+<ul class="simple">
+<li>Linear input/output systems in state-space and frequency domain</li>
+<li>Block diagram algebra: serial, parallel, and feedback interconnections</li>
+<li>Time response: initial, step, impulse</li>
+<li>Frequency response: Bode and Nyquist plots</li>
+<li>Control analysis: stability, reachability, observability, stability margins</li>
+<li>Control design: eigenvalue placement, LQR, H2, Hinf</li>
+<li>Model reduction: balanced realizations, Hankel singular values</li>
+<li>Estimator design: linear quadratic estimator (Kalman filter)</li>
+</ul>
+<p class="rubric">Documentation</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/intro.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/intro.html#overview-of-the-toolbox">Overview of the toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/intro.html#some-differences-from-matlab">Some differences from MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/intro.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/intro.html#getting-started">Getting started</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/conventions.html">Library conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/conventions.html#lti-system-representation">LTI system representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/conventions.html#time-series-data">Time series data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/conventions.html#package-configuration-parameters">Package configuration parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/control.html">Function reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/control.html#system-creation">System creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/control.html#system-interconnections">System interconnections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/control.html#frequency-domain-plotting">Frequency domain plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/control.html#time-domain-simulation">Time domain simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/control.html#block-diagram-algebra">Block diagram algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/control.html#control-system-analysis">Control system analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/control.html#matrix-computations">Matrix computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/control.html#control-system-synthesis">Control system synthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/control.html#model-simplification-tools">Model simplification tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/control.html#nonlinear-system-support">Nonlinear system support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/control.html#utility-functions-and-conversions">Utility functions and conversions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/classes.html">Control system classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/generated/control.TransferFunction.html">control.TransferFunction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/generated/control.StateSpace.html">control.StateSpace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/generated/control.FrequencyResponseData.html">control.FrequencyResponseData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/generated/control.iosys.InputOutputSystem.html">control.iosys.InputOutputSystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/classes.html#input-output-system-subclasses">Input/output system subclasses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html">MATLAB compatibility module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html#creating-linear-models">Creating linear models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html#utility-functions-and-conversions">Utility functions and conversions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html#system-interconnections">System interconnections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html#system-gain-and-dynamics">System gain and dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html#time-domain-analysis">Time-domain analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html#frequency-domain-analysis">Frequency-domain analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html#compensator-design">Compensator design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html#state-space-ss-models">State-space (SS) models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html#model-simplification">Model simplification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html#time-delays">Time delays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html#matrix-equation-solvers-and-linear-algebra">Matrix equation solvers and linear algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html#additional-functions">Additional functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/matlab.html#functions-imported-from-other-modules">Functions imported from other modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/flatsys.html">Differentially flat systems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/flatsys.html#overview-of-differential-flatness">Overview of differential flatness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/flatsys.html#module-usage">Module usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/flatsys.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/flatsys.html#module-classes-and-functions">Module classes and functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/iosys.html">Input/output systems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/iosys.html#module-usage">Module usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/iosys.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/iosys.html#module-classes-and-functions">Module classes and functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/examples.html#python-scripts">Python scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/examples.html#jupyter-notebooks">Jupyter notebooks</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<ul class="simple">
+<li><a class="reference internal" href="https://python-control.readthedocs.io/en/0.8.3/genindex.html"><span class="std std-ref">Index</span></a></li>
+</ul>
+<p class="rubric">Development</p>
+<p>You can check out the latest version of the source code with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">python</span><span class="o">-</span><span class="n">control</span><span class="o">/</span><span class="n">python</span><span class="o">-</span><span class="n">control</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>You can run a set of unit tests to make sure that everything is working
+correctly.  After installation, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span>
+</pre></div>
+</div>
+<p>Your contributions are welcome!  Simply fork the <a class="reference external" href="https://github.com/python-control/python-control">GitHub repository</a> and send a
+<a class="reference external" href="https://github.com/python-control/python-control/pulls">pull request</a>.</p>
+<p class="rubric">Links</p>
+<ul class="simple">
+<li>Issue tracker: <a class="reference external" href="https://github.com/python-control/python-control/issues">https://github.com/python-control/python-control/issues</a></li>
+<li>Mailing list: <a class="reference external" href="http://sourceforge.net/p/python-control/mailman/">http://sourceforge.net/p/python-control/mailman/</a></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="https://python-control.readthedocs.io/en/0.8.3/intro.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr>
+
+  <div role="contentinfo">
+    <p>
+        © Copyright 2019, python-control.org
+      
+        <span class="commit">
+          Revision <code>319a756e</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org/">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: 0.8.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Các phiên ban</dt>
+        
+        
+        <dd><a href="https://python-control.readthedocs.io/en/latest/">latest</a></dd>
+        
+        
+         <strong> 
+        <dd><a href="https://python-control.readthedocs.io/en/0.8.3/">0.8.3</a></dd>
+         </strong> 
+        
+        
+        <dd><a href="https://python-control.readthedocs.io/en/0.8.2/">0.8.2</a></dd>
+        
+        
+        
+        <dd><a href="https://python-control.readthedocs.io/en/0.8.1/">0.8.1</a></dd>
+        
+        
+        
+        <dd><a href="https://python-control.readthedocs.io/en/0.7.0/">0.7.0</a></dd>
+        
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="https://python-control.readthedocs.io/_/downloads/en/0.8.3/pdf/">PDF</a></dd>
+        
+        <dd><a href="https://python-control.readthedocs.io/_/downloads/en/0.8.3/htmlzip/">HTML</a></dd>
+        
+        <dd><a href="https://python-control.readthedocs.io/_/downloads/en/0.8.3/epub/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="https://readthedocs.org/projects/python-control/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/python-control/builds/">Các phiên bản xây dựng</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/python-control/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/python-control/python-control/blob/0.8.3/doc/index.rst">View</a>
+        </dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Tìm kiếm</dt>
+        <dd>
+          <div style="padding: 6px;">
+            
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="https://readthedocs.org/projects/python-control/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+      
+      
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org/">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+   
+
+
+<div id="lbdictex_find_popup" class="lbexpopup hidden" style="position: absolute; top: 0px; left: 0px;"><div class="lbexpopup_top"><h2 class="fl popup_title">&nbsp;</h2><ul><li><a class="close_main popup_close" href="https://python-control.readthedocs.io/en/0.8.3/#">&nbsp;</a></li></ul><div class="clr"></div></div><div class="popup_details"></div><div class="popup_powered">abc</div></div><div id="lbdictex_ask_mark" class="hidden" style="position: absolute; top: 0px; left: 0px;"><a class="lbdictex_ask_select" href="https://python-control.readthedocs.io/en/0.8.3/#">&nbsp;</a></div></body></html>
