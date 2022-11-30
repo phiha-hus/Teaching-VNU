@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Oct  1 11:04:59 2020
 
-@author: phiha
-
-Image compression using Singular Value Decomposition (svd)
-"""
+# =============================================================================
+# """
+# Created on Thu Oct  1 11:04:59 2020
+# 
+# @author: phiha
+# 
+# Image compression using Singular Value Decomposition (svd)
+# """
+# 
+# =============================================================================
 
 import os
 import numpy as np
