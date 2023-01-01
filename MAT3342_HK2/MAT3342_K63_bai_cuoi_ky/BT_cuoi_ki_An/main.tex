@@ -1,0 +1,147 @@
+ \documentclass[11pt, reqno]{amsart}
+\usepackage[utf8]{vietnam}
+\usepackage{verbatim}
+\usepackage{amsmath,amsthm}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{exscale}
+\usepackage[mathscr]{eucal}
+\usepackage{makeidx}
+%\usepackage{lscape}
+\usepackage{multicol}
+\usepackage{afterpage}
+\usepackage{graphicx}
+\usepackage{color}
+ \usepackage{colortbl}
+\usepackage[colorlinks,hyperindex,unicode]{hyperref}
+%\usepackage{cite}
+\usepackage{biblatex}
+\usepackage{parallel} \usepackage{framed}
+\usepackage{lipsum}
+\usepackage{tikz}
+\usepackage[left=2.00cm, right=1.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+
+\title{bt xemina 2}
+\author{anthule2000 }
+\date{June 2021}
+
+ 
+
+\begin{document}
+
+Câu 4: Giải điều kiện cần và đủ cho ma trận K $\in$ $\mathbb{R}^{n,n}$ sao cho:
+
+\begin{equation}
+    \underset{m\geq0}{\mathlarger{\sum}}
+    {\dfrac{1}{(2m)!}(-K)^mt^{2m} = 0   
+    
+\end{equation}
+  
+và
+\begin{equation}
+     \underset{m\geq0}{\mathlarger{\sum}}
+        {\dfrac{1}{(2m+1)!}(-K)^mt^{2m+1} \geq 0 
+        
+\end{equation} 
+
+ở trong 2 trường hợp:
+  
+\begin{tikzpicture}
+    \node[rectangle,rounded corners,draw=black,text width
+    =8cm,text ragged, fill=yellow]  (a) at (0,0)
+    {
+        i) K là vô hướng:
+       \begin{itemize}
+       \item Nếu $-K\geq0$ thì (1),(2) đều thỏa mãn.
+       \item Nếu $-K<0$ thì 
+           $-K= (-1)x^2$ 
+           
+           với x $\geq0$
+           
+           \begin{allign}
+              f(t) = \underset{m\geq0}{\mathlarger{\sum}}
+           {\dfrac{1}{(2m)!}(-K)^mt^{2m} \\
+           = 
+           \underset{m\geq0}{\mathlarger{\sum}}
+           {\dfrac{1}{(2m)!}(-1)^m(xt)^{2m}
+           =cos(xt)
+           
+           \end{allign}
+            vì t $\in [0, +\infty)$  nên f(t) sẽ <0 với t nào đó. 
+        \end{itemize}
+        Vậy điều kiện cần và đủ của (1) và (2) là $-K\geq 0$
+    }
+\end{tikzpicture}
+\begin{tikzpicture}
+     \node[rectangle,rounded corners,draw=black,text width
+    =9cm,text ragged, fill=yellow]  (b) at (3,0)
+    {
+     ii) K là ma trận vuông, đối xứng:
+        \begin{itemize}
+            \item Nếu $-K\geq0$ thì (1),(2) đều thỏa mãn.
+            \item  Nếu $-K$ không $\geq0$ thì 
+                 $$ -K = S^T A S $$ 
+                 với S là ma trận trực giao, A là ma trận đường chéo
+                 $A = diag(a_1, \dots, a_n)$.
+                 
+                 $$ (-K)^m = S^T diag(a_1^m, \dots, a_n^m) S $$
+                 \begin{allign}
+              f(t) = \underset{m\geq0}{\mathlarger{\sum}}
+           {\dfrac{1}{(2m)!}(-K)^mt^{2m} \\
+           = 
+           \underset{m\geq0}{\mathlarger{\sum}}
+           {\dfrac{1}{(2m)!}S^T diag(a_1^m, \dots, a_n^m) S
+         
+           \end{allign}
+                 
+        \end{itemize}
+     
+     }
+\end{tikzpicture}
+
+Câu 5: Giải điều kiện cần và đủ cho ma trận M,D,K,B sao cho hệ bậc 2:
+ $$ M\ddot{x}(t) + D\dot{x}(t) + Kx(t) = Bu(t)  \hspace{2cm}(5) $$ với mọi $t\geq 0$ 
+ với M $\in$ $\mathbb{R}^{n,n}$, khả nghịch.
+ 
+ Giải: Vì M khả nghịch nên không mất tổng quát, cho M = $I_n$.
+ 
+ b) Là $C_2$-điều khiển được, chuyển từ $(x_0, \dot{x}_0)$  $\in$ $\mathbb{R}^n \times \mathbb{R}^n$ sang $(x_1, \dot{x}_1)$ $\in$ $\mathbb{R}^n \times \mathbb{R}^n$ 
+ 
+ Đặt $ z(t) = \dot{x}(t)$
+
+ \def\xz{
+    \begin{bmatrix}
+        x(t) \\ z(t)
+    \end{bmatrix}}
+ \def\dotxz{
+\begin{bmatrix}
+    \dot{x}(t) \\ \dot{z}(t)
+\end{bmatrix}}
+
+\def \A {
+\begin{bmatrix}
+    0&I_n \\
+      -K& -D 
+
+      \end{bmatrix}}
+}
+\def \nB {
+\begin{bmatrix}
+   0\\B
+\end{bmatrix}
+}
+\begin{equation}
+    \dotxz = \A \xz + \nB u(t)
+\end{equation}
+Vậy hệ (5) là $C_2$-điều khiển được khi và chỉ khi  $\left[\A, \nB\right] $ trong hệ (3) là C-điều khiển được.
+
+
+
+\end{document}
+
+
+
+
+
+
+

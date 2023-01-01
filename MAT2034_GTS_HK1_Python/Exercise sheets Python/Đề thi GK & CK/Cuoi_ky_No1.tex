@@ -1,0 +1,128 @@
+\documentclass[11pt]{article}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+
+\begin{document}
+
+\input{header_template}
+
+\begin{center}
+	\textbf{ĐỀ THI CUỐI KỲ: GIẢI TÍCH SỐ - MAT 2034 \\ Thời gian: 8h - 9h30 ngày 19/01/2022 \\ Mỗi Câu Trong Đề Thi Này Tương Ứng Với 2 Ý Trong Google Form } 
+\end{center}
+
+\begin{bt} \textbf{Google form chỉ cần điền nghiệm chính xác đến 4 chữ số thập phân.} \\
+a) Hãy áp dụng phương pháp lặp đơn $x_{n+1} = 1 + e^{-x_n}$ để giải phương trình $ 1 + e^{-x} - x  = 0 $? \\
+\textbf{Đề thi viết yêu cầu phải kiểm tra tính chất ánh xạ co. Đề lập trình yêu cầu phải vẽ hình để thể hiện rõ ràng tính tự ánh và tính co của ánh xạ.} \\
+b) Sử dụng phương pháp lặp đơn trên và công thức ước lượng tiên nghiệm để tìm $n$ sao cho sai số tuyệt đối của $x_n$, với $x_0 = 1.5$,
+$\leq 1e-5$.
+\end{bt}
+
+
+\begin{bt} \textbf{Google form chỉ cần điền kết quả chính xác đến 4 chữ số thập phân.} \\
+Sử dụng phương pháp bình phương tối thiểu với phân tích QR, hãy tìm hàm có dạng $f(x) = A \sqrt{x+1}+ Bx$ để xấp xỉ tốt nhất bảng số liệu sau. 
+\begin{center}
+	\begin{tabular}[5]{l|l|l|l|l|l}
+		x    & 4 & 5 & 6 & 7 & 8 \\ \hline
+		f(x) & 1 & 2.5 & 1.2 & 3.3 & 1.4 \\
+	\end{tabular}	
+\end{center}
+% 
+a) Câu 2A trong google form điền kết quả A = ? \\
+b) Câu 2B trong google form điền kết quả B = ? \\
+\end{bt}
+
+\begin{bt} \textbf{Google form chỉ cần điền kết quả chính xác đến 4 chữ số thập phân.} \\
+Cho bảng số liệu sau. 
+\begin{center}
+	\begin{tabular}[5]{l|l|l|l|l} 
+		x    & 0.97 & 1.00 & 1.05 \\ \hline
+		y(x) & 0.8504 & 0.8415 & 0.8261 \\
+	\end{tabular}	
+\end{center}
+% 
+Sử dụng bảng số liệu trên, hãy thực hiện các yêu cầu sau: \\
+a) Tính gần đúng đa thức nội suy $y'(x)$ tại $x=1$.\\
+b) Tính gần đúng đa thức nội suy $y"(x)$ tại $x=1$.	
+\end{bt}
+
+\begin{bt} \textbf{Google form chỉ cần điền kết quả chính xác đến 4 chữ số thập phân.} \\
+Xét bài toán Cauchy  
+\begin{align}
+	y'(x) &= y \ (x+1), \quad 1 \leq x, \\
+	y(1)  &= 2 \ . 
+\end{align}
+%
+a) Sử dụng phương pháp Heun, tính xấp xỉ $y(x)$ tại $x=1.2$ với bước $h = 0.1$. \\
+b) Sử dụng phương pháp Euler ẩn, tính xấp xỉ $y(x)$ tại $x=1.2$ với bước $h = 0.1$. \\	
+\end{bt}
+
+\begin{bt} \textbf{Phần thi viết bắt buộc.} \\ 
+	Hãy xác định các hằng số $a$, $b$, $c$, $d$, $e$ sao cho quy tắc cầu phương sau có cấp chính xác là 4.
+	%
+	\[  \int_{-1}^{1} f(x) dx = a f(-1) + bf (1) + cf(0) + d f'(-1) + e f'(1) \ .  \]
+	%
+\end{bt}
+
+\centerline{———————————Hết——————————-}
+
+\end{document}
+
+
+\begin{bt} \textbf{Google form chỉ cần điền kết quả chính xác đến 4 chữ số thập phân.} Xét tích phân: $I = \int_{1}^{2} \sqrt[3]{8x+3} \ dx$. \\
+	a) Sử dụng công thức Simpson composite, hãy xác định số đoạn chia tối thiểu $n_{min}$ sao cho sai số tuyệt đối $\leq 1e-6$. \\
+	b) Với giá trị $n$ vừa tìm được, hãy tính xấp xỉ tích phân $I$.
+\end{bt}
+
+
+
+
+\vspace{1cm}
+\noindent{\bf Chú ý:} {\it Cán bộ coi thi không giải thích gì thêm}\\
+\Closesolutionfile{ans}
+\newpage
+\begin{center}
+{\LARGE{\bf ĐÁP ÁN}}
+\end{center}
+
+\begin{sol}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Solution1/Sol4_1.png}
+		%\caption{}
+		\label{fig:Sol4}
+	\end{figure}
+	Exercise 7: Convergence order is 3.	
+\end{sol}
+
+   
+\end{document}
+
+
+

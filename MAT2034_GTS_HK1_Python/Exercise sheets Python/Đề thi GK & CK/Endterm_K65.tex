@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+
+\begin{document}
+
+\input{header_template}
+
+\begin{center}
+	\textbf{ĐỀ THI CUỐI KỲ K64: GIẢI TÍCH SỐ (ONLINE) \\ Điền đáp số: 4 bài + Viết 1 bài \quad \& \quad Time: 120 min.} 
+\begin{shaded}
+\textbf{Đây chỉ là một mẫu demo đề thi thầy soạn để minh họa, không phải đề thi thật và không có phần nào hoàn toàn trùng với đề thi thật.
+}
+\end{shaded}
+\end{center}
+
+\begin{bt} \textbf{Google form chỉ cần điền nghiệm chính xác đến 6 chữ số thập phân.} \\
+a) Hãy áp dụng phương pháp lặp đơn để giải phương trình $e^{-x} - x  = 0 $? \\ \textbf{Chú ý: Yêu cầu phải sử dụng phương pháp ánh xạ co, có chứng minh hoặc vẽ hình để thể hiện rõ ràng tính tự ánh và tính co.} \\
+b) Sử dụng ước lượng tiên nghiệm để tìm $n$ sao cho sai số tuyệt đối của $x_n$, với $x_0 = 0.5$,
+$\leq 1e-6$.
+\end{bt}
+
+
+\begin{bt} \textbf{Google form chỉ cần điền kết quả chính xác đến 6 chữ số thập phân.} \\
+Sử dụng phương pháp bình phương tối thiểu, hãy tìm hàm có dạng $f(x) = A \sqrt[3]{x}+ \dfrac{B}{x^2}$ để xấp xỉ tốt nhất bảng số liệu sau. 
+\begin{center}
+	\begin{tabular}[5]{l|l|l|l|l}
+		x    & 22  &  23  &  24  &  25 \\ \hline
+		f(x) & 1.2 & 1.5  & 1.9  & 2.1
+	\end{tabular}	
+\end{center}
+% 
+a) Câu 2A trong google form điền kết quả A = ? \\
+b) Câu 2B trong google form điền kết quả B = ? \\
+\end{bt}
+
+\begin{bt} \textbf{Google form chỉ cần điền kết quả chính xác đến 6 chữ số thập phân.} \\
+Vận tốc đo được của một chiếc xe đua được thể hiện trong bảng số liệu sau. 
+\begin{center}
+	\begin{tabular}[5]{l|l|l|l|l}
+		t \mbox{(giây)}   & 10 & 12 & 16 & 18 \\ \hline
+		v(t) \mbox{(vận tốc m/s)} & 74 & 86 & 116 & 134
+	\end{tabular}	
+\end{center}
+% 
+a) Hãy sử dụng công thức nội suy Lagrange và nội suy Newton để tính gần đúng vận tốc của chiếc xe đua tại thời điểm $t = 14$ giây.\\
+b) Nếu vận tốc tính trong câu a) là chính xác 100\%, hãy tính xấp xỉ gia tốc của chiếc xe đua tại thời điểm $t = 14$ giây bằng phương pháp sai phân hữu hạn theo cách tốt nhất mà em có thể làm được. \\
+c) Hỏi gia tốc tại thời điểm $t = 17$ giây là bao nhiêu?	
+\end{bt}
+
+\begin{bt} \textbf{Google form chỉ cần điền kết quả chính xác đến 6 chữ số thập phân.} \\ 
+Xét tích phân: $I = \int_{1}^{2} \sqrt[3]{8x+3} \ dx$. \\
+a) Sử dụng công thức Simpson composite, hãy xác định số đoạn chia tối thiểu $n_{min}$ sao cho sai số tuyệt đối $\leq 1e-6$. \\
+b) Với giá trị $n$ vừa tìm được, hãy tính xấp xỉ tích phân $I$.
+\end{bt}
+
+\begin{bt} \textbf{Phần thi viết chung cho cả 2 đề.} \\ 
+Xét bài toán Cauchy  
+\begin{align}
+	y'(x) &= xy + e^{-x} + 1.5 \ x, \quad 1 \leq x, \\
+	y(1)  &= 0.5 \ . 
+\end{align}
+%
+a) Sử dụng phương pháp Heun, tính xấp xỉ $y(x)$ tại $x=1.2$ với bước $h = 0.1$. \\
+b) Sử dụng phương pháp Euler ẩn, tính xấp xỉ $y(x)$ tại $x=1.2$ với bước $h = 0.1$. \\
+\end{bt}
+
+\centerline{———————————Hết——————————-}
+
+\end{document}
+
+\vspace{1cm}
+\noindent{\bf Chú ý:} {\it Cán bộ coi thi không giải thích gì thêm}\\
+\Closesolutionfile{ans}
+\newpage
+\begin{center}
+{\LARGE{\bf ĐÁP ÁN}}
+\end{center}
+
+\begin{sol}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Solution1/Sol4_1.png}
+		%\caption{}
+		\label{fig:Sol4}
+	\end{figure}
+	Exercise 7: Convergence order is 3.	
+\end{sol}
+
+   
+\end{document}
+
+
+

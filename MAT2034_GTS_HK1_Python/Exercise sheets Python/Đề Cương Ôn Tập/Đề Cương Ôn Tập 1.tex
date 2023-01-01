@@ -1,0 +1,211 @@
+\documentclass[11pt]{article}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+
+\usepackage{listings}
+\lstset{language=Python}          % Set your language (you can change the language for each code-block optionally)
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=2.0cm, bottom=2.5cm, left=2.5cm, right=1.5cm] {geometry}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+\def\a{\alpha}
+\def\b{\beta}
+
+\begin{document}
+
+\input{header_template}
+
+\begin{center}
+	\textbf{Đề cương ôn thi Lý thuyết Giải Tích Số} 
+\end{center}
+
+\begin{bt}\label{lt1}
+a) Hãy hoàn thành bảng tóm tắt về các phân tích ma trận sau.
+%
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		\rule[-1ex]{0pt}{2.5ex}  Tên phân tích  & LU & PLU & Cholesky & QR & SVD \\
+		\hline
+		\rule[-1ex]{0pt}{2.5ex}  Dạng phân tích & A = L U &  &  &  &  \\
+		\hline
+		\rule[-1ex]{0pt}{2.5ex}  Tính chất  & L: tam giác dưới, U: tam giác trên  &  &  &  &  \\
+		\hline
+		\rule[-1ex]{0pt}{2.5ex}  Phạm vi áp dụng & A bất kỳ $\in \mathbb{R}^{m,n}$  &  &  &  &  \\
+		\hline
+	\end{tabular}	 
+\end{center}
+b) Lập bảng như trên để xây dựng cách giải hệ phương trình $Ax = b$ sử dụng các phân tích ma trận trên. \
+\end{bt}
+
+\begin{bt}\label{lt1b}
+a) Viết 1 đoạn code để giải các hệ tam giác trên dạng $Ux=z$ hoặc tam giác dưới dạng $Lx = z$. \\
+b) Viết 1 đoạn code sử dụng built-in functions \verb| lu, plu, cholesky, qr, svd| trong Python kết hợp với đoạn code trong câu a) để giải hệ $Ax=b$.  
+\end{bt}
+
+\begin{bt}\label{lt2}
+a) Bài toán nội suy là gì? Phát biểu các công thức nội suy Newton, nội suy Lagrange cho trường hợp 3 điểm mốc và lấy ví dụ minh họa. So sánh 2 công thức nội suy đó. \\ 
+b) Hiện tượng Runge về sai số khi sử dụng các mốc nội suy cách đều là gì? Để khắc phục hiện tượng đó người ta dùng các mốc nội suy Chebyshev-Gauss hoặc Chebyshev-Gauss-Lobatto. Công thức của các mốc nội suy đó là gì? \\
+%Hãy google các mốc nội suy đó và lập trình Python để minh họa sai số với hàm $f(x) = \dfrac{1}{1+25x^2}$. \\
+%\url{https://en.wikipedia.org/wiki/Runge%27s_phenomenon} \\
+%\url{https://en.wikipedia.org/wiki/Chebyshev_nodes}
+\end{bt}
+
+\begin{bt}\label{lt3}
+a) Viết hàm $\verb|div_diff(x,y)|$ để tính các hệ số của đa thức nội suy Newton dựa trên bảng dữ liệu cho trước $x$, $y$. \\
+b) Cho trước hàm $\verb|div_diff(x,y)|$ để tính các hệ số của đa thức nội suy Newton. Hãy viết hàm $\verb|Newt_poly_eval|$ tính giá trị của đa thức nội suy Newton xấp xỉ tại các điểm nằm trên vector $z$.
+%
+\begin{lstlisting}[frame=single]
+	import numpy as np
+	import scipy as sp
+	
+	def Newt_poly_eval(x,y,z):
+		c = div_diff(x,y)
+		p = 0	
+		...
+		return p
+\end{lstlisting}
+%
+\end{bt}
+
+\begin{bt}\label{lt4}
+a) Viết 1 đoạn code ngắn để chuyển bảng số liệu  $(x\_data,y\_data)$ về bài toán bình phương tối thiểu $\|Ac-b\|_2^2 \longrightarrow \min$ bằng cách sử dụng đa thức xấp xỉ 
+%
+\[
+y \approx P_m(x) = c_0 + c_1 x + \dots + c_m x^m \ .\]
+%
+\begin{lstlisting}[frame = single]
+	def convert_lsqst(x_data,y_data):
+		...
+		return A, b
+\end{lstlisting}
+b) Viết 1 đoạn code ngắn để giải bài toán bình phương tối thiểu bằng phương pháp phương trình chính tắc hoặc phương pháp QR.
+\textbf{Chú ý: Không sử dụng built-in functions nào ngoại trừ }
+\verb|QR| và \verb|numpy.linalg.solve|.
+\end{bt}
+
+\begin{bt}\label{lt5}
+	a) Lập bảng tổng kết các công thức sai phân hữu hạn (bao gồm sai phân 1 phía và sai phân trung tâm) và sai số của chúng để xấp xỉ các đạo hàm $f'(x)$, $f"(x)$. \\
+	b) Xây dựng ví dụ minh họa để so sánh xem 2 phương pháp sai phân 1 phía và sai phân trung tâm (để tính $f'(x)$, $f"(x)$) thì phương pháp nào tốt hơn. 	
+\end{bt}
+
+\begin{bt}\label{lt6}
+a) Lập bảng tổng kết các công thức (chưa phải composite) tính tích phân: công thức trung điểm, hình thang, Simpson 1/3, Simpson 3/8. Sai số của các phép nội suy đó là bao nhiêu? \\
+b) Xây dựng các phương pháp cầu phương trung điểm composite, hình thang composite hoặc Simpson composite. Các quy tắc cầu phương đó chính xác đến cấp mấy?
+\end{bt}
+
+\begin{bt}\label{lt7}
+Viết 1 hàm sử dụng phương pháp trung điểm composite, hình thang composite hoặc Simpson composite để tính toán tích phân 
+%
+\[
+I = \int_a^b f(x)dx
+\]
+%
+chính xác đến $\verb|tol = 1e-6|$. \textbf{Chú ý: Không sử dụng built-in functions để tính tích phân nào}.
+\end{bt}
+
+\begin{bt}\label{lt8}
+a) Lập bảng tổng kết công thức cầu phương Gauss với n = 2, 3, 4 điểm chia cho trường hợp đoạn $[a,b] = [-1,1]$. \\
+b) Xây dựng công thức cầu phương Gauss với n = 2, 3, 4 điểm chia cho trường hợp đoạn $[a,b]$ tổng quát (chứ 0 phải đoạn $[-1,1]$).  \\
+\url{https://en.wikipedia.org/wiki/Gaussian_quadrature}
+\end{bt}
+
+\begin{bt}\label{lt9}
+a) Phát biểu bài toán giá trị ban đầu và các phương pháp Euler ẩn, Euler hiện để giải. \\
+b) Viết 1 đoạn code ngắn để giải bài toán giá trị ban đầu sử dụng các phương pháp Euler ẩn, Euler hiện để giải.
+\end{bt}
+
+\begin{bt}\label{lt10}
+Tìm công thức nghiệm chính xác của hai bài toán giá trị ban đầu sau.
+\begin{equation*}
+	(a) 
+	\begin{cases}
+	y'(x) &= a y(x), \\
+	y(0) &= y_0 
+	\end{cases}
+ \qquad \mbox{ and } \qquad 
+ 	(b) 
+ \begin{cases}
+ 	y'(x) &= a y(x) + q(x), \\
+ 	y(0) &= y_0 
+ \end{cases}
+\end{equation*}
+%
+trong đó $a \in \mathbb{R}$ và $q(x)$ là 1 hàm số cho trước.
+\end{bt}
+
+\begin{bt}\label{lt11}
+a) Phương pháp Euler ẩn và Euler hiện khác nhau ở những điểm chính nào? \\
+b) Bài toán cương là gì? Lấy 1 ví dụ về bài toán cương và áp dụng 2 phương pháp ẩn, hiện tùy chọn để giải nó. So sánh sai số trong hai trường hợp. 
+\end{bt}
+
+\begin{bt}\label{lt12}
+a) Phát biểu bài toán giá trị ban đầu và các phương pháp trung điểm hiện (RK2 cải tiến/Heun), hình thang hiện, hình thang ẩn để giải. \\
+b) Viết 1 đoạn code ngắn để giải bài toán giá trị ban đầu sử dụng các phương pháp trung điểm hiện (RK2 cải tiến/Heun), hình thang hiện, hình thang ẩn để giải.
+\end{bt}
+
+\begin{bt}\label{lt13}
+a) Phát biểu bài toán giá trị ban đầu cho phương trình vi phân bậc cao. Lấy 1 ví dụ trong trường hợp hệ bậc 2. \\
+b) Làm sao để chuyển bài toán giá trị ban đầu cho 1 phương trình vi phân bậc cao thành bài toán cho 1 hệ phương trình bậc nhất. Lấy 1 ví dụ minh họa. 
+\end{bt}
+
+\begin{center}
+\begin{shaded}
+	\textbf{Giới hạn các dạng bài tập ôn thi được bao gồm trong các chương sau.}.
+	\begin{enumerate}
+		\item[i)] Giải số hệ phương trình tuyến tính bằng các phương pháp trực tiếp. 
+		\item[ii)] Nội suy, bài toán bình phương tối thiểu.
+		\item[iii)] Xấp xỉ đạo hàm, tích phân.
+		\item[iv)] Giải gần đúng phương trình vi phân. \\
+	\end{enumerate}
+    \textbf{Đề thi 90 phút bao gồm 4 câu hỏi: 3 bài tập + 1 lý thuyết (có code).}
+\end{shaded}
+\end{center}
+
+\centerline{———————————Hết——————————-}
+
+\end{document}
+
+\vspace{1cm}
+\noindent{\bf Chú ý:} {\it Cán bộ coi thi không giải thích gì thêm}\\
+\Closesolutionfile{ans}
+\newpage
+\begin{center}
+{\LARGE{\bf ĐÁP ÁN}}
+\end{center}
+
+\begin{sol}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Solution1/Sol4_1.png}
+		%\caption{}
+		\label{fig:Sol4}
+	\end{figure}
+	Exercise 7: Convergence order is 3.	
+\end{sol}
+   
+\end{document}
+
+
+

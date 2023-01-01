@@ -1,0 +1,188 @@
+\documentclass[12pt,a4paper]{exam}
+\usepackage[top=1.5cm, bottom=2cm, left=2cm, right=2cm] {geometry}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{times,mathptmx}
+\usepackage{longtable,tabularx,multirow}
+\usepackage{graphicx}
+\usepackage{enumitem,indentfirst}
+\title{Template for VNU-HUS final test}
+\author{Ha Phi}
+\date{\today}
+
+\newtheorem{bt}{Câu}
+\newcommand{\R}{\mathbb R}
+%\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+%\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+\begin{document}
+	
+	\pagestyle{empty}
+	%\fontsize{13}{18}\selectfont
+	
+	\begin{longtable}{p{4cm}p{0.5cm}p{4cm}p{4cm}}
+		\multicolumn{1}{c}{\bf ĐẠI HỌC QUỐC GIA HÀ NỘI } & &  \multicolumn{2}{l}{\bf ĐỀ THI KẾT THÚC HỌC PHẦN} \\
+		
+		\multicolumn{1}{c}{\bf TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN} & & \multicolumn{2}{l}
+		{{\bf HỌC KỲ I, NĂM HỌC 2022-2023}} \\
+	\end{longtable}
+	
+	\begin{longtable}{p{5cm}p{0.5cm}p{8cm}p{4cm}}
+		\multicolumn{1}{l}{Tên HP: {\bf GIẢI TÍCH SỐ}} & &  \multicolumn{1}{l}{Mã HP: {\bf MATH 2034} \hskip 3cm Số tín chỉ: {\bf 03}} &  \\
+		
+		\multicolumn{1}{l}{\bf Mã đề: 02} & & \multicolumn{1}{l}{
+			{\it Dành cho sinh viên lớp học phần: \textbf{MAT2034 2/3 CLCMTTT} } 
+		} & \\
+		
+		\multicolumn{1}{c}{(Đề thi gồm có {\bf 01} trang)} & & \multicolumn{2}{l}{Thời gian làm bài: {\bf 120 phút} (không kể thời gian phát đề)}\\
+	\end{longtable}
+	
+	\vspace*{0.3cm}
+	%\noindent
+
+	\begin{bt}\textbf{(2.5 điểm)} \ Xét bài toán Cauchy  
+		\begin{align}
+			y'(x) &= (x+1)/y, \quad \forall \ 1 \leq x, \\
+			y(1)  &= 0.5 \ . 
+		\end{align}
+		%
+		a) Sử dụng phương pháp Euler ẩn, tính xấp xỉ $y(x)$ tại $x=1.2$ với bước $h = 0.1$. \\
+		b) Sử dụng phương pháp trung điểm hiện, tính xấp xỉ $y(x)$ tại $x=1.2$ với bước $h = 0.1$. \\		
+	\end{bt}
+
+	\begin{bt}\textbf{(2.5 điểm)} \\ 
+	a) Lập bảng các công thức tính đạo hàm, tích phân như dưới đây. 
+	\begin{center}
+	\begin{tabular}{|c|c|}
+		\hline
+		\rule[-1ex]{0pt}{2.5ex} Yêu cầu sử dụng & Công thức tính \\
+		\hline
+		\rule[-1ex]{0pt}{3ex} Sai phân tiến/lùi tính $f'(x)$  &  \\
+		\hline
+		\rule[-1ex]{0pt}{3ex} Sai phân trung tâm tính $f'(x)$ &  \\
+		\hline
+		\rule[-1ex]{0pt}{3ex} Sai phân trung tâm tính $f"(x)$ &  \\ 
+		\hline
+		\rule[-1ex]{0pt}{4ex} Cầu phương Gauss tính tích phân 
+		$\int_{-1}^{1} f(x)dx$ &  \\
+		\hline
+	\end{tabular}
+	\end{center}
+	b) Viết 1 đoạn code để tính tích phân $\int_{a}^{b} f(x)dx$ sử dụng công thức Simpson 1/3 composite với sai số $tol = 1e-6$. \textbf{Chú ý: Không được sử dụng built-in function để tính tích phân có sẵn trong Python.}
+	\end{bt}
+	
+	\begin{bt} \textbf{(3 điểm)} \ Vận tốc đo được của một chiếc xe đua được thể hiện trong bảng số liệu sau. 
+		\begin{center}
+			\begin{tabular}[5]{l|l|l|l|l}
+				t \mbox{(giây)}   & 10 & 12 & 16 & 18 \\ \hline
+				v(t) \mbox{(vận tốc m/s)} & 74 & 86 & 116 & 134
+			\end{tabular}	
+		\end{center}
+		% 
+		a) Nếu vận tốc của chiếc xe đua được giả sử là 1 đa thức bậc hai của biến thời gian $t$ thì bảng dữ liệu đo đạc trên có chính xác không? Vì sao? \\
+		b) Dựa vào bảng dữ liệu đó, vẫn giả sử vận tốc của chiếc xe đua được giả sử là 1 đa thức bậc hai, hãy tính gần đúng vận tốc của chiếc xe đua tại thời điểm $t = 14$ giây.\\
+		c) Nếu vận tốc tính trong câu a) là chính xác 100\%, hãy tính xấp xỉ gia tốc của chiếc xe đua tại thời điểm $t = 14$ giây bằng phương pháp sai phân hữu hạn theo cách tốt nhất mà em có thể làm được. \\
+		d) Biết vận tốc $v(t)$ là một hàm đa thức bậc 2 của $t$. Hãy tính xấp xỉ gia tốc tại thời điểm $t = 17$ giây bằng cách sử dụng phương pháp bình phương tối thiểu.
+	\end{bt}
+	
+	\begin{bt}\textbf{(2 điểm)} \\ 
+	a) Trong Câu 1 quy tắc cầu phương Gauss được áp dụng cho đoạn lấy tích phân $[-1,1]$, hãy xây dựng quy tắc cầu phương tương tự để tính tích phân trên đoạn $[0,n]$. \\
+	b) Hãy xác định các hằng số $a$, $b$, $c$, và $d$ sao cho quy tắc cầu phương sau có cấp chính xác là 3.
+	%
+	\[ \int_{-1}^{1} f(x) dx = a f(-1) + bf (1) + cf'(-1) + df'(1) \ .
+	\]
+	% 
+	\end{bt}
+	
+
+	\centerline{\rule[0.1cm]{1cm}{0.5pt} HẾT \rule[0.1cm]{1cm}{0.5pt}}
+	
+	\textit{\textbf{\underline{Lưu ý:}}}
+	
+	\begin{itemize}
+		\setlength{\itemindent}{1.5cm}
+		\item[$-$] {\it Thí sinh \textbf{không} được sử dụng tài liệu khi làm bài}.
+		\item[$-$] {\it Cán bộ coi thi không giải thích gì thêm}.
+	\end{itemize}
+	
+\end{document}
+
+	\vfill
+	
+	\newpage
+	
+	\begin{longtable}{|p{8cm}|p{8cm}|}
+		\hline 
+		\multicolumn{2}{|c|}{\bf Không in phần này khi sao in đề thi} \\ \hline
+		\multicolumn{1}{|c|}{Ngày ... tháng ... năm 20...} & \multicolumn{1}{c|}{Ngày ... tháng ... năm 20...} \\
+		\multicolumn{1}{|c|}{Trưởng bộ môn duyệt} & \multicolumn{1}{c|}{Giảng viên ra đề } \\
+		\multicolumn{1}{|c|}{(kí và ghi rõ họ tên)} & \multicolumn{1}{c|}{(kí và ghi rõ họ tên)} \\ 
+		\vspace{2.5cm} & \\
+		\hline
+	\end{longtable}
+	
+	\newpage
+	
+	\begin{longtable}{p{4cm}p{0.5cm}p{4cm}p{4cm}}
+		\multicolumn{1}{c}{\bf TRƯỜNG ĐHKHTN, ĐHQGHN} & &  \multicolumn{2}{c}{\bf ĐÁP ÁN ĐỀ THI KẾT THÚC HỌC PHẦN}\\
+		
+		\multicolumn{1}{c}{\bf KHOA TOÁN} & & \multicolumn{2}{l}{Tên HP: {\bf ...}} \\
+		
+		& &  \multicolumn{1}{l}{Mã HP: {\bf MAT...}} &  \multicolumn{1}{l}{Số tín chỉ: {\bf ...}}\\
+		
+		\multicolumn{1}{c}{\bf Đáp án chính thức} & & \multicolumn{1}{l}{Học kỳ: {\bf I/II}} & \multicolumn{1}{l}{Năm học: {\bf 20...--20...}}\\
+		
+		\multicolumn{1}{c}{\bf Đề số 1} & & \multicolumn{2}{l}{Ngày thi: \textbf{.../.../20...}} \\
+		
+		\multicolumn{1}{c}{(Đáp án gồm có {\bf ...} trang)} & & \multicolumn{2}{l}{Thời gian làm bài: {\bf 90 phút} (không kể thời gian phát đề)}\\
+	\end{longtable}
+	
+	
+	\begin{longtable}{|p{14.5cm}|p{1.5cm}|}
+		\hline 
+		\centerline{\bf Nội dung} & \centerline{\bf Điểm}\\ \hline
+		\textbf{Câu 1} & \centerline{\bf 2.0 điểm} \\ \hline
+		a. ... & \centerline{0.5}\\ \hline
+		... & \centerline{0.5}\\ \hline
+		b. ... & \centerline{0.5}\\ \hline
+		... & \centerline{0.5}\\ \hline
+		\textbf{Câu 2} & \centerline{\bf 2.0 điểm} \\ \hline
+		a. ... & \centerline{0.5}\\ \hline
+		... & \centerline{0.5}\\ \hline
+		b. ... & \centerline{0.5}\\ \hline
+		... & \centerline{0.5}\\ \hline
+		\textbf{Câu 3} & \centerline{\bf 2.0 điểm} \\ \hline
+		a. ... & \centerline{0.5}\\ \hline
+		... & \centerline{0.5}\\ \hline
+		b. ... & \centerline{0.5}\\ \hline
+		... & \centerline{0.5}\\ \hline
+		\textbf{Câu 4} & \centerline{\bf 2.0 điểm} \\ \hline
+		a. ... & \centerline{0.5}\\ \hline
+		... & \centerline{0.5}\\ \hline
+		b. ... & \centerline{0.5}\\ \hline
+		... & \centerline{0.5}\\ \hline
+		\textbf{Câu 5} & \centerline{\bf 2.0 điểm} \\ \hline
+		a. ... & \centerline{0.5}\\ \hline
+		... & \centerline{0.5}\\ \hline
+		b. ... & \centerline{0.5}\\ \hline
+		... & \centerline{0.5}\\ \hline
+	\end{longtable}
+	
+	\centerline{\rule[0.1cm]{1cm}{0.5pt} HẾT \rule[0.1cm]{1cm}{0.5pt}}
+
+	\vfill
+	
+	\newpage
+	
+	\begin{longtable}{|p{8cm}|p{8cm}|}
+		\hline 
+		\multicolumn{2}{|c|}{\bf Không in phần này khi sao in đề thi} \\ \hline
+		\multicolumn{1}{|c|}{Ngày ... tháng ... năm 20...} & \multicolumn{1}{c|}{Ngày ... tháng ... năm 20...} \\
+		\multicolumn{1}{|c|}{Trưởng bộ môn duyệt} & \multicolumn{1}{c|}{Giảng viên ra đề } \\
+		\multicolumn{1}{|c|}{(kí và ghi rõ họ tên)} & \multicolumn{1}{c|}{(kí và ghi rõ họ tên)} \\ 
+		\vspace{2.5cm} & \\
+		\hline
+	\end{longtable}
+	
+ 
