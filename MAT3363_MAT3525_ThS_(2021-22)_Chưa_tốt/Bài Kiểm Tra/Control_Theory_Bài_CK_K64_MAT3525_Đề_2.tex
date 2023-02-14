@@ -1,0 +1,85 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{listings}
+\lstset{language=Python}          % Set your language (you can change the language for each code-block optionally)
+
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+
+\usepackage{extarrows}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+
+\begin{document}
+% \noindent
+
+\input{header_template_thi_CK}
+
+\begin{center}
+	Tên học phần: {\bf Tính Toán Khoa Học} \\ 
+	Mã học phần: \textbf{MAT3525}	\quad Số tín chỉ: \textbf{03} \quad	Đề số: \textbf{02} \\ 
+	% Dành cho sinh viên lớp học phần: MAT3525 \\
+	Thời gian làm bài: \textbf{90 phút} (không kể thời gian phát đề) \quad Đề bao gồm: \textbf{01 trang}
+\end{center}
+
+
+\begin{bt}
+	Cho hệ thống điều khiển với các tham số $\a$, $\b$ như sau
+	%
+	\begin{align}\label{eq1}
+		\dot{x}(t) &= \m{0 & 1 & 0 \\ 1 & 0 & 0 \\ -2 & 1 & 2} x(t) + \m{1 \\ 2 \\ \a} u(t), \\
+		y(t) &= \m{1 & \b & 1} x(t). 
+	\end{align}
+	%
+	a) Hãy tìm hàm truyền của hệ và các không điểm, cực, lợi của hàm truyền. Tính gần đúng đến 4 chữ số thập phân. \\	
+	b) Tìm ma trận điều khiển Kalman và quan sát Kalman của hệ. \\
+	c) Tìm điều kiện của $\a$, $\b$ để hệ điều khiển \eqref{eq1} là điều khiển được. \\
+	d) Vẽ biểu đồ mô phỏng của hệ thống điều khiển trên.
+\end{bt}
+
+
+\begin{bt}\label{Câu 1}
+	Một hệ thống điều khiển trong cơ khí có dạng như trong Hình \ref{fig:mechanicalsystem} dưới đây. 
+	
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{Mechanical_System}
+		\caption[Hệ thống điều khiển cơ học]{Hệ thống điều khiển cơ học gồm cả lò xo, pittông và vật nặng.}
+		\label{fig:mechanicalsystem}
+	\end{figure}
+	
+	a) Từ biểu đồ mô phỏng bên phải hãy viết công thức không gian trạng thái của hệ thống điều khiển đó. \\
+	b) Ý nghĩa của đầu vào $u$, đầu ra $y$ và vector trạng thái $x$ là gì? \\
+	c) Hãy tìm hàm truyền của hệ và các không điểm, cực của hàm truyền. Tính gần đúng đến 3 chữ số thập phân. \\
+	d) Hãy tìm điều kiện cần và đủ của $k$ (\textbf{độ cứng lò xo}), $b$ (\textbf{hệ số đẩy}), $m$ (\textbf{khối lượng vật nặng}) sao cho hệ hở là ổn định.
+\end{bt}
+
+
+\begin{center}
+	--------------------------- Hết ---------------------------
+\end{center}
+
+\end{document}
+
+
+
