@@ -37,15 +37,20 @@
 \end{center}
 
 \begin{bt}
-Một hệ thống tuyến tính 
+Cho trước thời điểm $t_1 > t_0 \geq 0$, một hệ thống tuyến tính 
 \begin{align}
 	\dot{x} &= A(t)x + B(t)u, \quad \forall t \geq t_0, \\
 	y &= C(t)x + D(t)u
 \end{align}
-được gọi là \textbf{điều khiển được (toàn phần/completely controllable)} từ trạng thái $x_0$ đến trạng thái $x_1$ nếu tồn tại một hàm đầu vào $u(t)$ và một thời điểm $t_1 > t_0$ nào đó sao cho $x(t_1;t_0,x_0,u) = x_1$. Trong trường hợp $x_1 = 0$ ta nói \textbf{hệ là điều khiển được về $0$ (null-controllable)}. 
-
-\noindent  a) Chứng tỏ rằng đối với hệ tuyến tính thì tính chất điều khiển được về $0$ tương đương với điều khiển được toàn phần. \\
-b) Đối với hệ phi tuyến mệnh đề trong câu a) còn đúng nữa không? Vì sao?
+được gọi là \textbf{điều khiển được từ trạng thái $x_0 \in \R^n$ đến trạng thái $x_1 \in \R^n$} nếu tồn tại một hàm đầu vào $u(t)$ (khả tích, liên tục từng khúc) nào đó sao cho $x(t_1;t_0,x_0,u) = x_1$. Trong trường hợp $x_1 = 0$ ta nói \textbf{hệ là điều khiển được về $0$ (null-controllable)}. 
+Nếu mọi trạng thái $x_1 \in \R^n$ đều điều khiển được từ $x_0$ thì ta nói hệ là điều khiển được toàn phần (từ $x_0$) (completely controllable). \\ 
+\noindent  a) Chứng tỏ rằng đối với hệ tuyến tính thì tính chất điều khiển được về $0$ tương đương với điều khiển được toàn phần. \ Từ đó dẫn đến một tính chất quan trọng là điều khiển được đến một điểm $x_1$ cho trước sẽ tương đương với điều khiển được toàn phần. \\
+b) Đối với hệ phi tuyến mệnh đề trong câu a) còn đúng nữa không? Vì sao? \\
+c) Chứng minh rằng đối với hệ thống 
+\begin{equation}
+	\dot{x} = A(t) x + k(t,u),
+\end{equation}
+trong đó $k$ là một hàm liên tục, thì tính chất điều khiển được về $0$ cũng tương đương với điều khiển được toàn phần. 
 \end{bt}
 
 \begin{bt} \textbf{Bài tập về hệ dương (positive systems)} \\

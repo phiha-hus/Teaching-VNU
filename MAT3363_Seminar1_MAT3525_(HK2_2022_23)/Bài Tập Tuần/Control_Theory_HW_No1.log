@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.29)  15 APR 2022 06:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.29)  27 FEB 2023 10:06
 entering extended mode
-**./Control_Theory_No3.tex
-(Control_Theory_No3.tex
+**./Control_Theory_HW_No1.tex
+(Control_Theory_HW_No1.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
 (D:\Program Files\MikTex\tex/latex/base\article.cls
@@ -444,9 +444,6 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@dimlist=\toks34
 
 (D:\Program Files\MikTex\tex/latex/geometry\geometry.cfg))
-(D:\Program Files\MikTex\tex/latex/extarrows\extarrows.sty
-Package: extarrows 2020/03/12 v1.2.0 Some extensible arrows
-)
 (D:\Program Files\MikTex\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
 
@@ -589,31 +586,30 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count304
 \l__pdf_internal_box=\box70
 )
-(Control_Theory_No3.aux)
-\openout1 = `Control_Theory_No3.aux'.
+No file Control_Theory_HW_No1.aux.
+\openout1 = `Control_Theory_HW_No1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 \c@lstlisting=\count305
-
 (D:\Program Files\MikTex\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count306
@@ -669,7 +665,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 33.
+Package hyperref Info: Link coloring OFF on input line 30.
 (D:\Program Files\MikTex\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -681,18 +677,16 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count312
 )
-LaTeX Info: Redefining \ref on input line 33.
-LaTeX Info: Redefining \pageref on input line 33.
-LaTeX Info: Redefining \nameref on input line 33.
-
-(Control_Theory_No3.out) (Control_Theory_No3.out)
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
 \@outlinefile=\write3
-\openout3 = `Control_Theory_No3.out'.
+\openout3 = `Control_Theory_HW_No1.out'.
 
- (header_template.tex
+
+(header_template.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
-
-(D:\Program Files\MikTex\tex/latex/amsfonts\umsa.fd
+ (D:\Program Files\MikTex\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
@@ -700,60 +694,78 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 (D:\Program Files\MikTex\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (35.17105pt too wide) in alignment at lines 2--12
+Overfull \hbox (35.17105pt too wide) in alignment at lines 2--11
 [][] 
  []
 
 
-Overfull \hbox (17.0pt too wide) in paragraph at lines 2--13
+Overfull \hbox (17.0pt too wide) in paragraph at lines 2--12
 [][] 
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
+<Figures/inverted_pendulum.png, id=3, 106.59825pt x 269.808pt>
+File: Figures/inverted_pendulum.png Graphic file (type png)
+<use Figures/inverted_pendulum.png>
+Package pdftex.def Info: Figures/inverted_pendulum.png  used on input line 49.
+(pdftex.def)             Requested size: 74.61826pt x 188.8643pt.
+
+
+LaTeX Warning: Reference `2' on page 1 undefined on input line 61.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--62
 
  []
 
-<../Figures/Electrical_connection.png, id=4, 724.50674pt x 162.00525pt>
-File: ../Figures/Electrical_connection.png Graphic file (type png)
-<use ../Figures/Electrical_connection.png>
-Package pdftex.def Info: ../Figures/Electrical_connection.png  used on input li
-ne 73.
-(pdftex.def)             Requested size: 434.7074pt x 97.20389pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [1
 
-{C:/Users/DELL/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2 <../Figures/E
-lectrical_connection.png>] [3] (Control_Theory_No3.aux)
-Package rerunfilecheck Info: File `Control_Theory_No3.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+{C:/Users/DELL/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./Figures/invert
+ed_pendulum.png (PNG copy)>]
+<Figures/Electrical_connection.png, id=23, 724.50674pt x 162.00525pt>
+File: Figures/Electrical_connection.png Graphic file (type png)
+<use Figures/Electrical_connection.png>
+Package pdftex.def Info: Figures/Electrical_connection.png  used on input line 
+94.
+(pdftex.def)             Requested size: 434.7074pt x 97.20389pt.
+ [2 <./Figures/Electrical_connection.png>]
+[3] (Control_Theory_HW_No1.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `Control_Theory_HW_No1.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Control_Theory_HW_No1.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 11812 strings out of 479321
- 166729 string characters out of 2866504
- 543308 words of memory out of 3000000
- 29052 multiletter control sequences out of 15000+600000
- 414993 words of font info for 54 fonts, out of 8000000 for 9000
+ 11763 strings out of 479321
+ 165799 string characters out of 2866504
+ 527314 words of memory out of 3000000
+ 29025 multiletter control sequences out of 15000+600000
+ 413348 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,16n,74p,460b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,9n,74p,365b,326s stack positions out of 5000i,500n,10000p,200000b,80000s
 <D:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Progra
 m Files/MikTex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Program Files/MikT
-ex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/Program Files/MikTex/fonts/type
-1/public/amsfonts/cm/cmmi8.pfb><D:/Program Files/MikTex/fonts/type1/public/amsf
-onts/cm/cmr10.pfb><D:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmr6.
-pfb><D:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Progra
-m Files/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MikT
-ex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Program Files/MikTex/fonts/type
-1/public/amsfonts/symbols/msbm10.pfb><D:/Program Files/MikTex/fonts/type1/vntex
-/vnr/vnbx10.pfb><D:/Program Files/MikTex/fonts/type1/vntex/vnr/vnbxti10.pfb><D:
-/Program Files/MikTex/fonts/type1/vntex/vnr/vnr10.pfb><D:/Program Files/MikTex/
-fonts/type1/vntex/vnr/vnti10.pfb><D:/Program Files/MikTex/fonts/type1/vntex/vnr
-/vnti8.pfb>
-Output written on Control_Theory_No3.pdf (3 pages, 399629 bytes).
+ex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Program Files/MikTex/fonts/type
+1/public/amsfonts/cm/cmr10.pfb><D:/Program Files/MikTex/fonts/type1/public/amsf
+onts/cm/cmr8.pfb><D:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb><D:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Prog
+ram Files/MikTex/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/Program Fil
+es/MikTex/fonts/type1/vntex/vnr/vnbx10.pfb><D:/Program Files/MikTex/fonts/type1
+/vntex/vnr/vnbxti10.pfb><D:/Program Files/MikTex/fonts/type1/vntex/vnr/vnr10.pf
+b><D:/Program Files/MikTex/fonts/type1/vntex/vnr/vnti10.pfb>
+Output written on Control_Theory_HW_No1.pdf (3 pages, 386498 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 26 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 85 PDF objects out of 1000 (max. 8388607)
+ 15 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
