@@ -1,0 +1,88 @@
+\documentclass[oneside]{article} 
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc} 
+\usepackage[fontsize=13pt]{scrextend} 
+\usepackage[paperheight=29.7cm,paperwidth=21cm,right=2cm,left=3.5cm,top=3cm,bottom=3.5cm]{geometry}
+\usepackage{mathptmx} 
+\usepackage{graphicx} 
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float} 
+\usepackage{tikz} 
+\usetikzlibrary{calc} 
+\usepackage{indentfirst} 
+\renewcommand{\baselinestretch}{1.2} 
+\setlength{\parskip}{6pt} 
+\setlength{\parindent}{1cm} 
+\usepackage{titlesec} 
+\setcounter{secnumdepth}{4} 
+\titlespacing*{\section}{0pt}{0pt}{10pt} 
+\titleformat*{\section}{\fontsize{13pt}{0pt}\selectfont \bfseries \centering}
+\titlelabel{\thetitle.\quad}
+\titlespacing*{\subsection}{0pt}{6pt}{0pt} 
+\titleformat*{\subsection}{\fontsize{13pt}{0pt}\selectfont \bfseries}
+\titlespacing*{\subsubsection}{0pt}{0pt}{0pt} 
+\titleformat*{\subsubsection}{\fontsize{13pt}{0pt}\selectfont \bfseries}
+\titlespacing*{\paragraph}{0pt}{0pt}{0pt} 
+\titleformat*{\paragraph}{\fontsize{13pt}{0pt}\selectfont \itshape}
+\renewcommand{\figurename}{\fontsize{13pt}{0pt}\selectfont \itshape Hình}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}.}
+\usepackage{caption}
+\captionsetup[figure]{labelsep=space}
+\renewcommand{\tablename}{\fontsize{13pt}{0pt}\selectfont \itshape Bảng}
+\renewcommand{\thetable}{\arabic{table}.}
+\captionsetup[table]{labelsep=space}
+\usepackage{tabularx}
+\newcolumntype{s}{>{\hsize=.1\hsize}X}
+\newcolumntype{y}{>{\hsize=.2\hsize}X}
+\newcolumntype{d}{>{\hsize=.1\hsize}X}
+\newcolumntype{a}{>{\hsize=1.1\hsize}X}
+\newcolumntype{g}{>{\hsize=5\hsize}X}
+\renewcommand{\tabularxcolumn}[1]{>{\small}m{#1}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}} % Thay đổi đánh số phương trình mặc định
+\newtheorem{theorem}{Định lý}[section]
+\newtheorem{defn}[theorem]{Định nghĩa}
+\newtheorem{corollary}[theorem]{Hệ quả}
+\newtheorem{lemma}[theorem]{Bổ đề}
+\usepackage{lipsum}
+\renewcommand{\contentsname}{MỤC LỤC}
+\renewcommand{\listfigurename}{DANH MỤC HÌNH VẼ}
+\renewcommand{\listtablename}{DANH MỤC BẢNG BIỂU}
+\renewcommand{\refname}{TÀI LIỆU THAM KHẢO}
+\usepackage[unicode]{hyperref}
+\usepackage{colortbl}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\usepackage{forloop}
+\newcounter{loopcntr}
+\newcommand{\rpt}[2][1]{\forloop{loopcntr}{0}{\value{loopcntr}<#1}{#2}}
+\usepackage{enumitem} 
+\setitemize{itemsep=0pt,leftmargin=1.25cm,topsep = 3pt} 
+\usepackage{chngcntr}
+\begin{document}
+\input{coverPage} 
+\pagenumbering{arabic} 
+\input{loi_cam_on} 
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\tableofcontents 
+\thispagestyle{empty}
+\cleardoublepage
+{\let\oldnumberline\numberline
+\renewcommand{\numberline}{Hình~\oldnumberline}
+\listoffigures} 
+\newpage
+{\let\oldnumberline\numberline
+\renewcommand{\numberline}{Bảng~\oldnumberline}
+\listoftables}
+\newpage
+\input{mo_dau}
+\newpage
+\input{chuong_1}
+\newpage
+\input{chuong_2}
+\newpage
+\input{ket_luan}
+\newpage
+\phantomsection\addcontentsline{toc}{section}{\numberline {}TÀI LIỆU THAM KHẢO}
+\include{tailieu}
+\end{document}
+

@@ -9,6 +9,8 @@
 \usepackage[utf8]{vietnam}
 \DeclareUnicodeCharacter{00A0}{ }
 
+\usepackage[most]{tcolorbox}
+
 \usepackage{longtable}
 \usepackage{answers}
 \usepackage{graphicx}
@@ -44,6 +46,13 @@ K61 TTƯD & {\bf Bài Tập Giải Tích Số. No 1}
 %
 %\Opensolutionfile{ans}[ans1]
 \printanswers
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+\begin{bt}
+a) Số $e$ được biểu diễn bởi công thức $e = \sum_{n=0}^{\infty}(1/n!)$. Hãy sử dụng 1 vòng lặp while và if để tính gần đúng e đến 12 chữ số thập phân. \\
+b) Viết 1 hàm tính tổng các ước số của 1 số tự nhiên. Liệt kê tất cả các số tự nhiên hoàn hảo trong phạm vi [1,\ 10000], biết rằng một số tự nhiên được gọi là hoàn hảo nếu như tổng các ước số của số đó (không kể nó) bằng chính số đó.
+\end{bt}
+\end{tcolorbox}
 
 \begin{bt} 
 i) Hãy sử dụng phép làm tròn đến 3 chữ số thập phân để thực hiện các tính toán sau. Tính sai số tuyệt đối và sai số tương đối đến ít nhất 5 chữ số. 

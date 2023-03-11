@@ -1,0 +1,44 @@
+\thispagestyle {empty}
+\contentsline {section}{\hbox to\@tempdima {\hfil }MỞ ĐẦU}{7}{section*.1}%
+\contentsline {section}{\hbox to\@tempdima {\hfil }\hspace {-1cm}CHƯƠNG 1. KIẾN THỨC CHUẨN BỊ}{9}{section*.2}%
+\contentsline {subsection}{\numberline {1.1}Phương trình vi phân tuyến tính và bài toán giá trị ban đầu}{9}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Giải gần đúng bài toán giá trị ban đầu bằng phương pháp Euler tiến}{11}{subsection.1.2}%
+\contentsline {section}{\hbox to\@tempdima {\hfil }\hspace {-1cm}CHƯƠNG 2. PHÂN TÍCH VÀ MÔ PHỎNG MỘT SỐ MÔ HÌNH THỰC TẾ SỬ DỤNG PHƯƠNG TRÌNH VI PHÂN TUYẾN TÍNH}{18}{section*.6}%
+\contentsline {subsection}{\numberline {2.1}Mô hình sự tăng trưởng của vi khuẩn}{18}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Xây dựng mô hình.}{18}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Bài tập}{19}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Mô phỏng bằng Excel.}{20}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Sự phân rã của đồng vị phóng xạ Plutonium-239}{22}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Xây dựng mô hình}{22}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Bài tập}{22}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Mô phỏng bằng Excel.}{24}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}Xác định tuổi của hóa thạch}{26}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Xây dựng mô hình xác định niên đại của carbon.}{26}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Bài tập}{27}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Mô phỏng bằng Excel}{29}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}Định luật làm mát/nóng của Newton}{30}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Xây dựng mô hình}{30}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Bài tập}{31}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Mô phỏng bằng Excel}{37}{subsubsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.5}Mô hình hỗn hợp hai dung dịch muối}{38}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Xây dựng mô hình}{38}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Bài tập}{42}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Mô phỏng bằng Excel.}{44}{subsubsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.6}Mô hình mạch điện mắc nối tiếp}{45}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Xây dựng mô hình}{45}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Bài tập}{47}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Mô phỏng bằng Excel}{50}{subsubsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.7}Mô hình vật rơi trong không khí}{51}{subsection.2.7}%
+\contentsline {subsubsection}{\numberline {2.7.1}Xây dựng mô hình}{51}{subsubsection.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.2}Bài tập}{54}{subsubsection.2.7.2}%
+\contentsline {subsubsection}{\numberline {2.7.3}Mô phỏng bằng Excel}{57}{subsubsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.8}Mô hình chuyển động của tên lửa}{58}{subsection.2.8}%
+\contentsline {subsubsection}{\numberline {2.8.1}Xây dựng mô hình}{58}{subsubsection.2.8.1}%
+\contentsline {subsubsection}{\numberline {2.8.2}Bài tập}{59}{subsubsection.2.8.2}%
+\contentsline {subsubsection}{\numberline {2.8.3}Mô phỏng bằng Excel}{61}{subsubsection.2.8.3}%
+\contentsline {subsection}{\numberline {2.9}Mô hình hộp trượt trên mặt phẳng nghiêng}{62}{subsection.2.9}%
+\contentsline {subsubsection}{\numberline {2.9.1}Xây dựng mô hình}{62}{subsubsection.2.9.1}%
+\contentsline {subsubsection}{\numberline {2.9.2}Bài tập}{63}{subsubsection.2.9.2}%
+\contentsline {subsubsection}{\numberline {2.9.3}Mô phỏng bằng Excel}{67}{subsubsection.2.9.3}%
+\contentsline {section}{\hbox to\@tempdima {\hfil }KẾT LUẬN}{69}{section*.44}%
+\contentsline {section}{\hbox to\@tempdima {\hfil }TÀI LIỆU THAM KHẢO}{70}{section*.45}%

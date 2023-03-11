@@ -31,6 +31,8 @@ A**2 % Error
 
 
 %% Loops and condition 
+clear all; close all; clc
+
  for i=1:5:60
      i
      if (i>30) && (i<50)
@@ -38,7 +40,7 @@ A**2 % Error
      elseif i<= 30
        disp('Lop minh that nhieu giai dep')
      else
-       disp('Lop minh that lam gai xinh')
+       disp('Lop minh that lam ban gai xinh')
      end
  end    
      
@@ -94,8 +96,36 @@ A = rand(3,3)
 %% Plot in 2D of function, multifunction, multiplots, hold on hold off
 clear all; close all; clc
 
-%x = -10 : 0.1: 10;
-%y = x.^2 - 4*x + 4;
+x = -10 : 0.1: 10;
+y = x.^2 - 4*x + 5;
+y2 = x.^3;
+
+clf; figure(1);
+plot(x,y,'r-.',x,y2,'b-','LineWidth',3)
+xlabel('x')
+ylabel('y')
+title('Do thi ham so y = x.^2 - 4*x + 5 va y2 = x.^3')
+legend('y','y2')
+grid on
+hold on
+
+x3 = -10:0.5:10;
+y3 = x3.^4 + x3.^3;
+%plot(x3,y3,'LineWidth',3)
+legend('y','y2','y3')
+hold off
+
+%%
+clf; figure(2)
+x3 = 0:0.5:1000000;
+y3 = x3.^4 + x3.^3;
+loglog(x3,y3,'LineWidth',3)
+legend('y3')
+xlabel('x')
+ylabel('y')
+grid on
+
+%%
 
 X = linspace(-10,10,100);
 y = @(x) x.^2 - 4*x + 4;
@@ -135,18 +165,20 @@ Z = 1 - X.^2;
 % grid on
 
 figure(4); clf;
-subplot(1,2,1)
+subplot(2,2,1)
 xlim([-1,1])
 ylim([-1,1])
 ezplot('x^2 + y^2 - 4 = 0')
 grid on
 
-subplot(122)
+subplot(224)
 % x = @(t) sin(3*t) * cos(t)/(t+pi)
 % y = @(t) sin(3*t) * sin(t)/(t+pi)
 % t = [0, 4 *pi]
 ezplot('sin(3*t)* cos(t)/(t+pi)','sin(3*t)* sin(t)/(t+pi)',[0, 4 *pi])
 grid on
+
+print -f -dpng 'Figure 4'
 
 %% Plot in 3D
 clear all; close all; clc

@@ -66,28 +66,8 @@ Hãy tổng quát hóa các dạng chính tắc ở trên, sao cho hàm truyền
 trong đó $r \leq n$. Ở đây $G(s)$ được gọi là 1 hàm chính thường, \textbf{proper function}.
 \end{bt}
 
-\begin{bt} \textbf{Nghiên cứu về tính điều khiển được của 2 hệ thống được mắc nối tiếp/song song với nhau theo các sơ đồ trong Hình \ref{fig:electricalconnection}.} \\
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale = 0.6]{../Figures/Electrical_connection}
-	\caption{Mạch nối tiếp (trái) \& Mạch song song (phải)}
-	\label{fig:electricalconnection}
-\end{figure}
-
-\noindent Giả sử rằng các hệ con đều là điều khiển được. \\
-1) Hãy xây dựng phương trình của hệ thống mắc nối tiếp, chú ý rằng ở đây đầu vào của hệ tổng chỉ có $u_1$, và đầu ra của hệ tổng là $y_2$. Chứng minh rằng nếu hệ thống tổng là điều khiển được thì nó không thể có vector riêng trái dạng $w = \m{w_1 & 0} \in \C^{n_1+n_2}$ mà thỏa mãn điều kiện $w^H B= 0$ . \\
-2) Hãy xây dựng phương trình của hệ thống song song. Chứng minh hệ thống song song sẽ đánh mất tính điều khiển được khi và chỉ khi $A_1$ và $A_2$ có giá trị riêng chung $\lambda$, và các vector riêng trái $w_1$, $w_2$ tương ứng thỏa mãn
-\begin{align*}
-	& w^H_1 B_1 + w^H_2 B_2 = 0, \\
-	& w^H_1 A_1 = \lambda w^H_1,   \   w^H_2 A_2 = \lambda w^H_2.
-\end{align*}
-\end{bt}
-
-
 \begin{bt}
-Cho hệ điều khiển LTI là SISO (single input/single output). Hãy chứng minh
-công thức hàm truyền sau
+Cho hệ điều khiển LTI là SISO (single input/single output). Hãy chứng minh công thức hàm truyền sau
 %
 \begin{equation}
 G(s) := D+C(sI-A)^{-1}B \ \xlongequal{\text{chứng minh}} \ \dfrac{\det(sI-A+BC)}{\det(sI-A)}-1+D \ .  
