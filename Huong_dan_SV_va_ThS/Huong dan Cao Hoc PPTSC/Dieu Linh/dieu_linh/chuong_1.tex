@@ -4,18 +4,12 @@
 \setcounter{figure}{0}
 \setcounter{table}{0}
 \subsection{Phương trình vi phân tuyến tính và bài toán giá trị ban đầu}
-Rất nhiều bài toán trong sinh học, khoa học kỹ thuật và công nghiệp gắn liền với việc giải một phương trình vi phân, tức là một phương trình thể hện mối liên hệ của một hàm số chưa biết (cần tìm) với các đạo hàm của nó, xem \cite{ref1}, \cite{ref4}, \cite{ref6}. Luận văn này tập trung vào việc phân tích và mô phỏng (sử dụng phầm mềm Excel, xem \cite{ref2}, \cite{ref5}) các phương trình vi phân tuyến tính bậc nhất có dạng                                
+Rất nhiều bài toán trong sinh học, khoa học kỹ thuật và công nghiệp gắn liền với việc giải một phương trình vi phân, tức là một phương trình thể hện mối liên hệ của một hàm số chưa biết (cần tìm) với các đạo hàm của nó, xem \cite{ref1}, \cite{ref6}, \cite{ref4}. Luận văn này tập trung vào việc phân tích và mô phỏng (sử dụng phầm mềm Excel, xem \cite{ref2}, \cite{ref5}) các phương trình vi phân tuyến tính bậc nhất có dạng                                
 \begin{equation}
-	A(t)y'(t)+B(t)y=C(t),
-	\label{eq:1.1}
-\end{equation}
-với mọi $  t \in [{t}_{0},{{t}_{f}})$       \\
-trong đó $t$ là biến thời gian, $y(t)$ là hàm chưa biết, $A(t)$, $B(t)$, $C(t)$ là các hàm số nhận giá trị thực cho trước và liên tục trong khoảng    $[t_0, t_f)$        đang xét. \\
-Nếu trong khoảng đang xét mà $A(t)\ne 0\,\,\forall t$ thì bằng cách chia cho $A(t)$, phương trình trên có thể đưa được về dạng         
-\begin{equation}
-	y'(t)+P(t)y=Q(t).
+	y'(t)+P(t)y=Q(t)
 	\label{eq:1.2}
 \end{equation}
+với mọi $t \in [{t}_{0},{{t}_{f}})$, trong đó $t$ là biến thời gian thuộc khoảng hữu hạn $[{t}_{0},{{t}_{f}})$, $y(t)$ là hàm chưa biết. Ở đây $P(t)$, $Q(t)$ là các hàm số nhận giá trị thực và liên tục trong khoảng $[t_0, t_f)$ đang xét. \\
 Cùng với (\ref{eq:1.2}), ta cũng xét phương trình tuyến tính thuần nhất tương ứng có dạng 
 \begin{equation}
 	y'(t)+P(t)y=0.

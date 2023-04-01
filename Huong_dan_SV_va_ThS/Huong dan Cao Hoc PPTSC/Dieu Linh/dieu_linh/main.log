@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.29)  2 MAR 2023 22:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.29)  31 MAR 2023 21:34
 entering extended mode
 **./main.tex
 (main.tex
@@ -1142,102 +1142,102 @@ l.180 \cleardoublepage
 
 
 [6] (mo_dau.tex [7]) [8] (chuong_1.tex [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
 [12]
-<Images/cac_tham_so_trong_vidu_1_4_1.png, id=442, 592.71437pt x 140.525pt>
+<Images/cac_tham_so_trong_vidu_1_4_1.png, id=441, 592.71437pt x 140.525pt>
 File: Images/cac_tham_so_trong_vidu_1_4_1.png Graphic file (type png)
 <use Images/cac_tham_so_trong_vidu_1_4_1.png>
 Package pdftex.def Info: Images/cac_tham_so_trong_vidu_1_4_1.png  used on input
- line 106.
+ line 100.
 (pdftex.def)             Requested size: 355.63135pt x 84.31564pt.
-<Images/cac_tham_so_trong_vidu_1_4_1t.png, id=444, 625.83812pt x 203.25937pt>
+<Images/cac_tham_so_trong_vidu_1_4_1t.png, id=443, 625.83812pt x 203.25937pt>
 File: Images/cac_tham_so_trong_vidu_1_4_1t.png Graphic file (type png)
 <use Images/cac_tham_so_trong_vidu_1_4_1t.png>
 Package pdftex.def Info: Images/cac_tham_so_trong_vidu_1_4_1t.png  used on inpu
-t line 113.
+t line 107.
 (pdftex.def)             Requested size: 438.0837pt x 142.28058pt.
-<Images/cac_tham_so_trong_vidu_1_4_1tt.png, id=445, 632.86438pt x 220.32312pt>
+<Images/cac_tham_so_trong_vidu_1_4_1tt.png, id=444, 632.86438pt x 220.32312pt>
 File: Images/cac_tham_so_trong_vidu_1_4_1tt.png Graphic file (type png)
 <use Images/cac_tham_so_trong_vidu_1_4_1tt.png>
 Package pdftex.def Info: Images/cac_tham_so_trong_vidu_1_4_1tt.png  used on inp
-ut line 117.
+ut line 111.
 (pdftex.def)             Requested size: 443.00204pt x 154.22511pt.
 
-Overfull \hbox (1.98431pt too wide) in paragraph at lines 117--118
+Overfull \hbox (1.98431pt too wide) in paragraph at lines 111--112
  [] 
  []
 
 [13 <./Images/cac_tham_so_trong_vidu_1_4_1.png> <./Images/cac_tham_so_trong_vid
 u_1_4_1t.png> <./Images/cac_tham_so_trong_vidu_1_4_1tt.png>]
-<Images/cac_tham_so_trong_vidu_1_4_1ttt.png, id=453, 628.3475pt x 211.79124pt>
+<Images/cac_tham_so_trong_vidu_1_4_1ttt.png, id=452, 628.3475pt x 211.79124pt>
 File: Images/cac_tham_so_trong_vidu_1_4_1ttt.png Graphic file (type png)
 <use Images/cac_tham_so_trong_vidu_1_4_1ttt.png>
 Package pdftex.def Info: Images/cac_tham_so_trong_vidu_1_4_1ttt.png  used on in
-put line 121.
+put line 115.
 (pdftex.def)             Requested size: 439.84026pt x 148.25285pt.
-<Images/cac_tham_so_trong_vidu_1_4_1tttt.png, id=454, 626.34pt x 218.31563pt>
+<Images/cac_tham_so_trong_vidu_1_4_1tttt.png, id=453, 626.34pt x 218.31563pt>
 File: Images/cac_tham_so_trong_vidu_1_4_1tttt.png Graphic file (type png)
 <use Images/cac_tham_so_trong_vidu_1_4_1tttt.png>
 Package pdftex.def Info: Images/cac_tham_so_trong_vidu_1_4_1tttt.png  used on i
-nput line 125.
+nput line 119.
 (pdftex.def)             Requested size: 438.435pt x 152.81989pt.
-<Images/cac_tham_so_trong_vidu_1_4_1t5.png, id=455, 626.34pt x 214.30063pt>
+<Images/cac_tham_so_trong_vidu_1_4_1t5.png, id=454, 626.34pt x 214.30063pt>
 File: Images/cac_tham_so_trong_vidu_1_4_1t5.png Graphic file (type png)
 <use Images/cac_tham_so_trong_vidu_1_4_1t5.png>
 Package pdftex.def Info: Images/cac_tham_so_trong_vidu_1_4_1t5.png  used on inp
-ut line 132.
+ut line 126.
 (pdftex.def)             Requested size: 438.435pt x 150.0094pt.
  [14 <./Images/cac_tham_so_trong_vidu_1_4_1ttt.png> <./Images/cac_tham_so_trong
 _vidu_1_4_1tttt.png> <./Images/cac_tham_so_trong_vidu_1_4_1t5.png>]
-<Images/cac_tham_so_trong_vidu_1_4_1t6.png, id=463, 618.31pt x 221.32687pt>
+<Images/cac_tham_so_trong_vidu_1_4_1t6.png, id=462, 618.31pt x 221.32687pt>
 File: Images/cac_tham_so_trong_vidu_1_4_1t6.png Graphic file (type png)
 <use Images/cac_tham_so_trong_vidu_1_4_1t6.png>
 Package pdftex.def Info: Images/cac_tham_so_trong_vidu_1_4_1t6.png  used on inp
-ut line 137.
+ut line 131.
 (pdftex.def)             Requested size: 432.81404pt x 154.92773pt.
-<Images/cac_tham_so_trong_vidu_1_4_1t7.png, id=464, 791.95876pt x 339.2675pt>
+<Images/cac_tham_so_trong_vidu_1_4_1t7.png, id=463, 791.95876pt x 339.2675pt>
 File: Images/cac_tham_so_trong_vidu_1_4_1t7.png Graphic file (type png)
 <use Images/cac_tham_so_trong_vidu_1_4_1t7.png>
 Package pdftex.def Info: Images/cac_tham_so_trong_vidu_1_4_1t7.png  used on inp
-ut line 142.
+ut line 136.
 (pdftex.def)             Requested size: 451.42119pt x 193.38448pt.
 
-Overfull \hbox (10.40346pt too wide) in paragraph at lines 142--143
+Overfull \hbox (10.40346pt too wide) in paragraph at lines 136--137
  [] 
  []
 
-<Images/cac_tham_so_trong_vidu_1_4_1t8.png, id=465, 689.07437pt x 305.14pt>
+<Images/cac_tham_so_trong_vidu_1_4_1t8.png, id=464, 689.07437pt x 305.14pt>
 File: Images/cac_tham_so_trong_vidu_1_4_1t8.png Graphic file (type png)
 <use Images/cac_tham_so_trong_vidu_1_4_1t8.png>
 Package pdftex.def Info: Images/cac_tham_so_trong_vidu_1_4_1t8.png  used on inp
-ut line 147.
+ut line 141.
 (pdftex.def)             Requested size: 447.89302pt x 198.33864pt.
 
-Overfull \hbox (6.87529pt too wide) in paragraph at lines 147--148
+Overfull \hbox (6.87529pt too wide) in paragraph at lines 141--142
  [] 
  []
 
 [15 <./Images/cac_tham_so_trong_vidu_1_4_1t6.png> <./Images/cac_tham_so_trong_v
 idu_1_4_1t7.png>]
-Underfull \hbox (badness 10000) in alignment at lines 191--191
+Underfull \hbox (badness 10000) in alignment at lines 185--185
 [][][][][][] 
  []
 
-<Images/hinh_1_1.png, id=473, 628.14674pt x 225.84375pt>
+<Images/hinh_1_1.png, id=472, 628.14674pt x 225.84375pt>
 File: Images/hinh_1_1.png Graphic file (type png)
 <use Images/hinh_1_1.png>
-Package pdftex.def Info: Images/hinh_1_1.png  used on input line 197.
+Package pdftex.def Info: Images/hinh_1_1.png  used on input line 191.
 (pdftex.def)             Requested size: 439.69972pt x 158.08954pt.
 [16 <./Images/cac_tham_so_trong_vidu_1_4_1t8.png>]
-Underfull \hbox (badness 10000) in alignment at lines 227--227
+Underfull \hbox (badness 10000) in alignment at lines 221--221
 [][][][][][] 
  []
 
 ) [17 <./Images/hinh_1_1.png>] (chuong_2.tex [18]
-<Images/hinh_2_1.png, id=501, 432.61626pt x 299.61937pt>
+<Images/hinh_2_1.png, id=500, 432.61626pt x 299.61937pt>
 File: Images/hinh_2_1.png Graphic file (type png)
 <use Images/hinh_2_1.png>
 Package pdftex.def Info: Images/hinh_2_1.png  used on input line 46.
@@ -1252,7 +1252,7 @@ Underfull \hbox (badness 10000) in alignment at lines 102--102
 [][][][][][] 
  []
 
-<Images/hinh_2_2.png, id=512, 558.888pt x 240.9pt>
+<Images/hinh_2_2.png, id=511, 558.888pt x 240.9pt>
 File: Images/hinh_2_2.png Graphic file (type png)
 <use Images/hinh_2_2.png>
 Package pdftex.def Info: Images/hinh_2_2.png  used on input line 108.
@@ -1282,7 +1282,7 @@ Underfull \hbox (badness 10000) in alignment at lines 203--203
 [][][][][][] 
  []
 
-<Images/hinh_2_3.png, id=544, 497.4585pt x 363.15675pt>
+<Images/hinh_2_3.png, id=543, 497.4585pt x 363.15675pt>
 File: Images/hinh_2_3.png Graphic file (type png)
 <use Images/hinh_2_3.png>
 Package pdftex.def Info: Images/hinh_2_3.png  used on input line 209.
@@ -1294,13 +1294,13 @@ File: Images/hinh_2_4.png Graphic file (type png)
 Package pdftex.def Info: Images/hinh_2_4.png  used on input line 222.
 (pdftex.def)             Requested size: 125.9703pt x 171.89175pt.
  [26 <./Images/hinh_2_4.png>]
-<Images/hinh_2_5.png, id=567, 476.78125pt x 320.19624pt>
+<Images/hinh_2_5.png, id=568, 476.78125pt x 320.19624pt>
 File: Images/hinh_2_5.png Graphic file (type png)
 <use Images/hinh_2_5.png>
 Package pdftex.def Info: Images/hinh_2_5.png  used on input line 242.
 (pdftex.def)             Requested size: 190.7091pt x 128.07622pt.
  [27 <./Images/hinh_2_5.png>]
-<Images/hinh_2_6.png, id=576, 290.08376pt x 331.2375pt>
+<Images/hinh_2_6.png, id=577, 290.08376pt x 331.2375pt>
 File: Images/hinh_2_6.png Graphic file (type png)
 <use Images/hinh_2_6.png>
 Package pdftex.def Info: Images/hinh_2_6.png  used on input line 255.
@@ -1310,7 +1310,7 @@ Underfull \hbox (badness 10000) in alignment at lines 302--302
 [][][][][][] 
  []
 
-<Images/hinh_2_7.png, id=585, 626.34pt x 217.41225pt>
+<Images/hinh_2_7.png, id=586, 626.34pt x 217.41225pt>
 File: Images/hinh_2_7.png Graphic file (type png)
 <use Images/hinh_2_7.png>
 Package pdftex.def Info: Images/hinh_2_7.png  used on input line 309.
@@ -1322,7 +1322,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
 (D:\Program Files\MikTex\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-<Images/hinh_2_8.png, id=596, 519.1395pt x 211.992pt>
+<Images/hinh_2_8.png, id=597, 519.1395pt x 211.992pt>
 File: Images/hinh_2_8.png Graphic file (type png)
 <use Images/hinh_2_8.png>
 Package pdftex.def Info: Images/hinh_2_8.png  used on input line 348.
@@ -1347,7 +1347,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 396--416
  []
 
 [32] [33] [34]
-<Images/hinh_2_9.png, id=628, 659.96562pt x 365.365pt>
+<Images/hinh_2_9.png, id=629, 659.96562pt x 365.365pt>
 File: Images/hinh_2_9.png Graphic file (type png)
 <use Images/hinh_2_9.png>
 Package pdftex.def Info: Images/hinh_2_9.png  used on input line 457.
@@ -1357,25 +1357,25 @@ Underfull \hbox (badness 10000) in alignment at lines 544--544
 [][][][][][] 
  []
 
-<Images/hinh_2_10.png, id=646, 430.60875pt x 278.2395pt>
+<Images/hinh_2_10.png, id=647, 430.60875pt x 278.2395pt>
 File: Images/hinh_2_10.png Graphic file (type png)
 <use Images/hinh_2_10.png>
 Package pdftex.def Info: Images/hinh_2_10.png  used on input line 550.
 (pdftex.def)             Requested size: 366.01915pt x 236.50468pt.
 [37] [38 <./Images/hinh_2_10.png>]
-<Images/hinh_2_11.png, id=658, 252.945pt x 329.23pt>
+<Images/hinh_2_11.png, id=659, 252.945pt x 329.23pt>
 File: Images/hinh_2_11.png Graphic file (type png)
 <use Images/hinh_2_11.png>
 Package pdftex.def Info: Images/hinh_2_11.png  used on input line 578.
 (pdftex.def)             Requested size: 126.47218pt x 164.6146pt.
  [39 <./Images/hinh_2_11.png>]
-<Images/hinh_2_12.png, id=669, 537.207pt x 310.761pt>
+<Images/hinh_2_12.png, id=670, 537.207pt x 310.761pt>
 File: Images/hinh_2_12.png Graphic file (type png)
 <use Images/hinh_2_12.png>
 Package pdftex.def Info: Images/hinh_2_12.png  used on input line 608.
 (pdftex.def)             Requested size: 349.1804pt x 201.99225pt.
  [40 <./Images/hinh_2_12.png>] [41]
-<Images/hinh_2_13.png, id=681, 534.798pt x 333.04425pt>
+<Images/hinh_2_13.png, id=682, 534.798pt x 333.04425pt>
 File: Images/hinh_2_13.png Graphic file (type png)
 <use Images/hinh_2_13.png>
 Package pdftex.def Info: Images/hinh_2_13.png  used on input line 646.
@@ -1390,24 +1390,24 @@ Underfull \hbox (badness 10000) in alignment at lines 725--725
 [][][][][][] 
  []
 
-<Images/hinh_2_14.png, id=695, 521.5485pt x 335.45325pt>
+<Images/hinh_2_14.png, id=696, 521.5485pt x 335.45325pt>
 File: Images/hinh_2_14.png Graphic file (type png)
 <use Images/hinh_2_14.png>
 Package pdftex.def Info: Images/hinh_2_14.png  used on input line 731.
 (pdftex.def)             Requested size: 417.23935pt x 268.36295pt.
 [44] [45 <./Images/hinh_2_14.png>]
-<Images/hinh_2_15.png, id=705, 403.5075pt x 238.39063pt>
+<Images/hinh_2_15.png, id=706, 403.5075pt x 238.39063pt>
 File: Images/hinh_2_15.png Graphic file (type png)
 <use Images/hinh_2_15.png>
 Package pdftex.def Info: Images/hinh_2_15.png  used on input line 752.
 (pdftex.def)             Requested size: 242.10637pt x 143.03546pt.
-<Images/hinh_2_16.png, id=708, 379.4175pt x 245.41687pt>
+<Images/hinh_2_16.png, id=709, 379.4175pt x 245.41687pt>
 File: Images/hinh_2_16.png Graphic file (type png)
 <use Images/hinh_2_16.png>
 Package pdftex.def Info: Images/hinh_2_16.png  used on input line 766.
 (pdftex.def)             Requested size: 227.65225pt x 147.25125pt.
  [46 <./Images/hinh_2_15.png> <./Images/hinh_2_16.png>] [47] [48]
-<Images/hinh_2_17.png, id=745, 575.751pt x 332.442pt>
+<Images/hinh_2_17.png, id=746, 575.751pt x 332.442pt>
 File: Images/hinh_2_17.png Graphic file (type png)
 <use Images/hinh_2_17.png>
 Package pdftex.def Info: Images/hinh_2_17.png  used on input line 849.
@@ -1417,24 +1417,24 @@ Underfull \hbox (badness 10000) in alignment at lines 890--890
 [][][][][][] 
  []
 
-<Images/hinh_2_18.png, id=751, 508.90125pt x 337.86224pt>
+<Images/hinh_2_18.png, id=752, 508.90125pt x 337.86224pt>
 File: Images/hinh_2_18.png Graphic file (type png)
 <use Images/hinh_2_18.png>
 Package pdftex.def Info: Images/hinh_2_18.png  used on input line 896.
 (pdftex.def)             Requested size: 381.675pt x 253.39604pt.
 [50 <./Images/hinh_2_17.png>] [51 <./Images/hinh_2_18.png>]
-<Images/hinh_2_19.png, id=763, 335.2525pt x 306.14375pt>
+<Images/hinh_2_19.png, id=764, 335.2525pt x 306.14375pt>
 File: Images/hinh_2_19.png Graphic file (type png)
 <use Images/hinh_2_19.png>
 Package pdftex.def Info: Images/hinh_2_19.png  used on input line 932.
 (pdftex.def)             Requested size: 167.62584pt x 153.07149pt.
-<Images/hinh_2_20.png, id=766, 228.35312pt x 271.0125pt>
+<Images/hinh_2_20.png, id=767, 228.35312pt x 271.0125pt>
 File: Images/hinh_2_20.png Graphic file (type png)
 <use Images/hinh_2_20.png>
 Package pdftex.def Info: Images/hinh_2_20.png  used on input line 944.
 (pdftex.def)             Requested size: 114.17627pt x 135.5059pt.
  [52 <./Images/hinh_2_19.png>] [53 <./Images/hinh_2_20.png>]
-<Images/hinh_2_21.png, id=788, 217.81375pt x 340.27126pt>
+<Images/hinh_2_21.png, id=789, 217.81375pt x 340.27126pt>
 File: Images/hinh_2_21.png Graphic file (type png)
 <use Images/hinh_2_21.png>
 Package pdftex.def Info: Images/hinh_2_21.png  used on input line 982.
@@ -1445,7 +1445,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 977--986
  []
 
 [54 <./Images/hinh_2_21.png>]
-<Images/hinh_2_22.png, id=799, 314.67563pt x 347.2975pt>
+<Images/hinh_2_22.png, id=800, 314.67563pt x 347.2975pt>
 File: Images/hinh_2_22.png Graphic file (type png)
 <use Images/hinh_2_22.png>
 Package pdftex.def Info: Images/hinh_2_22.png  used on input line 1013.
@@ -1455,13 +1455,13 @@ Underfull \hbox (badness 10000) in alignment at lines 1078--1078
 [][][][][][] 
  []
 
-<Images/hinh_2_23.png, id=816, 498.663pt x 249.93375pt>
+<Images/hinh_2_23.png, id=817, 498.663pt x 249.93375pt>
 File: Images/hinh_2_23.png Graphic file (type png)
 <use Images/hinh_2_23.png>
 Package pdftex.def Info: Images/hinh_2_23.png  used on input line 1084.
 (pdftex.def)             Requested size: 398.93094pt x 199.94727pt.
 [57]
-<Images/hinh_2_24.png, id=821, 275.52937pt x 320.19624pt>
+<Images/hinh_2_24.png, id=822, 275.52937pt x 320.19624pt>
 File: Images/hinh_2_24.png Graphic file (type png)
 <use Images/hinh_2_24.png>
 Package pdftex.def Info: Images/hinh_2_24.png  used on input line 1094.
@@ -1471,7 +1471,7 @@ Underfull \hbox (badness 10000) in alignment at lines 1211--1211
 [][][][][][] 
  []
 
-<Images/hinh_2_25.png, id=846, 501.67426pt x 275.22826pt>
+<Images/hinh_2_25.png, id=847, 501.67426pt x 275.22826pt>
 File: Images/hinh_2_25.png Graphic file (type png)
 <use Images/hinh_2_25.png>
 Package pdftex.def Info: Images/hinh_2_25.png  used on input line 1217.
@@ -1482,13 +1482,13 @@ Overfull \hbox (10.48492pt too wide) in paragraph at lines 1217--1219
  []
 
 [61]
-<Images/hinh_2_26.png, id=851, 376.40625pt x 233.37187pt>
+<Images/hinh_2_26.png, id=852, 376.40625pt x 233.37187pt>
 File: Images/hinh_2_26.png Graphic file (type png)
 <use Images/hinh_2_26.png>
 Package pdftex.def Info: Images/hinh_2_26.png  used on input line 1226.
 (pdftex.def)             Requested size: 225.84547pt x 140.02419pt.
  [62 <./Images/hinh_2_25.png> <./Images/hinh_2_26.png>] [63] [64]
-<Images/nocaption.png, id=874, 429.10312pt x 248.42813pt>
+<Images/nocaption.png, id=875, 429.10312pt x 248.42813pt>
 File: Images/nocaption.png Graphic file (type png)
 <use Images/nocaption.png>
 Package pdftex.def Info: Images/nocaption.png  used on input line 1287.
@@ -1498,7 +1498,7 @@ Underfull \hbox (badness 10000) in alignment at lines 1388--1388
 [][][][][][] 
  []
 
-<Images/hinh_2_27.png, id=893, 537.207pt x 202.356pt>
+<Images/hinh_2_27.png, id=894, 537.207pt x 202.356pt>
 File: Images/hinh_2_27.png Graphic file (type png)
 <use Images/hinh_2_27.png>
 Package pdftex.def Info: Images/hinh_2_27.png  used on input line 1394.
@@ -1511,19 +1511,30 @@ Overfull \hbox (4.86397pt too wide) in paragraph at lines 1394--1396
 [67]) [68 <./Images/hinh_2_27.png>] (ket_luan.tex) [69]
 \openout2 = `tailieu.aux'.
 
- (tailieu.tex) [70
+ (tailieu.tex
+LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 4
+4.
 
-]
-(main.aux (tailieu.aux))
+(D:\Program Files\MikTex\tex/latex/vntex\t5cmtt.fd
+File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 1360) in paragraph at lines 43--45
+[]\T5/ptm/m/it/13 American Chem-i-cal So-ci-ety Na-tional His-toric Chem-i-cal 
+Land-marks. Dis-
+ []
+
+) [70
+
+] (main.aux (tailieu.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 444A0D74DC4167EC60353D9020FAA414;8888.
  ) 
 Here is how much of TeX's memory you used:
- 24260 strings out of 479321
- 434318 string characters out of 2866504
- 841700 words of memory out of 3000000
- 40972 multiletter control sequences out of 15000+600000
- 470446 words of font info for 130 fonts, out of 8000000 for 9000
+ 24282 strings out of 479321
+ 434670 string characters out of 2866504
+ 841621 words of memory out of 3000000
+ 40990 multiletter control sequences out of 15000+600000
+ 470757 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,15n,116p,1210b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
 {D:/Program Files/MikTex/fonts/enc/dvips/vntex/t5.enc}{D:/Program Files/MikTe
@@ -1536,10 +1547,11 @@ symbol/usyr.pfb><D:/Program Files/MikTex/fonts/type1/urw/times/utmb8a.pfb><D:/P
 rogram Files/MikTex/fonts/type1/vntex/urwvn/utmb8v.pfb><D:/Program Files/MikTex
 /fonts/type1/urw/times/utmr8a.pfb><D:/Program Files/MikTex/fonts/type1/vntex/ur
 wvn/utmr8v.pfb><D:/Program Files/MikTex/fonts/type1/urw/times/utmri8a.pfb><D:/P
-rogram Files/MikTex/fonts/type1/vntex/urwvn/utmri8v.pfb>
-Output written on main.pdf (72 pages, 6421465 bytes).
+rogram Files/MikTex/fonts/type1/vntex/urwvn/utmri8v.pfb><D:/Program Files/MikTe
+x/fonts/type1/vntex/vnr/vntt12.pfb>
+Output written on main.pdf (72 pages, 6429284 bytes).
 PDF statistics:
- 996 PDF objects out of 1000 (max. 8388607)
+ 1003 PDF objects out of 1200 (max. 8388607)
  193 named destinations out of 1000 (max. 500000)
  547 words of extra memory for PDF output out of 10000 (max. 10000000)
 

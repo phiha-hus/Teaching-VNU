@@ -1,0 +1,41 @@
+%%7:1:0 23/4/2019%%5:30:29 23/4/2019 -VieTeX creates C:\Users\Administrator\Desktop\.tex
+% LaTeX Book Template - using defaults
+\documentclass[12pt,a4paper]{book}
+\usepackage{amsmath,amsxtra,amssymb,latexsym, amscd,amsthm}
+\usepackage{indentfirst}
+\usepackage[mathscr]{eucal}
+\usepackage{color}
+\usepackage[utf8]{vietnam}
+\usepackage{graphicx}
+\usepackage[left=2.5cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+
+\newtheorem{note}{Chú ý}
+\newtheorem{dn}{Định nghĩa}
+\newtheorem{md}{Mệnh đề}
+\newtheorem{dl}{Định lý}
+\newtheorem{bd}{Bổ đề}
+\newtheorem{vd}{Ví dụ}
+\newtheorem{hq}{Hệ quả}
+\newtheorem{op}{Trường hợp}
+\newtheorem{al}{Thuật toán}
+\def\tSi{\tilde{\Sigma}}
+
+\newcommand{\m}[1]{
+\begin{bmatrix}
+#1
+\end{bmatrix}
+}
+
+% Set the beginning of a LaTeX document
+\begin{document}
+\title{VỀ HÀM LAMBERT VÀ ỨNG DỤNG CHO CÁC PHƯƠNG TRÌNH VI PHÂN CÓ TRỄ}         
+\author{Lê Tiến Lượng \\ K61A1T - Đại học khoa học tự nhiên Hà Nội \\ Giảng viên hướng dẫn : TS. Hà Phi}        
+\date{15/05/2019}       
+\maketitle
+\tableofcontents %Muc luc
+		 %end Muc luc
+	\input{chuong1.tex}
+	\input{chuong2.tex}
+	\input{chuong3.tex}
+	\input{TLTK.tex}
+\end{document}
