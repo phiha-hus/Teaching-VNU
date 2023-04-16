@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{listings}
+\lstset{language=Python}          % Set your language (you can change the language for each code-block optionally)
+
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+
+\usepackage{extarrows}
+\usepackage{hyperref}
+
+\newtheorem{preremark}{Câu}
+\newenvironment{bt}%
+{\begin{preremark}\upshape}{\end{preremark}}
+
+
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+\def\hro{\mathbb}
+\def\vphi{\varphi}
+\def\tet{\theta}
+\def\a{\alpha}
+\def\b{\beta}
+\def\rar{\rightarrow}
+\def\R{\hro{R}}
+\def\C{\hro{C}}
+\def\Si{\Sigma}
+\def\si{\sigma}
+\def\ep{\varepsilon}
+\def\rank{\mathrm{rank}}
+\newcommand{\m}[1]{
+	\begin{bmatrix}
+		#1
+	\end{bmatrix}
+}
+
+
+\begin{document}
+% \noindent
+
+\input{header_template_thi_GK_CK}
+
+\begin{center}
+	{\bf Bài Thi Giữa Kỳ - Tính Toán Khoa Học. \\ Đề 1 - Thời gian 60 phút.
+	 }
+\end{center}
+
+\begin{bt}\label{Câu 1}\textbf{(3 điểm)} % Bài 11 trang 15o sách Nguyễn Quang Hoàng
+a) Sử dụng MATLAB (hoặc tính tay nếu muốn) để xác định các hệ số của đa thức bậc 3 có dạng 
+%
+\[
+q(t) = a_0 + a_1 t + a_2 t^2 + a_3 t^3, \quad \forall 0\leq t \leq T 
+\]
+%
+để chuyển động của tay máy một bậc tự do thỏa mãn các điều kiện sau
+%
+\[
+T = 2, \ q(0) = 120^o, \ q(T) = 60^o, \ \dot{q}(0) = \dot{q}(T) = 0.
+% T = 4, \ q(0) = -5^o, \ q(T) = 80^o, \ \dot{q}(0) = \dot{q}(T) = 0.
+\]
+%
+b) Vẽ đồ thị của $q(t)$ vừa tìm được trên đoạn $[0,T]$ với bước $h = 0.01$. \\
+Trên cùng hệ trục tọa độ đó, hãy vẽ đồ thị của hàm số 
+%
+\[
+f(x) = x^3 - 3x^2 + 5xsin \left(\dfrac{\pi x - 5\pi}{4} \right) + 3 \ .
+\]%
+\end{bt}
+
+\begin{bt}\textbf{(2 điểm)}
+Tính các tích phân kép sau đây sử dụng hàm sẵn có trong MATLAB.\\
+a) $A = \int_0^4 \int_0^{\pi} x^2 sin(y) dxdy$ 
+\qquad b) $B = \int_0^2 \int_y^{3} x^2(x+y) dxdy$.
+\end{bt}
+
+\begin{bt}\label{Câu 1b}
+Sử dụng phương pháp Heun, ode45 và ode15s để giải IVP sau.
+\begin{equation}
+(1+t) \ \dot{y} = t y + e^t (3t^2+2t+1), \quad y(0) = 1, \quad \forall 0\leq t\leq 2,
+\end{equation}
+với bước $h = 1e-2$. Vẽ các đồ thị sai số tuyệt đối so với nghiệm chính xác 
+%
+\[
+y(t) = e^t (t^2+1) \ .
+\]
+%
+\textbf{Các em có thể vẽ chung các sai số trên cùng 1 đồ thị nếu muốn.}
+\end{bt}
+
+\begin{center}
+	--------------------------- Hết ---------------------------
+\end{center}
+
+\end{document}
+
+
+

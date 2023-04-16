@@ -1,0 +1,105 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{listings}
+\lstset{language=Python}          % Set your language (you can change the language for each code-block optionally)
+
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+\usepackage{hyperref}
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+
+
+\begin{document}
+% \noindent
+
+\input{header_template}
+
+\begin{center}
+	{\bf Bài Tập Lý Thuyết Điều Khiển Hệ Thống - No. 2}
+\end{center}
+
+\begin{bt}
+Cho trước thời điểm $t_1 > t_0 \geq 0$, một hệ thống tuyến tính 
+\begin{align}
+	\dot{x} &= A(t)x + B(t)u, \quad \forall t \geq t_0, \\
+	y &= C(t)x + D(t)u
+\end{align}
+được gọi là \textbf{điều khiển được từ trạng thái $x_0 \in \R^n$ đến trạng thái $x_1 \in \R^n$} nếu tồn tại một hàm đầu vào $u(t)$ (khả tích, liên tục từng khúc) nào đó sao cho $x(t_1;t_0,x_0,u) = x_1$. Trong trường hợp $x_1 = 0$ ta nói \textbf{hệ là điều khiển được về $0$ (null-controllable)}. 
+Nếu mọi trạng thái $x_1 \in \R^n$ đều điều khiển được từ $x_0$ thì ta nói hệ là điều khiển được toàn phần (từ $x_0$) (completely controllable). \\ 
+\noindent  a) Chứng tỏ rằng đối với hệ tuyến tính thì tính chất điều khiển được về $0$ tương đương với điều khiển được toàn phần. \ Từ đó dẫn đến một tính chất quan trọng là điều khiển được đến một điểm $x_1$ cho trước sẽ tương đương với điều khiển được toàn phần. \\
+b) Đối với hệ phi tuyến mệnh đề trong câu a) còn đúng nữa không? Vì sao? \\
+c) Chứng minh rằng đối với hệ thống 
+\begin{equation}
+	\dot{x} = A(t) x + k(t,u),
+\end{equation}
+trong đó $k$ là một hàm liên tục, thì tính chất điều khiển được về $0$ cũng tương đương với điều khiển được toàn phần. 
+\end{bt}
+
+\begin{bt} \textbf{Bài tập về hệ dương (positive systems)} \\
+Cho hệ điều khiển LTI
+\begin{align}
+	\dot{x} &= Ax + Bu, \quad \forall t \geq 0, \\
+	y &= Cx + Du
+\end{align}
+Hệ trên được gọi là \textbf{dương trong (internally positive)} nếu với mọi điều kiện ban đầu $x(t_0) = x_0 \geq 0$, $u(t) \geq 0$ với mọi $t\geq 0$ thì cả trạng thái $x(t)$ và đầu ra $y(t)$ đều không âm. Ở đây ta hiểu một vector không âm ($\geq 0$) nghĩa là mọi tọa độ của nó đều không âm. 
+
+\noindent a) Hãy tìm các điều kiện cần và đủ của 4 ma trận $A$, $B$, $C$, $D$ sao cho hệ đã cho là dương trong/dương ngoài.
+
+\noindent b) Hãy tìm điều kiện cần và đủ của 4 ma trận $A$, $B$, $C$, $D$ sao cho hệ vừa là dương trong, vừa là ổn định (theo nghĩa hệ tự do là ổn định).
+\end{bt}   
+
+\begin{bt}
+Cho hai hệ thống LTI được \textbf{mắc nối tiếp (cascade)} hoặc \textbf{mắc song song (parallel)}. \\
+a) Hỏi nếu hai hệ thống đó là ổn định thì hệ thống tổng có ổn định không? \\
+b) Hỏi nếu hai hệ thống đó là dương trong/dương ngoài thì hệ thống tổng có là dương trong/dương ngoài không? \\
+c) Hỏi nếu hai hệ thống đó là không ổn định thì hệ thống tổng có thể ổn định hay không?
+\end{bt}
+
+
+\end{document}
+
+
+\begin{bt} \textbf{(tính ổn định của hệ thống LTI):} Cho $A \in \R^{n,n}$. Chứng minh các khẳng định sau: \\
+	a) PTVP $x'(t) = Ax(t)$ là ổn định tiệm cận khi và chỉ khi $\sigma(A) := \{ \lambda \in \C \ | \ \det(\lambda I-A) = 0\} \subset \C_{-}$ và $\sigma(A) \cap i\R = \emptyset$. \\
+	b) PTVP $x'(t) = Ax(t)$ là ổn định khi và chỉ khi $\sigma(A) := \{ \lambda \in \C \ | \ \det(\lambda I-A) = 0\} \subset \C_{-}$ và các giá trị riêng thuần ảo là đơn (bội 1).
+\end{bt}   
+
+\begin{bt}
+	a) Cho trước ma trận $A \in \R^{m,n}$. Chứng minh rằng $\|A\|_2 = \max\{\lambda \ | \ \det(\lambda I - A^TA) = 0 \}$. \\
+	b) Cho ma trận $A \in \R^{n,n}$ khả nghịch, $B \in \R^{n,m}$, $C \in \R^{p,n}$, $D \in \R^{p,m}$. Chứng minh rằng $\m{A & B \\ C & D}$ khả nghịch khi và chỉ khi ma trận $M := D - CA^{-1}B$ là khả nghịch. \\
+	c) Xét TH đặc biệt $p = m$ và $D \in \R^{m,m}$ là xác định âm. Chứng minh rằng ma trận $\m{A & B \\ B^T & D}$ là (nửa) xác định âm khi và chỉ khi $M$ là (nửa) xác định âm.
+\end{bt}
+
+\begin{bt} \textbf{Bài tập thực hành về tính ổn định - vẽ hình trong Matlab.}
+Cho hệ \eqref{3} với các ma trận hệ số là 
+%
+\[
+A = \m{1 & 1 \\ 4 & -2}, \ B = \m{1 & -1 \\ 1 & -1}, \ C = \m{1 & 0}, \ D = 0. 
+\]
+%
+Hãy tìm hiểu các hàm \verb|eig| và \verb|ode45| trong MATLAB để xác định tính ổn định của hệ và vẽ hình 
+đầu ra $y(t)$, trạng thái $x(t)$ với các dữ kiện sau:
+%
+\[
+u(t) \mbox{ là hàm Heaviside (google nhé)}, \ x_0 = \m{1 \\ 1}, \ [t_0,t_f] = [0,10] \ .
+\]
+% 
+\end{bt}

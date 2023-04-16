@@ -1,0 +1,159 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsmath,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{listings}
+\lstset{language=Python}          % Set your language (you can change the language for each code-block optionally)
+\usepackage[most]{tcolorbox}
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=3.0cm, bottom=3.5cm, left=3.5cm, right=2.5cm] {geometry}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+\def\im{\mathrm{im}}
+
+\begin{document}
+% \noindent
+
+\input{header_template}
+
+\begin{center}
+	{\bf Bài Tập Lý Thuyết Điều Khiển Hệ Thống - No. 3 \\
+	     Controllability of LTV systems}
+\end{center}
+
+\begin{bt}
+Xét hệ thống tuyến tính có $D \equiv 0$ như sau
+%
+\begin{align}\label{eq1}
+	\dot{x} &= A(t)x + B(t)u, \quad \forall t \geq t_0, \\
+	y &= C(t)x \ . 
+\end{align}
+a) Trong một số ứng dụng thực tế, ví dụ như các hệ cơ học, nhiều khi người ta không quan tâm đến toàn bộ trạng thái $x(t)$ mà chỉ 1 phần của nó. Khi đó hệ được gọi là điều khiển được 1 phần (\textbf{partial controllable}). Hãy chứng minh kết quả sau.
+
+\begin{tcolorbox}[colback=red!5!white,colframe=green!75!black]
+Cho trước thời điểm $t_1 > t_0$. Khi đó tồn tại một hàm đầu vào $u$ để điều khiển đầu ra $y_t$ của hệ từ trạng thái ban đầu $y_0 = C(0)x_0$ tới trạng thái $y_1$ tại thời điểm $t_1$ khi và chỉ khi 
+%
+\begin{equation}\label{eq2}
+	y_1 - C(t_1) \Phi(t_1,t_0)x_0 \in \im 
+	C(t_1) \Phi(t_1,t_0) W_c(t_0,t_1),
+\end{equation}
+%
+trong đó $\{\Phi(t,s)\}$ là nửa nhóm tiến hóa t.ứ với ptvp của $x$ còn $W_c(t_0,t_1)$ là ma trận điều khiển Kalman. 
+\end{tcolorbox}
+ 
+b) Chứng minh Định lý về tính điều khiển được cho hệ LTV thông qua kiểm tra điều kiện \textbf{ma trận Kalman đủ hạng dòng}, i.e., \\
+%
+\begin{equation}
+ \rank \ K(t) = \m{M_0(t) & M_1(t) & \dots & M_{n-1}(t) } = n \ \mbox{ với $t>t_0$ nào đó}.
+\end{equation}
+%
+% Hiệu ứng gương, phản chiếu chữ
+% https://tex.stackexchange.com/questions/34713/mirror-effect-in-documents
+\raisebox{\depth}{\scalebox{1}[-1]{
+Hint: Nếu không làm được các em có thể xem Định lý 6.12 (trang 178 cuốn của Chen).
+}}\\
+c) (Open question) Em hãy thử mở rộng điều kiện hạng Kalman trong phần b) cho hệ điều khiển được 1 phần.
+\end{bt}
+
+\begin{bt}
+Hãy xét tính điều khiển được của các hệ điều khiển sau	
+\begin{equation}\label{1}
+\dot{x} = \m{0 & 1 \\ 0 & t} x + \m{0 \\ 1} u, \quad y = \m{0 & 1} x \ .
+\end{equation}
+%
+\begin{equation}\label{2}
+	\dot{x} = \m{0 & 0 \\ 0 & -1} x + \m{1 \\ e^{-t}} u, \quad y = \m{0 & e^{-t}} x \ .
+\end{equation}
+%
+\end{bt}
+	
+\begin{bt}
+	Hãy xây dựng và chứng minh điều kiện cần và đủ cho tính chất điều khiển được (tương tự như định lý về Gramian điều khiển $W_c$) của hệ phương trình vi phân sau
+	%
+	\begin{equation}\label{Lyapunov diff. equ.}
+		\dot{X}(t) = A(t)X(t) + X(t)B(t) + C(t)U(t)D(t), \ \forall t\geq t_0.
+	\end{equation}
+%
+\begin{tcolorbox}[colback=yellow!5!white,colframe=blue!75!black]
+Phương trình vi phân \eqref{Lyapunov diff. equ.} có tên gọi là phương trình vi phân Sylvester và có công thức nghiệm tường minh như sau.
+%
+\begin{equation}
+	X(t) = \Phi_A(t,t_0) D \Phi_{B^T}(t,t_0)^T + \int_{t_0}^t \Phi_A(t,s) C(s) \Phi_{B^T}(t,s)^T ds,
+\end{equation}
+%
+trong đó $\{\Phi_A(t,s)\}$ và $\{\Phi_{B^T}(t,s)\}$ là hai họ tiến hóa tương ứng với hai phương trình vi phân
+$\dot{X} = A(t)X$ và $\dot{X} = B^T(t)X$. \\
+
+Các em có thể tham khảo thêm Định lý 1.1.1-1.1.5 trong cuốn sách \\
+\emph{Abou-Kandil, H., Freiling, G., Ionescu, V., Jank, G.: Matrix Riccati Equations in Control and Systems Theory. Birkhäuser, Basel (2003)}. 
+\end{tcolorbox}
+\end{bt}
+
+\begin{bt} \textbf{Controllability of frozen system} \\ 
+	Ta gọi hệ LTV \eqref{eq1} là bị đóng băng từ thời điểm $\si > t_0$ nào đó nếu lấy $A(t) \equiv A(\si)$ và $B(t) \equiv B(\si)$, với mọi $t \geq \si$.\\  	
+	a) Giả sử rằng tại mọi thời điểm $\si > t_0$ hệ đóng băng 
+	%
+	\begin{align*}
+		\dot{x} = A(\si) x(t) + B(\si) u(t), \ \forall t\geq \si,
+	\end{align*}%
+	là điều khiển được. Hỏi hệ LTV \eqref{eq1} có điều khiển được hay không? Vì sao? \\
+	b) Cho trước thời điểm $\si \geq t_0$, và giả sử rằng hệ LTV \eqref{eq1} là điều khiển được từ thời điểm $\si$ đến thời điểm bất kỳ $t_1 > \si$. Hỏi hệ đóng băng tại $\si$ có điều khiển được hay không? Vì sao?
+\end{bt}
+	
+\end{document}
+
+\begin{bt}
+	Mệnh đề sau có luôn luôn đúng không?
+	%
+	\[
+	\rank \m{B & A B & \dots & A^{n-1}B} = \rank \m{AB & A^2 B & \dots & A^{n} B} \ .
+	\]
+	% 
+	Nếu không, nó sẽ đúng với điều kiện nào?
+\end{bt}
+
+\begin{bt}
+	Chuyển các hệ điều khiển LTI cấp $n$ sau về hệ điều khiển cấp 1 với biến điều khiển $u$, biến trạng thái $x$ và xét tính điều khiển được của hệ cấp 1 thu được. \\
+	a) 
+	%
+	\begin{equation}
+		x^{(n)} + \a_{n-1} x^{(n-1)} + \dots + \a_1 \dot{x} + \a_0 x = u(t) 
+	\end{equation}
+	%
+	b*) 
+	\begin{equation}
+		x^{(n)} + \a_{n-1} x^{(n-1)} + \dots + \a_1 \dot{x} + \a_0 x = 
+		u^{(n)} + \b_{n-1} u^{(n-1)} + \dots + \b_1 \dot{u} + \b_0 u \ . 
+	\end{equation} 
+\end{bt}
+
+\begin{bt}
+	Đối với hệ LTI, hãy chứng tỏ rằng $(A, B)$ là điều khiển được khi và chỉ khi $(-A, B)$ là điều khiển được. Điều này có đúng với các hệ thống LTV không?
+\end{bt}   
+
+\begin{bt}
+	Hãy xét tính điều khiển được của các hệ điều khiển sau
+	%
+	\begin{equation}
+		\dot{x} = \m{0 & 1 & 0 \\ 0 & 0 & 1 \\ 1 & -3 & -3} x + \m{0 \\ 0 \\ 1} u, \quad
+		y = \m{1 & 2 & 1} x. 
+	\end{equation}
+\end{bt}
+%
