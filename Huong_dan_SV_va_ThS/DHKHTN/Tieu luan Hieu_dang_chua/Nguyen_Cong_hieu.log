@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.29)  23 MAR 2023 11:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.29)  11 MAY 2023 14:56
 entering extended mode
 **./Nguyen_Cong_hieu.tex
 (Nguyen_Cong_hieu.tex
@@ -770,7 +770,7 @@ Overfull \hbox (23.30934pt too wide) detected at line 250
 \OT1/cmr/m/n/10.95 = []
  []
 
-[8]
+[8] [9]
 
 LaTeX Warning: Command \` invalid in math mode on input line 299.
 
@@ -797,7 +797,7 @@ ML/cmm/m/it/14.4 ; [] ; r$\T5/cmr/m/n/14 , trong â $\OT1/cmr/bx/n/14.4 B[]\OML
 
  []
 
-[9] [10]
+[10]
 Overfull \hbox (13.17522pt too wide) detected at line 337
 [][]
  []
@@ -810,7 +810,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  9115 strings out of 479321
  125215 string characters out of 2866504
- 490121 words of memory out of 3000000
+ 490122 words of memory out of 3000000
  26385 multiletter control sequences out of 15000+600000
  423461 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -832,7 +832,7 @@ rogram Files/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files
 vntex/vnr/vnbx12.pfb><D:/Program Files/MikTex/fonts/type1/vntex/vnr/vnr10.pfb><
 D:/Program Files/MikTex/fonts/type1/vntex/vnr/vnr12.pfb><D:/Program Files/MikTe
 x/fonts/type1/vntex/vnr/vnti12.pfb>
-Output written on Nguyen_Cong_hieu.pdf (12 pages, 251582 bytes).
+Output written on Nguyen_Cong_hieu.pdf (12 pages, 251275 bytes).
 PDF statistics:
  121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

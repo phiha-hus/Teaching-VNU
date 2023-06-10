@@ -1,0 +1,171 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+%\usepackage{extsizes}
+\usepackage{amsthm,amssymb}
+%\usepackage{omegavn,ocmrvn}
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{vietnam}
+
+\usepackage{listings}
+\lstset{language=Python}          % Set your language (you can change the language for each code-block optionally)
+
+
+\usepackage{longtable}
+\usepackage{answers}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{picinpar}
+\usepackage{enumerate}
+\usepackage[top=2.0cm, bottom=2.0cm, left=3.0cm, right=2.0cm] {geometry}
+
+\usepackage{extarrows}
+\usepackage{hyperref}
+
+
+\newtheorem{bt}{Câu}
+\newcommand{\RR}{\mathbb R}
+\Newassociation{sol}{Solution}{ans}
+\newtheorem{ex}{Câu}
+\renewcommand{\solutionstyle}[1]{\textbf{ #1}.}
+\def\hro{\mathbb}
+\def\vphi{\varphi}
+\def\tet{\theta}
+\def\a{\alpha}
+\def\b{\beta}
+\def\rar{\rightarrow}
+\def\R{\hro{R}}
+\def\C{\hro{C}}
+\def\Si{\Sigma}
+\def\si{\sigma}
+\def\ep{\varepsilon}
+\def\rank{\mathrm{rank}}
+\newcommand{\m}[1]{
+	\begin{bmatrix}
+		#1
+	\end{bmatrix}
+}
+
+\usepackage[most]{tcolorbox}
+
+\begin{document}
+% \noindent
+
+\input{header_template_thi_GK_CK}
+
+\begin{center}
+	{\bf Bài Thi Cuối Kỳ - Thực Hành Tính Toán (MAT3525) \\ Đề 1 - Thời gian 60 phút.
+	 }
+\end{center}
+
+\begin{bt}\label{Câu 1} \textbf{(1+2 điểm)} \
+	a) Phát biểu định nghĩa về bài toán cương. Bài toán giải phương trình vi phân
+	%
+	\begin{equation}\label{eq1}
+		x'(t) = \m{-1 & 0\\5 & -100} x(t), \quad \forall t\in [0,10],
+	\end{equation}
+	%
+	có cương hay không? Vì sao? \\
+	b) Sử dụng phương pháp Euler ẩn để giải bài toán giá trị ban đầu sau.
+	\begin{equation}
+		(1+t) \ y'(t) = t y(t) + e^t, \quad y(0) = 1, \quad \forall 0\leq t\leq 1,
+	\end{equation}
+	với bước $h = 0.5$. Tính toán chính xác đến 2 chữ số thập phân.
+\end{bt}
+\begin{tcolorbox}[colback=red!5!white,colframe=green!75!black]
+\sol{
+\textbf{Solution:} a) Bài toán cương là bài toán mà sử dụng các phương pháp ẩn sẽ hiệu quả hơn nhiều so với các phương pháp hiện. Nếu sử dụng các phương pháp hiện thì phải yêu cầu bước $h$ cực nhỏ. Bài toán \eqref{eq1} là cương vì các giá trị riêng của nó đều có phần thực âm $-1$ và $-100$ và hệ số cương $|-100/(-1)| = 100$ là khá lớn. \\
+b) Công thức phương pháp Euler ẩn là 
+%
+\[
+(1+t_{n+1}) \left( y_{n+1} - y_n \right) = h \left( t_{n+1} y_{n+1} +  e^{t_{n+1}} \right) \ \Rightarrow \
+y_{n+1} = \dfrac{(1+t_{n+1}) y_n + h e^{t_{n+1}}}{1+t_{n+1} - ht_{n+1}} \ .
+\]
+%
+Tính toán trực tiếp ta được $y(0.5) = 1.8595$ và $y(1) = 3.3854$ . 
+\\
+}
+\end{tcolorbox}
+
+\begin{bt}\textbf{(2 + 1 điểm)} \
+	Con lắc vật lý OA  có khối lượng $m$ và khối tâm tại C, OC $= \ell$, chịu một lực tác động $u(t)$, mô-men quán tính với trục quay O là $J_0$, có phương trình mô tả chuyển động là 1 phương trình vi phân bậc 2 dạng 
+	%
+	\begin{equation}
+		J_0 \ \varphi''(t) = u(t) - m \ g \ \ell \ \varphi(t), \qquad \forall \ t\in [t_0,t_f],
+	\end{equation}
+	%
+	trong đó $g=9.8m/s^2$ là gia tốc trọng trường. \\
+	a) Hãy chuyển hệ bậc 2 nói trên với điều kiện ban đầu
+	$
+	\varphi(t_0) = \varphi_0, \;\; \varphi'(t_0) = {\varphi}_1 
+	$
+	%
+	về dạng bài toán giá trị ban đầu cho hệ phương trình vi phân bậc nhất.\\
+	b) Sử dụng phương pháp Heun để tính xấp xỉ $\varphi(0.1)$ của hệ bậc nhất thu được trong câu a) biết $J_0 = 1$, $u = 2 \sin(5t)$, $m = 3$, $\ell = 4$, $t_0 = 0$, bước $h = 0.1$, $\varphi_0 = \varphi_1 = 1$.
+\end{bt}
+\begin{tcolorbox}[colback=red!5!white,colframe=green!75!black]
+\sol{
+\textbf{Solution: } a) Hệ bậc 2 có dạng 
+\begin{equation*}
+	\m{\varphi''(t) \\ \varphi'(t)} = \m{0 & - mg\ell/J_0 \\ 1 & 0} \m{\varphi'(t) \\ \varphi(t)} + \m{u(t) \\ 0}, 
+\end{equation*}
+với điều kiện ban đầu $\m{\varphi'(t_0) \\ \varphi(t_0)} = \m{\varphi_1 \\ \varphi_0}$. \\
+Ta có thể viết tắt lại hệ dưới dạng $y'(t) = f(t,y(t))$. \\
+b) Phương pháp Heun áp dụng cho hệ nói trên có dạng sau
+%
+\begin{align*}
+\tilde{y}_{i+1} &= y_i + f(t_i,y_i) \\
+y_{i+1} &= y_i + h/2 * \left( f(t_i,y_i) + f( t_{i+1},\tilde{y}_{i+1} ) \right) \ . 
+\end{align*}
+%
+Từ đó chúng ta có thể tính được $y(0.1) = \m{-16.5921 \\ -4.7800}$ \ .
+}
+\end{tcolorbox}
+
+\begin{center}
+\textbf{Trong phần tự chọn dưới đây sinh viên chọn làm 1 trong 2 câu}
+\end{center}
+
+\begin{bt}\label{Câu 3}\textbf{(2 + 2 điểm)} \\ 
+	a) Vẽ sơ đồ Simulink để mô phỏng hệ thống điều khiển: $ 3 x''(t) + 39 x'(t) + 120 x(t) = u(t)$.
+	\\
+	\noindent b) Cho hệ thống điều khiển tuyến tính
+	%
+	\begin{align}
+		\m{x'_1(t) \\ x'_2(t)} &= \m{1 & 2 \\ 3 & 4}  \m{x_1(t) \\ x_2(t)} + \m{1 \\ 2} u(t), \\
+		y(t) &= \m{2 & 1} \m{x_1(t) \\ x_2(t)} + 3 u(t). 
+	\end{align}
+	%
+	Hỏi hệ thống trên có ổn định không, điều khiển được không, quan sát được không, biết rằng
+	\[
+	\rank \m{0.2 & 1\\0.4 & 2.2} = 2, \qquad 
+	\rank \m{0.5 & 0.25 \\ 1.25 & 2} = 2 \ .\] 
+\end{bt}
+\begin{tcolorbox}[colback=red!5!white,colframe=green!75!black]
+\textbf{Solution: } a) \\
+b) Hệ 0 ổn định nhưng quan sát được và điều khiển được.
+$ eig(A) = \m{-0.3723 & 5.3723}$, $Kc = \m{1 & 5 \\ 2 &  11}$, $Ko = \m{2 & 1 \\ 5 & 8}$
+\end{tcolorbox}
+
+
+\begin{bt}\label{Câu 4}\textbf{(2 + 2 điểm)} \\ 
+	Cho 2 ma trận: $\mathbf{A} = \begin{pmatrix}
+		2&1&0&0\\0&2&1&0\\0&0&2&1\\0&0&0&2
+	\end{pmatrix}$, $\mathbf{b}=\begin{pmatrix}
+		0\\0\\0\\1
+	\end{pmatrix}$.
+	\\
+	\noindent a) Hãy tìm biểu diễn của ma trận $\mathbf{A}$ trong cơ sở $\{\mathbf{b}, \mathbf{Ab}, \mathbf{A^2b}, \mathbf{A^3b}\}$.
+	\\
+	\noindent b) Tính $e^{At}$.
+\end{bt}
+	
+\begin{center}
+	--------------------------- Hết ---------------------------
+\end{center}
+
+
+\end{document}
+
+
+

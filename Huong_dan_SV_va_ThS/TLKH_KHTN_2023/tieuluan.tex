@@ -1,0 +1,442 @@
+%%7:1:0 23/4/2019%%5:30:29 23/4/2019 -VieTeX creates C:\Users\Administrator\Desktop\.tex
+% LaTeX Book Template - using defaults
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amsxtra,amssymb,latexsym, amscd,amsthm}
+\usepackage{amsmath, amsfonts,latexsym, amscd, amsxtra, amssymb, amsbsy, amsgen, amsopn, fontenc, fontsmpl, amsthm}
+\usepackage{indentfirst}
+\usepackage[mathscr]{eucal}
+\usepackage{color}
+\usepackage{arydshln}
+\usepackage[utf8]{vietnam}
+\usepackage{graphicx}
+\usepackage[left=2.5cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\newtheorem{note}{Chú ý}
+\newtheorem{dn}{Định nghĩa}
+\newtheorem{md}{Mệnh đề}
+\newtheorem{dl}{Định lý}
+\newtheorem{bd}{Bổ đề}
+\newtheorem{vd}{Ví dụ}
+\newtheorem{hq}{Hệ quả}
+\newtheorem{op}{Trường hợp}
+\newtheorem{al}{Thuật toán}
+\def\tSi{\tilde{\Sigma}}
+\newcommand{\m}[1]{
+\begin{bmatrix}
+#1
+\end{bmatrix}
+}
+
+% Set the beginning of a LaTeX document
+\begin{document}
+\vspace*{5cm}
+\begin{center}
+	\textbf{{\Large VỀ SỰ BẢO TOÀN TÍNH ĐIỀU KHIỂN ĐƯỢC KHI LẤY MẪU}  }  
+\end{center}  
+
+\begin{center}
+	Nguyễn Công Hiếu \\ K62A1T - Đại học khoa học tự nhiên Hà Nội \\ Giảng viên hướng dẫn : TS. Hà Phi 
+\end{center}  
+       
+
+\newpage
+
+\tableofcontents %Muc luc
+	 
+\newpage
+		 
+Trong bài báo này, chúng tôi xem xét các hệ dữ liệu được lấy mẫu được thực hiện bởi các hệ thống liên tục tuyến tính bất biến theo thời gian có đầu vào là hằng số. Vấn đề được giải quyết như sau: giả sử rằng hệ thống liên tục có thể điều khiển được, điều kiện cần và đủ để hệ thống dữ liệu lấy mẫu có thể điều khiển được là gì?
+
+Chúng tôi rút ra một điều kiện cần cho trường hợp đa chiều và chỉ ra rằng một điều kiện yếu hơn điều kiện mà Kalman $e^{\prime}$ yêu cầu (1962) là cần và đủ.
+
+
+%\textbf{1. Giới thiệu}
+
+\section{Giới thiệu}
+
+Một hệ điều khiển rời rạc quan trọng là hệ thống dữ liệu lấy mẫu được thực hiện bằng cách chèn một thành phần kỹ thuật số vào vòng điều khiển. Nói cách khác, chúng tôi xem xét một hệ thống động liên tục có đầu vào là hằng số từng phần. Mặc dù bộ điều khiển chỉ có thể thay đổi tại các thời điểm nhất định, nhưng các thời điểm lấy mẫu, vectơ trạng thái, là nghiệm của các phương trình vi phân của hệ, thay đổi liên tục.
+
+Khả năng điều khiển của các hệ thống thời gian rời rạc đã được đề cập khá nhiều trong tài liệu (ví dụ: Kalman et al. 1962, Sarachik và Kreindler 1965, Katkovnik và Poluektov 1966, Grammaticos 1969, Panda 1970). Tuy nhiên, vấn đề về tính điều khiển được của các hệ thống lấy mẫu dữ liệu nhận được rất ít sự quan tâm. Kalman và cộng sự. (1962) đã tìm thấy một điều kiện đủ cho tính điều khiển được của các hệ thống dữ liệu được lấy mẫu, điều này cũng cần thiết nếu kích thước của không gian điều khiển là một chiều. Kết quả tương tự cũng được lặp lại bởi Katkovnik và Poluektov (1966) và Chen (1970).
+
+Trong bài báo này, chúng tôi giải quyết vấn đề sau: giả sử rằng hệ thống liên tục là điều khiển được, tiêu chí để hệ thống dữ liệu được lấy mẫu là điều khiển được là gì? Chúng tôi đưa ra một điều kiện cần  cho tính điều khiển được của các hệ thống dữ liệu được lấy mẫu với bất kỳ số lượng kiểm soát nào và chỉ ra rằng một điều kiện yếu hơn của Kalman là cần và đủ.
+
+Hầu hết các định lý và bổ đề được phát biểu mà không cần chứng minh vì lý do ngắn gọn. Một phiên bản đầy đủ của bài báo này có sẵn từ các tác giả (Bar-Ness và Langholz 1974).
+
+
+%\textbf{2. Phát biểu bài toán}
+
+\section{Phát biểu bài toán}
+
+Xem xét hệ thống bất biến thời gian tuyến tính
+\begin{equation}\tag{1}\label{pt1}
+	\dot{\mathbf{x}}(t)=\mathbf{A} \mathbf{x}(t)+\mathbf{C u}(t)
+\end{equation}
+trong đó $\mathbf{x}$ là vectơ trạng thái $n$ chiều; $\mathrm{u}$ là  vectơ điều khiển $r$ chiều; A và $\mathbf{C}$ là các ma trận hằng có cỡ phù hợp.
+
+Giả sử rằng $\mathbf{u}(t)=\mathbf{u}\left(t_i\right), t_i \leqslant t \leqslant t_{i+1}$, trong đó $t_i$ là lần lấy mẫu thứ $i$ thời gian và đặt $T \triangleq t_{i+1}-t_i \forall i, T>0$, biểu thị khoảng thời gian lấy mẫu. Giải phương trình \eqref{pt1} thu được
+\begin{equation}\tag{2}\label{pt2}
+	\mathbf{x}(t)=\boldsymbol{\Phi}\left(t, t_0\right) \mathbf{x}\left(t_0\right)+\int_{t_0}^t \boldsymbol{\Phi} (t, \tau) \mathbf{C u}(\tau) d \tau
+\end{equation}
+trong đó $\Phi\left(t, t_0\right)$ là ma trận cỡ $(n \times n)$ liên kết với phương trình \eqref{pt1}. Tại thời điểm lấy mẫu, chúng tôi nhận được từ phương trình \eqref{pt2}
+\begin{equation}\tag{3}\label{pt3}
+	\mathbf{x}\left(t_{i+1}\right)=\boldsymbol{\Phi}\left(t_{i+1}, t_i\right) \mathbf{x}\left(t_i\right) +\int_{t_1}^{t_{1+1}} \boldsymbol{\Phi}\left(t_{i+1}, \tau\right) \mathbf{C} d \tau \mathbf{u}(t_i)
+\end{equation}
+Vì chúng ta đang xử lý trường hợp bất biến theo thời gian, $\boldsymbol{\Phi}\left(t_{i+1}, t_i\right)=\boldsymbol{\Phi}\left(t_{i+1}-t_i \right)=$ $\Phi(T)$, do đó, viết phương trình \eqref{pt3} ở dạng phương trình sai phân ta được
+\begin{equation}\tag{4}\label{pt4}
+	\mathbf{x}_{i+1}=\Phi(T) \mathbf{x}_i+\mathrm{Bu}_i
+\end{equation}
+trong đó $u_i=u\left(t_i\right), x_i=x\left(t_i\right) \forall i$, và
+\begin{equation}\tag{5}\label{pt5}
+	\boldsymbol{\Phi}(T)=\mathrm{e}^{A T}
+\end{equation}
+\begin{equation}\tag{6}\label{pt6}
+	\mathbf{B}=\int_0^T e^{A_T} \mathbf{C} d \tau
+\end{equation}
+
+%\textbf{Định nghĩa 1}
+
+\begin{dn}\label{dn1}
+	Gọi $P$ và $Q$ lần lượt là các ma trận hằng số $(n \times n)$ và $(n \times r)$. Khi đó, cặp $(P, Q)$ được gọi là cặp điều khiển được nếu $\rho\left[\mathbf{Q}: \mathbf{P} \mathbf{Q}: \mathbf{P}^2 \mathbf{Q} : \ldots: \mathbf{P}^{\boldsymbol{\nu}-\mathbf{1}} \mathbf{Q}\right]=n$, trong đó $\nu$ là bậc của đa thức nhỏ nhất của $ P$.
+	
+	Ma trận $(n \times r \nu)$ $\left[\mathbf{Q}: \mathbf{P}: \mathbf{P}^2 \mathbf{Q}: \ldots: \mathbf{P}^ {\nu-1} \mathbf{Q}\right]$ được gọi là ma trận tính điều khiển được.
+\end{dn}
+
+
+
+\textit{Nhận xét.} Theo Định nghĩa 1, để cặp $(P, Q)$ là điều khiển được, bất đẳng thức $r \nu \geqslant n$ phải được thỏa mãn.
+
+Bây giờ giả sử rằng hệ thống tuyến tính bất biến theo thời gian của phương trình \eqref{pt1} kiểm soát được, bài toán tìm điều kiện cho hệ thống dữ liệu lấy mẫu của phương trình điều khiển \eqref{pt4}  được giải ở mục 4. Một số kết quả cần thiết cho nghiệm được trình bày trong phần sau.
+
+%\textbf{3. Kiến thức chuẩn bị}
+
+\section{Kiến thức chuẩn bị}
+
+%\textbf{Bổ đề 1}. 
+
+\begin{bd}\label{bd1}
+	Giả sử $G$ là ma trận hằng số bất kỳ $(n \times n)$. Khi đó, cặp $(\mathbf{P}, \mathbf{Q})$ có thể điều khiển được nếu cặp $\left(\mathbf{G}^{-1} \mathbf{P G}, \mathbf{G}^{-1} \mathbf{Q}\right)$ là điều khiển được.
+\end{bd}
+
+
+\textit{Nhận xét.} Theo bổ đề 1, có thể giả sử, không mất tính tổng quát, rằng $P$ ở dạng chính tắc Jordan.
+
+%\textbf{Bổ đề 2}
+
+\begin{bd}\label{bd2}
+Xét hệ phương trình tuyến tính của phương trình \ref{pt1} và giả sử rằng thời gian lấy mẫu $T \neq 2 \pi \beta / \lambda_i, \quad \beta= \pm 1, \pm 2, \ldots$, khi $\operatorname{Re}\left\{ \lambda_i\right\}=0$, trong đó $\lambda_i$ là giá trị riêng của $\mathbf{A}$. Khi đó, cặp $(\mathbf{A}, \mathbf{B})$, trong đó $B$ được đưa ra bởi phương trình \ref{pt6}, là điều khiển được nếu cặp $(\mathbf{A}, \mathbf{C})$ là điều khiển được.	
+\end{bd}
+
+
+
+Đối với hàm ma trận $e^{At}$ ta có (Zadeh và Desoer 1963)
+\begin{equation}\tag{7}\label{pt7}
+	\mathrm{e}^{\mathrm{A} t}=\sum_{k=0}^{\nu-1} \alpha_k(t) \mathrm{A}^k
+\end{equation}
+trong đó $\nu$ là bậc của đa thức nhỏ nhất của $\mathbf{A}$. Các phương trình đại số xác định $\alpha_k$ 's có dạng
+$$
+M \alpha(t)=\psi(t)
+$$
+trong đó $M$ là một ma trận bậc tối thiểu, $\alpha(t)=\left[\alpha_0(t) \alpha_1(t) \ldots \alpha_{\nu-1}(t)\right]^{\ prime}$ và $\psi(t)$ là một vectơ có các phần tử có dạng $t^l \exp \left(\lambda_k t\right), k=1,2, \ldots, \delta ; l=0,1,2$, $\ldots, m_k-1$, với $\lambda_k$'s và $m_k$'s là các giá trị riêng phân biệt của $\mathbf{A}$ và các bội số tương ứng của chúng. Theo Zadeh và Desoer (1963), các thành phần $\alpha_k(t)$ của $\alpha(t)$ tạo thành một tập hợp các hàm thời gian độc lập tuyến tính trên bất kỳ khoảng độ dài dương nào.
+
+%\textbf{4. Tiêu chí về tính điều khiển được}
+
+\section{Tiêu chí về tính điều khiển được}
+
+Kalman và cộng sự. (1962) đã đưa ra một điều kiện đủ cho khả năng điều khiển của một hệ thống dữ liệu được lấy mẫu, điều này cũng cần thiết nếu một chiều của không gian điều khiển. Katkovnik và Poluektov (1966) và Chen (1970) lại đưa ra kết quả tương tự. Trong phần này, chúng tôi rút ra một điều kiện cần  cho tính điều khiển được của một hệ thống dữ liệu được lấy mẫu với bất kỳ số lượng kiểm soát nào (Định lý 2) và chỉ ra rằng một điều kiện yếu hơn điều kiện của Kalman là cần và đủ (Định lý 1).
+
+Xác định ma trận $(\nu \times v)$ $W$ :
+\begin{equation}\tag{9}\label{pt9}
+	\mathbf{W}=\left[\begin{array}{cccc}
+		\alpha_0(0) & \alpha_1(0) & \ldots & \alpha_{\nu-1}(0) \\
+		\alpha_0(T) & \alpha_1(T) & \ldots & \alpha_{\nu-1}(T) \\
+		\vdots & \vdots & & \vdots \\
+		\alpha_0((\nu-1) T) & \alpha_1((\nu-1) T) & \ldots & \alpha_{\nu-1}((\nu-1) T)
+	\end{array}\right]
+\end{equation}
+và ma trận $\Omega$ cỡ $(\nu \times \nu)$:
+\begin{equation}\tag{10}\label{pt10}
+	\begin{aligned} & \Omega= \\ 
+		& 
+		{\small
+			{\left[\begin{array}{cccccc}1 & \exp \left(\lambda_1 T\right) & \exp \left(2 \lambda_1 T\right) & \exp \left(3 \lambda_1 T\right) & \cdots & \exp \left[(\nu-1) \lambda_1 T\right] \\ 0 & \exp \left(\lambda_1 T\right) & 2 \exp \left(2 \lambda_1 T\right) & 3 \exp \left(3 \lambda_1 T\right) & \cdots & (\nu-1) \exp \left[(\nu-1) \lambda_1 T\right] \\ \vdots & \vdots & \vdots & \vdots & & \\ 0 & \exp \left(\lambda_1 T\right) & 2^{m_1-1} \exp \left(2 \lambda_1 T\right) & 3^{m_1-1} \exp \left(3 \lambda_1 T\right) & \ldots & (\nu-1)^{m_1-1} \exp \left[(\nu-1) \lambda_1 T\right] \\ \hdashline 1 & \exp \left(\lambda_2 T\right) & \exp \left(2 \lambda_2 T\right) & \exp \left(3 \lambda_2 T\right) & \cdots & \exp \left[(\nu-1) \lambda_2 T\right] \\ 0 & \exp \left(\lambda_2 T\right) & 2 \exp \left(2 \lambda_2 T\right) & 3 \exp \left(3 \lambda_2 T\right) & \cdots & (\nu-1) \exp \left[(\nu-1) \lambda_2 T\right] \\ \vdots & \vdots & \vdots & \vdots & & \\ 0 & \exp \left(\lambda_2 T\right) & 2^{m_2-1} \exp \left(2 \lambda_2 T\right) & 3^{m_2-1} \exp \left(3 \lambda_2 T\right) & \cdots & (\nu-1)^{m_2-1} \exp \left[(\nu-1) \lambda_2 T\right] \\ \hdashline \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\ \cdots & \exp \left(\lambda_\delta T\right) & \exp \left(2 \lambda_\delta T\right) & \exp \left(3 \lambda_\delta T\right) & \cdots & \exp \left[(\nu-1) \lambda_\delta T\right] \\ 0 & \exp \left(\lambda_\delta T\right) & 2 \exp \left(2 \lambda_\delta T\right) & 3 \exp \left(3 \lambda_\delta T\right) & \cdots & (\nu-1) \exp \left[(\nu-1) \lambda_\delta T\right] \\ \vdots & \vdots & \vdots & \vdots & & \vdots \\ 0 & \exp \left(\lambda_\delta T\right) & 2^{m \delta-1} \exp \left(2 \lambda_\delta T\right) & 3^{m-1} \exp \left(3 \lambda_\delta T\right) & \cdots & (\nu-1)^{m-1} \exp \left[(\nu-1) \lambda_\delta T\right]\end{array}
+				\right]}}
+	\end{aligned}
+\end{equation}
+
+trong đó $T>0, \lambda_k$ và $m_k, k=1,2, \ldots, \delta$, lần lượt là các giá trị riêng phân biệt của $\mathbf{A}$ và các bội số đa thức tối thiểu tương ứng của chúng. Theo các định nghĩa này, chúng ta có
+
+\textbf{Bổ đề 3}
+
+Đặt $W$ và $\Omega$ lần lượt là các ma trận được xác định bởi phương trình (9) và (10). Khi đó, $\rho(\mathbf{W})=\rho(\boldsymbol{\Omega}) $.
+
+%\textbf{Định lý 1}
+
+\begin{dl}\label{dl1}
+	Xét hệ tuyến tính bất biến theo thời gian của phuwogn trình (1) và giả sử rằng (a) cặp $(A, C)$ là điều khiển được và $(b)\; T \neq 2 \pi \beta / \lambda_i, \beta= \pm 1, \pm 2, \ldots$ , đối với $\operatorname{Re}\left\{\lambda_i\right\}=0$, trong đó $\lambda_1$ là giá trị riêng của $\mathbf{A}$. Khi đó, cặp $(\boldsymbol{\Phi}, \mathbf{B})$ là điều khiển được nếu ma trận $\Omega$, được xác định bởi phương trình (10), là không suy biến. Điều kiện này cũng cần thiết nếu kích thước của không gian điều khiển là một chiều.
+\end{dl}
+
+
+
+Để chứng minh định lý này, xem Phụ lục.
+
+%\textit{Ví dụ 1.}
+
+\begin{vd}
+Cho 
+$$
+\boldsymbol{A}=\left[\begin{array}{lll}
+	1 & 1 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 2
+\end{array}\right]
+$$
+Bậc của đa thức nhỏ nhất là $\nu=n=3$. Vì $\operatorname{Re}\left\{\lambda_i\right\} \neq 0 . \quad i=1,2$, điều kiện $(b)$ của Định lý 1 được thỏa mãn với mọi $T>0$. Sử dụng phương trình (10) chúng ta có
+$$
+\Omega=\left[\begin{array}{ccc}
+	1 & \exp (T) & \exp (2 T) \\
+	0 & \exp (T) & 2 \exp (2 T) \\
+	1 & \exp (2 T) & \ exp (4 T)
+\end{array}\right]
+$$
+và có thể dễ dàng chứng minh rằng $\Omega$ không suy biến đối với mọi $T>0$. Do đó, hệ thống dữ liệu được lấy mẫu $(\boldsymbol{\Phi}, \mathbf{B})$ là điều khiển được trong mọi thời điểm lấy mẫu $T>0$, nếu cặp $(\mathbf{A}, \mathbf{C })$ là điều khiển được.	
+\end{vd}
+
+
+%\textbf{Ví dụ 2}
+
+\begin{vd}
+Cho 
+$$
+\mathbf{A}=\left[\begin{array}{lll}
+	1 & 1 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1
+\end{array}\right]
+$$
+Bậc của đa thức nhỏ nhất là $\nu=2<n=3$. Vì $\operatorname{Re}\{\lambda\} \neq 0$ nên điều kiện (b) của 'Định lý 1 được thỏa mãn với mọi $T>0$. Sử dụng phương trình (10) chúng ta có
+$$
+\Omega=\left[\begin{array}{ll}
+	Tôi & \exp (T) \\
+	0 & \exp (T)
+\end{array}\right]
+$$
+và rõ ràng là $\Omega$ không suy biến đối với mọi $T>0$. Do đó, nếu cặp $(\boldsymbol{A},$ $\boldsymbol{C})$ là điều khiển được, thì cặp $(\Phi, B)$ với bất kỳ $T>0$ nào cũng vậy. (Lưu ý: trong ví dụ này, cặp $(\boldsymbol{A},$ $\boldsymbol{C})$ chỉ là điều khiển được nếu $r>1$.)	
+\end{vd}
+
+
+
+\textit{Nhận xét}. Có thể chứng minh rằng $\rho(\boldsymbol{\Omega})=v$ nếu $\operatorname{Im}\left\{\lambda_i-\lambda_j\right\} \neq 2 \pi \beta / T$ , $\beta= \pm 1, \pm 2, \ldots$, cho $\operatorname{Re}\left\{\lambda_i-\lambda_j\right\}=0$, trong đó $\lambda_i$ và $\lambda_j $ là giá trị riêng phân biệt của $\boldsymbol{A}$.
+Bây giờ, giả sử rằng tất cả các khối Jordan của $\mathbf{A}$ là khác nhau, khi đó $\nu=n, \Omega$ là một ma trận $(n \times n)$ và $\rho(\ Omega)=n$. Lưu ý rằng điều kiện này chính xác là điều kiện của Kalman et al. (1962). Do đó, điều kiện đủ để kiểm soát được (Định lý 1) yếu hơn so với yêu cầu của Kalman.
+
+%\textbf{Định lý 2}
+
+\begin{dl}\label{dl2}
+Xét hệ tuyến tính bất biến theo thời gian của phương trình (1) và giả sử rằng (a) cặp $(\mathbf{A}, \mathbf{C})$ là điều khiển được và $(b) T \neq 2 \pi \beta / \lambda_i, \beta= \ pm 1, \pm 2, \ldots$, bất cứ khi nào $\operatorname{Re}\left\{\lambda_i\right\}=0$, trong đó $\lambda_i$ là các giá trị riêng phân biệt của $\mathbf{A }$. Sau đó, để cặp $(\Phi, B)$ có thể điều khiển được, điều kiện cần là $\rho(\Omega) \geqslant[n / r] \dagger$, trong đó $n$ và $r$ là các kích thước của không gian trạng thái và điều khiển tương ứng.	
+\end{dl}
+
+
+
+Để chứng minh định lý này, xem Phụ lục.
+
+
+\textbf{Ví dụ 3}
+
+\begin{vd}
+	Cho
+	$$
+	\mathbf{A}=\left[\begin{array}{rrr}
+		-2 & 0 & 0 \\
+		0 & -\alpha & 0 \\
+		0 & 0 & \beta
+	\end{array}\right] ; \quad \mathbf{C}=\left[\begin{array}{l}
+		1 \\
+		1 \\
+		1
+	\end{array}\right]
+	$$
+	trong đó $\alpha \triangleq 1+2 j, \beta \triangleq 1-2 j$. Có thể dễ dàng chứng minh rằng cặp $(A, C)$ có thể điều khiển được và vì $\operatorname{Re}\left\{\lambda_i\right\} \neq 0, i=1,2,3$, điều kiện $(a )$ và $(b)$ của Định lý 2 đều thỏa mãn. Bậc của đa thức tối tiểu của $\mathbf{A}$ là $\nu=n=3$. Sử dụng phương trình (10) ta có
+	$$
+	\boldsymbol{\Omega}=\left[\begin{array}{lll}
+		1 & \exp (-2 T) & \exp (-4 T) \\
+		1 & \exp (-\alpha T) & \exp (-2 \alpha T) \\
+		1 & \exp (-\beta T) & \exp (-2 \beta T)
+	\end{array}\right]
+	$$
+	và có thể chỉ ra rằng, ví dụ, nếu $T=\frac{1}{2} \pi \gamma, \gamma= \pm 1, \pm 2, \ldots, \Omega$ là số ít $(\rho (\Omega)=2)$. Do đó, theo Định lý 1 , cặp $(\boldsymbol{\Phi}, \mathbf{B})$ không thể kiểm soát được. 
+\end{vd}
+
+
+
+Bây giờ hãy xem xét trường hợp khi $r=2$ và đặt
+$$
+\mathbf{C}=\left[\begin{array}{ll}
+	1 & 1 \\
+	1 & 0 \\
+	1 & 1
+\end{array}\right]
+$$
+
+Một lần nữa, các điều kiện $(a)$ và $(b)$ của Định lý 2 được thỏa mãn và chúng tôi dự định chỉ ra rằng bây giờ hệ thống dữ liệu lấy mẫu là điều khiển được đối với $T=\frac{1}{2} \pi \gamma, \gamma=$ $\pm 1, \pm 2, \ldots$. Sử dụng phép tính trực tiếp, ta có
+$$
+\Phi=\mathbf{e}^{\mathbf{A} T}=\left[\begin{array}{ccc}
+	\exp (-2 T) & 0 & 0 \\
+	0 & \exp (-\alpha T) & 0 \\
+	0 & 0 & \exp (-\beta T)
+\end{array}\right]
+$$
+và
+$$
+\mathbf{B}=\int_0^T \mathbf{e}^{\mathbf{A}_\tau} d \tau \mathbf{C}=\left[\begin{array}{cc}
+	\frac{1}{2}[1-\exp (-2 T)] & \frac{1}{2}[1-\exp (-2 T)] \\
+	(1 / \alpha)[1-\exp (-\alpha T)] & 0 \\
+	(1 / \beta)[1-\exp (-\beta T)] & (1 / \beta)[1-\exp (-\beta T)]
+\end{array}\right]
+$$
+
+Vì bậc của đa thức nhỏ nhất của $A$ là $\nu=3$ nên ta xét
+
+$\mathbf{D}=\left[\mathbf{B} ; \Phi B: \Phi^2 \mathbf{B}\right]$
+{\small
+	$$=\left[\begin{array}{ccc}\frac{1}{2}[1-\exp (-2 T)] & \frac{1}{\alpha}[1-\exp (-\alpha T)] & \frac{1}{\beta}[1-\exp (-\beta T)] \\ \frac{1}{2}[1-\exp (-2 T)] & 0 & \frac{1}{\beta}[1-\exp (-\beta T)] \\ \hdashline \frac{1}{2}[1-\exp (-2 T)] \exp (-2 T) & \frac{1}{\alpha}[1-\exp (-\alpha T)] \exp (-\alpha T) & \frac{1}{\beta}[1-\exp (-\beta T)] \exp (-\beta T) \\ & 0 & \frac{1}{\beta}[1-\exp (-\beta T)] \exp (-\beta T) \\ \frac{1}{2}[1-\exp (-2 T)] \exp (-2 T) & 0 & \frac{1}{\beta}[1-\exp (-\beta T)] \exp (-2 \beta T) \\ \hdashline \frac{1}{2}[1-\exp (-2 T)] \exp (-4 T) & \frac{1}{\alpha}[1-\exp (-\alpha T)] \exp \left(-2 \alpha T^{\prime}\right) \\ \frac{1}{2}[1-\exp (-2 T)] \exp (-4 T) & & \frac{1}{\beta}[1-\exp (-\beta T)] \exp (-2 \beta T)\end{array}\right]$$
+}
+Các cột l, 2 và 4 của $D$ độc lập tuyến tính đối với $T=\frac{1}{2} \pi \gamma$, $\gamma= \pm 1, \pm 2, \ldots$ và do đó $\rho(\mathbf{D})=3$ và cặp $(\Phi, B)$ có thể điều khiển được. Bây giờ, hãy nhớ lại rằng $\rho(\Omega)=2$ và vì $[n / r]=1$ nên bất đẳng thức $\rho(\Omega) \geqslant[n / r]$ được thỏa mãn.
+
+\textit{Nhận xét}. Ví dụ này cho thấy rằng, như là kết quả của Định lý 2, có thể có một hệ thống dữ liệu lấy mẫu là điều khiển đa chiều với các điều kiện ít hạn chế hơn so với trường hợp $r=1$.
+
+%\textbf{Định lý 3}
+\begin{dl}
+Xét hệ tuyến tính bất biến theo thời gian của phương trình (1) và giả sử rằng (a) $T \neq 2 \pi \beta / \lambda_i, \beta= \pm 1, \pm 2, \ldots$, khi $\operatorname{Re}\left\{\lambda_i \right\}=0$, trong đó $\lambda_i$ là các giá trị riêng của $A$, và cặp $(b)$ $(A, C)$ sao cho
+$$
+\rho\left[C: A C: A^2 C: \ldots \vdots A^{l-1} C\right]=n
+$$
+trong đó $l \leqslant n$. Khi đó cặp $(\Phi, \mathbf{B})$ có thể điều khiển được nếu $\rho(\Omega)=l$.	
+\end{dl}
+
+\begin{hq}
+Nếu $l=[n / r]$ thì $\rho(\Omega)=l$ là điều kiện cần và đủ để hệ thống dữ liệu mẫu là điều khiển được.	
+\end{hq}
+
+%\textbf{Hệ quả 1}
+
+
+\textit{Nhận xét.} Ví dụ 3 chứng minh Hệ quả 1.
+
+%\textbf{Hệ quả 2}
+
+\begin{hq}
+Nếu $\boldsymbol{C}$ là một ma trận cỡ $(n \times n)$ không suy biến, thì hệ thống dữ liệu lấy mẫu luôn là điều khiển được.
+\end{hq}
+
+%\textbf{5. Kết Luận}
+
+\section{Kết luận}
+
+Vấn đề về tính điều khiển được của một hệ thống dữ liệu được lấy mẫu được thực hiện bởi một hệ thống liên tục tuyến tính bất biến theo thời gian với đầu vào không đổi từng phần đã được xem xét. Một điều kiện cần thiết đã được đưa ra để kiểm soát các hệ thống dữ liệu được lấy mẫu đa chiều và nó đã chỉ ra rằng một điều kiện yếu hơn so với yêu cầu của Kalman et al. (1962) là cần và đủ
+
+%\newpage
+\section*{Phụ lục}
+
+
+\textit{A 1. Chứng minh Định lý 1}
+
+Các giả định (a) và (b) ngụ ý, theo Bổ đề 2, rằng cặp (A, B) là điều khiển được, tức là
+\begin{equation}\label{pt11}\tag{11}
+	\rho\left(\mathbf{L}_\nu\right)=\rho\left(\mathbf{B} \vdots \mathbf{A B} \vdots \mathbf{A}^2 \mathbf{B} \vdots \ldots \vdots \mathbf{A}^{\nu-1} \mathbf{B}\right)=n
+\end{equation}
+Chúng tôi dự định chứng minh rằng
+$$
+\rho(\mathbf{D})=\rho\left(\mathbf{B}: \Phi \mathbf{B}: \Phi^2 \mathbf{B}: \ldots: \Phi^{\nu-1 } \mathbf{B}\right)=n
+$$
+Cần lưu ý (Gantmacher 1959, p. 158) rằng cả $\mathbf{A}$ và $\Phi$ đều có cùng bậc đối với đa thức tối thiểu của chúng.
+
+Giả sử rằng tồn tại một vectơ $x$ sao cho $\mathbf{x}^{\prime} \mathbf{D}=\mathbf{0}$. Thay thế $\mathbf{e}^{A T}$ cho $\Phi$ và sử dụng phương trình (7), $\mathbf{x}^{\prime} \mathbf{D}=\mathbf{0}$ ngụ ý rằng
+\begin{equation}\label{pt12}\tag{12}
+	\begin{aligned}
+		& \alpha_0(j T) \mathbf{x}^{\prime} \mathbf{B}_i+\alpha_1(j T) \mathbf{x}^{\prime}(\mathbf{A B})_i+\alpha_2(j T) \mathbf{x}^{\prime}\left(\mathbf{A}^2 \mathbf{B}\right)_i+\ldots \\
+		&+\alpha_{\nu-1}(j T) \mathbf{x}^{\prime}\left(\mathbf{A}^{\nu-1} \mathbf{B}\right)_i=0
+	\end{aligned}
+\end{equation}
+$j=0,1, \ldots, \nu-1 ; i=1,2, \ldots, r$, trong đó $\mathbf{B}_i,(\mathbf{A B})_i,\left(\mathbf{A}^2 \mathbf{B}\right)_i, \ldots,\left(\mathbf{A}^{\nu-1} \mathbf{B}\right)_i$ là cột thứ $i$ của $\mathbf{B}, \mathbf{A B}, \ lần lượt là \mathbf{A}^2 \mathbf{B}, \ldots, \mathbf{A}^{\nu-1} \mathbf{B}$. Do đó, viết đẳng thức (12) dạng ma trận, chúng ta có
+\begin{equation}\tag{13}\label{pt13}
+	\left[\begin{array}{c}
+		\mathbf{x}^{\prime} \mathbf{B}_i \\
+		\mathbf{x}^{\prime}\left(\mathbf{A} \mathbf{B}_i\right. \\
+		\mathbf{x}^{\prime}\left(\mathbf{A}^2 \mathbf{B}\right)_i \\
+		\vdots \\
+		\mathbf{x}^{\prime}\left(\mathbf{A}^{\nu-1} \mathbf{B}\right)_i
+	\end{array}\right] \mathbf{W}=\mathbf{0}, \quad i=1,2, \ldots, r
+\end{equation}
+trong đó $W$ được đưa ra bởi phương trình (9). Nhưng, theo bổ đề 3, $\Omega$ không suy biến ngụ ý rằng $W$ không suy biến và do đó,  nghiệm duy nhất của phương trình (13) là $\mathbf{x}^{\prime} \mathbf{B}_i=0,
+\mathbf{x}^{\prime}(\mathbf{A B})_i=0, \ldots, \mathbf {x}^{\prime}\left(\mathbf{A}^{\nu-1} \mathbf{B}\right)_i=0, i=1,2, \ldots, r$. Do đó, $\mathbf{x}$ trực giao với tất cả các cột của ma trận, $L_v$ và  từ phương trình (11) cho $x=0$. Vì vậy, không gian trống của $D$ là một tập rỗng và do đó, $\rho(D)=n$.
+
+Bây giờ, đặt $r=1$, tức là $B$ là một vectơ $n$ chiều và giả sử rằng $\rho(\boldsymbol{W})<n$. Do đó, $\mathbf{W} \boldsymbol{y}=\mathbf{0}$ có ít nhất một nghiệm $\mathbf{y} \neq \mathbf{0}$. Do đó chúng ta có thể giải phương trình
+$$
+\left[\begin{array}{c}
+	-\mathbf{x}^{\prime} \mathbf{B} \\
+	\mathbf{x}^{\prime} \mathbf{A B} \\
+	\mathbf{x}^{\prime} \mathbf{A}^2 \mathbf{B} \\
+	\vdots \\
+	\mathbf{x}^{\prime} \mathbf{A}^{\nu-1} \mathbf{B}
+\end{array}\right]=\mathbf{y}^{\prime}
+$$
+có thể viết lại thành $\mathbf{L}_\nu \mathbf{x}=\mathbf{y}$. Vì $\rho\left(\mathbf{L}_\nu\right)=n, \mathbf{y} \neq 0$ ngụ ý $\mathbf{x} \neq \mathbf{0}$. Do đó, tồn tại một vectơ $\mathbf{x} \neq \mathbf{0}$ thỏa mãn phương trình (13). Tương tự, chúng ta có $\mathbf{x}^{\prime} \mathbf{D}=\mathbf{0}$ cho $\mathbf{x} \neq \mathbf{0}$, tức là $\rho(\mathbf {D})<n$ và cặp $(\boldsymbol{\Phi}, \mathbf{B})$ không thể điều khiển được. Do đó, điều kiện cũng cần thiết khi $r=1$.
+
+\textbf{A 2. Chứng minh Định lý 2}
+
+Các giả định $(a)$ và $(b)$ ngụ ý bởi Bổ đề 2 rằng
+\begin{equation}\label{pt14}\tag{14}
+	\rho\left(\mathbf{L}_\nu\right)=\rho\left[\mathbf{B} \vdots \mathbf{A B}: \mathbf{A}^2 \mathbf{B} \vdots \ldots: \mathbf{A}^{\nu-1} \mathbf{B}\right]=n
+\end{equation}
+Xét ma trận $\mathbf{D}=\left[\mathbf{B}: \boldsymbol{\Phi} \mathbf{B}: \boldsymbol{\Phi}^2 \mathbf{B}: \ldots: \boldsymbol {\Phi}^{\nu-1} \mathbf{B}\right]$. Thay thế phương trình (7) cho $\Phi=e^{T \cdot A}$ ta được
+$$
+\begin{aligned}
+	\mathbf{D}= & {\left[\alpha_0(0) \mathbf{B}+\alpha_1(0) \mathbf{A B}+\ldots+\alpha_{\nu-1}(0) \mathbf{A}^{\nu-1} \mathbf{B} \vdots \alpha_0(T) \mathbf{B}+\alpha_1(T) \mathbf{A B}+\ldots\right.} \\
+	& +\alpha_{\nu-1}(T) \mathbf{A}^{\nu-1} \mathbf{B} \vdots \ldots \alpha_0((\nu-1) T) \mathbf{B}+\alpha_1((\nu-1) T) \mathbf{A B}+\ldots \\
+	= & \left.\quad+\alpha_{\nu-1}((\nu-1) T) \mathbf{A}^{\nu-1} \mathbf{B}\right]
+\end{aligned}
+$$
+trong đó
+\begin{equation}\label{pt15}\tag{15}
+	\mathbf{R}=\left[\begin{array}{cccc}
+		\alpha_0(0) \mathbf{I}_r & \alpha_0(T) \mathbf{I}_r & \ldots & \alpha_0((\nu-1) T) \mathbf{I}_r \\
+		\alpha_1(0) \mathbf{I}_r & \alpha_1(T) \mathbf{I}_r & \ldots & \alpha_1((\nu-1) T) \mathbf{I}_r \\
+		\vdots & \vdots & & \vdots \\
+		\alpha_{\nu-1}(0) \mathbf{I}_r & \alpha_{\nu-1}(T) \mathbf{I}_r & \ldots & \alpha_{y-1}((\nu-1) T) \mathbf{I}_r
+	\end{array}\right]
+\end{equation}
+và $\mathbf{I}_r$ là ma trận đồng nhất $(r \times r)$. Từ đó
+\begin{equation}\tag{16}\label{pt16}
+	\mathbf{D}=\mathbf{L}_\nu \mathbf{R}
+\end{equation}
+trong đó cỡ của $\mathbf{D}, \mathbf{L}_\nu$ và $\mathbf{R}$ lần lượt là $(n \times r \nu),(n \times r \nu)$ và $ (r \nu \times r \nu)$, tương ứng.
+
+Áp dụng bất đẳng thức Sylvester (Gantmacher, 1959, tr. 66) cho phương trình (16) chúng ta có
+$$
+\rho(\mathbf{D}) \leqslant \min \left\{\rho\left(\mathbf{L}_\nu\right), \rho(\mathbf{R})\right\}
+$$
+Nhưng, bởi phương trình (14), $\rho\left(\mathbf{L}_\nu\right)=n$ và do đó
+$$
+\rho(\mathbf{D}) \leqslant \min \{n, \rho(\mathbf{R})\}
+$$
+Bây giờ, nếu hệ thống dữ liệu lấy mẫu là điều khiển được, thì $\rho(\mathbf{D})=n$ và chúng ta có
+\begin{equation}\tag{17}
+	n \leqslant \rho(\mathbf{R})
+\end{equation}
+Bằng các thao tác hàng và cột cơ bản, có thể dễ dàng chỉ ra rằng ma trận $\mathbf{R}$ (phương trình (15)) được chuyển thành ma trận đường chéo $\mathbf{R}^*$ có các khối $r$ trên đường chéo chính của nó, mỗi khối này là ma trận $(\nu \times \nu)$ $W^{\prime}$ do phương trình (9) xác định. Do đó, $\rho(\mathbf{R})=\rho\left(\mathbf{R}^*\right)=r \rho\left(\mathbf{W}^{\prime}\right)$, và, theo Bổ đề 3, $\rho(\mathbf{R})=r \rho(\boldsymbol{\Omega})$. Thay thế kết quả này vào phương trình (17) thu được $n \leqslant r \rho(\Omega)$, và vì hạng của một ma trận là một số nguyên, nên chúng ta có
+$$
+\rho(\Omega) \geqslant[n / r]
+$$
+cần thiết để cặp $(\boldsymbol{\Phi}, \mathbf{B})$ là điều khiển được.
+
+\begin{thebibliography}{99}
+\bibitem{tl1} Bar-Ness, Y., and Langholz, G., 1974, Tel-Aviv University, School of Engineering, Report TAU-SOE/119-74.
+\bibitem{tl2} Chen, C. T., 1970, Introduction to Linear Systems (New York: Holt, Rinehart \& Winston), p. 403.
+\bibitem{tl3} Gantmacher, F. R., 1959, The Theory of Matrices, Vol. I (New York: Chelsea).
+\bibitem{tl4} Grammaticos, A. J., 1969, Proc. 7th Annual Allerton Conf. on Circuit and System Theory, p. 368 .
+\bibitem{tl5} Kalman, R. E., Ho, Y. C., and Narendra, K. S., 1962, Contr. diff. Eqns, 1, 189. Katkovnik, V. Ya., and Poluektov, R. A., 1966, Multivariable Discrete Control Systems (in Russian) (Moscow : Nauka), p. 136.
+\bibitem{tl6} Panda, S. P., 1970, Automatica, 6, 309.
+\bibitem{tl7} Sarachik, P. E., and Kreindeer, E., 1965, Int. J. Control, 1, 419.
+\bibitem{tl8} ZADer, L. A., and Desoer, C. A., 1963, Linear System Theory (New York: McGrawHill), p. 607.
+\end{thebibliography}
+
+
+\end{document}

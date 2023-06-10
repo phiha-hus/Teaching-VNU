@@ -35,18 +35,18 @@
 	Y. BAR-NESS $\dagger$ và G. LANGHOLZ $\dagger$
 \end{center}
 
-Trong bài báo này, chúng tôi xem xét các hệ dữ liệu được lấy mẫu được thực hiện bởi các hệ thống liên tục tuyến tính bất biến theo thời gian có đầu vào là hằng số. Vấn đề được giải quyết như sau: giả sử rằng hệ thống liên tục có thể điều khiển được, điều kiện cần và đủ để hệ thống dữ liệu lấy mẫu có thể điều khiển được là gì?
+Trong bài báo này, ta xem xét các hệ dữ liệu được lấy mẫu được thực hiện bởi các hệ thống liên tục tuyến tính bất biến theo thời gian có đầu vào là hằng số. Vấn đề được giải quyết như sau: giả sử rằng hệ thống liên tục có thể điều khiển được, điều kiện cần và đủ để hệ thống dữ liệu lấy mẫu có thể điều khiển được là gì?
 
-Chúng tôi rút ra một điều kiện cần cho trường hợp đa chiều và chỉ ra rằng một điều kiện yếu hơn điều kiện mà Kalman $e^{\prime}$ yêu cầu (1962) là cần và đủ.
+ta rút ra một điều kiện cần cho trường hợp đa chiều và chỉ ra rằng một điều kiện yếu hơn điều kiện mà Kalman $e^{\prime}$ yêu cầu (1962) là cần và đủ.
 
 
 \textbf{1. Giới thiệu}
 
-Một hệ điều khiển rời rạc quan trọng là hệ thống dữ liệu lấy mẫu được thực hiện bằng cách chèn một thành phần kỹ thuật số vào vòng điều khiển. Nói cách khác, chúng tôi xem xét một hệ thống động liên tục có đầu vào là hằng số từng phần. Mặc dù bộ điều khiển chỉ có thể thay đổi tại các thời điểm nhất định, nhưng các thời điểm lấy mẫu, vectơ trạng thái, là nghiệm của các phương trình vi phân của hệ, thay đổi liên tục.
+Một hệ điều khiển rời rạc quan trọng là hệ thống dữ liệu lấy mẫu được thực hiện bằng cách chèn một thành phần kỹ thuật số vào vòng điều khiển. Nói cách khác, ta xem xét một hệ thống động liên tục có đầu vào là hằng số từng phần. Mặc dù bộ điều khiển chỉ có thể thay đổi tại các thời điểm nhất định, nhưng các thời điểm lấy mẫu, vectơ trạng thái, là nghiệm của các phương trình vi phân của hệ, thay đổi liên tục.
 
 Khả năng điều khiển của các hệ thống thời gian rời rạc đã được đề cập khá nhiều trong tài liệu (ví dụ: Kalman et al. 1962, Sarachik và Kreindler 1965, Katkovnik và Poluektov 1966, Grammaticos 1969, Panda 1970). Tuy nhiên, vấn đề về tính điều khiển được của các hệ thống lấy mẫu dữ liệu nhận được rất ít sự quan tâm. Kalman và cộng sự. (1962) đã tìm thấy một điều kiện đủ cho tính điều khiển được của các hệ thống dữ liệu được lấy mẫu, điều này cũng cần thiết nếu kích thước của không gian điều khiển là một chiều. Kết quả tương tự cũng được lặp lại bởi Katkovnik và Poluektov (1966) và Chen (1970).
 
-Trong bài báo này, chúng tôi giải quyết vấn đề sau: giả sử rằng hệ thống liên tục là điều khiển được, tiêu chí để hệ thống dữ liệu được lấy mẫu là điều khiển được là gì? Chúng tôi đưa ra một điều kiện cần  cho tính điều khiển được của các hệ thống dữ liệu được lấy mẫu với bất kỳ số lượng kiểm soát nào và chỉ ra rằng một điều kiện yếu hơn của Kalman là cần và đủ.
+Trong bài báo này, ta giải quyết vấn đề sau: giả sử rằng hệ thống liên tục là điều khiển được, tiêu chí để hệ thống dữ liệu được lấy mẫu là điều khiển được là gì? ta đưa ra một điều kiện cần  cho tính điều khiển được của các hệ thống dữ liệu được lấy mẫu với bất kỳ số lượng điều khiển nào và chỉ ra rằng một điều kiện yếu hơn của Kalman là cần và đủ.
 
 Hầu hết các định lý và bổ đề được phát biểu mà không cần chứng minh vì lý do ngắn gọn. Một phiên bản đầy đủ của bài báo này có sẵn từ các tác giả (Bar-Ness và Langholz 1974).
 
@@ -63,7 +63,7 @@ Giả sử rằng $\mathbf{u}(t)=\mathbf{u}\left(t_i\right), t_i \leqslant t \le
 \begin{equation}\tag{2}\label{pt2}
 \mathbf{x}(t)=\boldsymbol{\Phi}\left(t, t_0\right) \mathbf{x}\left(t_0\right)+\int_{t_0}^t \boldsymbol{\Phi} (t, \tau) \mathbf{C u}(\tau) d \tau
 \end{equation}
-trong đó $\Phi\left(t, t_0\right)$ là ma trận cỡ $(n \times n)$ liên kết với phương trình \eqref{pt1}. Tại thời điểm lấy mẫu, chúng tôi nhận được từ phương trình \eqref{pt2}
+trong đó $\Phi\left(t, t_0\right)$ là ma trận cỡ $(n \times n)$ liên kết với phương trình \eqref{pt1}. Tại thời điểm lấy mẫu, ta nhận được từ phương trình \eqref{pt2}
 \begin{equation}\tag{3}\label{pt3}
 \mathbf{x}\left(t_{i+1}\right)=\boldsymbol{\Phi}\left(t_{i+1}, t_i\right) \mathbf{x}\left(t_i\right) +\int_{t_1}^{t_{1+1}} \boldsymbol{\Phi}\left(t_{i+1}, \tau\right) \mathbf{C} d \tau \mathbf{u}(t_i)
 \end{equation}
@@ -87,7 +87,7 @@ Ma trận $(n \times r \nu)$ $\left[\mathbf{Q}: \mathbf{P}: \mathbf{P}^2 \mathbf
 
 \textit{Nhận xét.} Theo Định nghĩa 1, để cặp $(P, Q)$ là điều khiển được, bất đẳng thức $r \nu \geqslant n$ phải được thỏa mãn.
 
-Bây giờ giả sử rằng hệ thống tuyến tính bất biến theo thời gian của phương trình \eqref{pt1} kiểm soát được, bài toán tìm điều kiện cho hệ thống dữ liệu lấy mẫu của phương trình điều khiển \eqref{pt4}  được giải ở mục 4. Một số kết quả cần thiết cho nghiệm được trình bày trong phần sau.
+Bây giờ giả sử rằng hệ thống tuyến tính bất biến theo thời gian của phương trình \eqref{pt1} điều khiển được, bài toán tìm điều kiện cho hệ thống dữ liệu lấy mẫu của phương trình điều khiển \eqref{pt4}  được giải ở mục 4. Một số kết quả cần thiết cho nghiệm được trình bày trong phần sau.
 
 \textbf{3. Kiến thức chuẩn bị}
 
@@ -113,7 +113,7 @@ trong đó $M$ là một ma trận bậc tối thiểu, $\alpha(t)=\left[\alpha_
 
 \textbf{4. Tiêu chí về tính điều khiển được}
 
-Kalman và cộng sự. (1962) đã đưa ra một điều kiện đủ cho khả năng điều khiển của một hệ thống dữ liệu được lấy mẫu, điều này cũng cần thiết nếu một chiều của không gian điều khiển. Katkovnik và Poluektov (1966) và Chen (1970) lại đưa ra kết quả tương tự. Trong phần này, chúng tôi rút ra một điều kiện cần  cho tính điều khiển được của một hệ thống dữ liệu được lấy mẫu với bất kỳ số lượng kiểm soát nào (Định lý 2) và chỉ ra rằng một điều kiện yếu hơn điều kiện của Kalman là cần và đủ (Định lý 1).
+Kalman và cộng sự. (1962) đã đưa ra một điều kiện đủ cho khả năng điều khiển của một hệ thống dữ liệu được lấy mẫu, điều này cũng cần thiết nếu một chiều của không gian điều khiển. Katkovnik và Poluektov (1966) và Chen (1970) lại đưa ra kết quả tương tự. Trong phần này, ta rút ra một điều kiện cần  cho tính điều khiển được của một hệ thống dữ liệu được lấy mẫu với bất kỳ số lượng điều khiển nào (Định lý 2) và chỉ ra rằng một điều kiện yếu hơn điều kiện của Kalman là cần và đủ (Định lý 1).
 
 Xác định ma trận $(\nu \times v)$ $W$ :
 \begin{equation}\tag{9}\label{pt9}
@@ -185,7 +185,7 @@ $$
 và rõ ràng là $\Omega$ không suy biến đối với mọi $T>0$. Do đó, nếu cặp $(\boldsymbol{A},$ $\boldsymbol{C})$ là điều khiển được, thì cặp $(\Phi, B)$ với bất kỳ $T>0$ nào cũng vậy. (Lưu ý: trong ví dụ này, cặp $(\boldsymbol{A},$ $\boldsymbol{C})$ chỉ là điều khiển được nếu $r>1$.)
 
 \textit{Nhận xét}. Có thể chứng minh rằng $\rho(\boldsymbol{\Omega})=v$ nếu $\operatorname{Im}\left\{\lambda_i-\lambda_j\right\} \neq 2 \pi \beta / T$ , $\beta= \pm 1, \pm 2, \ldots$, cho $\operatorname{Re}\left\{\lambda_i-\lambda_j\right\}=0$, trong đó $\lambda_i$ và $\lambda_j $ là giá trị riêng phân biệt của $\boldsymbol{A}$.
-Bây giờ, giả sử rằng tất cả các khối Jordan của $\mathbf{A}$ là khác nhau, khi đó $\nu=n, \Omega$ là một ma trận $(n \times n)$ và $\rho(\ Omega)=n$. Lưu ý rằng điều kiện này chính xác là điều kiện của Kalman et al. (1962). Do đó, điều kiện đủ để kiểm soát được (Định lý 1) yếu hơn so với yêu cầu của Kalman.
+Bây giờ, giả sử rằng tất cả các khối Jordan của $\mathbf{A}$ là khác nhau, khi đó $\nu=n, \Omega$ là một ma trận $(n \times n)$ và $\rho(\ Omega)=n$. Lưu ý rằng điều kiện này chính xác là điều kiện của Kalman et al. (1962). Do đó, điều kiện đủ để điều khiển được (Định lý 1) yếu hơn so với yêu cầu của Kalman.
 
 \textbf{Định lý 2}
 
@@ -215,7 +215,7 @@ $$
 	1 & \exp (-\beta T) & \exp (-2 \beta T)
 \end{array}\right]
 $$
-và có thể chỉ ra rằng, ví dụ, nếu $T=\frac{1}{2} \pi \gamma, \gamma= \pm 1, \pm 2, \ldots, \Omega$ là số ít $(\rho (\Omega)=2)$. Do đó, theo Định lý 1 , cặp $(\boldsymbol{\Phi}, \mathbf{B})$ không thể kiểm soát được. 
+và có thể chỉ ra rằng, ví dụ, nếu $T=\frac{1}{2} \pi \gamma, \gamma= \pm 1, \pm 2, \ldots, \Omega$ là số ít $(\rho (\Omega)=2)$. Do đó, theo Định lý 1 , cặp $(\boldsymbol{\Phi}, \mathbf{B})$ không thể điều khiển được. 
 
 Bây giờ hãy xem xét trường hợp khi $r=2$ và đặt
 $$
@@ -226,7 +226,7 @@ $$
 \end{array}\right]
 $$
 
-Một lần nữa, các điều kiện $(a)$ và $(b)$ của Định lý 2 được thỏa mãn và chúng tôi dự định chỉ ra rằng bây giờ hệ thống dữ liệu lấy mẫu là điều khiển được đối với $T=\frac{1}{2} \pi \gamma, \gamma=$ $\pm 1, \pm 2, \ldots$. Sử dụng phép tính trực tiếp, ta có
+Một lần nữa, các điều kiện $(a)$ và $(b)$ của Định lý 2 được thỏa mãn và ta dự định chỉ ra rằng bây giờ hệ thống dữ liệu lấy mẫu là điều khiển được đối với $T=\frac{1}{2} \pi \gamma, \gamma=$ $\pm 1, \pm 2, \ldots$. Sử dụng phép tính trực tiếp, ta có
 $$
 \Phi=\mathbf{e}^{\mathbf{A} T}=\left[\begin{array}{ccc}
 	\exp (-2 T) & 0 & 0 \\
@@ -273,7 +273,7 @@ Nếu $\boldsymbol{C}$ là một ma trận cỡ $(n \times n)$ không suy biến
 
 \textbf{5. Kết Luận}
 
-Vấn đề về tính điều khiển được của một hệ thống dữ liệu được lấy mẫu được thực hiện bởi một hệ thống liên tục tuyến tính bất biến theo thời gian với đầu vào không đổi từng phần đã được xem xét. Một điều kiện cần thiết đã được đưa ra để kiểm soát các hệ thống dữ liệu được lấy mẫu đa chiều và nó đã chỉ ra rằng một điều kiện yếu hơn so với yêu cầu của Kalman et al. (1962) là cần và đủ
+Vấn đề về tính điều khiển được của một hệ thống dữ liệu được lấy mẫu được thực hiện bởi một hệ thống liên tục tuyến tính bất biến theo thời gian với đầu vào không đổi từng phần đã được xem xét. Một điều kiện cần thiết đã được đưa ra để điều khiển các hệ thống dữ liệu được lấy mẫu đa chiều và nó đã chỉ ra rằng một điều kiện yếu hơn so với yêu cầu của Kalman et al. (1962) là cần và đủ
 
 \textbf{Phụ lục}
 
@@ -283,7 +283,7 @@ Các giả định (a) và (b) ngụ ý, theo Bổ đề 2, rằng cặp (A, B) 
 \begin{equation}\label{pt11}\tag{11}
 	\rho\left(\mathbf{L}_\nu\right)=\rho\left(\mathbf{B} \vdots \mathbf{A B} \vdots \mathbf{A}^2 \mathbf{B} \vdots \ldots \vdots \mathbf{A}^{\nu-1} \mathbf{B}\right)=n
 \end{equation}
-Chúng tôi dự định chứng minh rằng
+ta dự định chứng minh rằng
 $$
 \rho(\mathbf{D})=\rho\left(\mathbf{B}: \Phi \mathbf{B}: \Phi^2 \mathbf{B}: \ldots: \Phi^{\nu-1 } \mathbf{B}\right)=n
 $$
